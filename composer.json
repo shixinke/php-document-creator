@@ -1,0 +1,19 @@
+{
+    "name": "shixinke/doc-creator",
+    "description": "a document creator for php extension",
+    "type": "library",
+    "repositories": [
+        {
+            "url" : "http://github.com/shixinke/doc-creator"
+        }
+    ],
+    "homepage":"http://www.shixinke.com",
+    "license": "Apache 2.0",
+    "authors": [
+        {
+            "name": "shixinke",
+            "email": "ishixinke@qq.com"
+        }
+    ],
+    "require": {}
+}
