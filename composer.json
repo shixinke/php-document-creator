@@ -1,10 +1,10 @@
 {
-    "name": "phpDocumentCreator/php-document-creator",
+    "name": "shixinke/php-document-creator",
     "description": "a document creator for php extension",
     "type": "library",
     "repositories": [
         {
-            "url" : "http://github.com/shixinke/phpDocumentCreatorc"
+            "url" : "http://github.com/shixinke/php-document-creatorc"
         }
     ],
     "homepage":"http://www.shixinke.com",
