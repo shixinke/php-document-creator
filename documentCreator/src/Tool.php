@@ -37,8 +37,9 @@ class Tool
     {
         $constants = get_defined_constants();
         $arr = array();
+        $prefix = strtoupper($prefix);
         foreach($constants as $constant=>$v) {
-            if (strpos($constant, $prefix.'_') === 0) {
+            if (stripos($constant, $prefix.'_') === 0) {
                 $arr[$constant] = array(
                     'value'=>$v,
                     'comment'=>''
@@ -121,7 +122,7 @@ class Tool
         $functions = get_defined_functions();
         $arr = array();
         foreach($functions['user'] as $function) {
-            if (strpos($function, $prefix.'_') === 0) {
+            if (stripos($function, $prefix.'_') === 0) {
                 $func = new ReflectionFunction($function);
                 $name = $function;
                 $arr[$name]['comment'] = $func->getDocComment();
@@ -153,7 +154,7 @@ class Tool
         $classNames = array_unique(get_declared_classes());
         $arr = array();
         foreach($classNames as $className) {
-            if (strpos($className, $prefix.$delimiter) === 0) {
+            if (stripos($className, $prefix.$delimiter) === 0) {
                 $classObj = new ReflectionClass($className);
                 $name = $className;
                 $arr[$name]['object'] = $classObj;
@@ -266,6 +267,26 @@ class Tool
         return $arr;
     }
 
+    public static function createDir($baseDir, $namespace = false)
+    {
+
+        $fullDir = rtrim($baseDir, '/');
+        if (!is_dir($fullDir)) {
+            mkdir($baseDir);
+        }
+        if (!$namespace || $namespace == '') {
+            return $fullDir;
+        }
+        $arr = explode("\\", $namespace);
+        foreach($arr as $dir) {
+            $fullDir .= '/'.$dir;
+            if (!is_dir($fullDir)) {
+                mkdir($fullDir);
+            }
+        }
+        return $fullDir;
+    }
+
     public static function export($prefix, $isLocal = false, $delimiter = '_')
     {
         $data = array();
@@ -279,7 +300,6 @@ class Tool
             $data['classes'] = array();
             $classNames = self::getLocalClassNames($prefix, $delimiter);
         } else {
-            $lower = strtolower($prefix);
             $upper = strtoupper($prefix);
             $ext = new ReflectionExtension($upper);
             $data['version'] = $ext->getVersion();

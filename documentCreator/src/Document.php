@@ -65,13 +65,14 @@ class Document
             $content .= "define('".$k."', ".$v['value'].");\n";
         }
         foreach($data['functions'] as $m=>$mv) {
-            $content .= "    /**\n     * ".$mv['comment']."\n";
-            $content .= "     * @example ".$mv['example']."\n";
+            $mv['comment'] = str_replace("\n", "\n     *", "\n".$mv['comment']);
+            $content .= "/**\n* ".$mv['comment']."\n";
+            $content .= "* @example ".$mv['example']."\n";
 
             $params = '';
             if (isset($mv['parameters'])) {
                 foreach($mv['parameters'] as $param=>$paramValue) {
-                    $content .= "     * @param ";
+                    $content .= "* @param ";
                     if ($paramValue['type'] == 'array') {
                         $params .= 'Array $'.$param;
                         $content .= 'array $'.$param;
@@ -80,7 +81,7 @@ class Document
                         $content .= 'callable $'.$param;
                     } else {
                         if ($paramValue['type'] == 'unknown') {
-                            $content .= 'mixed '.$param;
+                            $content .= 'mixed $'.$param;
                         } else {
                             $content .= $paramValue['type'].' $'.$param;
                         }
@@ -108,20 +109,23 @@ class Document
                 $params = trim($params, ',');
 
             }
-            $content .= "     * @return ".$mv['return']."\n     */\n";
+            $content .= "* @return ".$mv['return']."\n*/\n";
 
-            $content .= " function ".$m."(";
+            $content .= "function ".$m."(";
             $content .= $params;
-            $content .= ")\n    {\n";
-            $content .=  "    }\n\n";
+            $content .= ")\n{\n";
+            $content .=  "}\n\n";
         }
 
         //将函数与常量定义放到一个文件
         $classes = array_keys($data['classes']);
         $extContent = $content;
         $res = true;
+        //创建目录
+        Tool::createDir(self::DOC_PATH, ucfirst($ext));
+        $baseDir = self::DOC_PATH.ucfirst($ext).'/';
         if (!in_array($ext, $classes)) {
-            $res = file_put_contents(self::DOC_PATH.$ext.'.php', $content);
+            $res = file_put_contents($baseDir.$ext.'.php', $content);
         }
 
         if (isset($data['classes']) && !empty($data['classes'])) {
@@ -135,12 +139,13 @@ class Document
                 }
 
                 $arr = explode("\\", $class);
+                $namespace = '';
                 $count = count($arr);
                 if ($count >= 2) {
                     $class = $arr[$count-1];
                     array_pop($arr);
                     $namespace = trim(implode("\\", $arr), "\\");
-                    $content .= 'namespace '.$namespace."\n";
+                    $content .= 'namespace '.$namespace.";\n";
                 }
                 if (isset($value['isInterface'])) {
                     $content .= "interface ".$class;
@@ -153,6 +158,9 @@ class Document
                     }
                     $content .= 'class '.$class;
                     if (isset($value['extends'])) {
+                        if ($namespace != '') {
+                            $value['extends'] = "\\".$value['extends'];
+                        }
                         $content .= ' extends '.$value['extends'];
                     }
                 }
@@ -171,7 +179,7 @@ class Document
                 }
                 foreach($value['properties'] as $p=>$pv) {
                     $pv['comment'] = str_replace("\n", "\n     *", "\n".$pv['comment']);
-                    $content .= "    /**\n     * @var ".$pv['type']." ".$p." ".$pv['comment']."\n     */\n";
+                    $content .= "    /**\n     * @var ".$pv['type']." $".$p." ".$pv['comment']."\n     */\n";
 
                     $content .= '    '.$pv['access'];
                     if ($pv['isStatic']) {
@@ -187,11 +195,16 @@ class Document
                     $content .=  ";\n";
                 }
                 foreach($value['methods'] as $m=>$mv) {
+                    $mv['comment'] = str_replace("\n", "\n     *", "\n".$mv['comment']);
                     $content .= "    /**\n     * ".$mv['comment']."\n";
+                    $mv['example'] = str_replace("\n", "\n     * ", $mv['example']);
                     $content .= "     * @example ".$mv['example']."\n";
                     $params = '';
                     if (isset($mv['parameters']) && !empty($mv['parameters'])) {
                         foreach($mv['parameters'] as $param=>$paramValue) {
+                            if (is_array($paramValue['type'])) {
+                                $paramValue['type'] = isset($paramValue[0]) ? $paramValue[0] : 'unknown';
+                            }
                             $content .= "     * @param ";
                             if ($paramValue['type'] == 'array') {
                                 $params .= 'Array $'.$param;
@@ -200,8 +213,11 @@ class Document
                                 $params .= 'Callable $'.$param;
                                 $content .= 'callable $'.$param;
                             } else {
+                                if (!$paramValue['type'] || ($paramValue['type'] == '')) {
+                                    $paramValue['type'] = 'mixed';
+                                }
                                 if ($paramValue['type'] == 'unknown') {
-                                    $content .= ' mixed '.$param;
+                                    $content .= ' mixed $'.$param;
                                 } else {
                                     $content .= $paramValue['type'].' $'.$param;
                                 }
@@ -240,15 +256,22 @@ class Document
                     $content .= $params;
                     $content .= ")";
                     if (isset($mv['isAbstract'])) {
-                        $content .= ';';
+                        $content .= ";\n\n";
                     } else {
                         $content .= "\n    {\n    }\n\n";
                     }
                 }
 
                 $content .= "}\n\n";
-                $fileName = str_replace("\\", "_", $class);
-                $res = file_put_contents(self::DOC_PATH.$fileName.'.php', $content);
+                if ($namespace != '') {
+                    $fullDir = Tool::createDir(self::DOC_PATH, $namespace);
+                } else {
+                    $fullDir = $baseDir;
+                }
+
+
+                $fileName = $fullDir.'/'.$class.'.php';
+                $res = file_put_contents($fileName, $content);
             }
         }
 
@@ -265,9 +288,9 @@ class Document
             $data = Tool::export($ext);
             $tmp = $data;
             unset($tmp['classes']);
-            $this->__createDict($ext, $tmp);
+            $this->__createDict(strtolower($ext), $tmp);
             foreach($data['classes'] as $k=>$v) {
-                $fileName = str_replace("\\", "_", $k);
+                $fileName = strtolower(str_replace("\\", "_", $k));
                 $this->__createDict($fileName, $v);
             }
         }
@@ -276,7 +299,7 @@ class Document
     private function __createDict($ext, $data)
     {
         $content = json_encode($data);
-        return file_put_contents(self::DICT_PATH.$ext.'.json', $content);
+        return file_put_contents(self::DICT_PATH.strtolower($ext).'.json', $content);
     }
 
     public function updateDict($ext, $data)
@@ -285,18 +308,19 @@ class Document
         unset($tmp['classes']);
         $this->__createDict($ext, $tmp);
         foreach($data['classes'] as $k=>$v) {
-            $fileName = str_replace("\\", "_", $k);
+            $fileName = strtolower(str_replace("\\", "_", $k));
             $this->__createDict($fileName, $v);
         }
     }
 
     public function getDict($extName)
     {
+        $extName = strtolower($extName);
         if (empty(self::$_dicts) || !isset(self::$_dicts[$extName])) {
             $files = scandir(self::DICT_PATH);
             $arr = array();
             foreach($files as $file) {
-                if (strpos($file, strtolower($extName)) == 0) {
+                if (stripos($file, strtolower($extName)) == 0) {
                     $content = file_get_contents(self::DICT_PATH.$file);
                     $arr[str_replace('.json', '', $file)] = json_decode($content, true);
                 }
@@ -308,6 +332,7 @@ class Document
 
     public function getExports($extName)
     {
+        $extName = strtolower($extName);
         if (empty(self::$_exports) || !isset(self::$_exports[$extName])) {
             self::$_exports[$extName] = Tool::export($extName);
         }
@@ -350,7 +375,7 @@ class Document
             }
         }
         foreach($exportData['classes'] as $k=>$v) {
-            $fileName = str_replace("\\", '_', $k);
+            $fileName = strtolower(str_replace("\\", '_', $k));
             if (isset($dict[$fileName]['comment']) && ($dict[$fileName]['comment'] != '')) {
                 $exportData['classes'][$k]['comment'] = $dict[$fileName]['comment'];
             }

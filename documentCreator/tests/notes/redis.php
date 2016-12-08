@@ -3276,7 +3276,7 @@ class RedisXArray {
 }
 
 /**
- * Class RedisXCluster
+ * RedisXCluster
  */
 class RedisXCluster
 {

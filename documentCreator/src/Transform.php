@@ -36,7 +36,7 @@ class Transform
             if ($prefix == '') {
                 $prefix = basename($fileName, '.php');
             }
-            $this->prefix = ucfirst($prefix);
+            $this->prefix = strtolower($prefix);
         } catch(Exception $e) {
             echo $e->getMessage();
             return false;
@@ -57,16 +57,16 @@ class Transform
             $prefixData = $data;
             $prefixData['constants'] = $prefixData['functions'] = $prefixData['classes'] = array();
             foreach($data['constants'] as $ck=>$cv) {
-                $cName = str_prelace(strtoupper($this->prefix).$unique, $this->prefix, $ck);
-                $prefixData['constants'][$cName] = $cv;
+                $cName = str_ireplace(strtoupper($this->prefix).$unique, $this->prefix, $ck);
+                $prefixData['constants'][strtoupper($cName)] = $cv;
             }
             foreach($data['functions'] as $func=>$value) {
-                $funcName = str_prelace(strtolower($this->prefix).$unique, $this->prefix, $func);
+                $funcName = str_ireplace(strtolower($this->prefix).$unique, $this->prefix, $func);
                 $prefixData['functions'][$funcName] = $value;
             }
             foreach($data['classes'] as $className=>$class) {
                 $doc = $this->getDoc($class['comment']);
-                $data['comment'] = $doc['desc'];
+                $data['classes'][$className]['comment'] = $doc['desc'];
                 foreach($class['consts'] as $const=>$cv) {
                     $doc = $this->getDoc($cv['comment']);
                     $data['classes'][$className]['consts'][$const]['comment'] = $doc['desc'];
@@ -89,7 +89,8 @@ class Transform
 
                     }
                 }
-                $prefixData['classes'][$this->prefix] = $data['classes'][$className];
+                $prefixClassName = str_ireplace($this->prefix.$unique, $this->prefix, $className);
+                $prefixData['classes'][$prefixClassName] = $data['classes'][$className];
             }
         }
         return $prefixData;
@@ -122,7 +123,7 @@ class Transform
             if (!$desc) {
                 $desc = $parser->getDesc();
             }
-            $data['desc'] = $desc ? $desc : '';
+            $data['desc'] = $desc;
             $data['params'] = $parser->getParams();
         }
 
