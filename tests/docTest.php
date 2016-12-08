@@ -1,7 +1,10 @@
 <?php
-require_once '../Autoloader.php';
+define('ROOT_PATH', dirname(__DIR__));
+require_once ROOT_PATH.'/Autoloader.php';
 
-$doc = new \documentCreator\Document('Redis');
-
-//$doc->createDict();
+$doc = new \phpDocumentCreator\Document('Yar');
 $doc->create();
+
+
+
+
