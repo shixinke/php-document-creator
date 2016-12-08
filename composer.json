@@ -1,5 +1,5 @@
 {
-    "name": "shixinke/phpDocumentCreator",
+    "name": "phpDocumentCreator/phpDocumentCreator",
     "description": "a document creator for php extension",
     "type": "library",
     "repositories": [
