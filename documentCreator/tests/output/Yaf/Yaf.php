@@ -11,48 +11,48 @@
 /**
 
 */
-define('YAF_VERSION', '3.0.4');
+define('YAF\VERSION', '3.0.4');
 /**
 
 */
-define('YAF_ENVIRON', 'dev');
+define('YAF\ENVIRON', 'dev');
 /**
 
 */
-define('YAF_ERR_STARTUP_FAILED', 512);
+define('YAF\ERR\STARTUP_FAILED', 512);
 /**
 
 */
-define('YAF_ERR_ROUTE_FAILED', 513);
+define('YAF\ERR\ROUTE_FAILED', 513);
 /**
 
 */
-define('YAF_ERR_DISPATCH_FAILED', 514);
+define('YAF\ERR\DISPATCH_FAILED', 514);
 /**
 
 */
-define('YAF_ERR_AUTOLOAD_FAILED', 520);
+define('YAF\ERR\AUTOLOAD_FAILED', 520);
 /**
 
 */
-define('YAF_ERR_NOTFOUND_MODULE', 515);
+define('YAF\ERR\NOTFOUND\MODULE', 515);
 /**
 
 */
-define('YAF_ERR_NOTFOUND_CONTROLLER', 516);
+define('YAF\ERR\NOTFOUND\CONTROLLER', 516);
 /**
 
 */
-define('YAF_ERR_NOTFOUND_ACTION', 517);
+define('YAF\ERR\NOTFOUND\ACTION', 517);
 /**
 
 */
-define('YAF_ERR_NOTFOUND_VIEW', 518);
+define('YAF\ERR\NOTFOUND\VIEW', 518);
 /**
 
 */
-define('YAF_ERR_CALL_FAILED', 519);
+define('YAF\ERR\CALL_FAILED', 519);
 /**
 
 */
-define('YAF_ERR_TYPE_ERROR', 521);
+define('YAF\ERR\TYPE_ERROR', 521);
