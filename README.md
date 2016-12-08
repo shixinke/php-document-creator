@@ -7,12 +7,8 @@ phpDocumentCreator is a PHP library for generating PHP Extension documents.Becau
 phpDocumentCreator是一个用于生成PHP扩展文档的类库.因为PHP的扩展是使用C语言编写的，所以我们没办法直接查看扩展函数或扩展类库的用法，只能通过查看C源码来了解。我们通过PHP的反射类库列出某个PHP扩展的常量、函数、类常量、属性和方法，然而有时反射类库不能显示完整的信息，而且这些类库没有注释，所以为了弥补这个缺陷，我们可以通过自定义的数据字典为这些扩展类库添加注释，或者我们通过已有PHP代码为这些扩展类库添加注释
 
 ##installation 安装
-
-1、 we can install the library with composer.我们可以通过composer来安装这个类库
-
-    composer install shixinke/phpDocumentCreator
     
-2、 we can download the source code from github.We can download the source from github. The github repository is https://github.com/shixinke/phpDocumentCreator. 当然我们也可以通过从github上下载源码来安装   
+1、 we can download the source code from github.We can download the source from github. The github repository is https://github.com/shixinke/phpDocumentCreator. 当然我们也可以通过从github上下载源码来安装   
 
 ##usage 基本用法
 
@@ -58,4 +54,5 @@ There are some  examples in the tests folder.(tests/docTest.php)
 带有注释的PHP源码，目前这里列举了yaf,swoole,redis等三个扩展的注释文件
 
 #### output 输出(最终的PHP文档)
+
     
