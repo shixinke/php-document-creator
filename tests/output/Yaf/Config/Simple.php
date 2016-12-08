@@ -14,16 +14,18 @@ final class Simple extends \Yaf\Config_Abstract
 {
     /**
      * @var unknown $_config 
-     *(Yaf >= 3.0.2)
-     *存储已解析的配置
-     */
+     * (Yaf >= 3.0.2)
+     * 存储已解析的配置
+     * @access protected
     protected $_config;
+
     /**
      * @var unknown $_readonly 
-     *(Yaf >= 3.0.2)
-     *配置是否只读，默认为1.
-     */
+     * (Yaf >= 3.0.2)
+     * 配置是否只读，默认为1.
+     * @access protected
     protected $_readonly    =    '';
+
     /**
      * 
      *(Yaf >= 3.0.2)

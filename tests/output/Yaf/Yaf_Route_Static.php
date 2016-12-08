@@ -7,7 +7,7 @@
 
 /**
 *(Yaf >= 3.0.2)
-*Class YafX_Route_Static
+*Class yaf_Route_Static
 */
 class Yaf_Route_Static
 {

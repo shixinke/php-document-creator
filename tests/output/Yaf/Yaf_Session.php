@@ -7,25 +7,28 @@
 
 /**
 *(Yaf >= 3.0.2)
-*Class YafX_Session
+*Class yaf_Session
 */
 final class Yaf_Session
 {
     /**
      * @var unknown $_instance 
-     *
-     */
+     * 
+     * @access protected
     protected static  $_instance;
+
     /**
      * @var unknown $_session 
-     *
-     */
+     * 
+     * @access protected
     protected $_session;
+
     /**
      * @var unknown $_started 
-     *
-     */
+     * 
+     * @access protected
     protected $_started    =    '';
+
     /**
      * 
      *(Yaf >= 3.0.2)

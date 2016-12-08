@@ -7,28 +7,31 @@
 
 /**
 *(Yaf >= 3.0.2)
-*Class YafX_Route_Simple
+*Class yaf_Route_Simple
 */
 final class Yaf_Route_Simple
 {
     /**
      * @var unknown $controller 
-     *(Yaf >= 3.0.2)
-     *控制器名
-     */
+     * (Yaf >= 3.0.2)
+     * 控制器名
+     * @access protected
     protected $controller;
+
     /**
      * @var unknown $module 
-     *(Yaf >= 3.0.2)
-     *模块名
-     */
+     * (Yaf >= 3.0.2)
+     * 模块名
+     * @access protected
     protected $module;
+
     /**
      * @var unknown $action 
-     *(Yaf >= 3.0.2)
-     *动作名
-     */
+     * (Yaf >= 3.0.2)
+     * 动作名
+     * @access protected
     protected $action;
+
     /**
      * 
      *(Yaf >= 3.0.2)

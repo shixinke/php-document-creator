@@ -13,14 +13,16 @@ class Client
 {
     /**
      * @var unknown $errCode 
-     *
-     */
+     * 
+     * @access public
     public $errCode    =    0;
+
     /**
      * @var unknown $sock 
-     *
-     */
+     * 
+     * @access public
     public $sock    =    0;
+
     /**
      * 
      *

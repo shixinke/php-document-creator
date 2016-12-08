@@ -12,6 +12,7 @@
  */
 
 namespace phpDocumentCreator;
+use \Exception as Exception;
 use phpDocumentCreator\Tool;
 use phpDocumentCreator\docParser\Parser as Parser;
 class Transform
@@ -62,22 +63,25 @@ class Transform
             }
             foreach($data['functions'] as $func=>$value) {
                 $funcName = str_ireplace(strtolower($this->prefix).$unique, $this->prefix, $func);
+                $value['comment'] = str_ireplace(strtolower($this->prefix).$unique, $this->prefix, $value['comment']);
                 $prefixData['functions'][$funcName] = $value;
             }
             foreach($data['classes'] as $className=>$class) {
                 $doc = $this->getDoc($class['comment']);
-                $data['classes'][$className]['comment'] = $doc['desc'];
+                $data['classes'][$className]['comment'] = str_ireplace(strtolower($this->prefix).$unique, $this->prefix, $doc['desc']);
                 foreach($class['consts'] as $const=>$cv) {
                     $doc = $this->getDoc($cv['comment']);
                     $data['classes'][$className]['consts'][$const]['comment'] = $doc['desc'];
                 }
                 foreach($class['properties'] as $property=>$pv) {
                     $doc = $this->getDoc($pv['comment']);
+                    $doc['desc'] = str_ireplace(strtolower($this->prefix).$unique, $this->prefix, $doc['desc']);
                     $data['classes'][$className]['properties'][$property]['comment'] = $doc['desc'];
                     $data['classes'][$className]['properties'][$property]['example'] = $doc['params']['example'];
                 }
                 foreach($class['methods'] as $mt=>$mv) {
                     $doc = $this->getDoc($mv['comment']);
+                    $doc['desc'] = str_ireplace(strtolower($this->prefix).$unique, $this->prefix, $doc['desc']);
                     $data['classes'][$className]['methods'][$mt]['comment'] = $doc['desc'];
                     $data['classes'][$className]['methods'][$mt]['return'] = $doc['params']['return'];
                     $data['classes'][$className]['methods'][$mt]['example'] = $doc['params']['example'];

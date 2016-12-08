@@ -30,12 +30,9 @@ $doc->updateDict('yaf', $data);
 $doc->create();
 */
 
+
 $doc = new \phpDocumentCreator\Document('swoole');
-$transform = new \phpDocumentCreator\Transform('./notes/swoole.php');
+$transform = new \phpDocumentCreator\Transform(__DIR__.'/notes/swoole.php');
 $data = $transform->info('X', "_");
-
-//var_dump($data['constants']);
-
 $doc->updateDict('swoole', $data);
-
 $doc->create();

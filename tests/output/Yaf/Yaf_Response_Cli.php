@@ -7,7 +7,7 @@
 
 /**
 *(Yaf >= 3.0.2)
-*Class YafX_Response_Cli
+*Class yaf_Response_Cli
 */
 class Yaf_Response_Cli extends Yaf_Response_Abstract
 {
@@ -18,22 +18,25 @@ class Yaf_Response_Cli extends Yaf_Response_Abstract
 
     /**
      * @var unknown $_header 
-     *(Yaf >= 3.0.2)
-     *响应报头
-     */
+     * (Yaf >= 3.0.2)
+     * 响应报头
+     * @access protected
     protected $_header;
+
     /**
      * @var unknown $_body 
-     *(Yaf >= 3.0.2)
-     *响应正文
-     */
+     * (Yaf >= 3.0.2)
+     * 响应正文
+     * @access protected
     protected $_body;
+
     /**
      * @var unknown $_sendheader 
-     *(Yaf >= 3.0.2)
-     *是否开启已输出响应报头检测
-     */
+     * (Yaf >= 3.0.2)
+     * 是否开启已输出响应报头检测
+     * @access protected
     protected $_sendheader    =    '';
+
     /**
      * 
      *(Yaf >= 3.0.2)

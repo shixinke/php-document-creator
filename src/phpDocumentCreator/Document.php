@@ -65,7 +65,7 @@ class Document
             $content .= "define('".$k."', ".$v['value'].");\n";
         }
         foreach($data['functions'] as $m=>$mv) {
-            $mv['comment'] = str_replace("\n", "\n     *", "\n".$mv['comment']);
+            $mv['comment'] = str_replace("\n", "\n*", "\n".$mv['comment']);
             $content .= "/**\n* ".$mv['comment']."\n";
             $content .= "* @example ".$mv['example']."\n";
 
@@ -178,9 +178,19 @@ class Document
                     $content .= ";\n\n";
                 }
                 foreach($value['properties'] as $p=>$pv) {
-                    $pv['comment'] = str_replace("\n", "\n     *", "\n".$pv['comment']);
-                    $content .= "    /**\n     * @var ".$pv['type']." $".$p." ".$pv['comment']."\n     */\n";
+                    $pv['comment'] = str_replace("\n", "\n     * ", "\n".$pv['comment']);
+                    if (strpos($pv['comment'], '@var')) {
+                        $content .= "    /**\n     * ".$pv['comment']."\n";
+                    } else {
+                        $content .= "    /**\n     * @var ".$pv['type']." $".$p." ".$pv['comment']."\n";
+                    }
 
+                    $content .= "     * @access ".$pv['access']."\n";
+                    if (isset($pv['example'])) {
+                        $pv['example'] = str_replace("\n", "\n     * ", "\n".$pv['example']);
+                        $content .= "     * @example ".$pv['example']."\n";
+                    }
+                    $content .= "     */\n";
                     $content .= '    '.$pv['access'];
                     if ($pv['isStatic']) {
                         $content .= ' static ';
@@ -188,11 +198,16 @@ class Document
                     $content .= " $".$p;
                     if (isset($pv['value']) && !is_null($pv['value'])) {
                         if (!is_numeric($pv['value'])) {
-                            $pv['value'] = "'".$pv['value']."'";
+                            if (is_array($pv['value'])) {
+                                $pv['value'] = " array() ";
+                            } else {
+                                $pv['value'] = "'".$pv['value']."'";
+                            }
+
                         }
                         $content .= '    =    '.$pv['value'];
                     }
-                    $content .=  ";\n";
+                    $content .=  ";\n\n";
                 }
                 foreach($value['methods'] as $m=>$mv) {
                     $mv['comment'] = str_replace("\n", "\n     *", "\n".$mv['comment']);
@@ -342,6 +357,7 @@ class Document
     public function compare($extName)
     {
         $dict = $this->getDict($extName);
+
         $exportData = $this->getExports($extName);
         if (isset($dict[$extName]['comment']) && ($dict[$extName]['comment'] != '')) {
             $exportData['comment'] = $dict[$extName]['comment'];
@@ -384,6 +400,10 @@ class Document
                     $exportData['classes'][$k]['consts'][$key]['comment'] = $dict[$fileName]['consts'][$key]['comment'];
                     $exportData['classes'][$k]['consts'][$key]['type'] = $dict[$fileName]['consts'][$key]['type'];
                 }
+            }
+
+            if (empty($v['properties']) && isset($dict[$fileName]['properties'])) {
+                $exportData['classes'][$k]['properties'] = $dict[$fileName]['properties'];
             }
             foreach($v['properties'] as $key=>$val) {
                 if (isset($dict[$fileName]['properties'][$key]['comment']) && ( $dict[$fileName]['properties'][$key]['comment'] != '')) {

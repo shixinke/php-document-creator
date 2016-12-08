@@ -7,7 +7,7 @@
 
 /**
 *(Yaf >= 3.0.2)
-*Class YafX_Bootstrap_Abstract
+*Class yaf_Bootstrap_Abstract
 */
 abstract class Yaf_Bootstrap_Abstract
 {

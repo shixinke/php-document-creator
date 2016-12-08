@@ -7,21 +7,23 @@
 
 /**
 *(Yaf >= 3.0.2)
-*Class YafX_Route_Map
+*Class yaf_Route_Map
 */
 final class Yaf_Route_Map
 {
     /**
      * @var unknown $_ctl_router 
-     *(Yaf >= 3.0.2)
-     *表示路由结果是作为动作的路由结果，还是控制器的路由结果，默认的是动作路由结果.
-     */
+     * (Yaf >= 3.0.2)
+     * 表示路由结果是作为动作的路由结果，还是控制器的路由结果，默认的是动作路由结果.
+     * @access protected
     protected $_ctl_router    =    '';
+
     /**
      * @var unknown $_delimiter 
-     *
-     */
+     * 
+     * @access protected
     protected $_delimiter;
+
     /**
      * 
      *(Yaf >= 3.0.2)

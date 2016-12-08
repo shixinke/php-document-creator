@@ -13,24 +13,28 @@ class Exception extends \Exception
 {
     /**
      * @var unknown $message 
-     *
-     */
+     * 
+     * @access protected
     protected $message    =    '';
+
     /**
      * @var unknown $code 
-     *
-     */
+     * 
+     * @access protected
     protected $code    =    0;
+
     /**
      * @var unknown $file 
-     *
-     */
+     * 
+     * @access protected
     protected $file;
+
     /**
      * @var unknown $line 
-     *
-     */
+     * 
+     * @access protected
     protected $line;
+
     /**
      * 
      *

@@ -14,16 +14,18 @@ final class Router
 {
     /**
      * @var unknown $_routes 
-     *(Yaf >= 3.0.2)
-     *路由器已有的路由协议栈, 默认的栈底总是名为"default"的Route_Static路由协议的实例
-     */
+     * (Yaf >= 3.0.2)
+     * 路由器已有的路由协议栈, 默认的栈底总是名为"default"的Route_Static路由协议的实例
+     * @access protected
     protected $_routes;
+
     /**
      * @var unknown $_current 
-     *(Yaf >= 3.0.2)
-     *在路由成功后, 路由生效的路由协议实例的索引
-     */
+     * (Yaf >= 3.0.2)
+     * 在路由成功后, 路由生效的路由协议实例的索引
+     * @access protected
     protected $_current;
+
     /**
      * 
      *(Yaf >= 3.0.2)

@@ -7,51 +7,59 @@
 
 /**
 *(Yaf >= 3.0.2)
-*Class YafX_Action_Abstract
+*Class yaf_Action_Abstract
 */
 abstract class Yaf_Action_Abstract extends Yaf_Controller_Abstract
 {
     /**
      * @var unknown $actions 
-     *
-     */
+     * 
+     * @access public
     public $actions;
+
     /**
      * @var unknown $_module 
-     *
-     */
+     * 
+     * @access protected
     protected $_module;
+
     /**
      * @var unknown $_name 
-     *
-     */
+     * 
+     * @access protected
     protected $_name;
+
     /**
      * @var unknown $_request 
-     *
-     */
+     * 
+     * @access protected
     protected $_request;
+
     /**
      * @var unknown $_response 
-     *
-     */
+     * 
+     * @access protected
     protected $_response;
+
     /**
      * @var unknown $_invoke_args 
-     *
-     */
+     * 
+     * @access protected
     protected $_invoke_args;
+
     /**
      * @var unknown $_view 
-     *
-     */
+     * 
+     * @access protected
     protected $_view;
+
     /**
      * @var unknown $_controller 
-     *(Yaf >= 3.0.2)
-     *当前请求的控制器实例
-     */
+     * (Yaf >= 3.0.2)
+     * 当前请求的控制器实例
+     * @access protected
     protected $_controller;
+
     /**
      * 
      *(Yaf >= 3.0.2)

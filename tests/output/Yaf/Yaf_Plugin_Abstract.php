@@ -7,7 +7,7 @@
 
 /**
 *(Yaf >= 3.0.2)
-*Class YafX_Plugin_Abstract
+*Class yaf_Plugin_Abstract
 */
 abstract class Yaf_Plugin_Abstract
 {

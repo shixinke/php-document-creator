@@ -13,9 +13,10 @@ class Server extends \Swoole\Server
 {
     /**
      * @var unknown $global 
-     *
-     */
+     * 
+     * @access private
     private $global    =    0;
+
     /**
      * 
      *绑定事件(为事件注册函数)
@@ -40,7 +41,7 @@ class Server extends \Swoole\Server
 
     /**
      * 
-     *swooleX_server初始化方法
+     *swoole_server初始化方法
      * @example 
      * @param  mixed $host 
      * @param  mixed $port 
@@ -80,7 +81,7 @@ class Server extends \Swoole\Server
 
     /**
      * 
-     *设置swooleX_server运行时的参数
+     *设置swoole_server运行时的参数
      * @example 
      * @param  mixed $zset 
      * @return 

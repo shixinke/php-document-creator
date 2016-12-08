@@ -7,37 +7,42 @@
 
 /**
 *(Yaf >= 3.0.2)
-*Class YafX_Exception_RouterFailed
+*Class yaf_Exception_RouterFailed
 */
 class Yaf_Exception_RouterFailed extends Yaf_Exception
 {
     /**
      * @var unknown $file 
-     *
-     */
+     * 
+     * @access protected
     protected $file;
+
     /**
      * @var unknown $line 
-     *
-     */
+     * 
+     * @access protected
     protected $line;
+
     /**
      * @var unknown $message 
-     *(Yaf >= 3.0.2)
-     *异常信息
-     */
+     * (Yaf >= 3.0.2)
+     * 异常信息
+     * @access protected
     protected $message;
+
     /**
      * @var unknown $code 
-     *
-     */
+     * 
+     * @access protected
     protected $code    =    0;
+
     /**
      * @var unknown $previous 
-     *(Yaf >= 3.0.2)
-     *上一个异常对象
-     */
+     * (Yaf >= 3.0.2)
+     * 上一个异常对象
+     * @access protected
     protected $previous;
+
     /**
      * 
      *

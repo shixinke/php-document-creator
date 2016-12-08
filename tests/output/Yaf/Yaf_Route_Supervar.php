@@ -7,16 +7,17 @@
 
 /**
 *(Yaf >= 3.0.2)
-*Class YafX_Route_Supervar
+*Class yaf_Route_Supervar
 */
 final class Yaf_Route_Supervar
 {
     /**
      * @var unknown $_var_name 
-     *(Yaf >= 3.0.2)
-     *全局路由变量名
-     */
+     * (Yaf >= 3.0.2)
+     * 全局路由变量名
+     * @access protected
     protected $_var_name;
+
     /**
      * 
      *(Yaf >= 3.0.2)

@@ -14,22 +14,25 @@ final class Loader
 {
     /**
      * @var unknown $_library 
-     *(Yaf >= 3.0.2)
-     *当前应用本地类库目录
-     */
+     * (Yaf >= 3.0.2)
+     * 当前应用本地类库目录
+     * @access protected
     protected $_library;
+
     /**
      * @var unknown $_global_library 
-     *(Yaf >= 3.0.2)
-     *全局类库目录
-     */
+     * (Yaf >= 3.0.2)
+     * 全局类库目录
+     * @access protected
     protected $_global_library;
+
     /**
      * @var unknown $_instance 
-     *(Yaf >= 3.0.2)
-     *当前Loader实例（单例模式）
-     */
+     * (Yaf >= 3.0.2)
+     * 当前Loader实例（单例模式）
+     * @access protected
     protected static  $_instance;
+
     /**
      * 
      *(Yaf >= 3.0.2)

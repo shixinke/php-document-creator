@@ -7,28 +7,31 @@
 
 /**
 *(Yaf >= 3.0.2)
-*Class YafX_Route_Rewrite
+*Class yaf_Route_Rewrite
 */
 final class Yaf_Route_Rewrite
 {
     /**
      * @var unknown $_route 
-     *(Yaf >= 3.0.2)
-     *匹配模式（正则表达式）
-     */
+     * (Yaf >= 3.0.2)
+     * 匹配模式（正则表达式）
+     * @access protected
     protected $_route;
+
     /**
      * @var unknown $_default 
-     *(Yaf >= 3.0.2)
-     *路由信息
-     */
+     * (Yaf >= 3.0.2)
+     * 路由信息
+     * @access protected
     protected $_default;
+
     /**
      * @var unknown $_verify 
-     *(Yaf >= 3.0.2)
-     *哥也不清楚（实在没有查到作用，源码也没看出所以然，问鸟哥！）
-     */
+     * (Yaf >= 3.0.2)
+     * 哥也不清楚（实在没有查到作用，源码也没看出所以然，问鸟哥！）
+     * @access protected
     protected $_verify;
+
     /**
      * 
      *(Yaf >= 3.0.2)

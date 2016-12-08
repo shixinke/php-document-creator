@@ -24,70 +24,81 @@ final class Simple extends \Yaf\Request_Abstract
 
     /**
      * @var unknown $module 
-     *(Yaf >= 3.0.2)
-     *当前请求的模块名
-     */
+     * (Yaf >= 3.0.2)
+     * 当前请求的模块名
+     * @access public
     public $module;
+
     /**
      * @var unknown $controller 
-     *(Yaf >= 3.0.2)
-     *当前请求的控制器名
-     */
+     * (Yaf >= 3.0.2)
+     * 当前请求的控制器名
+     * @access public
     public $controller;
+
     /**
      * @var unknown $action 
-     *(Yaf >= 3.0.2)
-     *当前请求的动作名
-     */
+     * (Yaf >= 3.0.2)
+     * 当前请求的动作名
+     * @access public
     public $action;
+
     /**
      * @var unknown $method 
-     *(Yaf >= 3.0.2)
-     *当前请求的方法 getMethod
-     */
+     * (Yaf >= 3.0.2)
+     * 当前请求的方法 getMethod
+     * @access public
     public $method;
+
     /**
      * @var unknown $params 
-     *(Yaf >= 3.0.2)
-     *请求传递的参数
-     */
+     * (Yaf >= 3.0.2)
+     * 请求传递的参数
+     * @access protected
     protected $params;
+
     /**
      * @var unknown $language 
-     *(Yaf >= 3.0.2)
-     *http报头中HTTP_ACCEPT_LANGUAGE的值
-     */
+     * (Yaf >= 3.0.2)
+     * http报头中HTTP_ACCEPT_LANGUAGE的值
+     * @access protected
     protected $language;
+
     /**
      * @var unknown $_exception 
-     *(Yaf >= 3.0.2)
-     *异常对象
-     */
+     * (Yaf >= 3.0.2)
+     * 异常对象
+     * @access protected
     protected $_exception;
+
     /**
      * @var unknown $_base_uri 
-     *(Yaf >= 3.0.2)
-     *请求的Base URI（http请求 or cli模式下）
-     */
+     * (Yaf >= 3.0.2)
+     * 请求的Base URI（http请求 or cli模式下）
+     * @access protected
     protected $_base_uri    =    '';
+
     /**
      * @var unknown $uri 
-     *(Yaf >= 3.0.2)
-     *请求的URI（http请求）
-     */
+     * (Yaf >= 3.0.2)
+     * 请求的URI（http请求）
+     * @access protected
     protected $uri    =    '';
+
     /**
      * @var unknown $dispatched 
-     *(Yaf >= 3.0.2)
-     *请求是否完成了分发，默认为0
-     */
+     * (Yaf >= 3.0.2)
+     * 请求是否完成了分发，默认为0
+     * @access protected
     protected $dispatched    =    '';
+
     /**
      * @var unknown $routed 
-     *(Yaf >= 3.0.2)
-     *请求是否完成了路由，默认为0
-     */
+     * (Yaf >= 3.0.2)
+     * 请求是否完成了路由，默认为0
+     * @access protected
     protected $routed    =    '';
+
     /**
      * 
      *(Yaf >= 3.0.2)

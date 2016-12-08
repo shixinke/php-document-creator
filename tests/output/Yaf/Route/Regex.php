@@ -14,33 +14,38 @@ final class Regex
 {
     /**
      * @var unknown $_route 
-     *(Yaf >= 3.0.2)
-     *匹配模式（正则表达式）
-     */
+     * (Yaf >= 3.0.2)
+     * 匹配模式（正则表达式）
+     * @access protected
     protected $_route;
+
     /**
      * @var unknown $_default 
-     *(Yaf >= 3.0.2)
-     *路由信息
-     */
+     * (Yaf >= 3.0.2)
+     * 路由信息
+     * @access protected
     protected $_default;
+
     /**
      * @var unknown $_maps 
-     *(Yaf >= 3.0.2)
-     *模式分组的映射关系
-     */
+     * (Yaf >= 3.0.2)
+     * 模式分组的映射关系
+     * @access protected
     protected $_maps;
+
     /**
      * @var unknown $_verify 
-     *(Yaf >= 3.0.2)
-     *哥也不清楚（实在没有查到作用，源码也没看出所以然，问鸟哥！）
-     */
+     * (Yaf >= 3.0.2)
+     * 哥也不清楚（实在没有查到作用，源码也没看出所以然，问鸟哥！）
+     * @access protected
     protected $_verify;
+
     /**
      * @var unknown $_reverse 
-     *
-     */
+     * 
+     * @access protected
     protected $_reverse;
+
     /**
      * 
      *(Yaf >= 3.0.2)

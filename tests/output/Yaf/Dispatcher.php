@@ -14,83 +14,94 @@ final class Dispatcher
 {
     /**
      * @var unknown $_router 
-     *(Yaf >= 3.0.2)
-     *路由器对象.
-     */
+     * (Yaf >= 3.0.2)
+     * 路由器对象.
+     * @access protected
     protected $_router;
+
     /**
      * @var unknown $_view 
-     *(Yaf >= 3.0.2)
-     *视图对象.
-     */
+     * (Yaf >= 3.0.2)
+     * 视图对象.
+     * @access protected
     protected $_view;
+
     /**
      * @var unknown $_request 
-     *(Yaf >= 3.0.2)
-     *当前请求对象（包含请求的所有信息）.
-     */
+     * (Yaf >= 3.0.2)
+     * 当前请求对象（包含请求的所有信息）.
+     * @access protected
     protected $_request;
+
     /**
      * @var unknown $_plugins 
-     *(Yaf >= 3.0.2)
-     *已注册的插件对象
-     */
+     * (Yaf >= 3.0.2)
+     * 已注册的插件对象
+     * @access protected
     protected $_plugins;
+
     /**
      * @var unknown $_instance 
-     *(Yaf >= 3.0.2)
-     *YafX_Dispatcher实现了单例模式，此属性保存当前实例.
-     */
+     * (Yaf >= 3.0.2)
+     * YafX_Dispatcher实现了单例模式，此属性保存当前实例.
+     * @access protected
     protected static  $_instance;
+
     /**
      * @var unknown $_auto_render 
-     *(Yaf >= 3.0.2)
-     *自动渲染功能开关，默认1.
-     *自动渲染是指根据当前请求的控制器Controller和动作Action自动寻找模块文件，加载与渲染模块，之后返回结果或者输出.
-     *如果设置为0，$this->_instantly_flush，$this->_return_response的设置将无效，也即：
-     *YafX_Dispatcher::getInstance()->flushInstantly($flag);
-     *YafX_Dispatcher::getInstance()->returnResponse($flag);
-     *设置无效，并且不会渲染模板.
-     */
+     * (Yaf >= 3.0.2)
+     * 自动渲染功能开关，默认1.
+     * 自动渲染是指根据当前请求的控制器Controller和动作Action自动寻找模块文件，加载与渲染模块，之后返回结果或者输出.
+     * 如果设置为0，$this->_instantly_flush，$this->_return_response的设置将无效，也即：
+     * YafX_Dispatcher::getInstance()->flushInstantly($flag);
+     * YafX_Dispatcher::getInstance()->returnResponse($flag);
+     * 设置无效，并且不会渲染模板.
+     * @access protected
     protected $_auto_render    =    '1';
+
     /**
      * @var unknown $_return_response 
-     *(Yaf >= 3.0.2)
-     *返回包含请求正文的响应对象开关，默认为0.
-     *默认情况下，Yaf的自动渲染查找并渲染模板（render，并非display），渲染结果写入YafX_Response_Abstract实例的_body属性，
-     *在分发器结束分发之后，输出_body（数组遍历输出）属性的值，并清空_body.
-     *设置此属性为1，分发器结束分发之后，不会输出和清空_body，可以通过YafX_Application的run()，YafX_Dispatcher的方法dispatch()，
-     *或者YafX_Controller_Abstract的getResponse()等方法的调用返回响应对象，
-     *进而调用YafX_Response_Abstract实例的getBody()方法获取响应正文.此属性依赖$this->_auto_render的设置，
-     *当$this->_auto_render=1时，响应正文包括渲染模板的结果，反之则不包括.
-     */
+     * (Yaf >= 3.0.2)
+     * 返回包含请求正文的响应对象开关，默认为0.
+     * 默认情况下，Yaf的自动渲染查找并渲染模板（render，并非display），渲染结果写入YafX_Response_Abstract实例的_body属性，
+     * 在分发器结束分发之后，输出_body（数组遍历输出）属性的值，并清空_body.
+     * 设置此属性为1，分发器结束分发之后，不会输出和清空_body，可以通过YafX_Application的run()，YafX_Dispatcher的方法dispatch()，
+     * 或者YafX_Controller_Abstract的getResponse()等方法的调用返回响应对象，
+     * 进而调用YafX_Response_Abstract实例的getBody()方法获取响应正文.此属性依赖$this->_auto_render的设置，
+     * 当$this->_auto_render=1时，响应正文包括渲染模板的结果，反之则不包括.
+     * @access protected
     protected $_return_response    =    '';
+
     /**
      * @var unknown $_instantly_flush 
-     *(Yaf >= 3.0.2)
-     *立即输出响应正文开头，默认为0.
-     *默认情况下，Yaf自动渲染调用YafX_Controller_Abstract的render方法，渲染模板.
-     *当此属性设置为1时，Yaf调用YafX_Controller_Abstract的display方法，直接渲染并输出，但不设置YafX_Response_Abstract实例的_body属性.
-     */
+     * (Yaf >= 3.0.2)
+     * 立即输出响应正文开头，默认为0.
+     * 默认情况下，Yaf自动渲染调用YafX_Controller_Abstract的render方法，渲染模板.
+     * 当此属性设置为1时，Yaf调用YafX_Controller_Abstract的display方法，直接渲染并输出，但不设置YafX_Response_Abstract实例的_body属性.
+     * @access protected
     protected $_instantly_flush    =    '';
+
     /**
      * @var unknown $_default_module 
-     *(Yaf >= 3.0.2)
-     *默认模块名
-     */
+     * (Yaf >= 3.0.2)
+     * 默认模块名
+     * @access protected
     protected $_default_module;
+
     /**
      * @var unknown $_default_controller 
-     *(Yaf >= 3.0.2)
-     *默认控制器
-     */
+     * (Yaf >= 3.0.2)
+     * 默认控制器
+     * @access protected
     protected $_default_controller;
+
     /**
      * @var unknown $_default_action 
-     *(Yaf >= 3.0.2)
-     *默认动作名
-     */
+     * (Yaf >= 3.0.2)
+     * 默认动作名
+     * @access protected
     protected $_default_action;
+
     /**
      * 
      *(Yaf >= 3.0.2)

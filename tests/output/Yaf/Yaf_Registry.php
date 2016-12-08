@@ -7,22 +7,24 @@
 
 /**
 *(Yaf >= 3.0.2)
-*Class YafX_Registry
+*Class yaf_Registry
 */
 final class Yaf_Registry
 {
     /**
      * @var unknown $_instance 
-     *(Yaf >= 3.0.2)
-     *Registry实例（单例模式）
-     */
+     * (Yaf >= 3.0.2)
+     * Registry实例（单例模式）
+     * @access protected
     protected static  $_instance;
+
     /**
      * @var unknown $_entries 
-     *(Yaf >= 3.0.2)
-     *注册变量栈
-     */
+     * (Yaf >= 3.0.2)
+     * 注册变量栈
+     * @access protected
     protected $_entries;
+
     /**
      * 
      *(Yaf >= 3.0.2)

@@ -22,12 +22,18 @@ There are some  examples in the tests folder.(tests/docTest.php)
     $doc = new \documentCreator\Document('Redis');
     $doc->createDict();
     
+    cd tests
+    php docTest.php
+    
 ### create php document 生成PHP文档
     
     require_once '../Autoloader.php';
     //Redis为扩展的名称
     $doc = new \documentCreator\Document('Redis');
     $doc->create();
+    
+    cd tests
+    php docTest.php
     
 ### create php document from other php source code 通过PHP源码生成文档
     
@@ -40,6 +46,9 @@ There are some  examples in the tests folder.(tests/docTest.php)
     $doc->updateDict('redis', $transform->info());
     //生成输出文档
     $doc->create();
+    
+    cd tests
+    php transformTest.php
     
 ### Other 其他说明
     

@@ -13,6 +13,73 @@ class Server extends \Swoole\Http\Server
 {
     /**
      * 
+     * @var $setting array:
+     * @description:通过swoole_server:set()设置的参数会保存到setting属性上
+     * @access public
+     * @example 
+     * 
+     * $serv = new swooleX_server('127.0.0.1', 9501);
+     * $serv->set(array('worker_num' => 4));
+     * echo $serv->setting['worker_num'];
+     */
+    public $setting    =     array() ;
+
+    /**
+     * 
+     * @var int $master_pid：主进程ID
+     * @access public
+     * @example 
+     * 
+     */
+    public $master_pid;
+
+    /**
+     * 
+     * @var int $manager_pid:管理进程ID
+     * @access public
+     * @example 
+     * 
+     */
+    public $manager_pid;
+
+    /**
+     * 
+     * @var int $worker_pid:当前工作进程ID(操作系统进程)
+     * @access public
+     * @example 
+     * 
+     */
+    public $worker_pid;
+
+    /**
+     * 
+     * @var int $worker_id：当前工作进程(包括worker进程和task进程)编号
+     * @access public
+     * @example 
+     * 
+     */
+    public $worker_id;
+
+    /**
+     * 
+     * @var boolean $taskworker:当前进程是否是task工作进程
+     * @access public
+     * @example 
+     * 
+     */
+    public $taskworker;
+
+    /**
+     * 
+     * @var iterator $connections：TCP连接抚抚今迭代器
+     * @access public
+     * @example 
+     * 
+     */
+    public $connections;
+
+    /**
+     * 
      *绑定事件(为事件注册函数)
      * @example 
      * @param  mixed $event_name 
@@ -125,7 +192,7 @@ class Server extends \Swoole\Http\Server
 
     /**
      * 
-     *设置swooleX_server运行时的参数
+     *设置swoole_server运行时的参数
      * @example 
      * @param  mixed $zset 
      * @return 

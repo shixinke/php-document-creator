@@ -7,66 +7,74 @@
 
 /**
 *(Yaf >= 3.0.2)
-*Class YafX_Application
+*Class yaf_Application
 */
 final class Yaf_Application
 {
     /**
      * @var unknown $config 
-     *(Yaf >= 3.0.2)
-     *全局配置实例
-     */
+     * (Yaf >= 3.0.2)
+     * 全局配置实例
+     * @access protected
     protected $config;
+
     /**
      * @var unknown $dispatcher 
-     *(Yaf >= 3.0.2)
-     *YafX_Dispatcher实例,即分发器.
-     */
+     * (Yaf >= 3.0.2)
+     * yaf_Dispatcher实例,即分发器.
+     * @access protected
     protected $dispatcher;
+
     /**
      * @var unknown $_app 
-     *(Yaf >= 3.0.2)
-     *过特殊的方式实现了单例模式, 此属性保存当前实例.
-     */
+     * (Yaf >= 3.0.2)
+     * 过特殊的方式实现了单例模式, 此属性保存当前实例.
+     * @access protected
     protected static  $_app;
+
     /**
      * @var unknown $_modules 
-     *(Yaf >= 3.0.2)
-     *存在的模块名, 从配置文件中ap.modules读取.
-     */
+     * (Yaf >= 3.0.2)
+     * 存在的模块名, 从配置文件中ap.modules读取.
+     * @access protected
     protected $_modules;
+
     /**
      * @var unknown $_running 
-     *(Yaf >= 3.0.2)
-     *指明当前的YafX_Application是否已经运行.
-     */
+     * (Yaf >= 3.0.2)
+     * 指明当前的yaf_Application是否已经运行.
+     * @access protected
     protected $_running    =    '';
+
     /**
      * @var unknown $_environ 
-     *(Yaf >= 3.0.2)
-     *前的环境名, 也就是YafX_Application在读取配置的时候, 获取的配置节名字.
-     *注：此值只能在Yaf扩展级的配置文件.ini里面进行修改，默认为product.
-     */
+     * (Yaf >= 3.0.2)
+     * 前的环境名, 也就是yaf_Application在读取配置的时候, 获取的配置节名字.
+     * 注：此值只能在Yaf扩展级的配置文件.ini里面进行修改，默认为product.
+     * @access protected
     protected $_environ    =    'dev';
+
     /**
      * @var unknown $_err_no 
-     *(Yaf >= 3.0.2)
-     *最近一次发生的错误代码.
-     */
+     * (Yaf >= 3.0.2)
+     * 最近一次发生的错误代码.
+     * @access protected
     protected $_err_no    =    0;
+
     /**
      * @var unknown $_err_msg 
-     *(Yaf >= 3.0.2)
-     *最近一次产生的错误信息.
-     */
+     * (Yaf >= 3.0.2)
+     * 最近一次产生的错误信息.
+     * @access protected
     protected $_err_msg    =    '';
+
     /**
      * 
      *(Yaf >= 3.0.2)
-     *构造函数，根据配置初始化YafX_Application
+     *构造函数，根据配置初始化yaf_Application
      * @example 
      * @param mixed $config (Yaf >= 3.0.2)
-构造函数，根据配置初始化YafX_Application
+构造函数，根据配置初始化yaf_Application
      * @param  mixed $environ 
      * @return 
      */
@@ -77,7 +85,7 @@ final class Yaf_Application
     /**
      * 
      *(Yaf >= 3.0.2)
-     *运行YafX_Application
+     *运行yaf_Application
      * @example 
      * @return 
      */
@@ -102,7 +110,7 @@ final class Yaf_Application
     /**
      * 
      *(Yaf >= 3.0.2)
-     *获取当前的YafX_Application实例.
+     *获取当前的yaf_Application实例.
      * @example 
      * @return 
      */
@@ -113,7 +121,7 @@ final class Yaf_Application
     /**
      * 
      *(Yaf >= 3.0.2)
-     *获取当前YafX_Application的环境名,它被定义在yaf.environ，默认值为"product".
+     *获取当前yaf_Application的环境名,它被定义在yaf.environ，默认值为"product".
      * @example 
      * @return 
      */
@@ -158,7 +166,7 @@ final class Yaf_Application
     /**
      * 
      *(Yaf >= 3.0.2)
-     *获取当前请求的分发器YafX_Dispatcher的实例
+     *获取当前请求的分发器yaf_Dispatcher的实例
      * @example 
      * @return 
      */
@@ -237,7 +245,7 @@ final class Yaf_Application
     /**
      * 
      *(Yaf >= 3.0.2)
-     *重置__clone魔术方法，防止克隆YafX_Application（因为是单例模式）.
+     *重置__clone魔术方法，防止克隆yaf_Application（因为是单例模式）.
      * @example 
      * @return 
      */

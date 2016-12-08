@@ -6,7 +6,7 @@
 */
 
 /**
-*RedisXCluster
+*redisCluster
 */
 class RedisCluster
 {

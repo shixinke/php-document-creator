@@ -14,21 +14,24 @@ class Simple
 {
     /**
      * @var unknown $_tpl_vars 
-     *(Yaf >= 3.0.2)
-     *储存所有模板变量
-     */
+     * (Yaf >= 3.0.2)
+     * 储存所有模板变量
+     * @access protected
     protected $_tpl_vars;
+
     /**
      * @var unknown $_tpl_dir 
-     *(Yaf >= 3.0.2)
-     *模板文件目录
-     */
+     * (Yaf >= 3.0.2)
+     * 模板文件目录
+     * @access protected
     protected $_tpl_dir;
+
     /**
      * @var unknown $_options 
-     *(Yaf >= 3.0.2)
-     */
+     * (Yaf >= 3.0.2)
+     * @access protected
     protected $_options;
+
     /**
      * 
      *(Yaf >= 3.0.2)

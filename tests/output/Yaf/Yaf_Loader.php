@@ -7,28 +7,31 @@
 
 /**
 *(Yaf >= 3.0.2)
-*Class YafX_Loader
+*Class yaf_Loader
 */
 final class Yaf_Loader
 {
     /**
      * @var unknown $_library 
-     *(Yaf >= 3.0.2)
-     *当前应用本地类库目录
-     */
+     * (Yaf >= 3.0.2)
+     * 当前应用本地类库目录
+     * @access protected
     protected $_library;
+
     /**
      * @var unknown $_global_library 
-     *(Yaf >= 3.0.2)
-     *全局类库目录
-     */
+     * (Yaf >= 3.0.2)
+     * 全局类库目录
+     * @access protected
     protected $_global_library;
+
     /**
      * @var unknown $_instance 
-     *(Yaf >= 3.0.2)
-     *当前Loader实例（单例模式）
-     */
+     * (Yaf >= 3.0.2)
+     * 当前Loader实例（单例模式）
+     * @access protected
     protected static  $_instance;
+
     /**
      * 
      *(Yaf >= 3.0.2)
@@ -43,7 +46,7 @@ final class Yaf_Loader
     /**
      * 
      *(Yaf >= 3.0.2)
-     *重置__clone魔术方法，防止克隆YafX_Loader（因为是单例模式）.
+     *重置__clone魔术方法，防止克隆yaf_Loader（因为是单例模式）.
      * @example 
      * @return 
      */
@@ -88,7 +91,7 @@ final class Yaf_Loader
     /**
      * 
      *(Yaf >= 3.0.2)
-     *获取YafX_Loader实例
+     *获取yaf_Loader实例
      * @example 
      * @param  mixed $local_library_path 
      * @param  mixed $global_library_path 

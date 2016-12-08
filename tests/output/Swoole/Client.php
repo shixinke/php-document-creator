@@ -33,19 +33,22 @@ class Client
 
     /**
      * @var unknown $errCode 
-     *
-     */
+     * 
+     * @access public
     public $errCode    =    0;
+
     /**
      * @var unknown $sock 
-     *
-     */
+     * 
+     * @access public
     public $sock    =    0;
+
     /**
      * @var unknown $reuse 
-     *
-     */
+     * 
+     * @access public
     public $reuse    =    '';
+
     /**
      * 
      *创建tcp客户端对象
@@ -178,7 +181,7 @@ class Client
 
     /**
      * 
-     *返回swooleX_client的连接状态
+     *返回swoole_client的连接状态
      * @example 
      * @return 
      */

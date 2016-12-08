@@ -14,46 +14,53 @@ abstract class Controller_Abstract
 {
     /**
      * @var unknown $actions 
-     *(Yaf >= 3.0.2)
-     *动作名与动作类文件路径映射数组
-     */
+     * (Yaf >= 3.0.2)
+     * 动作名与动作类文件路径映射数组
+     * @access public
     public $actions;
+
     /**
      * @var unknown $_module 
-     *(Yaf >= 3.0.2)
-     *当前请求的模块名
-     */
+     * (Yaf >= 3.0.2)
+     * 当前请求的模块名
+     * @access protected
     protected $_module;
+
     /**
      * @var unknown $_name 
-     *(Yaf >= 3.0.2)
-     *当前请求的控制器名
-     */
+     * (Yaf >= 3.0.2)
+     * 当前请求的控制器名
+     * @access protected
     protected $_name;
+
     /**
      * @var unknown $_request 
-     *(Yaf >= 3.0.2)
-     *当前请求对象，包括请求的所有相关信息
-     */
+     * (Yaf >= 3.0.2)
+     * 当前请求对象，包括请求的所有相关信息
+     * @access protected
     protected $_request;
+
     /**
      * @var unknown $_response 
-     *(Yaf >= 3.0.2)
-     *当前响应对象，保存响应的所有相关信息
-     */
+     * (Yaf >= 3.0.2)
+     * 当前响应对象，保存响应的所有相关信息
+     * @access protected
     protected $_response;
+
     /**
      * @var unknown $_invoke_args 
-     *(Yaf >= 3.0.2)
-     *储存调用参数
-     */
+     * (Yaf >= 3.0.2)
+     * 储存调用参数
+     * @access protected
     protected $_invoke_args;
+
     /**
      * @var unknown $_view 
-     *(Yaf >= 3.0.2)
-     *视图对象
-     */
+     * (Yaf >= 3.0.2)
+     * 视图对象
+     * @access protected
     protected $_view;
+
     /**
      * 
      *(Yaf >= 3.0.2)
