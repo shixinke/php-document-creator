@@ -22,21 +22,27 @@ There are some  examples in the tests folder.(tests/docTest.php)
 ### create document dictionary 创建字典
 
     require_once '../Autoloader.php';
+    //Redis为扩展的名称
     $doc = new \documentCreator\Document('Redis');
     $doc->createDict();
     
 ### create php document 生成PHP文档
     
     require_once '../Autoloader.php';
+    //Redis为扩展的名称
     $doc = new \documentCreator\Document('Redis');
     $doc->create();
     
 ### create php document from other php source code 通过PHP源码生成文档
     
     require_once '../Autoloader.php';
+    //Redis为扩展的名称
     $doc = new \documentCreator\Document('Redis');
+    //./notes/redis.php为带注释的源码文件
     $transform = new \documentCreator\Transform('./notes/redis.php');
+    //通过注释的文件更新字典文件
     $doc->updateDict('redis', $transform->info());
+    //生成输出文档
     $doc->create();
     
 ### Other 其他说明
@@ -45,7 +51,11 @@ There are some  examples in the tests folder.(tests/docTest.php)
 
 包含PHP扩展的函数、常量和类常量、属性和方法的说明(主要是类型说明，参数说明和注释)
 
+这里自带了yaf,swoole,redis这三个扩展的字典
+
 #### PHP Notes 备注(PHP源代码)
+
+带有注释的PHP源码，目前这里列举了yaf,swoole,redis等三个扩展的注释文件
 
 #### output 输出(最终的PHP文档)
     
