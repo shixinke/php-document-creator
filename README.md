@@ -8,8 +8,12 @@ phpDocumentCreator是一个用于生成PHP扩展文档的类库.因为PHP的扩�
 
 ##installation 安装
     
-1、 we can download the source code from github.We can download the source from github. The github repository is https://github.com/shixinke/phpDocumentCreator. 当然我们也可以通过从github上下载源码来安装   
+1、 we can download the source code from github.We can download the source from github. The github repository is https://github.com/shixinke/php-document-creator. 当然我们也可以通过从github上下载源码来安装   
 
+2、 we can install it with composer
+
+    composer require shixinke/php-document-creator
+    
 ##usage 基本用法
 
 
