@@ -1,5 +1,5 @@
 {
-    "name": "phpDocumentCreator/phpDocumentCreator",
+    "name": "phpDocumentCreator/php-document-creator",
     "description": "a document creator for php extension",
     "type": "library",
     "repositories": [

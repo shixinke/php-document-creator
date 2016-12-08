@@ -64,4 +64,15 @@ There are some  examples in the tests folder.(tests/docTest.php)
 
 #### output 输出(最终的PHP文档)
 
+如果想使用已经生成好的文档，请查看[phpstrom框架助手](https://github.com/shixinke/phpstorm-for-php-framework)
+
+如果有好的注释文件请push给我
+
+
+## Author
+
+author:shixinke(ishixinke@qq.com,ishixinke@gmail.com)
+
+website:[http://www.shixinke.com](http://www.shixinke.com)
+
     
