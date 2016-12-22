@@ -1,1 +1,54 @@
-{"object":{"name":"Yaconf"},"comment":false,"namespace":"","consts":[],"properties":[],"methods":{"get":{"access":"public","comment":false,"isStatic":true,"return":"","example":"","parameters":{"name":{"comment":"","type":"unknown","options":[]}}},"has":{"access":"public","comment":false,"isStatic":true,"return":"","example":"","parameters":{"name":{"comment":"","type":"unknown","options":[]}}}}}
+{
+  "version": "1.0.3",
+  "comment": false,
+  "constants": [],
+  "ini": {
+    "yaconf.directory": {
+      "value": "",
+      "options": [],
+      "comment": ""
+    },
+    "yaconf.check_delay": {
+      "value": "300",
+      "options": [],
+      "comment": ""
+    }
+  },
+  "functions": [],
+  "object": {
+    "name": "Yaconf"
+  },
+  "namespace": "",
+  "consts": [],
+  "properties": [],
+  "methods": {
+    "get": {
+      "access": "public",
+      "comment": false,
+      "isStatic": true,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "name": {
+          "comment": "",
+          "type": "unknown",
+          "options": []
+        }
+      }
+    },
+    "has": {
+      "access": "public",
+      "comment": false,
+      "isStatic": true,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "name": {
+          "comment": "",
+          "type": "unknown",
+          "options": []
+        }
+      }
+    }
+  }
+}
