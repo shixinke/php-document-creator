@@ -1,0 +1,1 @@
+{"object":{"name":"swoole_mmap"},"comment":false,"namespace":"","consts":[],"properties":[],"methods":{"open":{"access":"public","comment":false,"isStatic":true,"return":"","example":"","parameters":{"filename":{"comment":"","type":"unknown","options":[]},"size":{"comment":"","type":"unknown","options":[]},"offset":{"comment":"","type":"unknown","options":[]}}}}}

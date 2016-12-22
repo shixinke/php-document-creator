@@ -1,0 +1,1 @@
+{"object":{"name":"swoole_module"},"comment":false,"namespace":"","consts":[],"properties":[],"methods":{"__call":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":{"func":{"comment":"","type":"unknown","options":[]},"params":{"comment":"","type":"unknown","options":[]}}}}}
