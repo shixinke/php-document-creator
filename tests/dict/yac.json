@@ -1,1 +1,227 @@
-{"object":{"name":"Yac"},"comment":false,"namespace":"","consts":[],"properties":{"_prefix":{"access":"protected","type":"unknown","comment":false,"isStatic":false,"value":""}},"methods":{"__construct":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":{"prefix":{"comment":"","type":"unknown","options":[]}}},"add":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":{"keys":{"comment":"","type":"unknown","options":[]},"value":{"comment":"","type":"unknown","options":[]},"ttl":{"comment":"","type":"unknown","options":[]}}},"set":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":{"keys":{"comment":"","type":"unknown","options":[]},"value":{"comment":"","type":"unknown","options":[]},"ttl":{"comment":"","type":"unknown","options":[]}}},"__set":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":{"key":{"comment":"","type":"unknown","options":[]},"value":{"comment":"","type":"unknown","options":[]}}},"get":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":{"keys":{"comment":"","type":"unknown","options":[]}}},"__get":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":{"key":{"comment":"","type":"unknown","options":[]}}},"delete":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":{"keys":{"comment":"","type":"unknown","options":[]},"ttl":{"comment":"","type":"unknown","options":[]}}},"flush":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":[]},"info":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":[]},"dump":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":[]}}}
+{
+  "version": "2.0.1",
+  "comment": false,
+  "constants": {
+    "YAC_VERSION": {
+      "value": "2.0.1",
+      "comment": ""
+    },
+    "YAC_MAX_KEY_LEN": {
+      "value": 48,
+      "comment": ""
+    },
+    "YAC_MAX_VALUE_RAW_LEN": {
+      "value": 67108863,
+      "comment": ""
+    },
+    "YAC_MAX_RAW_COMPRESSED_LEN": {
+      "value": 1048576,
+      "comment": ""
+    },
+    "YAC_SERIALIZER": {
+      "value": "PHP",
+      "comment": ""
+    }
+  },
+  "ini": {
+    "yac.enable": {
+      "value": "1",
+      "options": [],
+      "comment": ""
+    },
+    "yac.debug": {
+      "value": "0",
+      "options": [],
+      "comment": ""
+    },
+    "yac.keys_memory_size": {
+      "value": "4M",
+      "options": [],
+      "comment": ""
+    },
+    "yac.values_memory_size": {
+      "value": "64M",
+      "options": [],
+      "comment": ""
+    },
+    "yac.compress_threshold": {
+      "value": "-1",
+      "options": [],
+      "comment": ""
+    },
+    "yac.enable_cli": {
+      "value": "0",
+      "options": [],
+      "comment": ""
+    }
+  },
+  "functions": [],
+  "object": {
+    "name": "Yac"
+  },
+  "namespace": "",
+  "consts": [],
+  "properties": {
+    "_prefix": {
+      "access": "protected",
+      "type": "unknown",
+      "comment": false,
+      "isStatic": false,
+      "value": ""
+    }
+  },
+  "methods": {
+    "__construct": {
+      "access": "public",
+      "comment": false,
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "prefix": {
+          "comment": "",
+          "type": "unknown",
+          "options": []
+        }
+      }
+    },
+    "add": {
+      "access": "public",
+      "comment": false,
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "keys": {
+          "comment": "",
+          "type": "unknown",
+          "options": []
+        },
+        "value": {
+          "comment": "",
+          "type": "unknown",
+          "options": []
+        },
+        "ttl": {
+          "comment": "",
+          "type": "unknown",
+          "options": []
+        }
+      }
+    },
+    "set": {
+      "access": "public",
+      "comment": false,
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "keys": {
+          "comment": "",
+          "type": "unknown",
+          "options": []
+        },
+        "value": {
+          "comment": "",
+          "type": "unknown",
+          "options": []
+        },
+        "ttl": {
+          "comment": "",
+          "type": "unknown",
+          "options": []
+        }
+      }
+    },
+    "__set": {
+      "access": "public",
+      "comment": false,
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "key": {
+          "comment": "",
+          "type": "unknown",
+          "options": []
+        },
+        "value": {
+          "comment": "",
+          "type": "unknown",
+          "options": []
+        }
+      }
+    },
+    "get": {
+      "access": "public",
+      "comment": false,
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "keys": {
+          "comment": "",
+          "type": "unknown",
+          "options": []
+        }
+      }
+    },
+    "__get": {
+      "access": "public",
+      "comment": false,
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "key": {
+          "comment": "",
+          "type": "unknown",
+          "options": []
+        }
+      }
+    },
+    "delete": {
+      "access": "public",
+      "comment": false,
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "keys": {
+          "comment": "",
+          "type": "unknown",
+          "options": []
+        },
+        "ttl": {
+          "comment": "",
+          "type": "unknown",
+          "options": []
+        }
+      }
+    },
+    "flush": {
+      "access": "public",
+      "comment": false,
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": []
+    },
+    "info": {
+      "access": "public",
+      "comment": false,
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": []
+    },
+    "dump": {
+      "access": "public",
+      "comment": false,
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": []
+    }
+  }
+}

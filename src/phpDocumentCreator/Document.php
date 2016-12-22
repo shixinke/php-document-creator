@@ -306,7 +306,11 @@ class Document
             $this->__createDict(strtolower($ext), $tmp);
             foreach($data['classes'] as $k=>$v) {
                 $fileName = strtolower(str_replace("\\", "_", $k));
-                $this->__createDict($fileName, $v);
+                if (strtolower($fileName) == strtolower($ext)) {
+                    $this->__createDict($fileName, array_merge($tmp, $v));
+                } else {
+                    $this->__createDict($fileName, $v);
+                }
             }
         }
     }
