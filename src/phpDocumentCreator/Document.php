@@ -124,21 +124,21 @@ class Document
         //创建目录
         Tool::createDir(self::DOC_PATH, ucfirst($ext));
         $baseDir = self::DOC_PATH.ucfirst($ext).'/';
-        if (!in_array($ext, $classes)) {
+        if (!self::inArray($ext, $classes) ) {
             if (!empty($data['classes'])) {
-                $tmp = array_pop($data['classes']);
+                $tmp = $data['classes'];
+                $tmp = array_pop($tmp);
                 if ($tmp['namespace'] != '') {
                     $res = file_put_contents($baseDir.$ext.'.namespace.php', $content);
                 } else {
                     $res = file_put_contents($baseDir.$ext.'.php', $content);
                 }
             }
-
         }
 
         if (isset($data['classes']) && !empty($data['classes'])) {
             foreach($data['classes'] as $class=>$value) {
-                if ($class != $ext) {
+                if (strtolower($class) != strtolower($ext)) {
                     $content = $common;
                     $value['comment'] = str_replace("\n", "\n*", "\n".$value['comment']);
                     $content .= "\n/**".$value['comment']."\n*/\n";
@@ -293,7 +293,7 @@ class Document
                 }
 
 
-                $fileName = $fullDir.'/'.$class.'.php';
+                $fileName = rtrim($fullDir, '/').'/'.$class.'.php';
                 $res = file_put_contents($fileName, $content);
             }
         }
@@ -364,6 +364,16 @@ class Document
             self::$_exports[$extName] = Tool::export($extName);
         }
         return self::$_exports[$extName];
+    }
+
+    public static function inArray($ele, $arr)
+    {
+        foreach($arr as $value) {
+            if (strtolower($ele) == strtolower($value)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public function compare($extName)
