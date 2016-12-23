@@ -41,10 +41,10 @@ class Document
 
         $data['comment'] = str_replace("\n", "\n*", "\n".$data['comment']);
         $content .= "\n/**".$data['comment']."\n*/\n";
-        if (empty($data['ini'])) {
-            $content .= "    * php.ini配置选项: \n";
+        if (!empty($data['ini'])) {
+            $content .= "/**\n * php.ini配置选项: \n\n";
             foreach ($data['ini'] as $k=>$v) {
-                $content .= "    * //".$v['comment'];
+                $content .= " * ".$v['comment'];
                 if (isset($v['options']) && !empty($v['options'])) {
                     $content .= '[备选值：';
                     foreach($v['options'] as $ok=>$ov) {
@@ -53,9 +53,9 @@ class Document
                     $content .= ']';
                 }
                 $content .= "\n";
-                $content .= "     *   ".$k.'='.$v['value']."\n";
+                $content .= " * ".$k.'='.$v['value']."\n\n";
             }
-            $content .= "\n";
+            $content .= "*/\n";
         }
         foreach($data['constants'] as $k=>$v){
             if (!is_numeric($v['value'])) {
@@ -125,7 +125,15 @@ class Document
         Tool::createDir(self::DOC_PATH, ucfirst($ext));
         $baseDir = self::DOC_PATH.ucfirst($ext).'/';
         if (!in_array($ext, $classes)) {
-            $res = file_put_contents($baseDir.$ext.'.php', $content);
+            if (!empty($data['classes'])) {
+                $tmp = array_pop($data['classes']);
+                if ($tmp['namespace'] != '') {
+                    $res = file_put_contents($baseDir.$ext.'.namespace.php', $content);
+                } else {
+                    $res = file_put_contents($baseDir.$ext.'.php', $content);
+                }
+            }
+
         }
 
         if (isset($data['classes']) && !empty($data['classes'])) {
