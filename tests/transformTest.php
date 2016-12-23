@@ -12,14 +12,14 @@ $doc->updateDict('redis', $data);
 //$doc->create();
 */
 
-/*
+
 $doc = new \phpDocumentCreator\Document('Yaf');
 $transform = new \phpDocumentCreator\Transform('./notes/yaf.php');
 $data = $transform->info('X', '_');
 $doc->updateDict('yaf', $data);
 
-//$doc->create();
-*/
+$doc->create();
+
 
 /*
 $doc = new \phpDocumentCreator\Document('Yaf');
