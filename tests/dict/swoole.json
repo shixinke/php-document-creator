@@ -1,1 +1,216 @@
-{"comment":"","constants":{"SWOOLE_BASE":{"value":4,"comment":""},"SWOOLE_THREAD":{"value":2,"comment":""},"SWOOLE_PROCESS":{"value":3,"comment":""},"SWOOLE_IPC_UNSOCK":{"value":1,"comment":""},"SWOOLE_IPC_MSGQUEUE":{"value":2,"comment":""},"SWOOLE_IPC_CHANNEL":{"value":3,"comment":""},"SWOOLE_SOCK_TCP":{"value":1,"comment":""},"SWOOLE_SOCK_TCP6":{"value":3,"comment":""},"SWOOLE_SOCK_UDP":{"value":2,"comment":""},"SWOOLE_SOCK_UDP6":{"value":4,"comment":""},"SWOOLE_SOCK_UNIX_DGRAM":{"value":5,"comment":""},"SWOOLE_SOCK_UNIX_STREAM":{"value":6,"comment":""},"SWOOLE_TCP":{"value":1,"comment":""},"SWOOLE_TCP6":{"value":3,"comment":""},"SWOOLE_UDP":{"value":2,"comment":""},"SWOOLE_UDP6":{"value":4,"comment":""},"SWOOLE_UNIX_DGRAM":{"value":5,"comment":""},"SWOOLE_UNIX_STREAM":{"value":6,"comment":""},"SWOOLE_SOCK_SYNC":{"value":0,"comment":""},"SWOOLE_SOCK_ASYNC":{"value":1,"comment":""},"SWOOLE_SYNC":{"value":2048,"comment":""},"SWOOLE_ASYNC":{"value":1024,"comment":""},"SWOOLE_KEEP":{"value":4096,"comment":""},"SWOOLE_SSL":{"value":512,"comment":""},"SWOOLE_SSLV3_METHOD":{"value":1,"comment":""},"SWOOLE_SSLV3_SERVER_METHOD":{"value":2,"comment":""},"SWOOLE_SSLV3_CLIENT_METHOD":{"value":3,"comment":""},"SWOOLE_SSLV23_METHOD":{"value":0,"comment":""},"SWOOLE_SSLV23_SERVER_METHOD":{"value":4,"comment":""},"SWOOLE_SSLV23_CLIENT_METHOD":{"value":5,"comment":""},"SWOOLE_TLSV1_METHOD":{"value":6,"comment":""},"SWOOLE_TLSV1_SERVER_METHOD":{"value":7,"comment":""},"SWOOLE_TLSV1_CLIENT_METHOD":{"value":8,"comment":""},"SWOOLE_TLSV1_1_METHOD":{"value":9,"comment":""},"SWOOLE_TLSV1_1_SERVER_METHOD":{"value":10,"comment":""},"SWOOLE_TLSV1_1_CLIENT_METHOD":{"value":11,"comment":""},"SWOOLE_TLSV1_2_METHOD":{"value":12,"comment":""},"SWOOLE_TLSV1_2_SERVER_METHOD":{"value":13,"comment":""},"SWOOLE_TLSV1_2_CLIENT_METHOD":{"value":14,"comment":""},"SWOOLE_DTLSV1_METHOD":{"value":15,"comment":""},"SWOOLE_DTLSV1_SERVER_METHOD":{"value":16,"comment":""},"SWOOLE_DTLSV1_CLIENT_METHOD":{"value":17,"comment":""},"SWOOLE_EVENT_READ":{"value":512,"comment":""},"SWOOLE_EVENT_WRITE":{"value":1024,"comment":""},"SWOOLE_VERSION":{"value":"1.8.7","comment":""},"SWOOLE_AIO_BASE":{"value":0,"comment":""},"SWOOLE_AIO_LINUX":{"value":1,"comment":""},"SWOOLE_FILELOCK":{"value":2,"comment":""},"SWOOLE_MUTEX":{"value":3,"comment":""},"SWOOLE_SEM":{"value":4,"comment":""},"SWOOLE_RWLOCK":{"value":1,"comment":""},"SWOOLE_SPINLOCK":{"value":5,"comment":""}},"version":"1.8.7","ini":[],"functions":[]}
+{
+  "comment": "",
+  "constants": {
+    "SWOOLE_BASE": {
+      "value": 4,
+      "comment": ""
+    },
+    "SWOOLE_THREAD": {
+      "value": 2,
+      "comment": ""
+    },
+    "SWOOLE_PROCESS": {
+      "value": 3,
+      "comment": ""
+    },
+    "SWOOLE_IPC_UNSOCK": {
+      "value": 1,
+      "comment": ""
+    },
+    "SWOOLE_IPC_MSGQUEUE": {
+      "value": 2,
+      "comment": ""
+    },
+    "SWOOLE_IPC_CHANNEL": {
+      "value": 3,
+      "comment": ""
+    },
+    "SWOOLE_SOCK_TCP": {
+      "value": 1,
+      "comment": ""
+    },
+    "SWOOLE_SOCK_TCP6": {
+      "value": 3,
+      "comment": ""
+    },
+    "SWOOLE_SOCK_UDP": {
+      "value": 2,
+      "comment": ""
+    },
+    "SWOOLE_SOCK_UDP6": {
+      "value": 4,
+      "comment": ""
+    },
+    "SWOOLE_SOCK_UNIX_DGRAM": {
+      "value": 5,
+      "comment": ""
+    },
+    "SWOOLE_SOCK_UNIX_STREAM": {
+      "value": 6,
+      "comment": ""
+    },
+    "SWOOLE_TCP": {
+      "value": 1,
+      "comment": ""
+    },
+    "SWOOLE_TCP6": {
+      "value": 3,
+      "comment": ""
+    },
+    "SWOOLE_UDP": {
+      "value": 2,
+      "comment": ""
+    },
+    "SWOOLE_UDP6": {
+      "value": 4,
+      "comment": ""
+    },
+    "SWOOLE_UNIX_DGRAM": {
+      "value": 5,
+      "comment": ""
+    },
+    "SWOOLE_UNIX_STREAM": {
+      "value": 6,
+      "comment": ""
+    },
+    "SWOOLE_SOCK_SYNC": {
+      "value": 0,
+      "comment": ""
+    },
+    "SWOOLE_SOCK_ASYNC": {
+      "value": 1,
+      "comment": ""
+    },
+    "SWOOLE_SYNC": {
+      "value": 2048,
+      "comment": ""
+    },
+    "SWOOLE_ASYNC": {
+      "value": 1024,
+      "comment": ""
+    },
+    "SWOOLE_KEEP": {
+      "value": 4096,
+      "comment": ""
+    },
+    "SWOOLE_SSL": {
+      "value": 512,
+      "comment": ""
+    },
+    "SWOOLE_SSLV3_METHOD": {
+      "value": 1,
+      "comment": ""
+    },
+    "SWOOLE_SSLV3_SERVER_METHOD": {
+      "value": 2,
+      "comment": ""
+    },
+    "SWOOLE_SSLV3_CLIENT_METHOD": {
+      "value": 3,
+      "comment": ""
+    },
+    "SWOOLE_SSLV23_METHOD": {
+      "value": 0,
+      "comment": ""
+    },
+    "SWOOLE_SSLV23_SERVER_METHOD": {
+      "value": 4,
+      "comment": ""
+    },
+    "SWOOLE_SSLV23_CLIENT_METHOD": {
+      "value": 5,
+      "comment": ""
+    },
+    "SWOOLE_TLSV1_METHOD": {
+      "value": 6,
+      "comment": ""
+    },
+    "SWOOLE_TLSV1_SERVER_METHOD": {
+      "value": 7,
+      "comment": ""
+    },
+    "SWOOLE_TLSV1_CLIENT_METHOD": {
+      "value": 8,
+      "comment": ""
+    },
+    "SWOOLE_TLSV1_1_METHOD": {
+      "value": 9,
+      "comment": ""
+    },
+    "SWOOLE_TLSV1_1_SERVER_METHOD": {
+      "value": 10,
+      "comment": ""
+    },
+    "SWOOLE_TLSV1_1_CLIENT_METHOD": {
+      "value": 11,
+      "comment": ""
+    },
+    "SWOOLE_TLSV1_2_METHOD": {
+      "value": 12,
+      "comment": ""
+    },
+    "SWOOLE_TLSV1_2_SERVER_METHOD": {
+      "value": 13,
+      "comment": ""
+    },
+    "SWOOLE_TLSV1_2_CLIENT_METHOD": {
+      "value": 14,
+      "comment": ""
+    },
+    "SWOOLE_DTLSV1_METHOD": {
+      "value": 15,
+      "comment": ""
+    },
+    "SWOOLE_DTLSV1_SERVER_METHOD": {
+      "value": 16,
+      "comment": ""
+    },
+    "SWOOLE_DTLSV1_CLIENT_METHOD": {
+      "value": 17,
+      "comment": ""
+    },
+    "SWOOLE_EVENT_READ": {
+      "value": 512,
+      "comment": ""
+    },
+    "SWOOLE_EVENT_WRITE": {
+      "value": 1024,
+      "comment": ""
+    },
+    "SWOOLE_VERSION": {
+      "value": "1.8.7",
+      "comment": ""
+    },
+    "SWOOLE_AIO_BASE": {
+      "value": 0,
+      "comment": ""
+    },
+    "SWOOLE_AIO_LINUX": {
+      "value": 1,
+      "comment": ""
+    },
+    "SWOOLE_FILELOCK": {
+      "value": 2,
+      "comment": ""
+    },
+    "SWOOLE_MUTEX": {
+      "value": 3,
+      "comment": ""
+    },
+    "SWOOLE_SEM": {
+      "value": 4,
+      "comment": ""
+    },
+    "SWOOLE_RWLOCK": {
+      "value": 1,
+      "comment": ""
+    },
+    "SWOOLE_SPINLOCK": {
+      "value": 5,
+      "comment": ""
+    }
+  },
+  "version": "1.8.7",
+  "ini": [],
+  "functions": []
+}

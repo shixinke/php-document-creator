@@ -67,6 +67,7 @@ class Document
         foreach($data['functions'] as $m=>$mv) {
             $mv['comment'] = str_replace("\n", "\n*", "\n".$mv['comment']);
             $content .= "/**\n* ".$mv['comment']."\n";
+            $mv['example'] = str_replace("\n", "\n* ", "\n".$mv['example']);
             $content .= "* @example ".$mv['example']."\n";
 
             $params = '';
@@ -133,6 +134,8 @@ class Document
                 } else {
                     $res = file_put_contents($baseDir.$ext.'.php', $content);
                 }
+            } else {
+                $res = file_put_contents($baseDir.$ext.'.php', $content);
             }
         }
 
@@ -334,6 +337,9 @@ class Document
         $tmp = $data;
         unset($tmp['classes']);
         $this->__createDict($ext, $tmp);
+        if (!isset($data['classes'])) {
+            return;
+        }
         foreach($data['classes'] as $k=>$v) {
             $fileName = strtolower(str_replace("\\", "_", $k));
             $this->__createDict($fileName, $v);
@@ -379,7 +385,6 @@ class Document
     public function compare($extName)
     {
         $dict = $this->getDict($extName);
-
         $exportData = $this->getExports($extName);
         if (isset($dict[$extName]['comment']) && ($dict[$extName]['comment'] != '')) {
             $exportData['comment'] = $dict[$extName]['comment'];
@@ -410,6 +415,8 @@ class Document
                 } else {
                     $dict[$extName]['functions'][$k]['parameters'] = $exportData['functions'][$k]['parameters'];
                 }
+            } else {
+                $dict[$extName]['functions'][$k] = $exportData['functions'][$k];
             }
         }
         foreach($exportData['classes'] as $k=>$v) {
@@ -460,6 +467,7 @@ class Document
                 }
             }
         }
+        $this->updateDict($extName, $dict[$extName]);
         return $exportData;
     }
 }
