@@ -52,13 +52,13 @@ define('SWOOLEX_SEM', 4);                     //创建信号量
 define('SWOOLEX_RWLOCK', 1);                  //创建读写锁
 define('SWOOLEX_SPINLOCK', 5);                //创建自旋锁
 
-class swooleX_server
+class swoole_server
 {
     /**
      * @var $setting array:
-     * @description:通过swooleX_server:set()设置的参数会保存到setting属性上
+     * @description:通过swoole_server:set()设置的参数会保存到setting属性上
      * @example
-     *  $serv = new swooleX_server('127.0.0.1', 9501);
+     *  $serv = new swoole_server('127.0.0.1', 9501);
      *  $serv->set(array('worker_num' => 4));
      *  echo $serv->setting['worker_num'];
      */
@@ -115,7 +115,7 @@ class swooleX_server
     public $connections;
 
     /**
-     * swooleX_server初始化方法
+     * swoole_server初始化方法
      * @param string $host:监听的服务器IP(如127.0.0.1表示本机，0.0.0.0表示监听所有地址)
      * @param int $port:监听服务器端口(如9501)
      * @param int $mode：运行模式(共有SWOOLEX_BASE基本、SWOOLEX_PROCESS多进程、SWOOLEX_THREAD三种模式)
@@ -127,7 +127,7 @@ class swooleX_server
     }
 
     /**
-     * 设置swooleX_server运行时的参数
+     * 设置swoole_server运行时的参数
      * @param array $setting
      *
      * 可选参数：
@@ -217,9 +217,9 @@ class swooleX_server
 
     /**
      * 添加一个自定义的工作进程
-     * @param swooleX_process $process：工作进程对象
+     * @param swoole_process $process：工作进程对象
      */
-    public function addProcess(swooleX_process $process)
+    public function addProcess(swoole_process $process)
     {
 
     }
@@ -505,7 +505,7 @@ class swooleX_server
     }
 }
 
-class swooleX_timer
+class swoole_timer
 {
     /**
      * 设置一个间隔定时器
@@ -556,7 +556,7 @@ class swooleX_timer
     }
 }
 
-class swooleX_connection_iterator
+class swoole_connection_iterator
 {
     public function rewind()
     {
@@ -589,7 +589,7 @@ class swooleX_connection_iterator
     }
 }
 
-class swooleX_server_port
+class swoole_server_port
 {
     public function __destruct()
     {
@@ -607,7 +607,7 @@ class swooleX_server_port
     }
 }
 
-class swooleX_client
+class swoole_client
 {
     const MSG_WAITALL = 256;
     const MSG_DONTWAIT = 64;
@@ -705,7 +705,7 @@ class swooleX_client
     }
 
     /**
-     * 返回swooleX_client的连接状态
+     * 返回swoole_client的连接状态
      */
     public function isConnected():bool
     {
@@ -756,7 +756,7 @@ class swooleX_client
     }
 }
 
-class swooleX_process
+class swoole_process
 {
     /**
      * 创建子进程
@@ -934,7 +934,7 @@ class swooleX_process
     }
 }
 
-class swooleX_table implements Iterator
+class swoole_table implements Iterator
 {
     const TYPE_INT = 1;
     const TYPE_FLOAT = 6;
@@ -1080,7 +1080,7 @@ class swooleX_table implements Iterator
 
 }
 
-class swooleX_lock
+class swoole_lock
 {
     /**
      * 创建锁
@@ -1140,7 +1140,7 @@ class swooleX_lock
 
 }
 
-class swooleX_atomic
+class swoole_atomic
 {
     /**
      * 初始化一个计数器对象
@@ -1197,7 +1197,7 @@ class swooleX_atomic
     }
 }
 
-class swooleX_http_server extends swooleX_server
+class swoole_http_server extends swoole_server
 {
     /**
      * 设置此选项后，服务器会自动将请求的GET、POST、COOKIE等数据设置到PHP的$_GET/$_POST/$_COOKIE等超全局变量中。
@@ -1212,7 +1212,7 @@ class swooleX_http_server extends swooleX_server
     }
 }
 
-class swooleX_http_request
+class swoole_http_request
 {
     /**
      * 请求头
@@ -1266,7 +1266,7 @@ class swooleX_http_request
     }
 }
 
-class swooleX_http_response
+class swoole_http_response
 {
     /**
      * 设置cookie
@@ -1353,7 +1353,7 @@ class swooleX_http_response
     }
 }
 
-class swooleX_buffer
+class swoole_buffer
 {
     /**
      * buffer初始化
@@ -1428,7 +1428,7 @@ class swooleX_buffer
     }
 }
 
-class swooleX_websocket_server extends swooleX_server
+class swoole_websocket_server extends swoole_server
 {
     public function __construct()
     {
@@ -1480,12 +1480,12 @@ class swooleX_websocket_server extends swooleX_server
 
 }
 
-class swooleX_websocket_frame
+class swoole_websocket_frame
 {
 
 }
 
-class swooleX_mysql
+class swoole_mysql
 {
     public function __construct()
     {
@@ -1497,7 +1497,7 @@ class swooleX_mysql
      * @param array $serverConfig:服务器配置
      * @param callable $callback:连接成功后的回调函数
      * @example
-     * 回调函数：function onConnect(swooleX_mysql $db, bool $result);
+     * 回调函数：function onConnect(swoole_mysql $db, bool $result);
      */
     public function connect(array $serverConfig, callable $callback)
     {
@@ -1509,7 +1509,7 @@ class swooleX_mysql
      * @param string $sql:sql语句
      * @param callable $callback：回调函数
      * @example
-     * 回调函数：function onSQLReady(swooleX_mysqli $link, mixed $result);
+     * 回调函数：function onSQLReady(swoole_mysqli $link, mixed $result);
      *
      * 注：执行失败，$result为false，读取$link对象的error属性获得错误信息，errno属性获得错误码
      *    执行成功，SQL为非查询语句，$result为true，读取$link对象的affected_rows属性获得影响的行数，insert_id属性获得Insert操作的自增ID
@@ -1547,12 +1547,12 @@ class swooleX_mysql
     }
 }
 
-class swooleX_mysql_exception extends Exception
+class swoole_mysql_exception extends Exception
 {
 
 }
 
-class swooleX_redis
+class swoole_redis
 {
     public function __construct()
     {
