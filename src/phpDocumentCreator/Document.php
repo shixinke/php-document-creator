@@ -84,6 +84,9 @@ class Document
                         if ($paramValue['type'] == 'unknown') {
                             $content .= 'mixed $'.$param;
                         } else {
+                            if (is_array($paramValue['type'])) {
+                                $paramValue['type'] = trim(implode('|', $paramValue['type']), '|');
+                            }
                             $content .= $paramValue['type'].' $'.$param;
                         }
                         $params .= '$'.$param;
@@ -389,11 +392,23 @@ class Document
         if (isset($dict[$extName]['comment']) && ($dict[$extName]['comment'] != '')) {
             $exportData['comment'] = $dict[$extName]['comment'];
         }
+        $exportConsts = array_keys($exportData['constants']);
+        foreach($dict[$extName]['constants'] as $k=>$v) {
+            if (!in_array($k, $exportConsts)) {
+                unset($dict[$extName]['constants'][$k]);
+            }
+        }
         foreach($exportData['constants'] as $k=>$v) {
             if (isset($dict[$extName]['constants'][$k])) {
                 $exportData['constants'][$k]['comment'] = $dict[$extName]['constants'][$k]['comment'];
             } else {
                 $dict[$extName]['constants'][$k] = $exportData['constants'][$k];
+            }
+        }
+        $exportInis = array_keys($exportData['ini']);
+        foreach($dict[$extName]['ini'] as $k=>$v) {
+            if (!in_array($k, $exportInis)) {
+                unset($dict[$extName]['ini'][$k]);
             }
         }
         foreach($exportData['ini'] as $k=>$v) {
@@ -402,6 +417,13 @@ class Document
                 $exportData['ini'][$k]['options'] = $dict[$extName]['ini'][$k]['options'];
             } else {
                 $dict[$extName]['ini'][$k] = $exportData['ini'][$k];
+            }
+        }
+
+        $exportFuncs = array_keys($exportData['functions']);
+        foreach($dict[$extName]['functions'] as $k=>$v) {
+            if (!in_array($k, $exportFuncs)) {
+                unset($dict[$extName]['functions'][$k]);
             }
         }
 
@@ -419,6 +441,15 @@ class Document
                 $dict[$extName]['functions'][$k] = $exportData['functions'][$k];
             }
         }
+
+        $dict[$extName]['classes'] = isset($dict[$extName]['classes']) ? $dict[$extName]['classes'] : array();
+        $exportClasses = array_keys($exportData['classes']);
+        foreach($dict[$extName]['classes'] as $k=>$v) {
+            if (!in_array($k, $exportClasses)) {
+                unset($dict[$extName]['classes'][$k]);
+            }
+        }
+
         foreach($exportData['classes'] as $k=>$v) {
             $fileName = strtolower(str_replace("\\", '_', $k));
             if (isset($dict[$fileName]['comment']) && ($dict[$fileName]['comment'] != '')) {
