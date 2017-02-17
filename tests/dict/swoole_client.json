@@ -1,1 +1,315 @@
-{"object":{"name":"swoole_client"},"comment":"","namespace":"","consts":{"MSG_WAITALL":{"comment":null,"type":"unknown","value":256},"MSG_DONTWAIT":{"comment":null,"type":"unknown","value":64},"MSG_PEEK":{"comment":null,"type":"unknown","value":2},"MSG_OOB":{"comment":null,"type":"unknown","value":1}},"properties":{"errCode":{"access":"protected","type":"unknown","comment":"","isStatic":false,"value":0,"example":""},"sock":{"access":"protected","type":"unknown","comment":"","isStatic":false,"value":0,"example":""},"reuse":{"access":"protected","type":"unknown","comment":"","isStatic":false,"value":false,"example":""}},"methods":{"__construct":{"access":"public","comment":"\u521b\u5efatcp\u5ba2\u6237\u7aef\u5bf9\u8c61","isStatic":false,"return":"","example":"","parameters":{"sock_type":{"comment":"","type":{},"options":[]},"is_sync":{"comment":"","type":{},"options":[],"value":0},"key":{"comment":"","type":{},"options":[]},"":{"type":"string","comment":"key\uff1a\u7528\u4e8e\u8fde\u63a5\u7684key"}}},"set":{"access":"public","comment":"\u8bbe\u7f6e\u5ba2\u6237\u7aef\u53c2\u6570","isStatic":false,"return":"","example":"","parameters":{"setting":{"comment":"","type":{},"options":[]},"":{"type":"array","comment":"setting:\u8bbe\u7f6e\u7684\u53c2\u6570"}}},"connect":{"access":"public","comment":"\u8fde\u63a5\u8fdc\u7a0b\u670d\u52a1\u5668","isStatic":false,"return":"","example":"","parameters":{"host":{"comment":"","type":{},"options":[]},"port":{"comment":"","type":{},"options":[]},"timeout":{"comment":"","type":{},"options":[],"value":0.10000000000000001},"flag":{"comment":"","type":{},"options":[],"value":0},"":{"type":"int","comment":"flag\uff1a\u662f\u5426\u542f\u7528udp\u8fde\u63a5"}}},"recv":{"access":"public","comment":"\u4ece\u670d\u52a1\u5668\u7aef\u63a5\u6536\u6570\u636e","isStatic":false,"return":"","example":"","parameters":{"size":{"comment":"","type":{},"options":[],"value":65535},"flags":{"comment":"","type":{},"options":[],"value":0},"":{"type":"int","comment":"flags\uff1a\u53ef\u4ee5\u63a5\u6536\u4e00\u4e9b\u7279\u6b8a\u7684SOCKET\u63a5\u6536\u8bbe\u7f6e"}}},"send":{"access":"public","comment":"\u53d1\u9001\u6570\u636e\u5230\u8fdc\u7a0b\u670d\u52a1\u5668","isStatic":false,"return":"","example":"","parameters":{"data":{"comment":"","type":{},"options":[]},"":{"type":"string","comment":"data:\u53d1\u9001\u7684\u6570\u636e"}}},"sendto":{"access":"public","comment":"\u5411\u4efb\u610f\u4e3b\u673a\u53d1\u9001UDP\u6570\u636e\u5305","isStatic":false,"return":"","example":"","parameters":{"ip":{"comment":"","type":{},"options":[]},"port":{"comment":"","type":{},"options":[]},"data":{"comment":"","type":{},"options":[]},"":{"type":"string","comment":"data\uff1a\u8981\u53d1\u9001\u7684\u6570\u636e"}}},"sendfile":{"access":"public","comment":"\u5411\u670d\u52a1\u5668\u53d1\u9001\u6587\u4ef6","isStatic":false,"return":"","example":"","parameters":{"filename":{"comment":"","type":{},"options":[]},"":{"type":"string","comment":"filename:\u53d1\u9001\u7684\u6587\u4ef6"}}},"sleep":{"access":"public","comment":"\u8c03\u7528\u6b64\u65b9\u6cd5\u4f1a\u4ece\u4e8b\u4ef6\u5faa\u73af\u4e2d\u79fb\u9664\u5f53\u524dsocket\u7684\u53ef\u8bfb\u76d1\u542c\uff0c\u505c\u6b62\u63a5\u6536\u6570\u636e","isStatic":false,"return":"","example":"","parameters":[]},"wakeup":{"access":"public","comment":"\u8c03\u7528\u6b64\u65b9\u6cd5\u4f1a\u91cd\u65b0\u76d1\u542c\u53ef\u8bfb\u4e8b\u4ef6\uff0c\u5c06socket\u8fde\u63a5\u4ece\u7761\u7720\u4e2d\u5524\u9192","isStatic":false,"return":"","example":"","parameters":[]},"isConnected":{"access":"public","comment":"\u8fd4\u56deswoole_client\u7684\u8fde\u63a5\u72b6\u6001","isStatic":false,"return":"","example":"","parameters":[]},"getsockname":{"access":"public","comment":"\u7528\u4e8e\u83b7\u53d6\u5ba2\u6237\u7aefsocket\u7684\u672c\u5730host:port\uff0c\u5fc5\u987b\u5728\u8fde\u63a5\u4e4b\u540e\u624d\u53ef\u4ee5\u4f7f\u7528","isStatic":false,"return":"","example":"","parameters":[]},"getpeername":{"access":"public","comment":"\u83b7\u53d6\u5bf9\u7aefsocket\u7684IP\u5730\u5740\u548c\u7aef\u53e3","isStatic":false,"return":"","example":"","parameters":[]},"close":{"access":"public","comment":"\u5173\u95ed\u8fde\u63a5","isStatic":false,"return":"","example":"","parameters":[]},"on":{"access":"public","comment":"\u7ed1\u5b9a\u4e8b\u4ef6(\u4e3a\u4e8b\u4ef6\u6ce8\u518c\u51fd\u6570)","isStatic":false,"return":"","example":"","parameters":{"event":{"comment":"","type":{},"options":[]},"callback":{"comment":"","type":{},"options":[]},"":{"type":"mixed","comment":"callback\uff1a\u51fd\u6570\u540d\u79f0"}}},"getSocket":{"access":"public","comment":"\u8c03\u7528\u6b64\u65b9\u6cd5\u53ef\u4ee5\u5f97\u5230\u5e95\u5c42\u7684socket\u53e5\u67c4","isStatic":false,"return":"","example":"","parameters":[]}}}
+{
+  "object": {
+    "name": "Swoole\\Client"
+  },
+  "comment": "tcp/udp socket的客户端",
+  "namespace": "Swoole",
+  "consts": {
+    "MSG_OOB": {
+      "comment": "读取带外数据",
+      "type": "int",
+      "value": 1
+    },
+    "MSG_PEEK": {
+      "comment": "窥视socket缓存区中的数据。设置MSG_PEEK参数后，recv读取数据不会修改指针，因此下一次调用recv仍然会从上一次的位置起返回数据",
+      "type": "int",
+      "value": 2
+    },
+    "MSG_DONTWAIT": {
+      "comment": "非阻塞接收数据，无论是否有数据都会立即返回",
+      "type": "int",
+      "value": 64
+    },
+    "MSG_WAITALL": {
+      "comment": "用于swoole_client->recv方法的第二个参数，阻塞等待直到收到指定长度的数据后返回",
+      "type": "int",
+      "value": 256
+    }
+  },
+  "properties": {
+    "errCode": {
+      "access": "public",
+      "type": "int",
+      "comment": "错误码。errCode的值等于Linux errno。可使用socket_strerror将错误码转为错误信息",
+      "isStatic": false,
+      "value": 0
+    },
+    "sock": {
+      "access": "public",
+      "type": "int",
+      "comment": "sock属性是此socket的文件描述符",
+      "isStatic": false,
+      "value": 0
+    },
+    "reuse": {
+      "access": "public",
+      "type": "bool",
+      "comment": "表示此连接是新创建的还是复用已存在的。与SWOOLE_KEEP配合使用",
+      "isStatic": false,
+      "value": false
+    },
+    "reuseCount": {
+      "access": "复用次数",
+      "type": "int",
+      "comment": false,
+      "isStatic": false,
+      "value": 0
+    }
+  },
+  "methods": {
+    "__construct": {
+      "access": "public",
+      "comment": "创建tcp/udp客户端",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "type": {
+          "comment": "表示socket的类型，如TCP/UDP",
+          "type": "int",
+          "options": []
+        },
+        "async": {
+          "comment": "表示同步阻塞还是异步非阻塞，默认为同步阻塞",
+          "type": "int",
+          "options": []
+        }
+      }
+    },
+    "__destruct": {
+      "access": "public",
+      "comment": "析构函数",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": []
+    },
+    "set": {
+      "access": "public",
+      "comment": "设置客户端参数",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "settings": {
+          "comment": "参数列表",
+          "type": "array",
+          "options": []
+        }
+      }
+    },
+    "connect": {
+      "access": "public",
+      "comment": "连接到远程服务器",
+      "isStatic": false,
+      "return": "bool",
+      "example": "",
+      "parameters": {
+        "host": {
+          "comment": "远程服务器的地址",
+          "type": "string",
+          "options": []
+        },
+        "port": {
+          "comment": "远程服务器端口",
+          "type": "int",
+          "options": []
+        },
+        "timeout": {
+          "comment": "超时时间",
+          "type": "float",
+          "options": []
+        },
+        "sock_flag": {
+          "comment": "在UDP类型时表示是否启用udp_connect",
+          "type": "int",
+          "options": []
+        }
+      }
+    },
+    "recv": {
+      "access": "public",
+      "comment": "用于从服务器端接收数据",
+      "isStatic": false,
+      "return": "string",
+      "example": "",
+      "parameters": {
+        "size": {
+          "comment": "接收数据的缓存区最大长度，此参数不要设置过大，否则会占用较大内存",
+          "type": "int",
+          "options": []
+        },
+        "flag": {
+          "comment": "可以接收一些特殊的SOCKET接收设置",
+          "type": "int",
+          "options": []
+        }
+      }
+    },
+    "send": {
+      "access": "public",
+      "comment": "发送数据到远程服务器，必须在建立连接后，才可向Server发送数据",
+      "isStatic": false,
+      "return": "int",
+      "example": "",
+      "parameters": {
+        "data": {
+          "comment": "参数为字符串，支持二进制数据",
+          "type": "string",
+          "options": []
+        },
+        "flag": {
+          "comment": "",
+          "type": "unknown",
+          "options": []
+        }
+      }
+    },
+    "pipe": {
+      "access": "public",
+      "comment": "使用管道发送数据",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "dst_socket": {
+          "comment": "目的socket对象",
+          "type": "int",
+          "options": []
+        }
+      }
+    },
+    "sendfile": {
+      "access": "public",
+      "comment": "发送文件到服务器，本函数是基于sendfile操作系统调用的",
+      "isStatic": false,
+      "return": "bool",
+      "example": "",
+      "parameters": {
+        "filename": {
+          "comment": "要发送的文件路径",
+          "type": "string",
+          "options": []
+        },
+        "offset": {
+          "comment": "文件偏移量",
+          "type": "int",
+          "options": []
+        }
+      }
+    },
+    "sendto": {
+      "access": "public",
+      "comment": "向任意IP:PORT的主机发送UDP数据包，仅支持SWOOLE_SOCK_UDP/SWOOLE_SOCK_UDP6类型的swoole_client对象。",
+      "isStatic": false,
+      "return": "bool",
+      "example": "",
+      "parameters": {
+        "ip": {
+          "comment": "目标主机IP",
+          "type": "string",
+          "options": []
+        },
+        "port": {
+          "comment": "目标主机端口",
+          "type": "int",
+          "options": []
+        },
+        "data": {
+          "comment": "发送的数据(不得超过64K)",
+          "type": "string",
+          "options": []
+        }
+      }
+    },
+    "sleep": {
+      "access": "public",
+      "comment": "调用此方法会从事件循环中移除当前socket的可读监听，停止接收数据",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": []
+    },
+    "wakeup": {
+      "access": "public",
+      "comment": "调用此方法会重新监听可读事件，将socket连接从睡眠中唤醒(如果socket并未进入sleep模式，wakeup操作没有任何作用)",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": []
+    },
+    "pause": {
+      "access": "public",
+      "comment": "暂停数据接收",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": []
+    },
+    "resume": {
+      "access": "public",
+      "comment": "恢复数据接收",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": []
+    },
+    "isConnected": {
+      "access": "public",
+      "comment": "返回swoole_client的连接状态",
+      "isStatic": false,
+      "return": "bool",
+      "example": "",
+      "parameters": []
+    },
+    "getsockname": {
+      "access": "public",
+      "comment": "用于获取客户端socket的本地host:port，必须在连接之后才可以使用",
+      "isStatic": false,
+      "return": "array",
+      "example": "",
+      "parameters": []
+    },
+    "getpeername": {
+      "access": "public",
+      "comment": "获取对端socket的IP地址和端口，仅支持SWOOLE_SOCK_UDP/SWOOLE_SOCK_UDP6类型的swoole_client对象(此函数必须在$client->recv() 之后调用)",
+      "isStatic": false,
+      "return": "bool",
+      "example": "",
+      "parameters": []
+    },
+    "close": {
+      "access": "public",
+      "comment": "关闭连接",
+      "isStatic": false,
+      "return": "bool",
+      "example": "",
+      "parameters": {
+        "force": {
+          "comment": "设置为true表示强制关闭连接，可用于关闭SWOOLE_KEEP长连接",
+          "type": "bool",
+          "options": []
+        }
+      }
+    },
+    "on": {
+      "access": "public",
+      "comment": "注册异步事件回调函数，调用on方法会使当前的socket变成非阻塞的",
+      "isStatic": false,
+      "return": "int",
+      "example": "",
+      "parameters": {
+        "event_name": {
+          "comment": "事件名称",
+          "type": "string",
+          "options": []
+        },
+        "callback": {
+          "comment": "事件回调函数",
+          "type": "string",
+          "options": []
+        }
+      }
+    }
+  }
+}

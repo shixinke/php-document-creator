@@ -1,1 +1,150 @@
-{"object":{"name":"swoole_async"},"comment":false,"namespace":"","consts":[],"properties":[],"methods":{"read":{"access":"public","comment":false,"isStatic":true,"return":"","example":"","parameters":{"filename":{"comment":"","type":"unknown","options":[]},"callback":{"comment":"","type":"unknown","options":[]},"chunk_size":{"comment":"","type":"unknown","options":[]},"offset":{"comment":"","type":"unknown","options":[]}}},"write":{"access":"public","comment":false,"isStatic":true,"return":"","example":"","parameters":{"filename":{"comment":"","type":"unknown","options":[]},"content":{"comment":"","type":"unknown","options":[]},"offset":{"comment":"","type":"unknown","options":[]},"callback":{"comment":"","type":"unknown","options":[]}}},"readFile":{"access":"public","comment":false,"isStatic":true,"return":"","example":"","parameters":{"filename":{"comment":"","type":"unknown","options":[]},"callback":{"comment":"","type":"unknown","options":[]}}},"writeFile":{"access":"public","comment":false,"isStatic":true,"return":"","example":"","parameters":{"filename":{"comment":"","type":"unknown","options":[]},"content":{"comment":"","type":"unknown","options":[]},"callback":{"comment":"","type":"unknown","options":[]}}},"dnsLookup":{"access":"public","comment":false,"isStatic":true,"return":"","example":"","parameters":{"domain_name":{"comment":"","type":"unknown","options":[]},"content":{"comment":"","type":"unknown","options":[]}}},"set":{"access":"public","comment":false,"isStatic":true,"return":"","example":"","parameters":{"settings":{"comment":"","type":"unknown","options":[]}}}}}
+{
+  "object": {
+    "name": "Swoole\\Async"
+  },
+  "comment": "异步IO操作",
+  "namespace": "Swoole",
+  "consts": [],
+  "properties": [],
+  "methods": {
+    "read": {
+      "access": "public",
+      "comment": "异步读文件，使用此函数读取文件是非阻塞的，当读操作完成时会自动回调指定的函数",
+      "isStatic": true,
+      "return": "bool",
+      "example": "",
+      "parameters": {
+        "filename": {
+          "comment": "读取的文件名",
+          "type": "string",
+          "options": []
+        },
+        "callback": {
+          "comment": "在读完后会自动回调$callback函数(bool callback(string $filename, string $content);)",
+          "type": "callable",
+          "options": []
+        },
+        "chunk_size": {
+          "comment": "每次只读$trunk_size个字节，不会占用太多内存",
+          "type": "int",
+          "options": []
+        },
+        "offset": {
+          "comment": "偏移量",
+          "type": "int",
+          "options": []
+        }
+      }
+    },
+    "write": {
+      "access": "public",
+      "comment": "异步写文件，与swoole_async_writefile不同，write是分段读写的。不需要一次性将要写的内容放到内存里，所以只占用少量内存。swoole_async_write通过传入的offset参数来确定写入的位置",
+      "isStatic": true,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "filename": {
+          "comment": "文件名",
+          "type": "string",
+          "options": []
+        },
+        "content": {
+          "comment": "写入的内容",
+          "type": "string",
+          "options": []
+        },
+        "offset": {
+          "comment": "偏移量",
+          "type": "int",
+          "options": []
+        },
+        "callback": {
+          "comment": "写完后的回调函数",
+          "type": "callable",
+          "options": []
+        }
+      }
+    },
+    "readFile": {
+      "access": "public",
+      "comment": "异步读取文件内容",
+      "isStatic": true,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "filename": {
+          "comment": "文件名",
+          "type": "string",
+          "options": []
+        },
+        "callback": {
+          "comment": "读完文件后的回调函数",
+          "type": "callable",
+          "options": []
+        }
+      }
+    },
+    "writeFile": {
+      "access": "public",
+      "comment": "异步写文件",
+      "isStatic": true,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "filename": {
+          "comment": "文件名",
+          "type": "string",
+          "options": []
+        },
+        "content": {
+          "comment": "写入的内容",
+          "type": "string",
+          "options": []
+        },
+        "callback": {
+          "comment": "",
+          "type": "写完的回调函数",
+          "options": []
+        },
+        "flags": {
+          "comment": "附加参数，如FILE_APPEND",
+          "type": "int",
+          "options": []
+        }
+      }
+    },
+    "dnsLookup": {
+      "access": "public",
+      "comment": "将域名解析为IP地址。调用此函数是非阻塞的，调用会立即返回。将向下执行后面的代码(当DNS查询完成时，自动回调指定的callback函数)",
+      "isStatic": true,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "domain_name": {
+          "comment": "要解析的域名",
+          "type": "string",
+          "options": []
+        },
+        "content": {
+          "comment": "解析完成成的回调函数",
+          "type": "callable",
+          "options": []
+        }
+      }
+    },
+    "set": {
+      "access": "public",
+      "comment": "设置选项",
+      "isStatic": true,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "settings": {
+          "comment": "配置选项数组",
+          "type": "array",
+          "options": []
+        }
+      }
+    }
+  }
+}

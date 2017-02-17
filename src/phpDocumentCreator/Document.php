@@ -356,7 +356,7 @@ class Document
             $files = scandir(self::DICT_PATH);
             $arr = array();
             foreach($files as $file) {
-                if (stripos($file, strtolower($extName)) == 0) {
+                if (stripos($file, strtolower($extName)) === 0) {
                     $content = file_get_contents(self::DICT_PATH.$file);
                     $arr[str_replace('.json', '', $file)] = json_decode($content, true);
                 }

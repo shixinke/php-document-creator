@@ -1,1 +1,10 @@
-{"object":{"name":"swoole_websocket_frame"},"comment":"","namespace":"","consts":[],"properties":[],"methods":[]}
+{
+  "object": {
+    "name": "Swoole\\WebSocket\\Frame"
+  },
+  "comment": "swoole websocket数据帧",
+  "namespace": "Swoole\\WebSocket",
+  "consts": [],
+  "properties": [],
+  "methods": []
+}

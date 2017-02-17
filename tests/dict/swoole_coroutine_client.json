@@ -1,9 +1,9 @@
 {
   "object": {
-    "name": "swoole_client_coro"
+    "name": "Swoole\\Coroutine\\Client"
   },
   "comment": "swoole协程客户端",
-  "namespace": "",
+  "namespace": "Swoole\\Coroutine",
   "consts": {
     "MSG_OOB": {
       "comment": "读取带外数据",

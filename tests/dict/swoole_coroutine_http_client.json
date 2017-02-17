@@ -1,9 +1,9 @@
 {
   "object": {
-    "name": "Swoole\\Http\\Client"
+    "name": "Swoole\\Coroutine\\Http\\Client"
   },
-  "comment": "swoole http客户端",
-  "namespace": "Swoole\\Http",
+  "comment": "swoole http协程客户端",
+  "namespace": "Swoole\\Coroutine\\Http",
   "consts": [],
   "properties": {
     "errCode": {
@@ -19,7 +19,7 @@
       "comment": "sock属性是此socket的文件描述符",
       "isStatic": false,
       "value": 0
-    },
+    }
   },
   "methods": {
     "__construct": {
@@ -56,13 +56,13 @@
     },
     "set": {
       "access": "public",
-      "comment": "设置选项",
+      "comment": "设置客户端参数",
       "isStatic": false,
       "return": "",
       "example": "",
       "parameters": {
         "settings": {
-          "comment": "选项",
+          "comment": "参数列表",
           "type": "array",
           "options": []
         }
@@ -124,40 +124,6 @@
         }
       }
     },
-    "addFile": {
-      "access": "public",
-      "comment": false,
-      "isStatic": false,
-      "return": "",
-      "example": "",
-      "parameters": {
-        "path": {
-          "comment": "",
-          "type": "unknown",
-          "options": []
-        },
-        "name": {
-          "comment": "",
-          "type": "unknown",
-          "options": []
-        },
-        "type": {
-          "comment": "",
-          "type": "unknown",
-          "options": []
-        },
-        "filename": {
-          "comment": "",
-          "type": "unknown",
-          "options": []
-        },
-        "offset": {
-          "comment": "",
-          "type": "unknown",
-          "options": []
-        }
-      }
-    },
     "execute": {
       "access": "public",
       "comment": "执行请求",
@@ -173,30 +139,6 @@
         "callback": {
           "comment": "执行请求后回调函数",
           "type": "callable",
-          "options": []
-        }
-      }
-    },
-    "push": {
-      "access": "public",
-      "comment": "向服务端推送数据",
-      "isStatic": false,
-      "return": "",
-      "example": "",
-      "parameters": {
-        "data": {
-          "comment": "要推送的数据",
-          "type": "string",
-          "options": []
-        },
-        "opcode": {
-          "comment": "",
-          "type": "unknown",
-          "options": []
-        },
-        "finish": {
-          "comment": "",
-          "type": "unknown",
           "options": []
         }
       }
@@ -244,7 +186,7 @@
         }
       }
     },
-    "upgrade": {
+    "addFile": {
       "access": "public",
       "comment": false,
       "isStatic": false,
@@ -256,31 +198,17 @@
           "type": "unknown",
           "options": []
         },
-        "callback": {
-          "comment": "",
-          "type": "unknown",
-          "options": []
-        }
-      }
-    },
-    "download": {
-      "access": "public",
-      "comment": false,
-      "isStatic": false,
-      "return": "",
-      "example": "",
-      "parameters": {
-        "path": {
+        "name": {
           "comment": "",
           "type": "unknown",
           "options": []
         },
-        "file": {
+        "type": {
           "comment": "",
           "type": "unknown",
           "options": []
         },
-        "callback": {
+        "filename": {
           "comment": "",
           "type": "unknown",
           "options": []
@@ -308,24 +236,35 @@
       "example": "",
       "parameters": []
     },
-    "on": {
+    "setDefer": {
       "access": "public",
-      "comment": "为事件绑定函数",
+      "comment": "设置defer",
       "isStatic": false,
-      "return": "",
+      "return": "bool",
       "example": "",
       "parameters": {
-        "event_name": {
-          "comment": "事件名称",
-          "type": "string",
-          "options": []
-        },
-        "callback": {
-          "comment": "回调函数",
-          "type": "callable",
+        "is_defer": {
+          "comment": "为true时，表明该Client要延迟收包，为false时，表明该Client非延迟收包，默认值为true",
+          "type": "bool",
           "options": []
         }
       }
+    },
+    "getDefer": {
+      "access": "public",
+      "comment": "返回当前设置的defer",
+      "isStatic": false,
+      "return": "bool",
+      "example": "",
+      "parameters": []
+    },
+    "recv": {
+      "access": "public",
+      "comment": "获取延迟收包的结果，当没有进行延迟收包或者收包超时",
+      "isStatic": false,
+      "return": "mixed",
+      "example": "",
+      "parameters": []
     }
   }
 }

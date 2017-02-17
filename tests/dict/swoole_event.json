@@ -1,1 +1,132 @@
-{"object":{"name":"swoole_event"},"comment":false,"namespace":"","consts":[],"properties":[],"methods":{"add":{"access":"public","comment":false,"isStatic":true,"return":"","example":"","parameters":{"fd":{"comment":"","type":"unknown","options":[]},"cb":{"comment":"","type":"unknown","options":[]}}},"del":{"access":"public","comment":false,"isStatic":true,"return":"","example":"","parameters":{"fd":{"comment":"","type":"unknown","options":[]}}},"set":{"access":"public","comment":false,"isStatic":true,"return":"","example":"","parameters":[]},"exit":{"access":"public","comment":false,"isStatic":true,"return":"","example":"","parameters":[]},"write":{"access":"public","comment":false,"isStatic":true,"return":"","example":"","parameters":{"fd":{"comment":"","type":"unknown","options":[]},"data":{"comment":"","type":"unknown","options":[]}}},"wait":{"access":"public","comment":false,"isStatic":true,"return":"","example":"","parameters":[]},"defer":{"access":"public","comment":false,"isStatic":true,"return":"","example":"","parameters":{"callback":{"comment":"","type":"unknown","options":[]}}}}}
+{
+  "object": {
+    "name": "Swoole\\Event"
+  },
+  "comment": "swoole事件处理器",
+  "namespace": "Swoole",
+  "consts": [],
+  "properties": [],
+  "methods": {
+    "add": {
+      "access": "public",
+      "comment": "将一个socket加入到swoole的reactor事件监听中",
+      "isStatic": true,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "fd": {
+          "comment": "文件描述符,包括swoole_client的socket,以及第三方扩展的socket",
+          "type": "int",
+          "options": []
+        },
+        "read_callback": {
+          "comment": "可读回调函数",
+          "type": "mixed",
+          "options": []
+        },
+        "write_callback": {
+          "comment": "可写回调函数",
+          "type": "mixed",
+          "options": []
+        },
+        "events": {
+          "comment": "事件类型的掩码，可选择关闭/开启可读可写事件，如SWOOLE_EVENT_READ，SWOOLE_EVENT_WRITE，或者SWOOLE_EVENT_READ | SWOOLE_EVENT_WRITE",
+          "type": "int",
+          "options": []
+        }
+      }
+    },
+    "del": {
+      "access": "public",
+      "comment": "用于从reactor中移除监听的socket",
+      "isStatic": true,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "fd": {
+          "comment": "文件描述符",
+          "type": "int",
+          "options": []
+        }
+      }
+    },
+    "set": {
+      "access": "public",
+      "comment": "修改事件监听的回调函数和掩码",
+      "isStatic": true,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "fd": {
+          "comment": "文件描述符,包括swoole_client的socket,以及第三方扩展的socket",
+          "type": "int",
+          "options": []
+        },
+        "read_callback": {
+          "comment": "可读回调函数",
+          "type": "mixed",
+          "options": []
+        },
+        "write_callback": {
+          "comment": "可写回调函数",
+          "type": "mixed",
+          "options": []
+        },
+        "events": {
+          "comment": "事件类型的掩码，可选择关闭/开启可读可写事件，如SWOOLE_EVENT_READ，SWOOLE_EVENT_WRITE，或者SWOOLE_EVENT_READ | SWOOLE_EVENT_WRITE",
+          "type": "int",
+          "options": []
+        }
+      }
+    },
+    "exit": {
+      "access": "public",
+      "comment": "退出事件轮询，此函数仅在Client程序中有效",
+      "isStatic": true,
+      "return": "",
+      "example": "",
+      "parameters": []
+    },
+    "write": {
+      "access": "public",
+      "comment": "将stream/sockets资源的数据发送变成异步的，当缓冲区满了或者返回EAGAIN，swoole底层会将数据加入到发送队列，并监听可写。socket可写时swoole底层会自动写入",
+      "isStatic": true,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "fd": {
+          "comment": "文件描述符",
+          "type": "int",
+          "options": []
+        },
+        "data": {
+          "comment": "写入的数据",
+          "type": "string",
+          "options": []
+        }
+      }
+    },
+    "wait": {
+      "access": "public",
+      "comment": "使脚本开始进行事件轮询",
+      "isStatic": true,
+      "return": "",
+      "example": "",
+      "parameters": []
+    },
+    "defer": {
+      "access": "public",
+      "comment": "延后执行一个PHP函数",
+      "isStatic": true,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "callback": {
+          "comment": "执行的函数",
+          "type": "callable",
+          "options": []
+        }
+      }
+    }
+  }
+}

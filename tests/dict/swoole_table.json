@@ -1,1 +1,238 @@
-{"object":{"name":"swoole_table"},"comment":"","namespace":"","consts":{"TYPE_INT":{"comment":null,"type":"unknown","value":1},"TYPE_FLOAT":{"comment":null,"type":"unknown","value":6},"TYPE_STRING":{"comment":null,"type":"unknown","value":7}},"properties":[],"methods":{"__construct":{"access":"public","comment":"\u521b\u5efa\u5185\u5728\u8868","isStatic":false,"return":"","example":"","parameters":{"size":{"comment":"","type":{},"options":[]},"":{"type":"int","comment":"size\uff1a\u5185\u5b58\u8868\u7684\u884c\u6570(\u5fc5\u987b\u662f2\u7684\u6307\u6570)"}}},"column":{"access":"public","comment":"\u5185\u5b58\u8868\u589e\u52a0\u4e00\u5217","isStatic":false,"return":"","example":"","parameters":{"name":{"comment":"","type":{},"options":[]},"type":{"comment":"","type":{},"options":[]},"size":{"comment":"","type":{},"options":[]},"":{"type":"int","comment":"size:\u5b57\u7b26\u4e32\u6700\u5927\u957f\u5ea6"},"type\uff1a\u7c7b\u578b(\u4f7f\u7528\u7c7b\u5e38\u91cfTYPE_INT,":{"type":"int","comment":"TYPE_FLOAT, TYPE_STRING)"}}},"create":{"access":"public","comment":"\u521b\u5efa\u5185\u5b58\u8868(\u5728\u4f7f\u7528column\u521b\u5efa\u5185\u5b58\u8868\u7ed3\u6784\u65f6\u6267\u884c)","isStatic":false,"return":"","example":"","parameters":[]},"destroy":{"access":"public","comment":"","isStatic":false,"return":"","example":"","parameters":[]},"set":{"access":"public","comment":"\u8bbe\u7f6e\u884c\u7684\u6570\u636e","isStatic":false,"return":"","example":"","parameters":{"key":{"comment":"","type":{},"options":[]},"data":{"comment":"","type":{},"options":[]},"":{"type":"array","comment":"data\uff1a\u6570\u636e(\u8981\u8ddfcolumn\u521b\u5efa\u7684\u5185\u5b58\u8868\u7ed3\u6784\u6765)"}}},"get":{"access":"public","comment":"\u83b7\u53d6\u4e00\u884c\u6570\u636e","isStatic":false,"return":"","example":"","parameters":{"key":{"comment":"","type":{},"options":[]},"":{"type":"string","comment":"key\uff1a\u6570\u636e\u952e"}}},"count":{"access":"public","comment":"","isStatic":false,"return":"","example":"","parameters":[]},"del":{"access":"public","comment":"\u5220\u9664\u6570\u636e","isStatic":false,"return":"","example":"","parameters":{"key":{"comment":"","type":{},"options":[]},"":{"type":"string","comment":"key\uff1a\u6570\u636e\u952e"}}},"exist":{"access":"public","comment":"\u68c0\u67e5table\u4e2d\u662f\u5426\u5b58\u5728\u67d0\u4e00\u4e2akey","isStatic":false,"return":"","example":"","parameters":{"key":{"comment":"","type":{},"options":[]},"":{"type":"string","comment":"key:\u6570\u636e\u952e"}}},"incr":{"access":"public","comment":"\u539f\u5b50\u81ea\u589e\u64cd\u4f5c","isStatic":false,"return":"","example":"","parameters":{"key":{"comment":"","type":{},"options":[]},"column":{"comment":"","type":{},"options":[]},"incrby":{"comment":"","type":"unknown","options":[],"value":1},"":{"type":"mixed","comment":"incrby\uff1a\u589e\u91cf"}}},"decr":{"access":"public","comment":"\u539f\u5b50\u81ea\u51cf\u64cd\u4f5c","isStatic":false,"return":"","example":"","parameters":{"key":{"comment":"","type":{},"options":[]},"column":{"comment":"","type":{},"options":[]},"decrby":{"comment":"","type":"unknown","options":[],"value":1},"":{"type":"mixed","comment":"incrby\uff1a\u51cf\u91cf"}}},"lock":{"access":"public","comment":"\u5bf9\u5185\u5b58\u64cd\u4f5c\u8fdb\u884c\u52a0\u9501\u64cd\u4f5c","isStatic":false,"return":"","example":"","parameters":[]},"unlock":{"access":"public","comment":"\u5bf9\u5185\u5b58\u8868\u64cd\u4f5c\u8fdb\u884c\u91ca\u653e\u9501\u64cd\u4f5c","isStatic":false,"return":"","example":"","parameters":[]},"current":{"access":"public","comment":"","isStatic":false,"return":"","example":"","parameters":[]},"key":{"access":"public","comment":"","isStatic":false,"return":"","example":"","parameters":[]},"next":{"access":"public","comment":"","isStatic":false,"return":"","example":"","parameters":[]},"rewind":{"access":"public","comment":"","isStatic":false,"return":"","example":"","parameters":[]},"valid":{"access":"public","comment":"","isStatic":false,"return":"","example":"","parameters":[]}}}
+{
+  "object": {
+    "name": "Swoole\\Table"
+  },
+  "comment": "一个基于共享内存和锁实现的超高性能，并发数据结构。用于解决多进程/多线程数据共享和同步加锁问题",
+  "namespace": "Swoole",
+  "consts": {
+    "TYPE_INT": {
+      "comment": "整型字段",
+      "type": "int",
+      "value": 1
+    },
+    "TYPE_STRING": {
+      "comment": "字符串型字段",
+      "type": "int",
+      "value": 7
+    },
+    "TYPE_FLOAT": {
+      "comment": "浮点型字段",
+      "type": "int",
+      "value": 6
+    }
+  },
+  "properties": [],
+  "methods": {
+    "__construct": {
+      "access": "public",
+      "comment": "创建内存表(table占用的内存总数为 (结构体长度 + KEY长度64字节 + 行尺寸$size) * (1.2预留20%作为hash冲突) * (列尺寸)，如果机器内存不足table会创建失败)",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "table_size": {
+          "comment": "参数指定表格的最大行数，必须为2的指数，如1024,8192,65536等",
+          "type": "int",
+          "options": []
+        }
+      }
+    },
+    "column": {
+      "access": "public",
+      "comment": "内存表增加一列",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "name": {
+          "comment": "指定字段的名称",
+          "type": "string",
+          "options": []
+        },
+        "type": {
+          "comment": "指定字段类型，支持3种类型，swoole_table::TYPE_INT, swoole_table::TYPE_FLOAT, ",
+          "type": "int",
+          "options": []
+        },
+        "size": {
+          "comment": "指定字符串字段的最大长度，单位为字节(字符串类型的字段必须指定$size)",
+          "type": "int",
+          "options": []
+        }
+      }
+    },
+    "create": {
+      "access": "public",
+      "comment": "创建内存表",
+      "isStatic": false,
+      "return": "",
+      "example": "$table = new swoole_table(1024);\n$table->column('id', swoole_table::TYPE_INT, 4);       //1,2,4,8\n$table->column('name', swoole_table::TYPE_STRING, 64);\n$table->column('num', swoole_table::TYPE_FLOAT);\n$table->create();",
+      "parameters": []
+    },
+    "destroy": {
+      "access": "public",
+      "comment": "销毁内存表",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": []
+    },
+    "set": {
+      "access": "public",
+      "comment": "设置行的数据，swoole_table使用key-value的方式来访问数据。",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "key": {
+          "comment": "键名",
+          "type": "string",
+          "options": []
+        },
+        "value": {
+          "comment": "行数据",
+          "type": "array",
+          "options": []
+        }
+      }
+    },
+    "get": {
+      "access": "public",
+      "comment": "获取一行数据",
+      "isStatic": false,
+      "return": "array",
+      "example": "",
+      "parameters": {
+        "key": {
+          "comment": "行所在键",
+          "type": "string",
+          "options": []
+        }
+      }
+    },
+    "count": {
+      "access": "public",
+      "comment": "获取键的数量",
+      "isStatic": false,
+      "return": "int",
+      "example": "",
+      "parameters": []
+    },
+    "del": {
+      "access": "public",
+      "comment": "删除指定key的值",
+      "isStatic": false,
+      "return": "boolean",
+      "example": "",
+      "parameters": {
+        "key": {
+          "comment": "对应的数据不存在，将返回false",
+          "type": "string",
+          "options": []
+        }
+      }
+    },
+    "exist": {
+      "access": "public",
+      "comment": "检查table中是否存在某一个key",
+      "isStatic": false,
+      "return": "boolean",
+      "example": "",
+      "parameters": {
+        "key": {
+          "comment": "内存表的key",
+          "type": "string",
+          "options": []
+        }
+      }
+    },
+    "incr": {
+      "access": "public",
+      "comment": "原子自增操作",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "key": {
+          "comment": "指定数据的key，如果$key对应的行不存在，默认列的值为0",
+          "type": "string",
+          "options": []
+        },
+        "column": {
+          "comment": "指定列名，仅支持浮点型和整型字段",
+          "type": "number",
+          "options": []
+        },
+        "incrby": {
+          "comment": "增量，默认为1",
+          "type": "mixed",
+          "options": []
+        }
+      }
+    },
+    "decr": {
+      "access": "public",
+      "comment": "原子自减操作",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "key": {
+          "comment": "指定数据的key，如果$key对应的行不存在，默认列的值为0",
+          "type": "string",
+          "options": []
+        },
+        "column": {
+          "comment": "指定列名，仅支持浮点型和整型字段",
+          "type": "number",
+          "options": []
+        },
+        "decrby": {
+          "comment": "减量，默认为1",
+          "type": "mixed",
+          "options": []
+        }
+      }
+    },
+    "rewind": {
+      "access": "public",
+      "comment": "返回到迭代器的第一个元素",
+      "isStatic": false,
+      "return": "void",
+      "example": "",
+      "parameters": []
+    },
+    "next": {
+      "access": "public",
+      "comment": "向前移动到下一个元素",
+      "isStatic": false,
+      "return": "void",
+      "example": "",
+      "parameters": []
+    },
+    "current": {
+      "access": "public",
+      "comment": "返回当前元素",
+      "isStatic": false,
+      "return": "mixed",
+      "example": "",
+      "parameters": []
+    },
+    "key": {
+      "access": "public",
+      "comment": "返回当前元素的键",
+      "isStatic": false,
+      "return": "scalar",
+      "example": "",
+      "parameters": []
+    },
+    "valid": {
+      "access": "public",
+      "comment": "此方法在 rewind() 和 next() 方法之后被调用以此用来检查当前位置是否有效",
+      "isStatic": false,
+      "return": "boolean",
+      "example": "",
+      "parameters": []
+    }
+  }
+}

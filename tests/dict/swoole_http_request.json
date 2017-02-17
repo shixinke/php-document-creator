@@ -1,1 +1,70 @@
-{"object":{"name":"swoole_http_request"},"comment":"","namespace":"","consts":[],"properties":{"header":{"access":"public","type":"unknown","comment":"\u8bf7\u6c42\u5934\n@var array header\n\u6bcf\u4e2akey\u90fd\u662f\u5c0f\u5199","isStatic":false,"value":[],"example":""},"server":{"access":"public","type":"unknown","comment":"\u8bf7\u6c42\u76f8\u5f53\u7684\u670d\u52a1\u5668\u4fe1\u606f\n@var array $server\uff1a\u76f8\u5f53\u4e8e$_SERVER","isStatic":false,"value":[],"example":""},"get":{"access":"public","type":"unknown","comment":"get\u8bf7\u6c42\u53c2\u6570\n@var array get","isStatic":false,"value":[],"example":""},"post":{"access":"public","type":"unknown","comment":"post\u8bf7\u6c42\u6570\u636e\n@var array post","isStatic":false,"value":[],"example":""},"files":{"access":"public","type":"unknown","comment":"@var array $files:\u8bf7\u6c42\u4e2d\u7684\u6587\u4ef6\u4e0a\u4f20\u4fe1\u606f\nname \u6d4f\u89c8\u5668\u4e0a\u4f20\u65f6\u4f20\u5165\u7684\u6587\u4ef6\u540d\u79f0","isStatic":false,"value":[],"example":""},"cookie":{"access":"public","type":"unknown","comment":"\u8bf7\u6c42\u4e2d\u7684cookie\u6570\u636e\n@var array cookie","isStatic":false,"value":[],"example":""}},"methods":{"rawcontent":{"access":"public","comment":"\u83b7\u53d6\u8bf7\u6c42\u7684\u539f\u59cb\u6570\u636e","isStatic":false,"return":"","example":"","parameters":[]},"__destruct":{"access":"public","comment":"","isStatic":false,"return":"","example":"","parameters":[]}}}
+{
+  "object": {
+    "name": "Swoole\\Http\\Request"
+  },
+  "comment": "swoole http请求对象",
+  "namespace": "Swoole\\Http",
+  "consts": [],
+  "properties": {
+    "header": {
+      "access": "public",
+      "type": "array",
+      "comment": "请求头",
+      "isStatic": false,
+      "value": "array()"
+    },
+    "server":{
+      "access": "public",
+      "type": "array",
+      "comment": "Http请求相关的服务器信息",
+      "isStatic": false,
+      "value": "array()"
+    },
+    "get":{
+      "access": "public",
+      "type": "array",
+      "comment": "Http请求的GET参数",
+      "isStatic": false,
+      "value": "array"
+    },
+    "post":{
+      "access": "public",
+      "type": "array",
+      "comment": "HTTP POST参数，格式为数组",
+      "isStatic": false,
+      "value": "array"
+    },
+    "cookie":{
+      "access": "public",
+      "type": "array",
+      "comment": "HTTP请求携带的COOKIE信息，与PHP的$_COOKIE相同，格式为数组",
+      "isStatic": false,
+      "value": "array"
+    },
+    "files":{
+      "access": "public",
+      "type": "array",
+      "comment": "文件上传信息。类型为以form名称为key的二维数组。与PHP的$_FILES相同。",
+      "isStatic": false,
+      "value": "array"
+    }
+  },
+  "methods": {
+    "rawcontent": {
+      "access": "public",
+      "comment": "获取原始的POST包体，用于非application/x-www-form-urlencoded格式的Http POST请求",
+      "isStatic": false,
+      "return": "string",
+      "example": "",
+      "parameters": []
+    },
+    "__destruct": {
+      "access": "public",
+      "comment": "析构函数",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": []
+    }
+  }
+}

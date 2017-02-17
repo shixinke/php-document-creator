@@ -1,1 +1,744 @@
-{"object":{"name":"swoole_redis_server"},"comment":false,"namespace":"","extends":"swoole_server","consts":{"NIL":{"comment":"","type":"unknown","value":1},"ERROR":{"comment":"","type":"unknown","value":0},"STATUS":{"comment":"","type":"unknown","value":2},"INT":{"comment":"","type":"unknown","value":3},"STRING":{"comment":"","type":"unknown","value":4},"SET":{"comment":"","type":"unknown","value":5},"MAP":{"comment":"","type":"unknown","value":6}},"properties":[],"methods":{"start":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":[]},"setHandler":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":{"command":{"comment":"","type":"unknown","options":[]},"callback":{"comment":"","type":"unknown","options":[]},"number_of_string_param":{"comment":"","type":"unknown","options":[]},"type_of_array_param":{"comment":"","type":"unknown","options":[]}}},"format":{"access":"public","comment":false,"isStatic":true,"return":"","example":"","parameters":{"type":{"comment":"","type":"unknown","options":[]},"value":{"comment":"","type":"unknown","options":[]}}},"__construct":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":{"host":{"comment":"","type":"unknown","options":[]},"port":{"comment":"","type":"unknown","options":[]},"mode":{"comment":"","type":"unknown","options":[]},"sock_type":{"comment":"","type":"unknown","options":[]}}},"listen":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":{"host":{"comment":"","type":"unknown","options":[]},"port":{"comment":"","type":"unknown","options":[]},"sock_type":{"comment":"","type":"unknown","options":[]}}},"addlistener":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":{"host":{"comment":"","type":"unknown","options":[]},"port":{"comment":"","type":"unknown","options":[]},"sock_type":{"comment":"","type":"unknown","options":[]}}},"on":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":{"name":{"comment":"","type":"unknown","options":[]},"cb":{"comment":"","type":"unknown","options":[]}}},"set":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":{"zset":{"comment":"","type":"unknown","options":[]}}},"send":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":{"fd":{"comment":"","type":"unknown","options":[]},"send_data":{"comment":"","type":"unknown","options":[]},"reactor_id":{"comment":"","type":"unknown","options":[]}}},"sendto":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":{"ip":{"comment":"","type":"unknown","options":[]},"port":{"comment":"","type":"unknown","options":[]},"send_data":{"comment":"","type":"unknown","options":[]}}},"sendwait":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":{"conn_fd":{"comment":"","type":"unknown","options":[]},"send_data":{"comment":"","type":"unknown","options":[]}}},"exist":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":{"fd":{"comment":"","type":"unknown","options":[]}}},"protect":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":{"fd":{"comment":"","type":"unknown","options":[]},"is_protected":{"comment":"","type":"unknown","options":[]}}},"sendfile":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":{"conn_fd":{"comment":"","type":"unknown","options":[]},"filename":{"comment":"","type":"unknown","options":[]}}},"close":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":{"fd":{"comment":"","type":"unknown","options":[]}}},"confirm":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":{"fd":{"comment":"","type":"unknown","options":[]}}},"pause":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":{"fd":{"comment":"","type":"unknown","options":[]}}},"resume":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":{"fd":{"comment":"","type":"unknown","options":[]}}},"task":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":{"data":{"comment":"","type":"unknown","options":[]},"worker_id":{"comment":"","type":"unknown","options":[]}}},"taskwait":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":{"data":{"comment":"","type":"unknown","options":[]},"timeout":{"comment":"","type":"unknown","options":[]},"worker_id":{"comment":"","type":"unknown","options":[]}}},"taskWaitMulti":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":{"tasks":{"comment":"","type":"unknown","options":[]},"timeout":{"comment":"","type":"unknown","options":[]}}},"finish":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":{"data":{"comment":"","type":"unknown","options":[]}}},"reload":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":[]},"shutdown":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":[]},"stop":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":[]},"getLastError":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":[]},"heartbeat":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":{"reactor_id":{"comment":"","type":"unknown","options":[]}}},"connection_info":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":{"fd":{"comment":"","type":"unknown","options":[]},"reactor_id":{"comment":"","type":"unknown","options":[]}}},"connection_list":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":{"start_fd":{"comment":"","type":"unknown","options":[]},"find_count":{"comment":"","type":"unknown","options":[]}}},"getClientInfo":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":{"fd":{"comment":"","type":"unknown","options":[]},"reactor_id":{"comment":"","type":"unknown","options":[]}}},"getClientList":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":{"start_fd":{"comment":"","type":"unknown","options":[]},"find_count":{"comment":"","type":"unknown","options":[]}}},"after":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":{"ms":{"comment":"","type":"unknown","options":[]},"callback":{"comment":"","type":"unknown","options":[]},"param":{"comment":"","type":"unknown","options":[]}}},"tick":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":{"ms":{"comment":"","type":"unknown","options":[]},"callback":{"comment":"","type":"unknown","options":[]}}},"clearTimer":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":{"timer_id":{"comment":"","type":"unknown","options":[]}}},"defer":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":{"callback":{"comment":"","type":"unknown","options":[]}}},"sendMessage":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":[]},"addProcess":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":[]},"stats":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":[]},"bind":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":{"fd":{"comment":"","type":"unknown","options":[]},"uid":{"comment":"","type":"unknown","options":[]}}}}}
+{
+  "object": {
+    "name": "Swoole\\Redis\\Server"
+  },
+  "comment": "一个兼容Redis服务器端协议的Server框架，可基于此框架实现Redis协议的服务器程序",
+  "namespace": "Swoole\\Redis",
+  "extends": "Swoole\\Server",
+  "consts": {
+    "NIL": {
+      "comment": "返回nil类型",
+      "type": "int",
+      "value": 1
+    },
+    "ERROR": {
+      "comment": "返回错误码",
+      "type": "int",
+      "value": 0
+    },
+    "STATUS": {
+      "comment": "返回状态",
+      "type": "int",
+      "value": 2
+    },
+    "INT": {
+      "comment": "返回int类型",
+      "type": "int",
+      "value": 3
+    },
+    "STRING": {
+      "comment": "返回string类型",
+      "type": "int",
+      "value": 4
+    },
+    "SET": {
+      "comment": "返回set类型",
+      "type": "int",
+      "value": 5
+    },
+    "MAP": {
+      "comment": "返回map类型",
+      "type": "int",
+      "value": 6
+    }
+  },
+  "properties": [],
+  "methods": {
+    "setHandler": {
+      "access": "public",
+      "comment": "设置Redis命令字的处理器",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "command": {
+          "comment": "命令的名称",
+          "type": "string",
+          "options": []
+        },
+        "callback": {
+          "comment": "命令的处理函数，回调函数返回字符串类型时会自动发送给客户端",
+          "type": "callable",
+          "options": []
+        },
+        "number_of_string_param": {
+          "comment": "",
+          "type": "unknown",
+          "options": []
+        },
+        "type_of_array_param": {
+          "comment": "",
+          "type": "unknown",
+          "options": []
+        }
+      }
+    },
+    "format": {
+      "access": "public",
+      "comment": "格式化命令响应数据",
+      "isStatic": true,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "type": {
+          "comment": "$type表示数据类型，NIL类型不需要传入$value，ERROR和STATUS类型$value可选，INT、STRING、SET、MAP必选",
+          "type": "int",
+          "options": []
+        },
+        "value": {
+          "comment": "数据",
+          "type": "mixed",
+          "options": []
+        }
+      }
+    },
+    "__construct": {
+      "access": "public",
+      "comment": "创建一个swoole tcp/udp server对象",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "host": {
+          "comment": "参数用来指定监听的ip地址，如127.0.0.1，或者外网地址，或者0.0.0.0监听全部地址",
+          "type": "string",
+          "options": []
+        },
+        "port": {
+          "comment": "监听的端口，如9501，监听小于1024端口需要root权限，如果此端口被占用server->start时会失败",
+          "type": "int",
+          "options": []
+        },
+        "mode": {
+          "comment": "运行的模式，swoole提供了3种运行模式，默认为多进程模式",
+          "type": "int",
+          "options": []
+        },
+        "sock_type": {
+          "comment": "指定socket的类型，支持TCP/UDP、TCP6/UDP6、UnixSock Stream/Dgram 6种",
+          "type": "int",
+          "options": []
+        }
+      }
+    },
+    "listen": {
+      "access": "public",
+      "comment": "监听一个新的Server端口，此方法是addlistener的别名",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "host": {
+          "comment": "参数用来指定监听的ip地址，如127.0.0.1，或者外网地址，或者0.0.0.0监听全部地址",
+          "type": "string",
+          "options": []
+        },
+        "port": {
+          "comment": "监听的端口，如9501，监听小于1024端口需要root权限，如果此端口被占用server->start时会失败",
+          "type": "int",
+          "options": []
+        },
+        "sock_type": {
+          "comment": "指定socket的类型，支持TCP/UDP、TCP6/UDP6、UnixSock Stream/Dgram 6种",
+          "type": "int",
+          "options": []
+        }
+      }
+    },
+    "addlistener": {
+      "access": "public",
+      "comment": "监听一个新的Server端口，此方法是addlistener的别名",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "host": {
+          "comment": "参数用来指定监听的ip地址，如127.0.0.1，或者外网地址，或者0.0.0.0监听全部地址",
+          "type": "string",
+          "options": []
+        },
+        "port": {
+          "comment": "监听的端口，如9501，监听小于1024端口需要root权限，如果此端口被占用server->start时会失败",
+          "type": "int",
+          "options": []
+        },
+        "sock_type": {
+          "comment": "指定socket的类型，支持TCP/UDP、TCP6/UDP6、UnixSock Stream/Dgram 6种",
+          "type": "int",
+          "options": []
+        }
+      }
+    },
+    "on": {
+      "access": "public",
+      "comment": "注册Server的事件回调函数",
+      "isStatic": false,
+      "return": "bool",
+      "example": "",
+      "parameters": {
+        "event_name": {
+          "comment": "事件类型",
+          "type": "string",
+          "options": []
+        },
+        "callback": {
+          "comment": "事件回调函数",
+          "type": "callable",
+          "options": []
+        }
+      }
+    },
+    "set": {
+      "access": "public",
+      "comment": "设置选项",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "settings": {
+          "comment": "选项数组",
+          "type": "array",
+          "options": []
+        }
+      }
+    },
+    "start": {
+      "access": "public",
+      "comment": "启动server，监听所有TCP/UDP端口",
+      "isStatic": false,
+      "return": "bool",
+      "example": "",
+      "parameters": []
+    },
+    "send": {
+      "access": "public",
+      "comment": "向客户端发送数据",
+      "isStatic": false,
+      "return": "bool",
+      "example": "",
+      "parameters": {
+        "fd": {
+          "comment": "socket文件描述符",
+          "type": "int",
+          "options": []
+        },
+        "send_data": {
+          "comment": "发送的数据。TCP协议最大不得超过2M，UDP协议不得超过64K",
+          "type": "string",
+          "options": []
+        },
+        "reactor_id": {
+          "comment": "线程的ID",
+          "type": "int",
+          "options": []
+        }
+      }
+    },
+    "sendto": {
+      "access": "public",
+      "comment": "向任意的客户端IP:PORT发送UDP数据包",
+      "isStatic": false,
+      "return": "bool",
+      "example": "",
+      "parameters": {
+        "ip": {
+          "comment": "网络主机IP",
+          "type": "string",
+          "options": []
+        },
+        "port": {
+          "comment": "网络端口",
+          "type": "int",
+          "options": []
+        },
+        "send_data": {
+          "comment": "发送的数据",
+          "type": "string",
+          "options": []
+        },
+        "server_socket": {
+          "comment": "服务器可能会同时监听多个UDP端口，此参数可以指定使用哪个端口发送数据包",
+          "type": "int",
+          "options": []
+        }
+      }
+    },
+    "sendwait": {
+      "access": "public",
+      "comment": "阻塞地向客户端发送数据",
+      "isStatic": false,
+      "return": "bool",
+      "example": "",
+      "parameters": {
+        "conn_fd": {
+          "comment": "连接的文件描述符(连接句柄)",
+          "type": "int",
+          "options": []
+        },
+        "send_data": {
+          "comment": "发送的数据",
+          "type": "string",
+          "options": []
+        }
+      }
+    },
+    "exist": {
+      "access": "public",
+      "comment": "检测fd对应的连接是否存在",
+      "isStatic": false,
+      "return": "bool",
+      "example": "",
+      "parameters": {
+        "fd": {
+          "comment": "连接的句柄",
+          "type": "int",
+          "options": []
+        }
+      }
+    },
+    "protect": {
+      "access": "public",
+      "comment": "用于保护某些连接不被心跳线程切断",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "fd": {
+          "comment": "连接句柄",
+          "type": "int",
+          "options": []
+        },
+        "is_protected": {
+          "comment": "是否受保护",
+          "type": "bool",
+          "options": []
+        }
+      }
+    },
+    "sendfile": {
+      "access": "public",
+      "comment": "发送文件到TCP客户端连接",
+      "isStatic": false,
+      "return": "bool",
+      "example": "",
+      "parameters": {
+        "conn_fd": {
+          "comment": "连接句柄",
+          "type": "int",
+          "options": []
+        },
+        "filename": {
+          "comment": "发送的文件名",
+          "type": "string",
+          "options": []
+        },
+        "offset": {
+          "comment": "文件偏移量",
+          "type": "int",
+          "options": []
+        }
+      }
+    },
+    "close": {
+      "access": "public",
+      "comment": "关闭客户端连接",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "fd": {
+          "comment": "连接句柄",
+          "type": "int",
+          "options": []
+        },
+        "reset": {
+          "comment": "是否强制关闭。设置为true会强制关闭连接，丢弃发送队列中的数据",
+          "type": "bool",
+          "options": []
+        }
+      }
+    },
+    "confirm": {
+      "access": "public",
+      "comment": "连接确认",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "fd": {
+          "comment": "连接句柄",
+          "type": "int",
+          "options": []
+        }
+      }
+    },
+    "pause": {
+      "access": "public",
+      "comment": "停止接收数据",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "fd": {
+          "comment": "连接句柄",
+          "type": "int",
+          "options": []
+        }
+      }
+    },
+    "resume": {
+      "access": "public",
+      "comment": "恢复数据接收",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "fd": {
+          "comment": "连接句柄",
+          "type": "int",
+          "options": []
+        }
+      }
+    },
+    "task": {
+      "access": "public",
+      "comment": "投递一个异步任务到task_worker池中。此函数是非阻塞的，执行完毕会立即返回",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "data": {
+          "comment": "要投递的任务数据，可以为除资源类型之外的任意PHP变量",
+          "type": "mixed",
+          "options": []
+        },
+        "worker_id": {
+          "comment": "工程进程编号",
+          "type": "int",
+          "options": []
+        },
+        "finish_callback": {
+          "comment": "任务完成后的回调",
+          "type": "callable",
+          "options": []
+        }
+      }
+    },
+    "taskwait": {
+      "access": "public",
+      "comment": "用于投递一个异步的任务到task进程池去执行。与task不同的是taskwait是阻塞等待的，直到任务完成或者超时返回。",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "data": {
+          "comment": "要投递的任务数据，可以为除资源类型之外的任意PHP变量",
+          "type": "mixed",
+          "options": []
+        },
+        "timeout": {
+          "comment": "超时时间",
+          "type": "float",
+          "options": []
+        },
+        "worker_id": {
+          "comment": "指定执行任务的工作进程的编号",
+          "type": "int",
+          "options": []
+        }
+      }
+    },
+    "taskWaitMulti": {
+      "access": "public",
+      "comment": "并发执行多个Task",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "tasks": {
+          "comment": "任务数组。必须为数字索引数组，不支持关联索引数组，底层会遍历$tasks将任务逐个投递到Task进程",
+          "type": "array",
+          "options": []
+        },
+        "timeout": {
+          "comment": "超时时间",
+          "type": "double",
+          "options": []
+        }
+      }
+    },
+    "finish": {
+      "access": "public",
+      "comment": "此函数用于在task进程中通知worker进程，投递的任务已完成。此函数可以传递结果数据给worker进程",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "data": {
+          "comment": "要传递的数据",
+          "type": "string",
+          "options": []
+        }
+      }
+    },
+    "reload": {
+      "access": "public",
+      "comment": "重启所有worker进程",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": []
+    },
+    "shutdown": {
+      "access": "public",
+      "comment": "关闭服务器",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": []
+    },
+    "stop": {
+      "access": "public",
+      "comment": "使当前worker进程停止运行，并立即触发onWorkerStop回调函数",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "worker_id": {
+          "comment": "要停止的worker进程",
+          "type": "int",
+          "options": []
+        }
+      }
+    },
+    "getLastError": {
+      "access": "public",
+      "comment": "获取最近一次操作错误的错误码。业务代码中可以根据错误码类型执行不同的逻辑。",
+      "isStatic": false,
+      "return": "int",
+      "example": "",
+      "parameters": []
+    },
+    "heartbeat": {
+      "access": "public",
+      "comment": "检测服务器所有连接，并找出已经超过约定时间的连接。如果指定if_close_connection，则自动关闭超时的连接。未指定仅返回连接的fd数组。",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "if_close_connection": {
+          "comment": "是否关闭超时的连接，默认为true",
+          "type": "bool",
+          "options": []
+        }
+      }
+    },
+    "connection_info": {
+      "access": "public",
+      "comment": "获取连接的信息",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "fd": {
+          "comment": "指定连接的句柄",
+          "type": "int",
+          "options": []
+        },
+        "reactor_id": {
+          "comment": "来源ID",
+          "type": "int",
+          "options": []
+        }
+      }
+    },
+    "connection_list": {
+      "access": "public",
+      "comment": "用来遍历当前Server所有的客户端连接",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "start_fd": {
+          "comment": "起始fd",
+          "type": "int",
+          "options": []
+        },
+        "find_count": {
+          "comment": "每页取多少条，最大不得超过100",
+          "type": "int",
+          "options": []
+        }
+      }
+    },
+    "getClientInfo": {
+      "access": "public",
+      "comment": "获取连接的信息",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "fd": {
+          "comment": "指定连接的句柄",
+          "type": "int",
+          "options": []
+        },
+        "reactor_id": {
+          "comment": "来源ID",
+          "type": "int",
+          "options": []
+        }
+      }
+    },
+    "getClientList": {
+      "access": "public",
+      "comment": "用来遍历当前Server所有的客户端连接",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "start_fd": {
+          "comment": "起始fd",
+          "type": "int",
+          "options": []
+        },
+        "find_count": {
+          "comment": "每页取多少条，最大不得超过100",
+          "type": "int",
+          "options": []
+        }
+      }
+    },
+    "after": {
+      "access": "public",
+      "comment": "在指定的时间后执行函数",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "ms": {
+          "comment": "延时时间(毫秒)",
+          "type": "int",
+          "options": []
+        },
+        "callback": {
+          "comment": "回调函数",
+          "type": "callable",
+          "options": []
+        },
+        "param": {
+          "comment": "回调函数的参数",
+          "type": "array",
+          "options": []
+        }
+      }
+    },
+    "tick": {
+      "access": "public",
+      "comment": "tick定时器，可以自定义回调函数",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "ms": {
+          "comment": "循环的时间(毫秒)",
+          "type": "int",
+          "options": []
+        },
+        "callback": {
+          "comment": "回调函数",
+          "type": "callable",
+          "options": []
+        }
+      }
+    },
+    "clearTimer": {
+      "access": "public",
+      "comment": "清除tick/after定时器，此函数是swoole_timer_clear的别名",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "timer_id": {
+          "comment": "定时器ID",
+          "type": "int",
+          "options": []
+        }
+      }
+    },
+    "defer": {
+      "access": "public",
+      "comment": "延后执行一个PHP函数。Swoole底层会在EventLoop循环完成后执行此函数。此函数的目的是为了让一些PHP代码延后执行，程序优先处理IO事件",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "callback": {
+          "comment": "延时执行的函数",
+          "type": "callable",
+          "options": []
+        }
+      }
+    },
+    "sendMessage": {
+      "access": "public",
+      "comment": "此函数可以向任意worker进程或者task进程发送消息。在非主进程和管理进程中可调用。收到消息的进程会触发onPipeMessage事件。",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "dst_worker_id": {
+          "comment": "目标进程的ID，范围是0 ~ (worker_num + task_worker_num - 1)",
+          "type": "int",
+          "options": []
+        },
+        "data": {
+          "comment": "发送的数据",
+          "type": "string",
+          "options": []
+        }
+      }
+    },
+    "addProcess": {
+      "access": "public",
+      "comment": "添加一个用户自定义的工作进程",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "process": {
+          "comment": "swoole_process对象，注意不需要执行start。在swoole_server启动时会自动创建进程，并执行指定的子进程函数",
+          "type": "object",
+          "options": []
+        }
+      }
+    },
+    "stats": {
+      "access": "public",
+      "comment": "得到当前Server的活动TCP连接数，启动时间，accpet/close的总次数等信息",
+      "isStatic": false,
+      "return": "array",
+      "example": "",
+      "parameters": []
+    },
+    "bind": {
+      "access": "public",
+      "comment": "将连接绑定一个用户定义的ID，可以设置dispatch_mode=5设置已此ID值进行hash固定分配。可以保证某一个UID的连接全部会分配到同一个Worker进程",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "fd": {
+          "comment": "连接句柄",
+          "type": "int",
+          "options": []
+        },
+        "uid": {
+          "comment": "指定的UID",
+          "type": "int",
+          "options": []
+        }
+      }
+    }
+  }
+}

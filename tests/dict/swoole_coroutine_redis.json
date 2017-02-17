@@ -1,9 +1,9 @@
 {
   "object": {
-    "name": "swoole_redis_coro"
+    "name": "Swoole\\Coroutine\\Redis"
   },
   "comment": "Redis协程类",
-  "namespace": "",
+  "namespace": "Swoole\\Coroutine",
   "consts": [],
   "properties": {
     "errCode": {

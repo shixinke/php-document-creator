@@ -1,1 +1,120 @@
-{"object":{"name":"swoole_connection_iterator"},"comment":"","namespace":"","consts":[],"properties":[],"methods":{"rewind":{"access":"public","comment":"","isStatic":false,"return":"","example":"","parameters":[]},"next":{"access":"public","comment":"","isStatic":false,"return":"","example":"","parameters":[]},"current":{"access":"public","comment":"","isStatic":false,"return":"","example":"","parameters":[]},"key":{"access":"public","comment":"","isStatic":false,"return":"","example":"","parameters":[]},"valid":{"access":"public","comment":"","isStatic":false,"return":"","example":"","parameters":[]},"count":{"access":"public","comment":"","isStatic":false,"return":"","example":"","parameters":[]}}}
+{
+  "object": {
+    "name": "Swoole\\Connection\\Iterator"
+  },
+  "comment": "连接迭代器",
+  "namespace": "Swoole\\Connection",
+  "consts": [],
+  "properties": [],
+  "methods": {
+    "rewind": {
+      "access": "public",
+      "comment": "返回到迭代器的第一个元素",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": []
+    },
+    "next": {
+      "access": "public",
+      "comment": "向前移动到下一个元素",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": []
+    },
+    "current": {
+      "access": "public",
+      "comment": "返回当前元素",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": []
+    },
+    "key": {
+      "access": "public",
+      "comment": "返回当前元素的键",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": []
+    },
+    "valid": {
+      "access": "public",
+      "comment": "检查当前位置是否有效",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": []
+    },
+    "count": {
+      "access": "public",
+      "comment": "返回迭代器元素的个数",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": []
+    },
+    "offsetExists": {
+      "access": "public",
+      "comment": "迭代器是否存在",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "fd": {
+          "comment": "",
+          "type": "unknown",
+          "options": []
+        }
+      }
+    },
+    "offsetGet": {
+      "access": "public",
+      "comment": "获取句柄所在的迭代器的值",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "fd": {
+          "comment": "连接句柄",
+          "type": "int",
+          "options": []
+        }
+      }
+    },
+    "offsetSet": {
+      "access": "public",
+      "comment": "设置指定句柄迭代器的值",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "fd": {
+          "comment": "连接句柄",
+          "type": "int",
+          "options": []
+        },
+        "value": {
+          "comment": "要设置的值",
+          "type": "mixed",
+          "options": []
+        }
+      }
+    },
+    "offsetUnset": {
+      "access": "public",
+      "comment": "删除迭代器的值",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "fd": {
+          "comment": "连接句柄",
+          "type": "int",
+          "options": []
+        }
+      }
+    }
+  }
+}

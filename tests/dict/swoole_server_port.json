@@ -1,1 +1,60 @@
-{"object":{"name":"swoole_server_port"},"comment":"","namespace":"","consts":[],"properties":[],"methods":{"__destruct":{"access":"public","comment":"","isStatic":false,"return":"","example":"","parameters":[]},"set":{"access":"public","comment":"","isStatic":false,"return":"","example":"","parameters":[]},"on":{"access":"public","comment":"","isStatic":false,"return":"","example":"","parameters":[]}}}
+{
+  "object": {
+    "name": "Swoole\\Server\\Port"
+  },
+  "comment": "swoole端口类",
+  "namespace": "Swoole\\Server",
+  "consts": [],
+  "properties": [],
+  "methods": {
+    "__construct": {
+      "access": "private",
+      "comment": "初始化方法",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": []
+    },
+    "__destruct": {
+      "access": "public",
+      "comment": "析构方法",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": []
+    },
+    "set": {
+      "access": "public",
+      "comment": "设置配置选项",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "settings": {
+          "comment": "配置选项",
+          "type": "array",
+          "options": []
+        }
+      }
+    },
+    "on": {
+      "access": "public",
+      "comment": "为事件绑定函数",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "event_name": {
+          "comment": "事件名称",
+          "type": "string",
+          "options": []
+        },
+        "callback": {
+          "comment": "回调函数",
+          "type": "callable",
+          "options": []
+        }
+      }
+    }
+  }
+}

@@ -1,1 +1,302 @@
-{"object":{"name":"swoole_process"},"comment":"","namespace":"","consts":[],"properties":[],"methods":{"__construct":{"access":"public","comment":"\u521b\u5efa\u5b50\u8fdb\u7a0b","isStatic":false,"return":"","example":"","parameters":{"function":{"comment":"","type":{},"options":[]},"redirect_stdin_stdout":{"comment":"","type":"unknown","options":[],"value":false},"create_pipe":{"comment":"","type":"unknown","options":[],"value":true},"":{"type":"bool","comment":"create_pipe\uff1a\u662f\u5426\u521b\u5efa\u7ba1\u9053"}}},"wait":{"access":"public","comment":"\u56de\u6536\u7ed3\u675f\u8fd0\u884c\u7684\u5b50\u8fdb\u7a0b\u3002","isStatic":false,"return":"","example":"","parameters":{"blocking":{"comment":"","type":{},"options":[],"value":true},"":{"type":"bool","comment":"blocking:\u662f\u5426\u963b\u585e\u7b49\u5f85"}}},"signal":{"access":"public","comment":"\u8bbe\u7f6e\u5f02\u6b65\u4fe1\u53f7\u76d1\u542c","isStatic":false,"return":"","example":"","parameters":{"signo":{"comment":"","type":{},"options":[]},"callback":{"comment":"","type":{},"options":[]},"":{"type":"mixed","comment":"callback\uff1a\u76d1\u542c\u51fd\u6570"}}},"kill":{"access":"public","comment":"\u5411\u5b50\u8fdb\u7a0b\u53d1\u9001\u4fe1\u53f7","isStatic":false,"return":"","example":"","parameters":{"pid":{"comment":"","type":{},"options":[]},"signo":{"comment":"","type":"unknown","options":[],"value":15},"":{"type":"int","comment":"signo\uff1a\u4fe1\u53f7\u91cf"}}},"daemon":{"access":"public","comment":"\u4f7f\u5f53\u524d\u8fdb\u7a0b\u8131\u53d8\u4e3a\u4e00\u4e2a\u5b88\u62a4\u8fdb\u7a0b","isStatic":false,"return":"","example":"","parameters":{"nochdir":{"comment":"","type":{},"options":[],"value":false},"noclose":{"comment":"","type":{},"options":[],"value":false},"":{"type":"bool","comment":"noclose:\u9ed8\u8ba4false\u8868\u793a\u5c06\u6807\u51c6\u8f93\u5165\u548c\u8f93\u51fa\u91cd\u5b9a\u5411\u5230\/dev\/null"}}},"setaffinity":{"access":"public","comment":"\u8bbe\u7f6eCPU\u4eb2\u548c\u6027\uff0c\u53ef\u4ee5\u5c06\u8fdb\u7a0b\u7ed1\u5b9a\u5230\u7279\u5b9a\u7684CPU\u6838\u4e0a","isStatic":false,"return":"","example":"","parameters":{"cpu_set":{"comment":"","type":{},"options":[]},"":{"type":"array","comment":"cpu_set:\u63a5\u53d7\u4e00\u4e2a\u6570\u7ec4\u53c2\u6570\u8868\u793a\u7ed1\u5b9a\u54ea\u4e9bCPU\u6838\uff0c\u5982(0,2,3)\u8868\u793a\u7ed1\u5b9aCPU0\/CPU2\/CPU3"}}},"useQueue":{"access":"public","comment":"\u542f\u7528\u6d88\u606f\u961f\u5217\u4f5c\u4e3a\u8fdb\u7a0b\u95f4\u901a\u4fe1","isStatic":false,"return":"","example":"","parameters":{"msgkey":{"comment":"","type":{},"options":[],"value":0},"mode":{"comment":"","type":{},"options":[],"value":2},"":{"type":"int","comment":"mode:\u901a\u4fe1\u6a21\u5f0f\uff0c\u9ed8\u8ba4\u4e3a2\uff0c\u8868\u793a\u4e89\u62a2\u6a21\u5f0f\uff0c\u6240\u6709\u521b\u5efa\u7684\u5b50\u8fdb\u7a0b\u90fd\u4f1a\u4ece\u961f\u5217\u4e2d\u53d6\u6570\u636e"}}},"statQueue":{"access":"public","comment":"\u67e5\u770b\u6d88\u606f\u961f\u5217\u72b6\u6001\n\u8fd4\u56de\u5b57\u6bb5\uff1a\nqueue_num \u961f\u5217\u4e2d\u7684\u4efb\u52a1\u6570\u91cf","isStatic":false,"return":"","example":"","parameters":[]},"freeQueue":{"access":"public","comment":"\u5220\u9664\u961f\u5217","isStatic":false,"return":"","example":"","parameters":[]},"start":{"access":"public","comment":"\u6267\u884cfork\u7cfb\u7edf\u8c03\u7528\uff0c\u542f\u52a8\u8fdb\u7a0b","isStatic":false,"return":"","example":"","parameters":[]},"write":{"access":"public","comment":"\u5411\u7ba1\u9053\u5185\u5199\u5165\u6570\u636e","isStatic":false,"return":"","example":"","parameters":{"data":{"comment":"","type":{},"options":[]},"":{"type":"string","comment":"data:\u5199\u5165\u7684\u6570\u636e"}}},"read":{"access":"public","comment":"\u4ece\u7ba1\u9053\u4e2d\u8bfb\u53d6\u6570\u636e","isStatic":false,"return":"","example":"","parameters":{"buffer_size":{"comment":"","type":{},"options":[],"value":8192},"":{"type":"int","comment":"buffer_size:\u7f13\u51b2\u533a\u5927\u5c0f"}}},"push":{"access":"public","comment":"\u5411\u6d88\u606f\u961f\u5217\u63a8\u9001\u6570\u636e","isStatic":false,"return":"","example":"","parameters":{"data":{"comment":"","type":{},"options":[]},"":{"type":"string","comment":"data\uff1a\u63a8\u9001\u7684\u6570\u636e"}}},"pop":{"access":"public","comment":"\u4ece\u6d88\u606f\u961f\u5217\u4e2d\u83b7\u53d6\u6570\u636e","isStatic":false,"return":"","example":"","parameters":{"maxsize":{"comment":"","type":{},"options":[],"value":8192},"":{"type":"int","comment":"maxsize:\u8868\u793a\u83b7\u53d6\u6570\u636e\u7684\u6700\u5927\u5c3a\u5bf8"}}},"exec":{"access":"public","comment":"\u6267\u884c\u4e00\u4e2a\u5916\u90e8\u7a0b\u5e8f\uff0c\u6b64\u51fd\u6570\u662fexec\u7cfb\u7edf\u8c03\u7528\u7684\u5c01\u88c5","isStatic":false,"return":"","example":"","parameters":{"execfile":{"comment":"","type":{},"options":[]},"args":{"comment":"","type":{},"options":[]},"":{"type":"array","comment":"args:\u53c2\u6570\u5217\u8868"}}},"name":{"access":"public","comment":"\u4fee\u6539\u8fdb\u7a0b\u540d\u79f0","isStatic":false,"return":"","example":"","parameters":{"new_process_name":{"comment":"","type":{},"options":[]},"":{"type":"string","comment":"new_process_name:\u8fdb\u7a0b\u540d\u79f0"}}},"exit":{"access":"public","comment":"\u9000\u51fa\u5b50\u8fdb\u7a0b","isStatic":false,"return":"","example":"","parameters":{"status":{"comment":"","type":{},"options":[],"value":0},"":{"type":"int","comment":"status:\u9000\u51fa\u8fdb\u7a0b\u7684\u72b6\u6001\u7801"}}},"close":{"access":"public","comment":"\u7528\u4e8e\u5173\u95ed\u521b\u5efa\u7684\u597d\u7684\u7ba1\u9053","isStatic":false,"return":"","example":"","parameters":[]},"__destruct":{"access":"public","comment":"","isStatic":false,"return":"","example":"","parameters":[]}}}
+{
+  "object": {
+    "name": "Swoole\\Process"
+  },
+  "comment": "swoole进程管理模块",
+  "namespace": "Swoole",
+  "consts": {
+    "IPC_NOWAIT": {
+      "comment": "可将队列设置为非阻塞",
+      "type": "int",
+      "value": 256
+    }
+  },
+  "properties": [],
+  "methods": {
+    "__construct": {
+      "access": "public",
+      "comment": "创建子进程",
+      "isStatic": false,
+      "return": "int",
+      "example": "",
+      "parameters": {
+        "callback": {
+          "comment": "子进程创建成功后要执行的函数",
+          "type": "callable",
+          "options": []
+        },
+        "redirect_stdin_and_stdout": {
+          "comment": "重定向子进程的标准输入和输出。 启用此选项后，在进程内echo将不是打印屏幕，而是写入到管道。读取键盘输入将变为从管道中读取数据。 默认为阻塞读取",
+          "type": "boolean",
+          "options": []
+        },
+        "pipe_type": {
+          "comment": "是否创建管道，启用$redirect_stdin_stdout后，此选项将忽略用户参数，强制为true 如果子进程内没有进程间通信，可以设置为false",
+          "type": "bool",
+          "options": []
+        }
+      }
+    },
+    "__destruct": {
+      "access": "public",
+      "comment": "析构函数",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": []
+    },
+    "wait": {
+      "access": "public",
+      "comment": "回收结束运行的子进程",
+      "isStatic": true,
+      "return": "mixed(array or boolean)",
+      "example": "",
+      "parameters": {
+        "blocking": {
+          "comment": "可以指定是否阻塞等待，默认为阻塞",
+          "type": "boolean",
+          "options": []
+        }
+      }
+    },
+    "signal": {
+      "access": "public",
+      "comment": "设置异步信号监听(此方法基于signalfd和eventloop是异步IO，不能用于同步程序中)",
+      "isStatic": true,
+      "return": "boolean",
+      "example": "",
+      "parameters": {
+        "signal_no": {
+          "comment": "信号量ID",
+          "type": "int",
+          "options": []
+        },
+        "callback": {
+          "comment": "回调函数",
+          "type": "callable",
+          "options": []
+        }
+      }
+    },
+    "alarm": {
+      "access": "public",
+      "comment": "高精度定时器，是操作系统setitimer系统调用的封装，可以设置微妙级别的定时器。定时器会触发信号，需要与swoole_process::signal或pcntl_signal配合使用。",
+      "isStatic": true,
+      "return": "boolean",
+      "example": "",
+      "parameters": {
+        "usec": {
+          "comment": "定时器间隔时间，单位为微妙。如果为负数表示清除定时器",
+          "type": "int",
+          "options": []
+        }
+      }
+    },
+    "kill": {
+      "access": "public",
+      "comment": "向子进程发送信号",
+      "isStatic": true,
+      "return": "int",
+      "example": "",
+      "parameters": {
+        "pid": {
+          "comment": "进程ID",
+          "type": "int",
+          "options": []
+        },
+        "signal_no": {
+          "comment": "信号ID，默认的信号为SIGTERM，表示终止进程",
+          "type": "int",
+          "options": []
+        }
+      }
+    },
+    "daemon": {
+      "access": "public",
+      "comment": "使当前进程脱变为一个守护进程",
+      "isStatic": true,
+      "return": "boolean",
+      "example": "",
+      "parameters": {
+        "nochdir": {
+          "comment": "为true表示不要切换当前目录到根目录",
+          "type": "boolean",
+          "options": []
+        },
+        "noclose": {
+          "comment": "为true表示不要关闭标准输入输出文件描述符",
+          "type": "boolean",
+          "options": []
+        }
+      }
+    },
+    "setaffinity": {
+      "access": "public",
+      "comment": "设置CPU亲和性，可以将进程绑定到特定的CPU核上",
+      "isStatic": true,
+      "return": "boolean",
+      "example": "",
+      "parameters": {
+        "cpu_settings": {
+          "comment": "cpu亲和性设置。$cpu_set内的元素不能超过CPU核数",
+          "type": "array",
+          "options": []
+        }
+      }
+    },
+    "useQueue": {
+      "access": "public",
+      "comment": "启用消息队列作为进程间通信",
+      "isStatic": false,
+      "return": "boolean",
+      "example": "",
+      "parameters": {
+        "key": {
+          "comment": "消息队列的key，默认会使用ftok(__FILE__, 1)作为KEY",
+          "type": "string",
+          "options": []
+        },
+        "mode": {
+          "comment": "通信模式，默认为2，表示争抢模式，所有创建的子进程都会从队列中取数据",
+          "type": "int",
+          "options": []
+        }
+      }
+    },
+    "statQueue": {
+      "access": "public",
+      "comment": "查看消息队列状态(返回一个数组，包括2项信息:queue_num 队列中的任务数量;queue_bytes 队列数据的总字节数)",
+      "isStatic": false,
+      "return": "array",
+      "example": "",
+      "parameters": []
+    },
+    "freeQueue": {
+      "access": "public",
+      "comment": "删除队列。此方法与useQueue成对使用，useQueue创建队列，使用freeQueue销毁队列。销毁队列后队列中的数据会被清空。",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": []
+    },
+    "start": {
+      "access": "public",
+      "comment": "执行fork系统调用，启动进程(创建成功返回子进程的PID，创建失败返回false。可使用swoole_errno和swoole_strerror得到错误码和错误信息)",
+      "isStatic": false,
+      "return": "int",
+      "example": "",
+      "parameters": []
+    },
+    "write": {
+      "access": "public",
+      "comment": "向管道内写入数据",
+      "isStatic": false,
+      "return": "int",
+      "example": "",
+      "parameters": {
+        "data": {
+          "comment": "写入的数据。$data的长度在Linux系统下最大不超过8K，MacOS/FreeBSD下最大不超过2K",
+          "type": "string",
+          "options": []
+        }
+      }
+    },
+    "close": {
+      "access": "public",
+      "comment": "用于关闭创建的好的管道(有一些特殊的情况swoole_process对象无法释放，如果持续创建进程会导致连接泄漏。调用此函数就可以直接关闭管道，释放资源)",
+      "isStatic": false,
+      "return": "boolean",
+      "example": "",
+      "parameters": []
+    },
+    "read": {
+      "access": "public",
+      "comment": "从管道中读取数据",
+      "isStatic": false,
+      "return": "int",
+      "example": "",
+      "parameters": {
+        "size": {
+          "comment": "是缓冲区的大小，默认为8192，最大不超过64K",
+          "type": "int",
+          "options": []
+        }
+      }
+    },
+    "push": {
+      "access": "public",
+      "comment": "投递数据到消息队列中",
+      "isStatic": false,
+      "return": "boolean",
+      "example": "",
+      "parameters": {
+        "data": {
+          "comment": "要投递的数据，长度受限与操作系统内核参数的限制。默认为8192，最大不超过65536",
+          "type": "string",
+          "options": []
+        }
+      }
+    },
+    "pop": {
+      "access": "public",
+      "comment": "从队列中取数据",
+      "isStatic": false,
+      "return": "string",
+      "example": "",
+      "parameters": {
+        "size": {
+          "comment": "表示获取数据的最大尺寸，默认为8192",
+          "type": "int",
+          "options": []
+        }
+      }
+    },
+    "exit": {
+      "access": "public",
+      "comment": "退出子进程",
+      "isStatic": false,
+      "return": "int",
+      "example": "",
+      "parameters": {
+        "exit_code": {
+          "comment": "是退出进程的状态码，如果为0表示正常结束，会继续执行PHP的shutdown_function，其他扩展的清理工作(如果$status不为0，表示异常退出，会立即终止进程。不再执行PHP的shutdown_function，其他扩展的清理工作)",
+          "type": "int",
+          "options": []
+        }
+      }
+    },
+    "exec": {
+      "access": "public",
+      "comment": "执行一个外部程序，此函数是exec系统调用的封装(执行成功后，当前进程的代码段将会被新程序替换。子进程脱变成另外一套程序。父进程与当前进程仍然是父子进程关系)",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "exec_file": {
+          "comment": "指定可执行文件的绝对路径，如 \"/usr/bin/python\"",
+          "type": "string",
+          "options": []
+        },
+        "args": {
+          "comment": "是一个数组，是exec的参数列表，如 array('test.py', 123)，相当与python test.py 123",
+          "type": "array",
+          "options": []
+        }
+      }
+    },
+    "name": {
+      "access": "public",
+      "comment": "修改进程名称。此函数是swoole_set_process_name的别名",
+      "isStatic": false,
+      "return": "boolean",
+      "example": "",
+      "parameters": {
+        "process_name": {
+          "comment": "进程的名称",
+          "type": "string",
+          "options": []
+        }
+      }
+    }
+  }
+}

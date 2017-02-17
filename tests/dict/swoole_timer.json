@@ -1,1 +1,82 @@
-{"object":{"name":"swoole_timer"},"comment":"","namespace":"","consts":[],"properties":[],"methods":{"tick":{"access":"public","comment":"\u8bbe\u7f6e\u4e00\u4e2a\u95f4\u9694\u5b9a\u65f6\u5668","isStatic":false,"return":"","example":"","parameters":{"ms":{"comment":"","type":{},"options":[]},"callback":{"comment":"","type":{},"options":[]},"param":{"comment":"","type":{},"options":[],"value":null},"":{"type":"mixed|null","comment":"param(\u53c2\u6570)"}}},"after":{"access":"public","comment":"\u5728\u6307\u5b9a\u7684\u65f6\u95f4\u540e\u6267\u884c\u51fd\u6570","isStatic":false,"return":"","example":"","parameters":{"after_time_ms":{"comment":"","type":{},"options":[]},"callback_function":{"comment":"","type":{},"options":[]},"":{"type":"mixed","comment":"callback(\u56de\u8c03\u51fd\u6570)"}}},"exists":{"access":"public","comment":"\u68c0\u67e5\u67d0\u4e2a\u5b9a\u65f6\u5668\u662f\u5426\u5b58\u5728","isStatic":false,"return":"","example":"","parameters":{"timer_id":{"comment":"","type":{},"options":[]},"":{"type":"int","comment":"timer_id:\u5b9a\u65f6\u5668ID"}}},"del":{"access":"public","comment":"\u5220\u9664\u6307\u5b9a\u7684\u5b9a\u65f6\u5668","isStatic":false,"return":"","example":"","parameters":{"timer_id":{"comment":"","type":{},"options":[]},"":{"type":"int","comment":"timer_id\uff1a\u5b9a\u65f6\u5668ID"}}},"clear":{"access":"public","comment":"\u5220\u9664\u6307\u5b9a\u7684\u5b9a\u65f6\u5668","isStatic":false,"return":"","example":"","parameters":{"timer_id":{"comment":"","type":{},"options":[]},"":{"type":"int","comment":"timer_id\uff1a\u5b9a\u65f6\u5668ID"}}}}}
+{
+  "object": {
+    "name": "Swoole\\Timer"
+  },
+  "comment": "swoole定时器",
+  "namespace": "Swoole",
+  "consts": [],
+  "properties": [],
+  "methods": {
+    "tick": {
+      "access": "public",
+      "comment": "创建一个指定时间为循环时间间隔的定时器",
+      "isStatic": true,
+      "return": "int",
+      "example": "",
+      "parameters": {
+        "ms": {
+          "comment": "循环时间(毫秒数)",
+          "type": "int",
+          "options": []
+        },
+        "callback": {
+          "comment": "执行的回调函数",
+          "type": "callable",
+          "options": []
+        },
+        "param": {
+          "comment": "传入回调函数的参数",
+          "type": "array",
+          "options": []
+        }
+      }
+    },
+    "after": {
+      "access": "public",
+      "comment": "创建一个在指定时间后执行某个函数的定时器",
+      "isStatic": true,
+      "return": "int",
+      "example": "",
+      "parameters": {
+        "ms": {
+          "comment": "延时时间(毫秒)",
+          "type": "int",
+          "options": []
+        },
+        "callback": {
+          "comment": "执行的回调函数",
+          "type": "callable",
+          "options": []
+        }
+      }
+    },
+    "exists": {
+      "access": "public",
+      "comment": "判断某个定时器是否存在",
+      "isStatic": true,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "timer_id": {
+          "comment": "定时器ID",
+          "type": "int",
+          "options": []
+        }
+      }
+    },
+    "clear": {
+      "access": "public",
+      "comment": "清除某个定时器",
+      "isStatic": true,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "timer_id": {
+          "comment": "定时器ID",
+          "type": "int",
+          "options": []
+        }
+      }
+    }
+  }
+}

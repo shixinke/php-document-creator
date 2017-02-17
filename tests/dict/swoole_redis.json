@@ -1,1 +1,97 @@
-{"object":{"name":"swoole_redis"},"comment":"","namespace":"","consts":[],"properties":[],"methods":{"__construct":{"access":"public","comment":"","isStatic":false,"return":"","example":"","parameters":[]},"__destruct":{"access":"public","comment":"","isStatic":false,"return":"","example":"","parameters":[]},"on":{"access":"public","comment":"\u6ce8\u518c\u4e8b\u4ef6\u56de\u8c03\u51fd\u6570","isStatic":false,"return":"","example":"","parameters":{"event_name":{"comment":"","type":{},"options":[]},"callback":{"comment":"","type":{},"options":[]},"":{"type":"callable","comment":"callback\uff1a\u56de\u8c03\u51fd\u6570"}}},"connect":{"access":"public","comment":"\u8fde\u63a5redis\u670d\u52a1\u5668","isStatic":false,"return":"","example":"","parameters":{"host":{"comment":"","type":{},"options":[]},"port":{"comment":"","type":{},"options":[]},"callback":{"comment":"","type":{},"options":[]},"":{"type":"callable","comment":"callback\uff1a\u56de\u8c03\u51fd\u6570(\u8fd4\u56deredis\u7684\u8fde\u63a5\u5bf9\u8c61\u548cresult)"}}},"close":{"access":"public","comment":"\u5173\u95edredis\u8fde\u63a5","isStatic":false,"return":"","example":"","parameters":[]},"__call":{"access":"public","comment":"\u6267\u884credis\u547d\u4ee4","isStatic":false,"return":"","example":"","parameters":{"command":{"comment":"","type":{},"options":[]},"params":{"comment":"","type":{},"options":[]},"":{"type":"array","comment":"params\uff1a\u53c2\u6570"}}}}}
+{
+  "object": {
+    "name": "Swoole\\Redis"
+  },
+  "comment": "异步Redis客户端",
+  "namespace": "Swoole",
+  "consts": [],
+  "properties": [],
+  "methods": {
+    "__construct": {
+      "access": "public",
+      "comment": "建立一个Redis客户端",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": []
+    },
+    "__destruct": {
+      "access": "public",
+      "comment": "析构函数",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": []
+    },
+    "on": {
+      "access": "public",
+      "comment": "注册事件回调函数(目前swoole_redis支持2种事件回调函数(close和message)。on方法必须在connect前被调用)",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "event_name": {
+          "comment": "事件名称",
+          "type": "string",
+          "options": []
+        },
+        "callback": {
+          "comment": "回调函数",
+          "type": "callable",
+          "options": []
+        }
+      }
+    },
+    "connect": {
+      "access": "public",
+      "comment": "连接Redis服务器",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "host": {
+          "comment": "Redis主机IP",
+          "type": "string",
+          "options": []
+        },
+        "port": {
+          "comment": "Redis主机端口",
+          "type": "int",
+          "options": []
+        },
+        "callback": {
+          "comment": "连接回调函数",
+          "type": "callable",
+          "options": []
+        }
+      }
+    },
+    "close": {
+      "access": "public",
+      "comment": "关闭Redis连接",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": []
+    },
+    "__call": {
+      "access": "public",
+      "comment": "魔术方法，方法名会映射为Redis指令，参数作为Redis指令的参数",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "command": {
+          "comment": "Redis命令",
+          "type": "string",
+          "options": []
+        },
+        "params": {
+          "comment": "命令所需要的参数",
+          "type": "array",
+          "options": []
+        }
+      }
+    }
+  }
+}

@@ -1,70 +1,70 @@
 {
   "object": {
-    "name": "swoole_mysql_coro"
+    "name": "Swoole\\Coroutine\\MySQL"
   },
-  "comment": "mysql协程类",
-  "namespace": "",
+  "comment": false,
+  "namespace": "Swoole\\Coroutine",
   "consts": [],
   "properties": {
     "serverInfo": {
       "access": "private",
-      "type": "unknown",
-      "comment": false,
+      "type": "array",
+      "comment": "连接信息，保存的是传递给构造函数的数组",
       "isStatic": false,
-      "value": ""
+      "value": "array()"
     },
     "sock": {
       "access": "public",
-      "type": "unknown",
-      "comment": false,
+      "type": "int",
+      "comment": "连接使用的文件描述符",
       "isStatic": false,
       "value": 0
     },
     "connected": {
       "access": "public",
-      "type": "unknown",
-      "comment": false,
+      "type": "bool",
+      "comment": "是否连接上了MySQL服务器",
       "isStatic": false,
       "value": false
     },
     "connect_error": {
       "access": "public",
-      "type": "unknown",
-      "comment": false,
+      "type": "string",
+      "comment": "发生在sock上的连接错误信息",
       "isStatic": false,
       "value": ""
     },
     "connect_errno": {
       "access": "public",
-      "type": "unknown",
-      "comment": false,
+      "type": "int",
+      "comment": "MySQL服务器返回的错误信息",
       "isStatic": false,
       "value": 0
     },
     "affected_rows": {
       "access": "public",
-      "type": "unknown",
-      "comment": false,
+      "type": "int",
+      "comment": "影响的行数",
       "isStatic": false,
       "value": 0
     },
     "insert_id": {
       "access": "public",
-      "type": "unknown",
-      "comment": false,
+      "type": "int",
+      "comment": "最后一个插入的记录id",
       "isStatic": false,
       "value": 0
     },
     "error": {
       "access": "public",
-      "type": "unknown",
-      "comment": false,
+      "type": "string",
+      "comment": "错误信息",
       "isStatic": false,
       "value": ""
     },
     "errno": {
       "access": "public",
-      "type": "unknown",
+      "type": "int",
       "comment": false,
       "isStatic": false,
       "value": 0
@@ -73,7 +73,7 @@
   "methods": {
     "__construct": {
       "access": "public",
-      "comment": false,
+      "comment": "初始化方法",
       "isStatic": false,
       "return": "",
       "example": "",
@@ -81,7 +81,7 @@
     },
     "__destruct": {
       "access": "public",
-      "comment": false,
+      "comment": "析构函数",
       "isStatic": false,
       "return": "",
       "example": "",
@@ -89,19 +89,36 @@
     },
     "connect": {
       "access": "public",
-      "comment": false,
+      "comment": "建立mysql连接",
       "isStatic": false,
-      "return": "",
+      "return": "bool",
       "example": "",
-      "parameters": []
+      "parameters": {
+        "server_config": {
+          "comment": "连接配置数据",
+          "type": "array",
+          "options": []
+        }
+      }
     },
     "query": {
       "access": "public",
-      "comment": false,
+      "comment": "执行mysql查询",
       "isStatic": false,
-      "return": "",
+      "return": "array",
       "example": "",
-      "parameters": []
+      "parameters": {
+        "sql": {
+          "comment": "sql语句",
+          "type": "string",
+          "options": []
+        },
+        "timeout": {
+          "comment": "超时时间",
+          "type": "double",
+          "options": []
+        }
+      }
     },
     "recv": {
       "access": "public",
@@ -129,7 +146,7 @@
     },
     "close": {
       "access": "public",
-      "comment": false,
+      "comment": "关闭连接",
       "isStatic": false,
       "return": "",
       "example": "",

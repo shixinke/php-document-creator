@@ -1,1 +1,51 @@
-{"object":{"name":"swoole_coroutine"},"comment":false,"namespace":"","consts":[],"properties":[],"methods":{"suspend":{"access":"public","comment":false,"isStatic":true,"return":"","example":"","parameters":[]},"resume":{"access":"public","comment":false,"isStatic":true,"return":"","example":"","parameters":[]},"getuid":{"access":"public","comment":false,"isStatic":true,"return":"","example":"","parameters":[]},"call_user_func":{"access":"public","comment":false,"isStatic":true,"return":"","example":"","parameters":[]},"call_user_func_array":{"access":"public","comment":false,"isStatic":true,"return":"","example":"","parameters":[]}}}
+{
+  "object": {
+    "name": "Swoole\\Coroutine"
+  },
+  "comment": "swoole协程类",
+  "namespace": "Swoole",
+  "consts": [],
+  "properties": [],
+  "methods": {
+    "suspend": {
+      "access": "public",
+      "comment": "挂起某个协程",
+      "isStatic": true,
+      "return": "",
+      "example": "",
+      "parameters": []
+    },
+    "resume": {
+      "access": "public",
+      "comment": "使协程从挂起变为运行",
+      "isStatic": true,
+      "return": "",
+      "example": "",
+      "parameters": []
+    },
+    "getuid": {
+      "access": "public",
+      "comment": "获取当前协程的ID",
+      "isStatic": true,
+      "return": "",
+      "example": "",
+      "parameters": []
+    },
+    "call_user_func": {
+      "access": "public",
+      "comment": false,
+      "isStatic": true,
+      "return": "",
+      "example": "",
+      "parameters": []
+    },
+    "call_user_func_array": {
+      "access": "public",
+      "comment": false,
+      "isStatic": true,
+      "return": "",
+      "example": "",
+      "parameters": []
+    }
+  }
+}

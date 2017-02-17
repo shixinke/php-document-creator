@@ -1,9 +1,9 @@
 {
   "object": {
-    "name": "Swoole\\Exception"
+    "name": "Swoole\\Coroutine\\MySQL\\Exception"
   },
-  "comment": "swoole异常类",
-  "namespace": "Swoole",
+  "comment": "mysql协程异常类",
+  "namespace": "Swoole\\Coroutine\\MySQL",
   "extends": "Exception",
   "consts": [],
   "properties": {

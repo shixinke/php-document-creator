@@ -1,1 +1,94 @@
-{"object":{"name":"swoole_atomic"},"comment":"","namespace":"","consts":[],"properties":[],"methods":{"__construct":{"access":"public","comment":"\u521d\u59cb\u5316\u4e00\u4e2a\u8ba1\u6570\u5668\u5bf9\u8c61","isStatic":false,"return":"","example":"","parameters":{"init":{"comment":"","type":{},"options":[],"value":0},"":{"type":"int","comment":"init\uff1a\u521d\u59cb\u5316\u503c"}}},"add":{"access":"public","comment":"\u589e\u52a0\u8ba1\u6570","isStatic":false,"return":"","example":"","parameters":{"add_value":{"comment":"","type":{},"options":[]},"":{"type":"int","comment":"add_value\uff1a\u589e\u52a0\u7684\u503c"}}},"sub":{"access":"public","comment":"\u51cf\u5c11\u8ba1\u6570","isStatic":false,"return":"","example":"","parameters":{"sub_value":{"comment":"","type":{},"options":[]},"":{"type":"int","comment":"sub_value\uff1a\u51cf\u5c11\u7684\u503c"}}},"get":{"access":"public","comment":"\u83b7\u53d6\u5f53\u524d\u8ba1\u6570\u7684\u503c","isStatic":false,"return":"","example":"","parameters":[]},"set":{"access":"public","comment":"\u5c06\u5f53\u524d\u503c\u8bbe\u7f6e\u4e3a\u6307\u5b9a\u7684\u6570\u5b57","isStatic":false,"return":"","example":"","parameters":{"value":{"comment":"","type":{},"options":[]},"":{"type":"int","comment":"value:\u8bbe\u7f6e\u7684\u503c"}}},"cmpset":{"access":"public","comment":"\u5982\u679c\u5f53\u524d\u8ba1\u6570\u5668\u7684\u503c\u4e0e\u6bd4\u8f83\u7684\u503c\u7684\u76f8\u7b49\uff0c\u5219\u8bbe\u7f6e\u5b83\u4e3a\u65b0\u7684\u503c","isStatic":false,"return":"","example":"","parameters":{"cmp_value":{"comment":"","type":{},"options":[]},"set_value":{"comment":"","type":{},"options":[]},"":{"type":"int","comment":"set_value\uff1a\u8bbe\u7f6e\u7684\u65b0\u7684\u503c"}}}}}
+{
+  "object": {
+    "name": "Swoole\\Atomic"
+  },
+  "comment": "原子计数操作类，可以方便整数的无锁原子增减",
+  "namespace": "Swoole",
+  "consts": [],
+  "properties": [],
+  "methods": {
+    "__construct": {
+      "access": "public",
+      "comment": "创建一个原子计数对象(只能操作32位整数，最大支持42亿.在swoole_server中使用原子计数器，必须在swoole_server->start前创建;在swoole_process中使用原子计数器，必须在swoole_process->start前创建)",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "value": {
+          "comment": "可以指定初始化的数值，默认为0",
+          "type": "int",
+          "options": []
+        }
+      }
+    },
+    "add": {
+      "access": "public",
+      "comment": "增加计数",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "add_value": {
+          "comment": "要增加的数值，默认为1(必须是正整数)",
+          "type": "int",
+          "options": []
+        }
+      }
+    },
+    "sub": {
+      "access": "public",
+      "comment": "减少计数",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "sub_value": {
+          "comment": "要减少的数值，默认为1",
+          "type": "int",
+          "options": []
+        }
+      }
+    },
+    "get": {
+      "access": "public",
+      "comment": "获取当前计数的值",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": []
+    },
+    "set": {
+      "access": "public",
+      "comment": "将当前值设置为指定的数字",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "value": {
+          "comment": "指定要设置的目标数值",
+          "type": "int",
+          "options": []
+        }
+      }
+    },
+    "cmpset": {
+      "access": "public",
+      "comment": "如果当前数值等于参数1，则将当前数值设置为参数2($cmp_value，$set_value 必须为小于42亿的整数)",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "cmp_value": {
+          "comment": "用于比较的值",
+          "type": "int",
+          "options": []
+        },
+        "new_value": {
+          "comment": "新设置的值",
+          "type": "int",
+          "options": []
+        }
+      }
+    }
+  }
+}
