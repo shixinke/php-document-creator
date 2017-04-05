@@ -10,11 +10,15 @@ phpDocumentCreator是一个用于生成PHP扩展文档的类库.因为PHP的扩�
     
 1、 通过从github上clone代码
 
-    git clone https://github.com/shixinke/php-document-creator
+
+    git clone https://github.com/shixinke/php-document-creator
+    
 
 2、 通过composer安装
+
   
     composer require shixinke/php-document-creator
+    
     
 ## 基本用法
 
