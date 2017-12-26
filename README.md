@@ -25,7 +25,7 @@ phpDocumentCreator是一个用于生成PHP扩展文档的类库.因为PHP的扩�
     
 ### create php document 生成PHP文档
 
-   usage : php creator.php <extensionName> create
+   usage : php creator.php extensionName create
     
     php creator.php swoole create
  
