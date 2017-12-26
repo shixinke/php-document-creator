@@ -28,15 +28,25 @@ class Transform
      */
     public function __construct($fileName, $prefix = '')
     {
-        if (!is_file($fileName)) {
+        if (!file_exists($fileName)) {
             throw new Exception('the file '.$fileName.' does not exists!');
             return false;
         }
         try {
-            require_once($fileName);
-            if ($prefix == '') {
-                $prefix = basename($fileName, '.php');
+            if (is_dir($fileName)) {
+                $files = scandir($fileName);
+                foreach($files as $file) {
+                    if ($file != '.' && $file != '..') {
+                        require_once rtrim($fileName, '/').DS.$file;
+                    }
+                }
+            } else {
+                require_once($fileName);
+                if ($prefix == '') {
+                    $prefix = basename($fileName, '.php');
+                }
             }
+
             $this->prefix = strtolower($prefix);
         } catch(Exception $e) {
             echo $e->getMessage();

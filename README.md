@@ -16,43 +16,13 @@ phpDocumentCreator是一个用于生成PHP扩展文档的类库.因为PHP的扩�
     
 ##usage 基本用法
 
-
-There are some  examples in the tests folder.(tests/docTest.php)
-
-### create document dictionary 创建字典
-
-    require_once '../Autoloader.php';
-    //Redis为扩展的名称
-    $doc = new \documentCreator\Document('Redis');
-    $doc->createDict();
-    
-    cd tests
-    php docTest.php
     
 ### create php document 生成PHP文档
+
+   usage : php creator.php <extensionName> create
     
-    require_once '../Autoloader.php';
-    //Redis为扩展的名称
-    $doc = new \documentCreator\Document('Redis');
-    $doc->create();
-    
-    cd tests
-    php docTest.php
-    
-### create php document from other php source code 通过PHP源码生成文档
-    
-    require_once '../Autoloader.php';
-    //Redis为扩展的名称
-    $doc = new \documentCreator\Document('Redis');
-    //./notes/redis.php为带注释的源码文件
-    $transform = new \documentCreator\Transform('./notes/redis.php');
-    //通过注释的文件更新字典文件
-    $doc->updateDict('redis', $transform->info());
-    //生成输出文档
-    $doc->create();
-    
-    cd tests
-    php transformTest.php
+    php creator.php swoole create
+ 
     
 ### Other 其他说明
     

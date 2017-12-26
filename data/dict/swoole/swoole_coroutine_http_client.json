@@ -1,0 +1,322 @@
+{
+  "object": {
+    "name": "Swoole\\Coroutine\\Http\\Client"
+  },
+  "comment": "http协程客户端",
+  "namespace": "Swoole\\Coroutine\\Http",
+  "consts": [],
+  "properties": {
+    "type": {
+      "access": "public",
+      "type": "int",
+      "comment": "socket类型",
+      "isStatic": false,
+      "value": 0
+    },
+    "errCode": {
+      "access": "public",
+      "type": "int",
+      "comment": "错误码",
+      "isStatic": false,
+      "value": 0
+    },
+    "statusCode": {
+      "access": "public",
+      "type": "int",
+      "comment": "状态码",
+      "isStatic": false,
+      "value": 0
+    },
+    "host": {
+      "access": "public",
+      "type": "string",
+      "comment": "请求的服务器地址",
+      "isStatic": false
+    },
+    "port": {
+      "access": "public",
+      "type": "int",
+      "comment": "请求的服务器端口",
+      "isStatic": false,
+      "value": 0
+    },
+    "requestMethod": {
+      "access": "public",
+      "type": "string",
+      "comment": "请求方式",
+      "isStatic": false
+    },
+    "requestHeaders": {
+      "access": "public",
+      "type": "array",
+      "comment": "请求头",
+      "isStatic": false
+    },
+    "requestBody": {
+      "access": "public",
+      "type": "string",
+      "comment": "请求体",
+      "isStatic": false
+    },
+    "uploadFiles": {
+      "access": "public",
+      "type": "array",
+      "comment": "上传的文件",
+      "isStatic": false
+    },
+    "headers": {
+      "access": "public",
+      "type": "array",
+      "comment": "请求响应头",
+      "isStatic": false
+    },
+    "cookies": {
+      "access": "public",
+      "type": "array",
+      "comment": "请求响应cookie",
+      "isStatic": false
+    },
+    "body": {
+      "access": "public",
+      "type": "string",
+      "comment": "请求响应后服务器端返回的内容",
+      "isStatic": false
+    }
+  },
+  "methods": {
+    "__construct": {
+      "access": "public",
+      "comment": "客户端初始化函数",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": []
+    },
+    "__destruct": {
+      "access": "public",
+      "comment": "析构函数",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": []
+    },
+    "set": {
+      "access": "public",
+      "comment": "设置选项",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "settings": {
+          "comment": "配置选项",
+          "type": "array",
+          "options": []
+        }
+      }
+    },
+    "setMethod": {
+      "access": "public",
+      "comment": "设置请求方式",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "method": {
+          "comment": "请求方式",
+          "type": "string",
+          "options": []
+        }
+      }
+    },
+    "setHeaders": {
+      "access": "public",
+      "comment": "设置请求头",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "headers": {
+          "comment": "请求头",
+          "type": "array",
+          "options": []
+        }
+      }
+    },
+    "setCookies": {
+      "access": "public",
+      "comment": "设置cookie",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "cookies": {
+          "comment": "cookie数组",
+          "type": "array",
+          "options": []
+        }
+      }
+    },
+    "setData": {
+      "access": "public",
+      "comment": "设置Http请求的包体",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "data": {
+          "comment": "请求体内容",
+          "type": "string",
+          "options": []
+        }
+      }
+    },
+    "execute": {
+      "access": "public",
+      "comment": "更底层的Http请求方法，需要代码中调用setMethod和setData等接口设置请求的方法和数据",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "path": {
+          "comment": "请求地址",
+          "type": "string",
+          "options": []
+        }
+      }
+    },
+    "get": {
+      "access": "public",
+      "comment": "发起GET请求",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "path": {
+          "comment": "请求路径",
+          "type": "string",
+          "options": []
+        }
+      }
+    },
+    "post": {
+      "access": "public",
+      "comment": "发送POST请求",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "path": {
+          "comment": "请求地址",
+          "type": "string",
+          "options": []
+        },
+        "data": {
+          "comment": "求的包体数据，如果$data为数组底层自动会打包为x-www-form-urlencoded格式的POST内容，并设置Content-Type为application/x-www-form-urlencoded",
+          "type": "mixed",
+          "options": []
+        }
+      }
+    },
+    "addFile": {
+      "access": "public",
+      "comment": "添加POST文件",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "path": {
+          "comment": "文件的路径，必选参数，不能为空文件或者不存在的文件",
+          "type": "string",
+          "options": []
+        },
+        "name": {
+          "comment": "表单的名称，必选参数，FILES参数中的key",
+          "type": "string",
+          "options": []
+        },
+        "type": {
+          "comment": "文件的MIME格式，可选参数，底层会根据文件的扩展名自动推断",
+          "type": "string",
+          "options": []
+        },
+        "filename": {
+          "comment": "文件名称",
+          "type": "string",
+          "options": []
+        },
+        "offset": {
+          "comment": "上传文件的偏移量，可以指定从文件的中间部分开始传输数据。此特性可用于支持断点续传。",
+          "type": "int",
+          "options": []
+        },
+        "length": {
+          "comment": "发送数据的尺寸，默认为整个文件的尺寸",
+          "type": "int",
+          "options": []
+        }
+      }
+    },
+    "isConnected": {
+      "access": "public",
+      "comment": "连接是否成功",
+      "isStatic": false,
+      "return": "boolean",
+      "example": "",
+      "parameters": []
+    },
+    "close": {
+      "access": "public",
+      "comment": "关闭连接",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": []
+    },
+    "setDefer": {
+      "access": "public",
+      "comment": "设置是否延迟",
+      "isStatic": false,
+      "return": "boolean",
+      "example": "",
+      "parameters": {
+        "defer": {
+          "comment": "为true时，表明该Client要延迟收包，为false时，表明该Client非延迟收包，默认值为true",
+          "type": "boolean",
+          "options": []
+        }
+      }
+    },
+    "getDefer": {
+      "access": "public",
+      "comment": "返回当前设置的defer",
+      "isStatic": false,
+      "return": "boolean",
+      "example": "",
+      "parameters": []
+    },
+    "recv": {
+      "access": "public",
+      "comment": "用于从服务器端接收数据。底层会自动yield，等待数据接收完成后自动切换到当前协程",
+      "isStatic": false,
+      "return": "string",
+      "example": "",
+      "parameters": []
+    },
+    "__sleep": {
+      "access": "public",
+      "comment": "序列化函数调用的魔术方法(在PHP进行序列化时，serialize() 检查类中是否有 __sleep() ,如果有，则该函数将在任何序列化之前运行。该函数必须返回一个需要进行序列化保存的成员属性数组，并且只序列化该函数返回的这些成员属性. 该函数有两个作用: 第一. 在序列化之前,关闭对象可能具有的任何数据库连接等. 第二. 指定对象中需要被序列化的成员属性,如果某个属性比较大而不需要储存下来,可以不把它写进__sleep要返回的数组中,这样该属性就不会被序列化)",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": []
+    },
+    "__wakeup": {
+      "access": "public",
+      "comment": "反序列化函数调用的魔术方法(unserialize() 从字节流中创建了一个对象之后,马上检查是否具有__wakeup 的函数的存在。如果存在，__wakeup 立刻被调用。使用 __wakeup 的目的是重建在序列化中可能丢失的任何数据库连接以及处理其它重新初始化的任务)",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": []
+    }
+  }
+}

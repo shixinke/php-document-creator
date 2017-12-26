@@ -9,13 +9,17 @@ use phpDocumentCreator\Tool;
 class Document
 {
     private $extension;
-    const DICT_PATH = './dict/';
-    const NOTES_PATH = './notes/';
-    const DOC_PATH = './output/';
+    const DICT_PATH = DICT_PATH;
+    const NOTES_PATH = NOTE_PATH;
+    const DOC_PATH = OUTPUT_PATH;
     private static $_dicts = array();
     private static $_exports = array();
     public function __construct($extension)
     {
+        $finalDictPath = self::DICT_PATH.DS.$extension;
+        if (!file_exists($finalDictPath)) {
+            mkdir($finalDictPath);
+        }
         if (!is_array($extension)) {
             $this->extension[] = $extension;
         } else {
@@ -127,18 +131,18 @@ class Document
         $res = true;
         //创建目录
         Tool::createDir(self::DOC_PATH, ucfirst($ext));
-        $baseDir = self::DOC_PATH.ucfirst($ext).'/';
+        $baseDir = self::DOC_PATH.DS.ucfirst($ext).'/';
         if (!self::inArray($ext, $classes) ) {
             if (!empty($data['classes'])) {
                 $tmp = $data['classes'];
                 $tmp = array_pop($tmp);
                 if ($tmp['namespace'] != '') {
-                    $res = file_put_contents($baseDir.$ext.'.namespace.php', $content);
+                    $res = self::writeFile($baseDir.$ext.'.namespace.php', $content);
                 } else {
-                    $res = file_put_contents($baseDir.$ext.'.php', $content);
+                    $res = self::writeFile($baseDir.$ext.'.php', $content);
                 }
             } else {
-                $res = file_put_contents($baseDir.$ext.'.php', $content);
+                $res = self::writeFile($baseDir.$ext.'.php', $content);
             }
         }
 
@@ -300,7 +304,7 @@ class Document
 
 
                 $fileName = rtrim($fullDir, '/').'/'.$class.'.php';
-                $res = file_put_contents($fileName, $content);
+                $res = self::writeFile($fileName, $content);
             }
         }
 
@@ -329,23 +333,22 @@ class Document
         }
     }
 
-    private function __createDict($ext, $data)
+    private function __createDict($ext, $fileName, $data)
     {
-        $content = json_encode($data);
-        return file_put_contents(self::DICT_PATH.strtolower($ext).'.json', $content);
+        return self::writeFile(self::DICT_PATH.DS.strtolower($ext).DS.$fileName.'.json', $data);
     }
 
     public function updateDict($ext, $data)
     {
         $tmp = $data;
         unset($tmp['classes']);
-        $this->__createDict($ext, $tmp);
+        $this->__createDict($ext, $ext, $tmp);
         if (!isset($data['classes'])) {
             return;
         }
         foreach($data['classes'] as $k=>$v) {
             $fileName = strtolower(str_replace("\\", "_", $k));
-            $this->__createDict($fileName, $v);
+            $this->__createDict($ext, $fileName, $v);
         }
     }
 
@@ -353,13 +356,11 @@ class Document
     {
         $extName = strtolower($extName);
         if (empty(self::$_dicts) || !isset(self::$_dicts[$extName])) {
-            $files = scandir(self::DICT_PATH);
+            $files = scandir(self::DICT_PATH.DS.$extName);
             $arr = array();
             foreach($files as $file) {
-                if (stripos($file, strtolower($extName)) === 0) {
-                    $content = file_get_contents(self::DICT_PATH.$file);
-                    $arr[str_replace('.json', '', $file)] = json_decode($content, true);
-                }
+                $content = file_get_contents(self::DICT_PATH.DS.$extName.DS.$file);
+                $arr[str_replace('.json', '', $file)] = json_decode($content, true);
             }
             self::$_dicts[$extName] = $arr;
         }
@@ -392,38 +393,15 @@ class Document
         if (isset($dict[$extName]['comment']) && ($dict[$extName]['comment'] != '')) {
             $exportData['comment'] = $dict[$extName]['comment'];
         }
-        $exportConsts = array_keys($exportData['constants']);
-        foreach($dict[$extName]['constants'] as $k=>$v) {
-            if (!in_array($k, $exportConsts)) {
-                unset($dict[$extName]['constants'][$k]);
-            }
-        }
         foreach($exportData['constants'] as $k=>$v) {
             if (isset($dict[$extName]['constants'][$k])) {
-                $exportData['constants'][$k]['comment'] = $dict[$extName]['constants'][$k]['comment'];
-            } else {
-                $dict[$extName]['constants'][$k] = $exportData['constants'][$k];
-            }
-        }
-        $exportInis = array_keys($exportData['ini']);
-        foreach($dict[$extName]['ini'] as $k=>$v) {
-            if (!in_array($k, $exportInis)) {
-                unset($dict[$extName]['ini'][$k]);
+                $exportData['constants'][$k] = $dict[$extName]['constants'][$k];
             }
         }
         foreach($exportData['ini'] as $k=>$v) {
             if (isset($dict[$extName]['ini'][$k])) {
                 $exportData['ini'][$k]['comment'] = $dict[$extName]['ini'][$k]['comment'];
                 $exportData['ini'][$k]['options'] = $dict[$extName]['ini'][$k]['options'];
-            } else {
-                $dict[$extName]['ini'][$k] = $exportData['ini'][$k];
-            }
-        }
-
-        $exportFuncs = array_keys($exportData['functions']);
-        foreach($dict[$extName]['functions'] as $k=>$v) {
-            if (!in_array($k, $exportFuncs)) {
-                unset($dict[$extName]['functions'][$k]);
             }
         }
 
@@ -437,16 +415,6 @@ class Document
                 } else {
                     $dict[$extName]['functions'][$k]['parameters'] = $exportData['functions'][$k]['parameters'];
                 }
-            } else {
-                $dict[$extName]['functions'][$k] = $exportData['functions'][$k];
-            }
-        }
-
-        $dict[$extName]['classes'] = isset($dict[$extName]['classes']) ? $dict[$extName]['classes'] : array();
-        $exportClasses = array_keys($exportData['classes']);
-        foreach($dict[$extName]['classes'] as $k=>$v) {
-            if (!in_array($k, $exportClasses)) {
-                unset($dict[$extName]['classes'][$k]);
             }
         }
 
@@ -498,7 +466,14 @@ class Document
                 }
             }
         }
-        $this->updateDict($extName, $dict[$extName]);
+        $this->updateDict($extName, $exportData);
         return $exportData;
+    }
+
+    public static function writeFile($fileName, $content) {
+        if (!is_string($content)) {
+            $content = json_encode($content, JSON_UNESCAPED_UNICODE);
+        }
+        return file_put_contents($fileName, $content);
     }
 }
