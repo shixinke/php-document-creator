@@ -41,15 +41,6 @@ phpDocumentCreator是一个用于生成PHP扩展文档的类库.因为PHP的扩�
     cd tests
     php docTest.php
     
-### 生成PHP文档
-    
-    require_once '../Autoloader.php';
-    //Redis为扩展的名称
-    $doc = new \documentCreator\Document('Redis');
-    $doc->create();
-    
-    cd tests
-    php docTest.php
      
 ### 其他说明
     
