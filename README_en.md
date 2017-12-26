@@ -16,43 +16,12 @@ phpDocumentCreator is a PHP library for generating PHP Extension documents.Becau
     
 ## usage
 
-
-There are some  examples in the tests folder.(tests/docTest.php)
-
-### create document dictionary 
-
-    require_once '../Autoloader.php';
-    //Redis is the extension name
-    $doc = new \documentCreator\Document('Redis');
-    $doc->createDict();
-    
-    cd tests
-    php docTest.php
     
 ### create php document 
     
-    require_once '../Autoloader.php';
-    $doc = new \documentCreator\Document('Redis');
-    $doc->create();
+    php creator.php extensionName create
     
-    cd tests
-    php docTest.php
-    
-### create php document from other php source code 
-    
-    require_once '../Autoloader.php';
-    
-    $doc = new \documentCreator\Document('Redis');
-    
-    $transform = new \documentCreator\Transform('./notes/redis.php');
-    
-    $doc->updateDict('redis', $transform->info());
-    
-    $doc->create();
-    
-    cd tests
-    php transformTest.php
-    
+    for example: create php redis extension: php creator.php redis create
 ### Other 
     
 ## Author
