@@ -2,102 +2,102 @@
 /**
 * Swoole自动补全类(基于最新的2.0.10版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2017/12/25
+* @modified 2017/12/26
 */
 
 /**
-*
+*http协程客户端
 */
 namespace Swoole\Coroutine\Http;
 class Client
 {
     /**
-     * @var unknown $type 
-     * 
+     * @var int $type 
+     * socket类型
      * @access public
      */
     public $type    =    0;
 
     /**
-     * @var unknown $errCode 
-     * 
+     * @var int $errCode 
+     * 错误码
      * @access public
      */
     public $errCode    =    0;
 
     /**
-     * @var unknown $statusCode 
-     * 
+     * @var int $statusCode 
+     * 状态码
      * @access public
      */
     public $statusCode    =    0;
 
     /**
-     * @var unknown $host 
-     * 
+     * @var string $host 
+     * 请求的服务器地址
      * @access public
      */
     public $host;
 
     /**
-     * @var unknown $port 
-     * 
+     * @var int $port 
+     * 请求的服务器端口
      * @access public
      */
     public $port    =    0;
 
     /**
-     * @var unknown $requestMethod 
-     * 
+     * @var string $requestMethod 
+     * 请求方式
      * @access public
      */
     public $requestMethod;
 
     /**
-     * @var unknown $requestHeaders 
-     * 
+     * @var array $requestHeaders 
+     * 请求头
      * @access public
      */
     public $requestHeaders;
 
     /**
-     * @var unknown $requestBody 
-     * 
+     * @var string $requestBody 
+     * 请求体
      * @access public
      */
     public $requestBody;
 
     /**
-     * @var unknown $uploadFiles 
-     * 
+     * @var array $uploadFiles 
+     * 上传的文件
      * @access public
      */
     public $uploadFiles;
 
     /**
-     * @var unknown $headers 
-     * 
+     * @var array $headers 
+     * 请求响应头
      * @access public
      */
     public $headers;
 
     /**
-     * @var unknown $cookies 
-     * 
+     * @var array $cookies 
+     * 请求响应cookie
      * @access public
      */
     public $cookies;
 
     /**
-     * @var unknown $body 
-     * 
+     * @var string $body 
+     * 请求响应后服务器端返回的内容
      * @access public
      */
     public $body;
 
     /**
      * 
-     *
+     *客户端初始化函数
      * @example 
      * @return 
      */
@@ -107,7 +107,7 @@ class Client
 
     /**
      * 
-     *
+     *析构函数
      * @example 
      * @return 
      */
@@ -117,7 +117,7 @@ class Client
 
     /**
      * 
-     *
+     *设置选项
      * @example 
      * @return 
      */
@@ -127,7 +127,7 @@ class Client
 
     /**
      * 
-     *
+     *设置请求方式
      * @example 
      * @return 
      */
@@ -137,7 +137,7 @@ class Client
 
     /**
      * 
-     *
+     *设置请求头
      * @example 
      * @return 
      */
@@ -147,7 +147,7 @@ class Client
 
     /**
      * 
-     *
+     *设置cookie
      * @example 
      * @return 
      */
@@ -157,7 +157,7 @@ class Client
 
     /**
      * 
-     *
+     *设置Http请求的包体
      * @example 
      * @return 
      */
@@ -167,7 +167,7 @@ class Client
 
     /**
      * 
-     *
+     *更底层的Http请求方法，需要代码中调用setMethod和setData等接口设置请求的方法和数据
      * @example 
      * @return 
      */
@@ -177,7 +177,7 @@ class Client
 
     /**
      * 
-     *
+     *发起GET请求
      * @example 
      * @return 
      */
@@ -187,7 +187,7 @@ class Client
 
     /**
      * 
-     *
+     *发送POST请求
      * @example 
      * @return 
      */
@@ -197,7 +197,7 @@ class Client
 
     /**
      * 
-     *
+     *添加POST文件
      * @example 
      * @return 
      */
@@ -207,9 +207,9 @@ class Client
 
     /**
      * 
-     *
+     *连接是否成功
      * @example 
-     * @return 
+     * @return boolean
      */
     public function isConnected()
     {
@@ -217,7 +217,7 @@ class Client
 
     /**
      * 
-     *
+     *关闭连接
      * @example 
      * @return 
      */
@@ -227,9 +227,9 @@ class Client
 
     /**
      * 
-     *
+     *设置是否延迟
      * @example 
-     * @return 
+     * @return boolean
      */
     public function setDefer()
     {
@@ -237,9 +237,9 @@ class Client
 
     /**
      * 
-     *
+     *返回当前设置的defer
      * @example 
-     * @return 
+     * @return boolean
      */
     public function getDefer()
     {
@@ -247,9 +247,9 @@ class Client
 
     /**
      * 
-     *
+     *用于从服务器端接收数据。底层会自动yield，等待数据接收完成后自动切换到当前协程
      * @example 
-     * @return 
+     * @return string
      */
     public function recv()
     {
@@ -257,7 +257,7 @@ class Client
 
     /**
      * 
-     *
+     *序列化函数调用的魔术方法(在PHP进行序列化时，serialize() 检查类中是否有 __sleep() ,如果有，则该函数将在任何序列化之前运行。该函数必须返回一个需要进行序列化保存的成员属性数组，并且只序列化该函数返回的这些成员属性. 该函数有两个作用: 第一. 在序列化之前,关闭对象可能具有的任何数据库连接等. 第二. 指定对象中需要被序列化的成员属性,如果某个属性比较大而不需要储存下来,可以不把它写进__sleep要返回的数组中,这样该属性就不会被序列化)
      * @example 
      * @return 
      */
@@ -267,7 +267,7 @@ class Client
 
     /**
      * 
-     *
+     *反序列化函数调用的魔术方法(unserialize() 从字节流中创建了一个对象之后,马上检查是否具有__wakeup 的函数的存在。如果存在，__wakeup 立刻被调用。使用 __wakeup 的目的是重建在序列化中可能丢失的任何数据库连接以及处理其它重新初始化的任务)
      * @example 
      * @return 
      */

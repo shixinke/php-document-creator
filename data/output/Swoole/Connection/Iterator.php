@@ -2,7 +2,7 @@
 /**
 * Swoole自动补全类(基于最新的2.0.10版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2017/12/25
+* @modified 2017/12/26
 */
 
 /**
@@ -13,7 +13,7 @@ class Iterator
 {
     /**
      * 
-     *
+     *返回到连接迭代器的第一个元素
      * @example 
      * @return 
      */
@@ -23,7 +23,7 @@ class Iterator
 
     /**
      * 
-     *
+     *向前移动到下一个元素
      * @example 
      * @return 
      */
@@ -33,7 +33,7 @@ class Iterator
 
     /**
      * 
-     *
+     *返回当前元素
      * @example 
      * @return 
      */
@@ -43,7 +43,7 @@ class Iterator
 
     /**
      * 
-     *
+     *返回当前元素的键
      * @example 
      * @return 
      */
@@ -53,7 +53,7 @@ class Iterator
 
     /**
      * 
-     *
+     *检查当前位置是否有效
      * @example 
      * @return 
      */
@@ -63,9 +63,9 @@ class Iterator
 
     /**
      * 
-     *
+     *计算迭代器中元素的个数
      * @example 
-     * @return 
+     * @return int
      */
     public function count()
     {
@@ -73,9 +73,9 @@ class Iterator
 
     /**
      * 
-     *
+     *检查一个偏移位置是否存在
      * @example 
-     * @param  mixed $fd 
+     * @param int $fd 连接句柄
      * @return 
      */
     public function offsetExists($fd)
@@ -84,9 +84,9 @@ class Iterator
 
     /**
      * 
-     *
+     *取一个偏移位置的值
      * @example 
-     * @param  mixed $fd 
+     * @param int $fd 连接句柄
      * @return 
      */
     public function offsetGet($fd)
@@ -95,10 +95,10 @@ class Iterator
 
     /**
      * 
-     *
+     *设置一个偏移位置的值(来自ArrayAccess接口)
      * @example 
-     * @param  mixed $fd 
-     * @param  mixed $value 
+     * @param int $fd 连接句柄
+     * @param mixed $value 需要设置的值
      * @return 
      */
     public function offsetSet($fd, $value)
@@ -107,9 +107,9 @@ class Iterator
 
     /**
      * 
-     *
+     *复位一个偏移位置的值
      * @example 
-     * @param  mixed $fd 
+     * @param int $fd 连接句柄
      * @return 
      */
     public function offsetUnset($fd)

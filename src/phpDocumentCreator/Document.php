@@ -98,17 +98,15 @@ class Document
                     if (isset($paramValue['value'])) {
                         $params .= " = ".$paramValue['value'];
                     }
-                    if (isset($dict['methods'][$m]['parameters'][$param])) {
-                        if (isset($paramValue['comment'])) {
-                            $content .= ':'.$paramValue['comment']." ";
+                    if (isset($paramValue['comment'])) {
+                        $content .= ':'.$paramValue['comment']." ";
+                    }
+                    if (isset($paramValue['options']) && !empty($paramValue['options'])) {
+                        $content .= '[备选值：';
+                        foreach($paramValue['options'] as $ok=>$ov) {
+                            $content .= $ov['value'].'('.$ov['comment'].');';
                         }
-                        if (isset($paramValue['options']) && !empty($paramValue['options'])) {
-                            $content .= '[备选值：';
-                            foreach($paramValue['options'] as $ok=>$ov) {
-                                $content .= $ov['value'].'('.$ov['comment'].');';
-                            }
-                            $content .= ']';
-                        }
+                        $content .= ']';
                     }
                     $params .= ', ';
                     $content .= "\n";
@@ -359,8 +357,18 @@ class Document
             $files = scandir(self::DICT_PATH.DS.$extName);
             $arr = array();
             foreach($files as $file) {
+                if ($file == '.' || $file == '..') {
+                    continue;
+                }
                 $content = file_get_contents(self::DICT_PATH.DS.$extName.DS.$file);
-                $arr[str_replace('.json', '', $file)] = json_decode($content, true);
+                if (!$content ) {
+                    echo "the file ".$file."not found\n";
+                }
+                $tmp = json_decode($content, true);
+                if (!$tmp ) {
+                    echo "the file ".$file." is not a legal json file\n";
+                }
+                $arr[str_replace('.json', '', $file)] = $tmp;
             }
             self::$_dicts[$extName] = $arr;
         }
@@ -412,8 +420,6 @@ class Document
                 $exportData['functions'][$k]['example'] = $dict[$extName]['functions'][$k]['example'];
                 if (isset($dict[$extName]['functions'][$k]['parameters']) && !empty($dict[$extName]['functions'][$k]['parameters'])) {
                     $exportData['functions'][$k]['parameters'] = $dict[$extName]['functions'][$k]['parameters'];
-                } else {
-                    $dict[$extName]['functions'][$k]['parameters'] = $exportData['functions'][$k]['parameters'];
                 }
             }
         }
@@ -453,14 +459,8 @@ class Document
                 }
                 if (isset($val['parameters']) && !empty($val['parameters'])) {
                     foreach($val['parameters'] as $pk=>$pv) {
-                        if (isset($dict[$fileName]['methods'][$key]['parameters'][$pk]['comment']) && ( $dict[$fileName]['methods'][$key]['parameters'][$pk]['comment'] != '')) {
-                            $exportData['classes'][$k]['methods'][$key]['parameters'][$pk]['comment'] = $dict[$fileName]['methods'][$key]['comment'];
-                        }
-                        if (isset($dict[$fileName]['methods'][$key]['parameters'][$pk]['type']) && ( $dict[$fileName]['methods'][$key]['parameters'][$pk]['type'] != '')) {
-                            $exportData['classes'][$k]['methods'][$key]['parameters'][$pk]['type'] = $dict[$fileName]['methods'][$key]['parameters'][$pk]['type'];
-                        }
-                        if (isset($dict[$fileName]['methods'][$key]['parameters'][$pk]['options']) && !empty($dict[$fileName]['methods'][$key]['parameters'][$pk]['options'])) {
-                            $exportData['classes'][$k]['methods'][$key]['parameters'][$pk]['options'] = $dict[$fileName]['methods'][$key]['parameters'][$pk]['options'];
+                        if (isset($dict[$fileName]['methods'][$key]['parameters'][$pk])) {
+                            $exportData['classes'][$k]['methods'][$key]['parameters'][$pk] = $dict[$fileName]['methods'][$key]['parameters'][$pk];
                         }
                     }
                 }
