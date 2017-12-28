@@ -1,0 +1,321 @@
+{
+  "object": {
+    "name": "RedisArray"
+  },
+  "comment": "与key相关的redis数组",
+  "namespace": "",
+  "consts": [],
+  "properties": [],
+  "methods": {
+    "__construct": {
+      "access": "public",
+      "comment": "创建一个Redis数组",
+      "isStatic": false,
+      "return": "",
+      "example": "$ra = new RedisArray(array(\"host1\", \"host2:63792\", \"host2:6380\")); //这里的host1/host2在php.ini中定义的",
+      "parameters": {
+        "hosts":{
+          "comment": "redis节点数组",
+          "type": "array",
+          "options": []
+        }
+      }
+    },
+    "__call": {
+      "access": "public",
+      "comment": "方法不存在时调用的魔术方法",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "function_name": {
+          "comment": "方法名",
+          "type": "string",
+          "options": []
+        },
+        "arguments": {
+          "comment": "参数",
+          "type": "mixed",
+          "options": []
+        }
+      }
+    },
+    "_hosts": {
+      "access": "public",
+      "comment": "返回主机列表",
+      "isStatic": false,
+      "return": "array",
+      "example": "",
+      "parameters": []
+    },
+    "_target": {
+      "access": "public",
+      "comment": "返回指定键分布的节点host",
+      "isStatic": false,
+      "return": "string",
+      "example": "",
+      "parameters": {
+        "key": {
+          "comment": "键名",
+          "type": "string",
+          "options": []
+        }
+      }
+    },
+    "_instance": {
+      "access": "public",
+      "comment": "返回连接到指定host的实例",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "host": {
+          "comment": "主机",
+          "type": "string",
+          "options": []
+        }
+      }
+    },
+    "_function": {
+      "access": "public",
+      "comment": "返回键分布使用的函数",
+      "isStatic": false,
+      "return": "string",
+      "example": "",
+      "parameters": []
+    },
+    "_distributor": {
+      "access": "public",
+      "comment": "",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": []
+    },
+    "_rehash": {
+      "access": "public",
+      "comment": "重新对键进行hash分布",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": []
+    },
+    "select": {
+      "access": "public",
+      "comment": "切换数据库",
+      "isStatic": false,
+      "return": "bool",
+      "example": "\n<pre>\n$redis->select(0);       \/\/ switch to DB 0\n$redis->set('x', '42');  \/\/ write 42 to x\n$redis->move('x', 1);    \/\/ move to DB 1\n$redis->select(1);       \/\/ switch to DB 1\n$redis->get('x');        \/\/ will return 42\n<\/pre>",
+      "parameters": {
+        "dbIndex":{
+          "comment": "数据库编号",
+          "type": "int",
+          "options": []
+        }
+      }
+    },
+    "info": {
+      "access": "public",
+      "comment": "获取Redis服务器的信息和统计数据",
+      "isStatic": false,
+      "return": "array",
+      "example": "\n<pre>\n$redis->info();\nor\n$redis->info(\"COMMANDSTATS\"); \/\/Information on the commands that have been run (>=2.6 only)\n$redis->info(\"CPU\"); \/\/ just CPU information from Redis INFO\n<\/pre>",
+      "parameters": []
+    },
+    "ping": {
+      "access": "public",
+      "comment": "检查当前redis连接状态(成功时返回PONG)",
+      "isStatic": false,
+      "return": "string",
+      "example": "",
+      "parameters":[]
+    },
+    "flushDB": {
+      "access": "public",
+      "comment": "删除当前数据库的所有键",
+      "isStatic": false,
+      "return": "bool",
+      "example": "$redis->flushDB();",
+      "parameters": []
+    },
+    "flushAll": {
+      "access": "public",
+      "comment": "删除当前实例的所有键",
+      "isStatic": false,
+      "return": "bool",
+      "example": "$redis->flushAll();",
+      "parameters": []
+    },
+    "mget": {
+      "access": "public",
+      "comment": "批量获取键名",
+      "isStatic": false,
+      "return": "",
+      "example": "\n<pre>\n$redis->delete('x', 'y', 'z', 'h');\t\/\/ remove x y z\n$redis->mset(array('x' => 'a', 'y' => 'b', 'z' => 'c'));\n$redis->hset('h', 'field', 'value');\nvar_dump($redis->mget(array('x', 'y', 'z', 'h')));\n\/\/ Output:\n\/\/ array(3) {\n\/\/ [0]=>\n\/\/ string(1) \"a\"\n\/\/ [1]=>\n\/\/ string(1) \"b\"\n\/\/ [2]=>\n\/\/ string(1) \"c\"\n\/\/ [3]=>\n\/\/ bool(false)\n\/\/ }\n<\/pre>",
+      "parameters": {
+        "keys": {
+          "comment": "键名数组",
+          "type": "array",
+          "options": []
+        }
+      }
+    },
+    "mset": {
+      "access": "public",
+      "comment": "批量设置值",
+      "isStatic": false,
+      "return": "bool",
+      "example": "\n<pre>\n$redis->mset(array('key0' => 'value0', 'key1' => 'value1'));\nvar_dump($redis->get('key0'));\nvar_dump($redis->get('key1'));\n\/\/ Output:\n\/\/ string(6) \"value0\"\n\/\/ string(6) \"value1\"\n<\/pre>",
+      "parameters": {
+        "values":{
+          "comment": "要设置的键值对",
+          "type": "array",
+          "options": []
+        }
+      }
+    },
+    "del": {
+      "access": "public",
+      "comment": "删除一个或多个键",
+      "isStatic": false,
+      "return": "int",
+      "example": "$redis->delete('key1', 'key2'); \n$redis->delete(array('key3', 'key4')); ",
+      "parameters": {
+        "keys": {
+          "comment": "键名",
+          "type": "array|string",
+          "options": []
+        }
+      }
+    },
+    "getOption": {
+      "access": "public",
+      "comment": "获取客户端选项",
+      "isStatic": false,
+      "return": "int",
+      "example": "\n\/\/ return Redis::SERIALIZER_NONE, Redis::SERIALIZER_PHP, or Redis::SERIALIZER_IGBINARY.\n$redis->getOption(Redis::OPT_SERIALIZER);",
+      "parameters": {
+        "optionName": {
+          "comment": "选项名",
+          "type": "string",
+          "options": []
+        }
+      }
+    },
+    "setOption": {
+      "access": "public",
+      "comment": "设置客户端选项.",
+      "isStatic": false,
+      "return": "bool:",
+      "example": "\n<pre>\n$redis->setOption(Redis::OPT_SERIALIZER, Redis::SERIALIZER_NONE);        \/\/ don't serialize data\n$redis->setOption(Redis::OPT_SERIALIZER, Redis::SERIALIZER_PHP);         \/\/ use built-in serialize\/unserialize\n$redis->setOption(Redis::OPT_SERIALIZER, Redis::SERIALIZER_IGBINARY);    \/\/ use igBinary serialize\/unserialize\n$redis->setOption(Redis::OPT_PREFIX, 'myAppName:');                      \/\/ use custom prefix on all keys\n<\/pre>",
+      "parameters": {
+        "optionName": {
+          "comment": "选项名",
+          "type": "string",
+          "options": []
+        },
+        "optionValue": {
+          "comment": "选项值",
+          "type": "string",
+          "options": []
+        }
+      }
+    },
+    "keys": {
+      "access": "public",
+      "comment": "根据匹配模式获取键名(如*)",
+      "isStatic": false,
+      "return": "array",
+      "example": "\n$allKeys = $redis->keys('*');\n$keyWithUserPrefix = $redis->keys('user*');",
+      "parameters": {
+        "pattern": {
+          "comment": "匹配模式",
+          "type": "string",
+          "options": []
+        }
+      }
+    },
+    "save": {
+      "access": "public",
+      "comment": "将数据同步到硬盘上",
+      "isStatic": false,
+      "return": "boolean",
+      "example": "$redis->save();",
+      "parameters": []
+    },
+    "bgSave": {
+      "access": "public",
+      "comment": "将数据存入到硬盘上(异步操作)",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": []
+    },
+    "multi": {
+      "access": "public",
+      "comment": "开始一个事务.",
+      "isStatic": false,
+      "return": "",
+      "example": "\n<pre>\n$ret = $redis->multi()\n->set('key1', 'val1')\n->get('key1')\n->set('key2', 'val2')\n->get('key2')\n->exec();\n\/\/$ret == array (\n\/\/    0 => TRUE,\n\/\/    1 => 'val1',\n\/\/    2 => TRUE,\n\/\/    3 => 'val2');\n<\/pre>",
+      "parameters": []
+    },
+    "discard": {
+      "access": "public",
+      "comment": "取消事务",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": []
+    },
+    "exec": {
+      "access": "public",
+      "comment": "执行事务",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": []
+    },
+    "unwatch": {
+      "access": "public",
+      "comment": "取消观察某个键在其他客户端的变化情况",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "keys":{
+          "comment": "键名",
+          "type": "string|array",
+          "options": []
+        }
+      }
+    },
+    "delete": {
+      "access": "public",
+      "comment": "删除一个或多个键",
+      "isStatic": false,
+      "return": "int",
+      "example": "$redis->delete('key1', 'key2'); \n$redis->delete(array('key3', 'key4')); ",
+      "parameters": {
+        "keys": {
+          "comment": "键名",
+          "type": "array|string",
+          "options": []
+        }
+      }
+    },
+    "getMultiple": {
+      "access": "public",
+      "comment": "批量获取键值",
+      "isStatic": false,
+      "return": "array",
+      "example": "\n<pre>\n$redis->set('key1', 'value1');\n$redis->set('key2', 'value2');\n$redis->set('key3', 'value3');\n$redis->getMultiple(array('key1', 'key2', 'key3')); \/\/ array('value1', 'value2', 'value3');\n$redis->getMultiple(array('key0', 'key1', 'key5')); \/\/ array(`FALSE`, 'value2', `FALSE`);\n<\/pre>",
+      "parameters": {
+        "keys": {
+          "comment": "键名数组",
+          "type": "array",
+          "options": []
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,1 @@
+{"object":{"name":"Swoole\\Http2\\Response"},"comment":"异步HTTP2响应","namespace":"Swoole\\Http2","consts":[],"properties":{"statusCode":{"access":"public","type":"int","comment":"状态码","isStatic":false,"value":0},"body":{"access":"public","type":"string","comment":"响应体内容","isStatic":false},"streamId":{"access":"public","type":"int","comment":"数据流ID","isStatic":false}},"methods":[]}

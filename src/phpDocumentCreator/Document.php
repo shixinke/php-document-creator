@@ -272,6 +272,9 @@ class Document
                         $params = trim($params, ',');
                     }
                     $content .= "     * @return ".$mv['return']."\n     */\n";
+                    if (!isset($mv['access'])) {
+                        $mv['access'] = 'public';
+                    }
                     $content .= "    ".$mv['access'];
                     if ($mv['isStatic']) {
                         $content .= ' static ';
@@ -415,12 +418,7 @@ class Document
 
         foreach($exportData['functions'] as $k=>$v) {
             if (isset($dict[$extName]['functions'][$k])) {
-                $exportData['functions'][$k]['comment'] = $dict[$extName]['functions'][$k]['comment'];
-                $exportData['functions'][$k]['return'] = $dict[$extName]['functions'][$k]['return'];
-                $exportData['functions'][$k]['example'] = $dict[$extName]['functions'][$k]['example'];
-                if (isset($dict[$extName]['functions'][$k]['parameters']) && !empty($dict[$extName]['functions'][$k]['parameters'])) {
-                    $exportData['functions'][$k]['parameters'] = $dict[$extName]['functions'][$k]['parameters'];
-                }
+                $exportData['functions'][$k] = $dict[$extName]['functions'][$k];
             }
         }
 
@@ -448,21 +446,8 @@ class Document
                 }
             }
             foreach($v['methods'] as $key=>$val) {
-                if (isset($dict[$fileName]['methods'][$key]['comment']) && ( $dict[$fileName]['methods'][$key]['comment'] != '')) {
-                    $exportData['classes'][$k]['methods'][$key]['comment'] = $dict[$fileName]['methods'][$key]['comment'];
-                }
-                if (isset($dict[$fileName]['methods'][$key]['return']) && ( $dict[$fileName]['methods'][$key]['return'] != '')) {
-                    $exportData['classes'][$k]['methods'][$key]['return'] = $dict[$fileName]['methods'][$key]['return'];
-                }
-                if (isset($dict[$fileName]['methods'][$key]['example']) && ( $dict[$fileName]['methods'][$key]['example'] != '')) {
-                    $exportData['classes'][$k]['methods'][$key]['example'] = $dict[$fileName]['methods'][$key]['example'];
-                }
-                if (isset($val['parameters']) && !empty($val['parameters'])) {
-                    foreach($val['parameters'] as $pk=>$pv) {
-                        if (isset($dict[$fileName]['methods'][$key]['parameters'][$pk])) {
-                            $exportData['classes'][$k]['methods'][$key]['parameters'][$pk] = $dict[$fileName]['methods'][$key]['parameters'][$pk];
-                        }
-                    }
+                if (isset($dict[$fileName]['methods']) ) {
+                    $exportData['classes'][$k]['methods'] = $dict[$fileName]['methods'];
                 }
             }
         }
