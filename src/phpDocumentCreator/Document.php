@@ -200,7 +200,7 @@ class Document
                     } else {
                         $content .= "    /**\n     * @var ".$pv['type']." $".$p." ".$pv['comment']."\n";
                     }
-
+                    $pv['access'] = isset($pv['access']) ? $pv['access'] : 'public';
                     $content .= "     * @access ".$pv['access']."\n";
                     if (isset($pv['example'])) {
                         $pv['example'] = str_replace("\n", "\n     * ", "\n".$pv['example']);
@@ -208,7 +208,7 @@ class Document
                     }
                     $content .= "     */\n";
                     $content .= '    '.$pv['access'];
-                    if ($pv['isStatic']) {
+                    if (isset($pv['isStatic']) && $pv['isStatic']) {
                         $content .= ' static ';
                     }
                     $content .= " $".$p;
