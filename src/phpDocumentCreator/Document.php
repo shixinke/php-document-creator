@@ -14,6 +14,7 @@ class Document
     const DOC_PATH = OUTPUT_PATH;
     private static $_dicts = array();
     private static $_exports = array();
+    private static $_remainData = false;
     public function __construct($extension)
     {
         $finalDictPath = self::DICT_PATH.DS.$extension;
@@ -326,9 +327,9 @@ class Document
             foreach($data['classes'] as $k=>$v) {
                 $fileName = strtolower(str_replace("\\", "_", $k));
                 if (strtolower($fileName) == strtolower($ext)) {
-                    $this->__createDict($fileName, array_merge($tmp, $v));
+                    $this->__createDict($ext, $fileName, array_merge($tmp, $v));
                 } else {
-                    $this->__createDict($fileName, $v);
+                    $this->__createDict($ext, $fileName, $v);
                 }
             }
         }
@@ -336,7 +337,8 @@ class Document
 
     private function __createDict($ext, $fileName, $data)
     {
-        return self::writeFile(self::DICT_PATH.DS.strtolower($ext).DS.$fileName.'.json', $data);
+        $fileFullName = self::DICT_PATH.DS.strtolower($ext).DS.$fileName.'.json';
+        return self::writeFile($fileFullName, $data);
     }
 
     public function updateDict($ext, $data)
@@ -349,7 +351,11 @@ class Document
         }
         foreach($data['classes'] as $k=>$v) {
             $fileName = strtolower(str_replace("\\", "_", $k));
-            $this->__createDict($ext, $fileName, $v);
+            if (strtolower($fileName) == strtolower($ext)) {
+                $this->__createDict($ext, $fileName, array_merge($tmp, $v));
+            } else {
+                $this->__createDict($ext, $fileName, $v);
+            }
         }
     }
 
@@ -453,6 +459,15 @@ class Document
         }
         $this->updateDict($extName, $exportData);
         return $exportData;
+    }
+
+    public static function getDictFileContent($fileName) {
+        $arr = array();
+        if (file_exists($fileName)) {
+            $content = file_get_contents($fileName);
+            $arr = json_decode($content, true);
+        }
+        return $arr;
     }
 
     public static function writeFile($fileName, $content) {
