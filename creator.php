@@ -64,7 +64,6 @@ class Creator {
         $fileName = NOTE_PATH.DS.$package.DS.'swoole_async.php';
         require_once($fileName);
         $data = \phpDocumentCreator\Tool::export('swooleX', true);
-        var_dump($data);
     }
 
     public static function getDocument($package) {

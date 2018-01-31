@@ -276,7 +276,7 @@ class Document
                         $mv['access'] = 'public';
                     }
                     $content .= "    ".$mv['access'];
-                    if ($mv['isStatic']) {
+                    if (isset($mv['isStatic']) && $mv['isStatic']) {
                         $content .= ' static ';
                     }
                     if (isset($mv['isFinal'])) {
