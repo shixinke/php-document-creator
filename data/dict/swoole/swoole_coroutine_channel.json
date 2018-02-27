@@ -1,9 +1,9 @@
 {
   "object": {
-    "name": "Swoole\\Channel"
+    "name": "Swoole\\Coroutine\\Channel"
   },
-  "comment": "一个新的内存数据结构Channel，类似于Go的chan通道，底层基于共享内存+Mutex互斥锁实现，可实现用户态的高性能内存队列(Channel可用于多进程环境下，底层在读取写入时会自动加锁，应用层不需要担心数据同步问题;必须在父进程内创建才可以在子进程内使用)",
-  "namespace": "Swoole",
+  "comment": "协程版通道",
+  "namespace": "Swoole\\Coroutine",
   "consts": [],
   "properties": [],
   "methods": {
@@ -23,7 +23,7 @@
     },
     "__destruct": {
       "access": "public",
-      "comment": "析构方法",
+      "comment": "析构函数",
       "isStatic": false,
       "return": "",
       "example": "",
@@ -51,6 +51,30 @@
       "example": "",
       "parameters": []
     },
+    "isEmpty": {
+      "access": "public",
+      "comment": "通道是否为空",
+      "isStatic": false,
+      "return": "boolean",
+      "example": "",
+      "parameters": []
+    },
+    "isFull": {
+      "access": "public",
+      "comment": "通道是否已满",
+      "isStatic": false,
+      "return": "boolean",
+      "example": "",
+      "parameters": []
+    },
+    "close": {
+      "access": "public",
+      "comment": "关闭通道",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": []
+    },
     "stats": {
       "access": "public",
       "comment": "获取通道的状态(返回一个数组，包括2项信息:queue_num 通道中的元素数量;queue_bytes 通道当前占用的内存字节数)",
@@ -58,6 +82,38 @@
       "return": "array",
       "example": "",
       "parameters": []
+    },
+    "length": {
+      "access": "public",
+      "comment": "通道长度",
+      "isStatic": false,
+      "return": "int",
+      "example": "",
+      "parameters": []
+    },
+    "select": {
+      "access": "public",
+      "comment": "",
+      "isStatic": true,
+      "return": "array",
+      "example": "",
+      "parameters": {
+        "read_list": {
+          "comment": "读通道",
+          "type": "array",
+          "options": []
+        },
+        "write_list": {
+          "comment": "写通道",
+          "type": "array",
+          "options": []
+        },
+        "timeout": {
+          "comment": "超时时间",
+          "type": "int",
+          "options": []
+        }
+      }
     }
   }
 }
