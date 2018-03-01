@@ -6,98 +6,77 @@
 */
 
 /**
-*http协程客户端
+*mysql操作协程客户端
 */
-namespace Swoole\Coroutine\Http;
-class Client
+namespace Co;
+class MySQL
 {
     /**
-     * @var int $type 
-     * socket类型
-     * @access public
+     * @var array $serverInfo 
+     * 连接信息，保存的是传递给构造函数的数组
+     * @access private
      */
-    public $type    =    0;
+    private $serverInfo    =    '';
 
     /**
-     * @var int $errCode 
+     * @var int $sock 
+     * 连接使用的文件描述符
+     * @access public
+     */
+    public $sock    =    0;
+
+    /**
+     * @var boolean $connected 
+     * 是否连接上了MySQL服务器
+     * @access public
+     */
+    public $connected    =    '';
+
+    /**
+     * @var string $connect_error 
+     * 连接错误信息
+     * @access public
+     */
+    public $connect_error    =    '';
+
+    /**
+     * @var int $connect_errno 
+     * 连接错误码
+     * @access public
+     */
+    public $connect_errno    =    0;
+
+    /**
+     * @var int $affected_rows 
+     * 影响的行数
+     * @access public
+     */
+    public $affected_rows    =    0;
+
+    /**
+     * @var int $insert_id 
+     * 最后一个插入的记录id
+     * @access public
+     */
+    public $insert_id    =    0;
+
+    /**
+     * @var string $error 
+     * 错误信息
+     * @access public
+     */
+    public $error    =    '';
+
+    /**
+     * @var int $errno 
      * 错误码
      * @access public
      */
-    public $errCode    =    0;
-
-    /**
-     * @var int $statusCode 
-     * 状态码
-     * @access public
-     */
-    public $statusCode    =    0;
-
-    /**
-     * @var string $host 
-     * 请求的服务器地址
-     * @access public
-     */
-    public $host;
-
-    /**
-     * @var int $port 
-     * 请求的服务器端口
-     * @access public
-     */
-    public $port    =    0;
-
-    /**
-     * @var string $requestMethod 
-     * 请求方式
-     * @access public
-     */
-    public $requestMethod;
-
-    /**
-     * @var array $requestHeaders 
-     * 请求头
-     * @access public
-     */
-    public $requestHeaders;
-
-    /**
-     * @var string $requestBody 
-     * 请求体
-     * @access public
-     */
-    public $requestBody;
-
-    /**
-     * @var array $uploadFiles 
-     * 上传的文件
-     * @access public
-     */
-    public $uploadFiles;
-
-    /**
-     * @var array $headers 
-     * 请求响应头
-     * @access public
-     */
-    public $headers;
-
-    /**
-     * @var array $cookies 
-     * 请求响应cookie
-     * @access public
-     */
-    public $cookies;
-
-    /**
-     * @var string $body 
-     * 请求响应后服务器端返回的内容
-     * @access public
-     */
-    public $body;
+    public $errno    =    0;
 
     /**
      * 
-     *客户端初始化函数
+     *mysql异步客户端初始化
      * @example 
      * @return 
      */
@@ -117,111 +96,70 @@ class Client
 
     /**
      * 
-     *设置选项
-     * @example 
+     *连接mysql服务器
+     * @example $server = array(
+     *     'host' => '192.168.56.102',
+     *     'user' => 'test',
+     *     'password' => 'test',
+     *     'database' => 'test',
+     *     'charset' => 'utf8',
+     * );
+     * @param array $server_config 连接配置信息
      * @return 
      */
-    public function set()
+    public function connect(Array $server_config)
     {
     }
 
     /**
      * 
-     *设置请求方式
+     *执行sql语句
      * @example 
-     * @return 
+     * @param string $sql 要执行的sql语句
+     * @param double $timeout 超时时间，超时的话会断开MySQL连接，0表示不设置超时时间
+     * @return array|boolean
      */
-    public function setMethod()
+    public function query($sql, $timeout)
     {
     }
 
     /**
      * 
-     *设置请求头
+     *接收包(获取延迟收包的结果，当没有进行延迟收包或者收包超时，返回false)
      * @example 
-     * @return 
+     * @return mixed
      */
-    public function setHeaders()
+    public function recv()
     {
     }
 
     /**
      * 
-     *设置cookie
+     *启动事务
      * @example 
      * @return 
      */
-    public function setCookies()
+    public function begin()
     {
     }
 
     /**
      * 
-     *设置Http请求的包体
+     *提交事务
      * @example 
      * @return 
      */
-    public function setData()
+    public function commit()
     {
     }
 
     /**
      * 
-     *更底层的Http请求方法，需要代码中调用setMethod和setData等接口设置请求的方法和数据
+     *回滚事务(必须先调用begin启动事务才能调用rollback否则底层会抛出异常)
      * @example 
      * @return 
      */
-    public function execute()
-    {
-    }
-
-    /**
-     * 
-     *发起GET请求
-     * @example 
-     * @return 
-     */
-    public function get()
-    {
-    }
-
-    /**
-     * 
-     *发送POST请求
-     * @example 
-     * @return 
-     */
-    public function post()
-    {
-    }
-
-    /**
-     * 
-     *添加POST文件
-     * @example 
-     * @return 
-     */
-    public function addFile()
-    {
-    }
-
-    /**
-     * 
-     *连接是否成功
-     * @example 
-     * @return boolean
-     */
-    public function isConnected()
-    {
-    }
-
-    /**
-     * 
-     *关闭连接
-     * @example 
-     * @return 
-     */
-    public function close()
+    public function rollback()
     {
     }
 
@@ -229,9 +167,10 @@ class Client
      * 
      *设置是否延迟
      * @example 
+     * @param boolean $defer 为true时，表明该Client要延迟收包，为false时，表明该Client非延迟收包，默认值为true
      * @return boolean
      */
-    public function setDefer()
+    public function setDefer($defer)
     {
     }
 
@@ -247,11 +186,11 @@ class Client
 
     /**
      * 
-     *用于从服务器端接收数据。底层会自动yield，等待数据接收完成后自动切换到当前协程
+     *关闭连接
      * @example 
-     * @return string
+     * @return 
      */
-    public function recv()
+    public function close()
     {
     }
 

@@ -6,10 +6,10 @@
 */
 
 /**
-*一个新的内存数据结构Channel，类似于Go的chan通道，底层基于共享内存+Mutex互斥锁实现，可实现用户态的高性能内存队列(Channel可用于多进程环境下，底层在读取写入时会自动加锁，应用层不需要担心数据同步问题;必须在父进程内创建才可以在子进程内使用)
+*协程版通道
 */
-namespace Swoole;
-class Channel
+
+class Chan
 {
     /**
      * 
@@ -24,7 +24,7 @@ class Channel
 
     /**
      * 
-     *析构方法
+     *析构函数
      * @example 
      * @return 
      */
@@ -55,11 +55,64 @@ class Channel
 
     /**
      * 
+     *通道是否为空
+     * @example 
+     * @return boolean
+     */
+    public function isEmpty()
+    {
+    }
+
+    /**
+     * 
+     *通道是否已满
+     * @example 
+     * @return boolean
+     */
+    public function isFull()
+    {
+    }
+
+    /**
+     * 
+     *关闭通道
+     * @example 
+     * @return 
+     */
+    public function close()
+    {
+    }
+
+    /**
+     * 
      *获取通道的状态(返回一个数组，包括2项信息:queue_num 通道中的元素数量;queue_bytes 通道当前占用的内存字节数)
      * @example 
      * @return array
      */
     public function stats()
+    {
+    }
+
+    /**
+     * 
+     *通道长度
+     * @example 
+     * @return int
+     */
+    public function length()
+    {
+    }
+
+    /**
+     * 
+     *
+     * @example 
+     * @param array $read_list 读通道
+     * @param array $write_list 写通道
+     * @param int $timeout 超时时间
+     * @return array
+     */
+    public static  function select(Array $read_list, Array $write_list, $timeout)
     {
     }
 

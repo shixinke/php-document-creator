@@ -6,10 +6,10 @@
 */
 
 /**
-*swoole websocket服务端
+*http异步客户端
 */
-namespace Swoole\WebSocket;
-class Server extends \Swoole\Http\Server
+namespace Co\Http;
+class Server extends \Swoole\Server
 {
     /**
      * @var callable $onConnect 
@@ -242,57 +242,7 @@ class Server extends \Swoole\Http\Server
 
     /**
      * 
-     *向websocket客户端连接推送数据，长度最大不得超过2M
-     * @example 
-     * @param int $fd 客户端连接的ID，如果指定的$fd对应的TCP连接并非websocket客户端，将会发送失败
-     * @param string $data 要发送的数据内容
-     * @param int $opcode 指定发送数据内容的格式，默认为文本。发送二进制内容$opcode参数需要设置
-     * @param boolean $finish 帧是否完成
-     * @return 
-     */
-    public function push($fd, $data, $opcode, $finish)
-    {
-    }
-
-    /**
-     * 
-     *检测fd对应的连接是否存在
-     * @example 
-     * @param int $fd 连接句柄
-     * @return 
-     */
-    public function exist($fd)
-    {
-    }
-
-    /**
-     * 
-     *打包数据
-     * @example 
-     * @param string $data 消息内容
-     * @param int $opcode WebSocket的opcode指令类型，1表示文本，2表示二进制数据，9表示心跳ping
-     * @param boolean $finish 帧是否完成
-     * @param boolean $mask 是否设置掩码
-     * @return 
-     */
-    public static  function pack($data, $opcode, $finish, $mask)
-    {
-    }
-
-    /**
-     * 
-     *参数据进行解包
-     * @example 
-     * @param string $data 解包的数据
-     * @return 
-     */
-    public static  function unpack($data)
-    {
-    }
-
-    /**
-     * 
-     *启动server
+     *启动HTTP server
      * @example 
      * @return 
      */
@@ -422,6 +372,17 @@ class Server extends \Swoole\Http\Server
 
     /**
      * 
+     *检测fd对应的连接是否存在
+     * @example 
+     * @param int $fd 连接句柄
+     * @return 
+     */
+    public function exist($fd)
+    {
+    }
+
+    /**
+     * 
      *设置客户端连接为保护状态，不被心跳线程切断
      * @example 
      * @param int $fd 要设置保护状态的客户端连接fd
@@ -545,7 +506,7 @@ class Server extends \Swoole\Http\Server
      * 
      *用于在task进程中通知worker进程任务已完成
      * @example 
-     * @param string $data 要传递的数据
+     * @param  mixed $data 
      * @return 
      */
     public function finish($data)
@@ -556,7 +517,7 @@ class Server extends \Swoole\Http\Server
      * 
      *重启所有工作进程
      * @example 
-     * @return boolean
+     * @return 
      */
     public function reload()
     {
@@ -576,7 +537,7 @@ class Server extends \Swoole\Http\Server
      * 
      *停止当前worker进程
      * @example 
-     * @param int $worker_id 进程ID
+     * @param int $worker_id 工作进程ID
      * @return 
      */
     public function stop($worker_id)

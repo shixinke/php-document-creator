@@ -8,7 +8,7 @@
 /**
 *http协程客户端
 */
-namespace Swoole\Coroutine\Http;
+namespace Co\Http;
 class Client
 {
     /**

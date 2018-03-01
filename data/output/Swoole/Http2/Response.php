@@ -2,7 +2,7 @@
 /**
 * Swoole自动补全类(基于最新的2.1.0版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/02/26
+* @modified 2018/03/01
 */
 
 /**
@@ -12,8 +12,8 @@ namespace Swoole\Http2;
 class Response
 {
     /**
-     * @var unknown $errCode 
-     * 
+     * @var int $errCode 
+     * 错误码
      * @access public
      */
     public $errCode    =    0;

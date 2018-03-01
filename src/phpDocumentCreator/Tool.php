@@ -117,13 +117,15 @@ class Tool
         return $arr;
     }
 
-    public static function getLocalFunctions($prefix = '')
+    public static function getLocalFunctions($prefix = '', $strict = false)
     {
         $functions = get_defined_functions();
         $arr = array();
-        foreach($functions['user'] as $function) {
-            if (stripos($function, $prefix.'_') === 0) {
-                $func = new ReflectionFunction($function);
+        $targets = $strict ? array_merge($functions['internal'], $functions['user']) : $functions['user'];
+        foreach($targets as $function) {
+            $matched = $strict ? $function == $prefix : stripos($function, $prefix.'_') === 0;
+            if ($matched) {
+                $func = new \ReflectionFunction($function);
                 $name = $function;
                 $arr[$name]['comment'] = $func->getDocComment();
                 $arr[$name]['parameters'] = array();
@@ -149,13 +151,14 @@ class Tool
         return $arr;
     }
 
-    public static function getLocalClassNames($prefix = '', $delimiter = '_')
+    public static function getLocalClassNames($prefix = '', $delimiter = '_', $strict = false)
     {
         $classNames = array_unique(get_declared_classes());
         $arr = array();
         foreach($classNames as $className) {
-            if (stripos($className, $prefix.$delimiter) === 0) {
-                $classObj = new ReflectionClass($className);
+            $matched = $strict ? $className == $prefix : stripos($className, $prefix.$delimiter) === 0;
+            if ($matched) {
+                $classObj = new \ReflectionClass($className);
                 $name = $className;
                 $arr[$name]['object'] = $classObj;
                 $arr[$name]['comment'] = $classObj->getDocComment();
@@ -301,7 +304,7 @@ class Tool
             $classNames = self::getLocalClassNames($prefix, $delimiter);
         } else {
             $upper = strtoupper($prefix);
-            $ext = new ReflectionExtension($upper);
+            $ext = new \ReflectionExtension($upper);
             $data['version'] = $ext->getVersion();
             $data['comment'] = '';
             $data['constants'] = self::getConstants($ext);
@@ -318,6 +321,18 @@ class Tool
             $data['classes'][$k]['methods'] = self::getMethods($className['object']);
         }
         return $data;
+    }
+
+    public static function getAliasName($alias) {
+        $aliasNames = array();
+        if (is_string($alias)) {
+            $alias = array($alias);
+        }
+        foreach($alias as $row) {
+            $tmp = new \ReflectionClass($row);
+            $aliasNames[$row] = $tmp->getName();
+        }
+        return $aliasNames;
     }
 
 

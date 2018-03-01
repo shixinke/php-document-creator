@@ -14,7 +14,7 @@ class Document
     const DOC_PATH = OUTPUT_PATH;
     private static $_dicts = array();
     private static $_exports = array();
-    private static $_remainData = false;
+    private static $_alias = array();
     public function __construct($extension)
     {
         $finalDictPath = self::DICT_PATH.DS.$extension;
@@ -145,9 +145,15 @@ class Document
             }
         }
 
+        $aliasClasses = array();
+        if (isset(self::$_alias['classes'])) {
+            $aliasClasses = array_flip(Tool::getAliasName(self::$_alias['classes']));
+        }
         if (isset($data['classes']) && !empty($data['classes'])) {
             foreach($data['classes'] as $class=>$value) {
-                if (strtolower($class) != strtolower($ext)) {
+                $sourceClassName = $class;
+                $isAlias = isset($aliasClasses[$sourceClassName]) ? true : false;
+                if (strtolower($sourceClassName) != strtolower($ext)) {
                     $content = $common;
                     $value['comment'] = str_replace("\n", "\n*", "\n".$value['comment']);
                     $content .= "\n/**".$value['comment']."\n*/\n";
@@ -155,8 +161,9 @@ class Document
                     $content = $extContent;
                 }
 
-                $arr = explode("\\", $class);
+                $arr = explode("\\", $sourceClassName);
                 $namespace = '';
+                $aliasNamespace = '';
                 $count = count($arr);
                 if ($count >= 2) {
                     $class = $arr[$count-1];
@@ -179,6 +186,15 @@ class Document
                             $value['extends'] = "\\".$value['extends'];
                         }
                         $content .= ' extends '.$value['extends'];
+                    }
+                }
+                $arrTmp = array();
+                if ($isAlias) {
+                    $arrTmp = explode("\\", $aliasClasses[$sourceClassName]);
+                    if (count($arrTmp) >=2 ) {
+                        $namespaceArrTmp = $arrTmp;
+                        array_pop($namespaceArrTmp);
+                        $aliasNamespace = trim(implode("\\", $namespaceArrTmp), "\\");
                     }
                 }
                 $content .= "\n{\n";
@@ -304,9 +320,27 @@ class Document
                     $fullDir = $baseDir;
                 }
 
-
                 $fileName = rtrim($fullDir, '/').'/'.$class.'.php';
                 $res = self::writeFile($fileName, $content);
+                if ($isAlias) {
+                    $aliasContent = $content;
+                    $aliasClass = $arrTmp[count($arrTmp)-1];
+                    $aliasContent = str_replace('class '.$class, 'class '.$aliasClass, $aliasContent);
+                    if ($aliasNamespace != '') {
+                        $aliasContent = str_replace('namespace '.$namespace, 'namespace '.$aliasNamespace, $aliasContent);
+                    } else {
+                        $aliasContent = str_replace('namespace '.$namespace.';', '', $aliasContent);
+                    }
+
+                    if ($aliasNamespace != '') {
+                        $fullDir = Tool::createDir($baseDir, $aliasNamespace);
+                    } else {
+                        $fullDir = $baseDir;
+                    }
+                    $aliasFileName = rtrim($fullDir, '/').'/'.$aliasClass.'.php';
+                    $res = self::writeFile($aliasFileName, $aliasContent);
+                }
+
             }
         }
 
@@ -377,7 +411,14 @@ class Document
                 if (!$tmp ) {
                     echo "the file ".$file." is not a legal json file\n";
                 }
-                $arr[str_replace('.json', '', $file)] = $tmp;
+                if ($file == 'config.json') {
+                    if (isset($tmp['alias'])) {
+                        self::$_alias = $tmp['alias'];
+                    }
+                } else {
+                    $arr[str_replace('.json', '', $file)] = $tmp;
+                }
+
             }
             self::$_dicts[$extName] = $arr;
         }

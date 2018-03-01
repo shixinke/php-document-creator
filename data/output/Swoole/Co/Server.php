@@ -6,10 +6,10 @@
 */
 
 /**
-*swoole websocket服务端
+*swoole TCP/UDP服务器
 */
-namespace Swoole\WebSocket;
-class Server extends \Swoole\Http\Server
+namespace Co;
+class Server
 {
     /**
      * @var callable $onConnect 
@@ -131,6 +131,13 @@ class Server extends \Swoole\Http\Server
     public $onPipeMessage;
 
     /**
+     * @var array $setting 
+     * 通过swoole_server:set()设置的参数会保存到setting属性上
+     * @access public
+     */
+    public $setting;
+
+    /**
      * @var iterator $connections 
      * TCP连接迭代器
      * @access public
@@ -208,119 +215,6 @@ class Server extends \Swoole\Http\Server
     public $worker_pid    =    0;
 
     /**
-     * @var callable $onRequest 
-     * 请求回调函数
-     * @access public
-     */
-    public $onRequest;
-
-    /**
-     * @var callable $onHandshake 
-     * TCP握手时的回调函数
-     * @access public
-     */
-    public $onHandshake;
-
-    /**
-     * @var array $setting 
-     * 通过swoole_server:set()设置的参数会保存到setting属性上
-     * @access public
-     */
-    public $setting;
-
-    /**
-     * 
-     *绑定事件(为事件注册函数)
-     * @example 
-     * @param string $event_name 事件名称
-     * @param callable $callback 事件对应的回调函数
-     * @return 
-     */
-    public function on($event_name, Callable $callback)
-    {
-    }
-
-    /**
-     * 
-     *向websocket客户端连接推送数据，长度最大不得超过2M
-     * @example 
-     * @param int $fd 客户端连接的ID，如果指定的$fd对应的TCP连接并非websocket客户端，将会发送失败
-     * @param string $data 要发送的数据内容
-     * @param int $opcode 指定发送数据内容的格式，默认为文本。发送二进制内容$opcode参数需要设置
-     * @param boolean $finish 帧是否完成
-     * @return 
-     */
-    public function push($fd, $data, $opcode, $finish)
-    {
-    }
-
-    /**
-     * 
-     *检测fd对应的连接是否存在
-     * @example 
-     * @param int $fd 连接句柄
-     * @return 
-     */
-    public function exist($fd)
-    {
-    }
-
-    /**
-     * 
-     *打包数据
-     * @example 
-     * @param string $data 消息内容
-     * @param int $opcode WebSocket的opcode指令类型，1表示文本，2表示二进制数据，9表示心跳ping
-     * @param boolean $finish 帧是否完成
-     * @param boolean $mask 是否设置掩码
-     * @return 
-     */
-    public static  function pack($data, $opcode, $finish, $mask)
-    {
-    }
-
-    /**
-     * 
-     *参数据进行解包
-     * @example 
-     * @param string $data 解包的数据
-     * @return 
-     */
-    public static  function unpack($data)
-    {
-    }
-
-    /**
-     * 
-     *启动server
-     * @example 
-     * @return 
-     */
-    public function start()
-    {
-    }
-
-    /**
-     * 
-     *序列化函数调用的魔术方法(在PHP进行序列化时，serialize() 检查类中是否有 __sleep() ,如果有，则该函数将在任何序列化之前运行。该函数必须返回一个需要进行序列化保存的成员属性数组，并且只序列化该函数返回的这些成员属性. 该函数有两个作用: 第一. 在序列化之前,关闭对象可能具有的任何数据库连接等. 第二. 指定对象中需要被序列化的成员属性,如果某个属性比较大而不需要储存下来,可以不把它写进__sleep要返回的数组中,这样该属性就不会被序列化)
-     * @example 
-     * @return 
-     */
-    public function __sleep()
-    {
-    }
-
-    /**
-     * 
-     *反序列化函数调用的魔术方法(unserialize() 从字节流中创建了一个对象之后,马上检查是否具有__wakeup 的函数的存在。如果存在，__wakeup 立刻被调用。使用 __wakeup 的目的是重建在序列化中可能丢失的任何数据库连接以及处理其它重新初始化的任务)
-     * @example 
-     * @return 
-     */
-    public function __wakeup()
-    {
-    }
-
-    /**
      * 
      *swoole_server初始化方法
      * @example 
@@ -372,12 +266,34 @@ class Server extends \Swoole\Http\Server
 
     /**
      * 
+     *绑定事件(为事件注册函数)
+     * @example 
+     * @param string $event_name 事件名称
+     * @param callable $callback 事件对应的回调函数
+     * @return 
+     */
+    public function on($event_name, Callable $callback)
+    {
+    }
+
+    /**
+     * 
      *设置swoole_server运行时的参数
      * @example 
      * @param array $settings 配置选项
      * @return 
      */
     public function set(Array $settings)
+    {
+    }
+
+    /**
+     * 
+     *启动server
+     * @example 
+     * @return 
+     */
+    public function start()
     {
     }
 
@@ -417,6 +333,17 @@ class Server extends \Swoole\Http\Server
      * @return 
      */
     public function sendwait($conn_fd, $send_data)
+    {
+    }
+
+    /**
+     * 
+     *检测fd对应的连接是否存在
+     * @example 
+     * @param int $fd 连接句柄
+     * @return 
+     */
+    public function exist($fd)
     {
     }
 
@@ -744,6 +671,26 @@ class Server extends \Swoole\Http\Server
      * @return 
      */
     public function bind($fd, $uid)
+    {
+    }
+
+    /**
+     * 
+     *序列化函数调用的魔术方法(在PHP进行序列化时，serialize() 检查类中是否有 __sleep() ,如果有，则该函数将在任何序列化之前运行。该函数必须返回一个需要进行序列化保存的成员属性数组，并且只序列化该函数返回的这些成员属性. 该函数有两个作用: 第一. 在序列化之前,关闭对象可能具有的任何数据库连接等. 第二. 指定对象中需要被序列化的成员属性,如果某个属性比较大而不需要储存下来,可以不把它写进__sleep要返回的数组中,这样该属性就不会被序列化)
+     * @example 
+     * @return 
+     */
+    public function __sleep()
+    {
+    }
+
+    /**
+     * 
+     *反序列化函数调用的魔术方法(unserialize() 从字节流中创建了一个对象之后,马上检查是否具有__wakeup 的函数的存在。如果存在，__wakeup 立刻被调用。使用 __wakeup 的目的是重建在序列化中可能丢失的任何数据库连接以及处理其它重新初始化的任务)
+     * @example 
+     * @return 
+     */
+    public function __wakeup()
     {
     }
 

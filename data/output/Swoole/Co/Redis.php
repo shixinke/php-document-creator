@@ -8,7 +8,7 @@
 /**
 *协程版redis客户端
 */
-namespace Swoole\Coroutine;
+namespace Co;
 class Redis
 {
     /**

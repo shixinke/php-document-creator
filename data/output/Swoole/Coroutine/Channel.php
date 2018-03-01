@@ -2,20 +2,20 @@
 /**
 * Swoole自动补全类(基于最新的2.1.0版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/02/26
+* @modified 2018/03/01
 */
 
 /**
-*
+*协程版通道
 */
 namespace Swoole\Coroutine;
 class Channel
 {
     /**
      * 
-     *
+     *创建通道
      * @example 
-     * @param  mixed $size 
+     * @param int $size 通道占用的内存的尺寸，单位为字节。最小值为64K，最大值没有限制
      * @return 
      */
     public function __construct($size)
@@ -24,7 +24,7 @@ class Channel
 
     /**
      * 
-     *
+     *析构函数
      * @example 
      * @return 
      */
@@ -34,10 +34,10 @@ class Channel
 
     /**
      * 
-     *
+     *向通道写入数据
      * @example 
-     * @param  mixed $data 
-     * @return 
+     * @param mixed $data 可以为任意PHP变量，当$data是非字符串类型时底层会自动进行串化($data的尺寸超过8K时会启用临时文件存储数据;$data必须为非空变量，如空字符串、空数组、0、null、false)
+     * @return boolean
      */
     public function push($data)
     {
@@ -45,7 +45,7 @@ class Channel
 
     /**
      * 
-     *
+     *弹出数据
      * @example 
      * @return 
      */
@@ -55,9 +55,9 @@ class Channel
 
     /**
      * 
-     *
+     *通道是否为空
      * @example 
-     * @return 
+     * @return boolean
      */
     public function isEmpty()
     {
@@ -65,9 +65,9 @@ class Channel
 
     /**
      * 
-     *
+     *通道是否已满
      * @example 
-     * @return 
+     * @return boolean
      */
     public function isFull()
     {
@@ -75,7 +75,7 @@ class Channel
 
     /**
      * 
-     *
+     *关闭通道
      * @example 
      * @return 
      */
@@ -85,9 +85,9 @@ class Channel
 
     /**
      * 
-     *
+     *获取通道的状态(返回一个数组，包括2项信息:queue_num 通道中的元素数量;queue_bytes 通道当前占用的内存字节数)
      * @example 
-     * @return 
+     * @return array
      */
     public function stats()
     {
@@ -95,9 +95,9 @@ class Channel
 
     /**
      * 
-     *
+     *通道长度
      * @example 
-     * @return 
+     * @return int
      */
     public function length()
     {
@@ -107,10 +107,10 @@ class Channel
      * 
      *
      * @example 
-     * @param array $read_list 
-     * @param array $write_list 
-     * @param  mixed $timeout 
-     * @return 
+     * @param array $read_list 读通道
+     * @param array $write_list 写通道
+     * @param int $timeout 超时时间
+     * @return array
      */
     public static  function select(Array $read_list, Array $write_list, $timeout)
     {

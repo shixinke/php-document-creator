@@ -8,7 +8,7 @@
 /**
 *swoole websocket服务端
 */
-namespace Swoole\WebSocket;
+namespace Co\WebSocket;
 class Server extends \Swoole\Http\Server
 {
     /**

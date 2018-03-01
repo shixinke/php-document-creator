@@ -2,7 +2,7 @@
 /**
 * Swoole自动补全类(基于最新的2.1.0版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/02/26
+* @modified 2018/03/01
 */
 
 /**
@@ -61,8 +61,8 @@ class Port
     public $onRequest;
 
     /**
-     * @var unknown $onHandShake 
-     * 
+     * @var callable $onHandShake 
+     * 握手时回调函数
      * @access public
      */
     public $onHandShake;
@@ -117,8 +117,8 @@ class Port
     public $setting;
 
     /**
-     * @var unknown $connections 
-     * 
+     * @var array $connections 
+     * 所有连接对象
      * @access public
      */
     public $connections;
