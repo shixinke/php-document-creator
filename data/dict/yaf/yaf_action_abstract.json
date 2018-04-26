@@ -1,1 +1,79 @@
-{"object":{"name":"YafX_Action_Abstract"},"comment":"(Yaf >= 3.0.2)\nClass yaf_Action_Abstract","namespace":"","isAbstract":1,"consts":[],"properties":{"_controller":{"access":"protected","type":"unknown","comment":"(Yaf >= 3.0.2)\n\u5f53\u524d\u8bf7\u6c42\u7684\u63a7\u5236\u5668\u5b9e\u4f8b","isStatic":false,"example":""}},"methods":{"getController":{"access":"public","comment":"(Yaf >= 3.0.2)\n\u83b7\u53d6\u5f53\u524d\u8bf7\u6c42\u7684\u63a7\u5236\u5668\u5b9e\u4f8b","isStatic":false,"return":"","example":"","parameters":[]},"execute":{"access":"public","isAbstract":1,"comment":"(Yaf >= 3.0.2)\n\u52a8\u4f5c\u5165\u53e3\u65b9\u6cd5\uff0c\u7531Yaf\u6846\u67b6\u81ea\u52a8\u8c03\u7528","isStatic":false,"return":"","example":"","parameters":[]}}}
+{
+  "object": {
+    "name": "Yaf_Action_Abstract"
+  },
+  "comment": "(Yaf >= 3.0.2)\nClass yaf_Action_Abstract",
+  "namespace": "",
+  "extends": "Yaf_Controller_Abstract",
+  "isAbstract": 1,
+  "consts": [],
+  "properties": {
+    "actions": {
+      "access": "public",
+      "type": "unknown",
+      "comment": false,
+      "isStatic": false
+    },
+    "_module": {
+      "access": "protected",
+      "type": "unknown",
+      "comment": false,
+      "isStatic": false
+    },
+    "_name": {
+      "access": "protected",
+      "type": "unknown",
+      "comment": false,
+      "isStatic": false
+    },
+    "_request": {
+      "access": "protected",
+      "type": "unknown",
+      "comment": false,
+      "isStatic": false
+    },
+    "_response": {
+      "access": "protected",
+      "type": "unknown",
+      "comment": false,
+      "isStatic": false
+    },
+    "_invoke_args": {
+      "access": "protected",
+      "type": "unknown",
+      "comment": false,
+      "isStatic": false
+    },
+    "_view": {
+      "access": "protected",
+      "type": "unknown",
+      "comment": false,
+      "isStatic": false
+    },
+    "_controller": {
+      "access": "protected",
+      "type": "unknown",
+      "comment": "(Yaf >= 3.0.2)\n当前请求的控制器实例",
+      "isStatic": false
+    }
+  },
+  "methods": {
+    "getController": {
+      "access": "public",
+      "comment": "(Yaf >= 3.0.2)\n获取当前请求的控制器实例",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": []
+    },
+    "execute": {
+      "access": "public",
+      "isAbstract": 1,
+      "comment": "(Yaf >= 3.0.2)\n动作入口方法，由Yaf框架自动调用",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": []
+    }
+  }
+}

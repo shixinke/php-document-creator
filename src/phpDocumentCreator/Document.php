@@ -28,6 +28,21 @@ class Document
         }
     }
 
+    public static function toString($value) {
+        $str = "";
+        if (is_array($value)) {
+            $str = '[';
+            $keys = array_keys($value);
+            foreach ($keys as $key) {
+                $str .= $key.'=>'.$value[$key];
+            }
+            $str .= ']';
+        } else {
+            $str = $value;
+        }
+        return $str;
+    }
+
     public function create()
     {
         foreach($this->extension as $ext) {
@@ -97,7 +112,7 @@ class Document
                         $params .= '$'.$param;
                     }
                     if (isset($paramValue['value'])) {
-                        $params .= " = ".$paramValue['value'];
+                        $params .= " = ".self::toString($paramValue['value']);
                     }
                     if (isset($paramValue['comment'])) {
                         $content .= ':'.$paramValue['comment']." ";
@@ -105,7 +120,7 @@ class Document
                     if (isset($paramValue['options']) && !empty($paramValue['options'])) {
                         $content .= '[备选值：';
                         foreach($paramValue['options'] as $ok=>$ov) {
-                            $content .= $ov['value'].'('.$ov['comment'].');';
+                            $content .= self::toString($ov['value']).'('.$ov['comment'].');';
                         }
                         $content .= ']';
                     }
@@ -232,7 +247,7 @@ class Document
                     if (isset($pv['value']) && !is_null($pv['value'])) {
                         if (!is_numeric($pv['value'])) {
                             if (is_array($pv['value'])) {
-                                $pv['value'] = " array() ";
+                                $pv['value'] = "  ".self::toString($pv['value']);
                             } else {
                                 $pv['value'] = "'".$pv['value']."'";
                             }
@@ -272,13 +287,13 @@ class Document
                                 $params .= '$'.$param;
                             }
                             if (isset($paramValue['value'])) {
-                                $params .= " = ".$paramValue['value'];
+                                $params .= " = ".self::toString($paramValue['value']);
                             }
                             $content .= " ".$paramValue['comment'];
                             if (isset($paramValue['options']) && !empty($paramValue['options'])) {
                                 $content .= '[备选值：';
                                 foreach($paramValue['options'] as $ok=>$ov) {
-                                    $content .= $ov['value'].'('.$ov['comment'].')';
+                                    $content .= self::toString($ov['value']).'('.$ov['comment'].')';
                                 }
                                 $content .= ']';
                             }
@@ -299,7 +314,7 @@ class Document
                     if (isset($mv['isFinal'])) {
                         $content .= ' final ';
                     }
-                    if (isset($mv['isAbstract'])) {
+                    if (isset($mv['isAbstract']) && !isset($value['isInterface'])) {
                         $content .= ' abstract ';
                     }
 
