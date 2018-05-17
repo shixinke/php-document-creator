@@ -2,7 +2,7 @@
 /**
 * Swoole自动补全类(基于最新的2.1.3版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/04/25
+* @modified 2018/05/17
 */
 
 /**
@@ -81,9 +81,10 @@ class Request
      * @example 
      * @return string
      */
-    public function rawcontent()
+    public function rawcontent():string
     {
-    }
+    
+}
 
     /**
      * 
@@ -93,7 +94,8 @@ class Request
      */
     public function __sleep()
     {
-    }
+    
+}
 
     /**
      * 
@@ -103,7 +105,8 @@ class Request
      */
     public function __wakeup()
     {
-    }
+    
+}
 
     /**
      * 
@@ -113,7 +116,8 @@ class Request
      */
     public function __destruct()
     {
-    }
+    
+}
 
 }
 

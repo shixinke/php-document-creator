@@ -2,7 +2,7 @@
 /**
 * Swoole自动补全类(基于最新的2.1.3版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/04/25
+* @modified 2018/05/17
 */
 
 /**
@@ -18,9 +18,10 @@ class Channel
      * @param int $size 通道占用的内存的尺寸，单位为字节。最小值为64K，最大值没有限制
      * @return 
      */
-    public function __construct($size)
+    public function __construct(int $size)
     {
-    }
+    
+}
 
     /**
      * 
@@ -30,7 +31,8 @@ class Channel
      */
     public function __destruct()
     {
-    }
+    
+}
 
     /**
      * 
@@ -39,9 +41,10 @@ class Channel
      * @param mixed $data 可以为任意PHP变量，当$data是非字符串类型时底层会自动进行串化($data的尺寸超过8K时会启用临时文件存储数据;$data必须为非空变量，如空字符串、空数组、0、null、false)
      * @return boolean
      */
-    public function push($data)
+    public function push($data):boolean
     {
-    }
+    
+}
 
     /**
      * 
@@ -51,7 +54,8 @@ class Channel
      */
     public function pop()
     {
-    }
+    
+}
 
     /**
      * 
@@ -59,9 +63,10 @@ class Channel
      * @example 
      * @return array
      */
-    public function stats()
+    public function stats():array
     {
-    }
+    
+}
 
 }
 

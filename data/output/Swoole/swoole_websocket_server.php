@@ -193,7 +193,7 @@ class swoole_websocket_server extends swoole_http_server
     public $worker_id    =    -1;
 
     /**
-     * @var boolean $taskworker 
+     * @var bool $taskworker 
      * 当前进程是否是task工作进程
      * @access public
      */
@@ -246,7 +246,7 @@ class swoole_websocket_server extends swoole_http_server
      * @param int $fd 客户端连接的ID，如果指定的$fd对应的TCP连接并非websocket客户端，将会发送失败
      * @param string $data 要发送的数据内容
      * @param int $opcode 指定发送数据内容的格式，默认为文本。发送二进制内容$opcode参数需要设置
-     * @param boolean $finish 帧是否完成
+     * @param bool $finish 帧是否完成
      * @return 
      */
     public function push($fd, $data, $opcode, $finish)
@@ -270,8 +270,8 @@ class swoole_websocket_server extends swoole_http_server
      * @example 
      * @param string $data 消息内容
      * @param int $opcode WebSocket的opcode指令类型，1表示文本，2表示二进制数据，9表示心跳ping
-     * @param boolean $finish 帧是否完成
-     * @param boolean $mask 是否设置掩码
+     * @param bool $finish 帧是否完成
+     * @param bool $mask 是否设置掩码
      * @return 
      */
     public static  function pack($data, $opcode, $finish, $mask)
@@ -424,7 +424,7 @@ class swoole_websocket_server extends swoole_http_server
      *设置客户端连接为保护状态，不被心跳线程切断
      * @example 
      * @param int $fd 要设置保护状态的客户端连接fd
-     * @param boolean $is_protected 设置的状态，true表示保护状态，false表示不保护
+     * @param bool $is_protected 设置的状态，true表示保护状态，false表示不保护
      * @return 
      */
     public function protect($fd, $is_protected)
@@ -450,7 +450,7 @@ class swoole_websocket_server extends swoole_http_server
      *关闭客户端连接
      * @example 
      * @param int $fd 连接句柄
-     * @param boolean $reset 设置为true会强制关闭连接，丢弃发送队列中的数据
+     * @param bool $reset 设置为true会强制关闭连接，丢弃发送队列中的数据
      * @return 
      */
     public function close($fd, $reset)
@@ -555,7 +555,7 @@ class swoole_websocket_server extends swoole_http_server
      * 
      *重启所有工作进程
      * @example 
-     * @return boolean
+     * @return bool
      */
     public function reload()
     {
@@ -598,7 +598,7 @@ class swoole_websocket_server extends swoole_http_server
      * 
      *检测所有服务器连接，并找出已经超时的连接
      * @example 
-     * @param boolean $reactor_id 是否关闭超时的连接，默认为true
+     * @param bool $reactor_id 是否关闭超时的连接，默认为true
      * @return 
      */
     public function heartbeat($reactor_id)

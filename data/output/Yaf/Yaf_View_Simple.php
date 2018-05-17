@@ -2,7 +2,7 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/04/26
+* @modified 2018/05/17
 */
 
 /**
@@ -43,9 +43,10 @@ class Yaf_View_Simple
      * @param array $options 此属性在php-5.4以下版本中适用，用以设置模板渲染的方式
      * @return 
      */
-    public function __construct($tpl_dir, Array $options)
+    public function __construct(string $tpl_dir, Array $options)
     {
-    }
+    
+}
 
     /**
      * 
@@ -55,9 +56,10 @@ class Yaf_View_Simple
      * @param string $name 模板变量名
      * @return 
      */
-    public function __isset($name)
+    public function __isset(string $name)
     {
-    }
+    
+}
 
     /**
      * 
@@ -67,9 +69,10 @@ class Yaf_View_Simple
      * @param string $name 模板变量名
      * @return 
      */
-    public function __get($name)
+    public function __get(string $name)
     {
-    }
+    
+}
 
     /**
      * 
@@ -79,9 +82,10 @@ class Yaf_View_Simple
      * @param string $name 模板变量名
      * @return 
      */
-    public function get($name)
+    public function get(string $name)
     {
-    }
+    
+}
 
     /**
      * 
@@ -92,9 +96,10 @@ class Yaf_View_Simple
      * @param string $value 变量值
      * @return 
      */
-    public function __set($name, $value)
+    public function __set(string $name, string $value)
     {
-    }
+    
+}
 
     /**
      * 
@@ -104,9 +109,10 @@ class Yaf_View_Simple
      * @param string $name 模板变量名
      * @return 
      */
-    public function clear($name)
+    public function clear(string $name)
     {
-    }
+    
+}
 
     /**
      * 
@@ -117,9 +123,10 @@ class Yaf_View_Simple
      * @param string $value 变量值
      * @return 
      */
-    public function assign($name, $value)
+    public function assign(string $name, string $value)
     {
-    }
+    
+}
 
     /**
      * 
@@ -130,9 +137,10 @@ class Yaf_View_Simple
      * @param string $value 变量值
      * @return 
      */
-    public function assignRef($name, $value)
+    public function assignRef(string $name, string $value)
     {
-    }
+    
+}
 
     /**
      * 
@@ -144,9 +152,10 @@ class Yaf_View_Simple
      * @param array $var_ 模板变量
      * @return 
      */
-    public function display($tpl, $var_array = [], Array $var_)
+    public function display(string $tpl, $var_array = [], Array $var_)
     {
-    }
+    
+}
 
     /**
      * 
@@ -158,9 +167,10 @@ class Yaf_View_Simple
      * @param array $var_ 模板变量
      * @return 
      */
-    public function render($tpl, $var_array = [], Array $var_)
+    public function render(string $tpl, $var_array = [], Array $var_)
     {
-    }
+    
+}
 
     /**
      * 
@@ -170,9 +180,10 @@ class Yaf_View_Simple
      * @param string $tpl_dir 模板文件目录
      * @return 
      */
-    public function setScriptPath($tpl_dir)
+    public function setScriptPath(string $tpl_dir)
     {
-    }
+    
+}
 
     /**
      * 
@@ -183,7 +194,8 @@ class Yaf_View_Simple
      */
     public function getScriptPath()
     {
-    }
+    
+}
 
 }
 

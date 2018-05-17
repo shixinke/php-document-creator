@@ -82,8 +82,8 @@ class swoole_process
      *创建子进程
      * @example 
      * @param callable $callback 子进程创建成功后要执行的函数
-     * @param boolean $redirect_stdin_and_stdout 重定向子进程的标准输入和输出。启用此选项后，在子进程内输出内容将不是打印屏幕，而是写入到主进程管道。读取键盘输入将变为从管道中读取数据。默认为阻塞读取
-     * @param boolean $pipe_type 是否创建管道，启用$redirect_stdin_stdout后，此选项将忽略用户参数，强制为true。如果子进程内没有进程间通信，可以设置为 false
+     * @param bool $redirect_stdin_and_stdout 重定向子进程的标准输入和输出。启用此选项后，在子进程内输出内容将不是打印屏幕，而是写入到主进程管道。读取键盘输入将变为从管道中读取数据。默认为阻塞读取
+     * @param bool $pipe_type 是否创建管道，启用$redirect_stdin_stdout后，此选项将忽略用户参数，强制为true。如果子进程内没有进程间通信，可以设置为 false
      * @return 
      */
     public function __construct(Callable $callback, $redirect_stdin_and_stdout, $pipe_type)
@@ -104,7 +104,7 @@ class swoole_process
      * 
      *回收结束运行的子进程。
      * @example 
-     * @param boolean $blocking 指定是否阻塞等待，默认为阻塞
+     * @param bool $blocking 指定是否阻塞等待，默认为阻塞
      * @return 
      */
     public static  function wait($blocking)
@@ -150,8 +150,8 @@ class swoole_process
      * 
      *使当前进程脱变为一个守护进程
      * @example 
-     * @param boolean $nochdir 为true表示不要切换当前目录到根目录
-     * @param boolean $noclose 为true表示不要关闭标准输入输出文件描述符
+     * @param bool $nochdir 为true表示不要切换当前目录到根目录
+     * @param bool $noclose 为true表示不要关闭标准输入输出文件描述符
      * @return 
      */
     public static  function daemon($nochdir, $noclose)
@@ -186,7 +186,7 @@ class swoole_process
      * @example 
      * @param string $key 消息队列的key，默认会使用ftok(__FILE__, 1)作为KEY
      * @param int $mode 通信模式，默认为2，表示争抢模式，所有创建的子进程都会从队列中取数据
-     * @return boolean
+     * @return bool
      */
     public function useQueue($key, $mode)
     {
@@ -239,7 +239,7 @@ class swoole_process
      * 
      *用于关闭创建的好的管道
      * @example 
-     * @return boolean
+     * @return bool
      */
     public function close()
     {
@@ -261,7 +261,7 @@ class swoole_process
      *向消息队列推送数据
      * @example 
      * @param string $data 要投递的数据，长度受限与操作系统内核参数的限制。默认为8192，最大不超过65536
-     * @return boolean
+     * @return bool
      */
     public function push($data)
     {
@@ -295,7 +295,7 @@ class swoole_process
      * @example 
      * @param string $exec_file 指定可执行文件的绝对路径，如 /usr/bin/python
      * @param array $args 参数列表，如 array('test.py', 123)，相当与python test.py 123
-     * @return boolean
+     * @return bool
      */
     public function exec($exec_file, Array $args)
     {
@@ -306,7 +306,7 @@ class swoole_process
      *修改进程名称
      * @example 
      * @param string $process_name 进程名称
-     * @return boolean
+     * @return bool
      */
     public function name($process_name)
     {

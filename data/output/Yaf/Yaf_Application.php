@@ -2,7 +2,7 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/04/26
+* @modified 2018/05/17
 */
 
 /**
@@ -85,7 +85,8 @@ final class Yaf_Application
      */
     public static  function app()
     {
-    }
+    
+}
 
     /**
      * 
@@ -96,7 +97,8 @@ final class Yaf_Application
      */
     public function bootstrap()
     {
-    }
+    
+}
 
     /**
      * 
@@ -107,7 +109,8 @@ final class Yaf_Application
      */
     public function run()
     {
-    }
+    
+}
 
     /**
      * 
@@ -118,7 +121,8 @@ final class Yaf_Application
      */
     public function clearLastError()
     {
-    }
+    
+}
 
     /**
      * 
@@ -129,9 +133,10 @@ final class Yaf_Application
      * @param string $section 加载的配置节点，使用该节点的配置初始化应用.
      * @return 
      */
-    public function __construct($config, $section = product)
+    public function __construct($config, string $section = product)
     {
-    }
+    
+}
 
     /**
      * 
@@ -144,7 +149,8 @@ final class Yaf_Application
      */
     public function execute(Callable $entry, $parameter)
     {
-    }
+    
+}
 
     /**
      * 
@@ -155,7 +161,8 @@ final class Yaf_Application
      */
     public function environ()
     {
-    }
+    
+}
 
     /**
      * 
@@ -166,7 +173,8 @@ final class Yaf_Application
      */
     public function getAppDirectory()
     {
-    }
+    
+}
 
     /**
      * 
@@ -177,7 +185,8 @@ final class Yaf_Application
      */
     public function getConfig()
     {
-    }
+    
+}
 
     /**
      * 
@@ -188,7 +197,8 @@ final class Yaf_Application
      */
     public function getDispatcher()
     {
-    }
+    
+}
 
     /**
      * 
@@ -199,7 +209,8 @@ final class Yaf_Application
      */
     public function getLastErrorMsg()
     {
-    }
+    
+}
 
     /**
      * 
@@ -210,7 +221,8 @@ final class Yaf_Application
      */
     public function getLastErrorNo()
     {
-    }
+    
+}
 
     /**
      * 
@@ -221,7 +233,8 @@ final class Yaf_Application
      */
     public function getModules()
     {
-    }
+    
+}
 
     /**
      * 
@@ -231,9 +244,10 @@ final class Yaf_Application
      * @param String $directory 目录路径.
      * @return 
      */
-    public function setAppDirectory($directory)
+    public function setAppDirectory(String $directory)
     {
-    }
+    
+}
 
     /**
      * 
@@ -244,7 +258,8 @@ final class Yaf_Application
      */
     private function __clone()
     {
-    }
+    
+}
 
     /**
      * 
@@ -255,7 +270,8 @@ final class Yaf_Application
      */
     public function __destruct()
     {
-    }
+    
+}
 
     /**
      * 
@@ -266,7 +282,8 @@ final class Yaf_Application
      */
     private function __sleep()
     {
-    }
+    
+}
 
     /**
      * 
@@ -277,7 +294,8 @@ final class Yaf_Application
      */
     private function __wakeup()
     {
-    }
+    
+}
 
 }
 

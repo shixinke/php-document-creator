@@ -2,7 +2,7 @@
 /**
 * Swoole自动补全类(基于最新的2.1.3版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/04/25
+* @modified 2018/05/17
 */
 
 /**
@@ -44,9 +44,10 @@ class Lock
      * @param string $filename 当类型为SWOOLE_FILELOCK时必须传入，指定文件锁的路径
      * @return 
      */
-    public function __construct($type, $filename)
+    public function __construct(int $type, string $filename)
     {
-    }
+    
+}
 
     /**
      * 
@@ -56,7 +57,8 @@ class Lock
      */
     public function __destruct()
     {
-    }
+    
+}
 
     /**
      * 
@@ -66,7 +68,8 @@ class Lock
      */
     public function lock()
     {
-    }
+    
+}
 
     /**
      * 
@@ -75,9 +78,10 @@ class Lock
      * @param float $timeout 超时时间
      * @return 
      */
-    public function lockwait($timeout)
+    public function lockwait(float $timeout)
     {
-    }
+    
+}
 
     /**
      * 
@@ -87,7 +91,8 @@ class Lock
      */
     public function trylock()
     {
-    }
+    
+}
 
     /**
      * 
@@ -97,7 +102,8 @@ class Lock
      */
     public function lock_read()
     {
-    }
+    
+}
 
     /**
      * 
@@ -107,7 +113,8 @@ class Lock
      */
     public function trylock_read()
     {
-    }
+    
+}
 
     /**
      * 
@@ -117,7 +124,8 @@ class Lock
      */
     public function unlock()
     {
-    }
+    
+}
 
 }
 

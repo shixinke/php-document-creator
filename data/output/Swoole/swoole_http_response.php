@@ -57,8 +57,8 @@ class swoole_http_response
      * @param int $expires 有效期
      * @param string $path 存放位置
      * @param string $domain 域名
-     * @param boolean $secure 是否为HTTPS
-     * @param boolean $httponly 是否只是http
+     * @param bool $secure 是否为HTTPS
+     * @param bool $httponly 是否只是http
      * @return 
      */
     public function cookie($name, $value, $expires, $path, $domain, $secure, $httponly)
@@ -74,8 +74,8 @@ class swoole_http_response
      * @param int $expires 有效期
      * @param string $path 存放位置
      * @param string $domain 域名
-     * @param boolean $secure 是否为HTTPS
-     * @param boolean $httponly 是否只是http
+     * @param bool $secure 是否为HTTPS
+     * @param bool $httponly 是否只是http
      * @return 
      */
     public function rawcookie($name, $value, $expires, $path, $domain, $secure, $httponly)
@@ -110,7 +110,7 @@ class swoole_http_response
      * @example 
      * @param string $key 响应头key
      * @param string $value 响应头值
-     * @param boolean $ucwords 首字母是否大写
+     * @param bool $ucwords 首字母是否大写
      * @return 
      */
     public function header($key, $value, $ucwords)

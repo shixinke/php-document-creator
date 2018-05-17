@@ -2,7 +2,7 @@
 /**
 * Swoole自动补全类(基于最新的2.1.3版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/04/25
+* @modified 2018/05/17
 */
 
 /**
@@ -25,7 +25,8 @@ class PostgreSQL
      */
     public function __construct()
     {
-    }
+    
+}
 
     /**
      * 
@@ -35,9 +36,10 @@ class PostgreSQL
      * @param string $conninfo 连接信息
      * @return resource|bool
      */
-    public function connect($conninfo)
+    public function connect(string $conninfo):resource
     {
-    }
+    
+}
 
     /**
      * 
@@ -46,9 +48,10 @@ class PostgreSQL
      * @param string $query 执行sql语句
      * @return resource
      */
-    public function query($query)
+    public function query(string $query):resource
     {
-    }
+    
+}
 
     /**
      * 
@@ -58,9 +61,10 @@ class PostgreSQL
      * @param int $result_type 获取结果类型(如关联数组等)
      * @return mixed
      */
-    public function fetchAll($result, $result_type)
+    public function fetchAll(resource $result, int $result_type)
     {
-    }
+    
+}
 
     /**
      * 
@@ -69,9 +73,10 @@ class PostgreSQL
      * @param resource $result 结果
      * @return 
      */
-    public function affectedRows($result)
+    public function affectedRows(resource $result)
     {
-    }
+    
+}
 
     /**
      * 
@@ -80,9 +85,10 @@ class PostgreSQL
      * @param resource $result 结果集
      * @return int
      */
-    public function numRows($result)
+    public function numRows(resource $result):int
     {
-    }
+    
+}
 
     /**
      * 
@@ -91,9 +97,10 @@ class PostgreSQL
      * @param string $table_name 表名
      * @return 
      */
-    public function metaData($table_name)
+    public function metaData(string $table_name)
     {
-    }
+    
+}
 
     /**
      * 
@@ -103,9 +110,10 @@ class PostgreSQL
      * @param int $row 行号
      * @return 
      */
-    public function fetchObject($result, $row)
+    public function fetchObject(resource $result, int $row)
     {
-    }
+    
+}
 
     /**
      * 
@@ -115,9 +123,10 @@ class PostgreSQL
      * @param int $row 要提取的行号
      * @return 
      */
-    public function fetchAssoc($result, $row)
+    public function fetchAssoc(resource $result, int $row)
     {
-    }
+    
+}
 
     /**
      * 
@@ -127,9 +136,10 @@ class PostgreSQL
      * @param int $row 行号
      * @return 
      */
-    public function fetchArray($result, $row)
+    public function fetchArray(resource $result, int $row)
     {
-    }
+    
+}
 
     /**
      * 
@@ -139,9 +149,10 @@ class PostgreSQL
      * @param int $row 行号
      * @return 
      */
-    public function fetchRow($result, $row)
+    public function fetchRow(resource $result, int $row)
     {
-    }
+    
+}
 
     /**
      * 
@@ -151,7 +162,8 @@ class PostgreSQL
      */
     public function __destruct()
     {
-    }
+    
+}
 
 }
 

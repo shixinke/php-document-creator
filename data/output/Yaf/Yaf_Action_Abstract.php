@@ -2,7 +2,7 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/04/26
+* @modified 2018/05/17
 */
 
 /**
@@ -77,7 +77,8 @@ abstract class Yaf_Action_Abstract extends Yaf_Controller_Abstract
      */
     public function getController()
     {
-    }
+    
+}
 
     /**
      * 

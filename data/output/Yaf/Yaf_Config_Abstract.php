@@ -2,7 +2,7 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/04/26
+* @modified 2018/05/17
 */
 
 /**
@@ -37,7 +37,7 @@ abstract class Yaf_Config_Abstract
      * @param string $ name
      * @return 
      */
-    public abstract  function get($name, $);
+    public abstract  function get($name, string $);
 
     /**
      * 
@@ -79,9 +79,10 @@ abstract class Yaf_Config_Abstract
      * @param string $ name
      * @return 
      */
-    public function __get($name, $)
+    public function __get($name, string $)
     {
-    }
+    
+}
 
     /**
      * 

@@ -2,7 +2,7 @@
 /**
 * Swoole自动补全类(基于最新的2.1.3版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/04/25
+* @modified 2018/05/17
 */
 
 /**
@@ -108,7 +108,8 @@ class Redis
      */
     public function __construct(Array $setting)
     {
-    }
+    
+}
 
     /**
      * 
@@ -118,7 +119,8 @@ class Redis
      */
     public function __destruct()
     {
-    }
+    
+}
 
     /**
      * 
@@ -128,9 +130,10 @@ class Redis
      * @param callable $callback 事件回调函数
      * @return 
      */
-    public function on($event_name, Callable $callback)
+    public function on(string $event_name, Callable $callback)
     {
-    }
+    
+}
 
     /**
      * 
@@ -141,9 +144,10 @@ class Redis
      * @param callable $callback 连接回调函数
      * @return 
      */
-    public function connect($host, $port, Callable $callback)
+    public function connect(string $host, int $port, Callable $callback)
     {
-    }
+    
+}
 
     /**
      * 
@@ -153,7 +157,8 @@ class Redis
      */
     public function close()
     {
-    }
+    
+}
 
     /**
      * 
@@ -161,9 +166,10 @@ class Redis
      * @example 
      * @return int
      */
-    public function getState()
+    public function getState():int
     {
-    }
+    
+}
 
     /**
      * 
@@ -173,9 +179,10 @@ class Redis
      * @param array $params 参数
      * @return 
      */
-    public function __call($command, Array $params)
+    public function __call(string $command, Array $params)
     {
-    }
+    
+}
 
 }
 

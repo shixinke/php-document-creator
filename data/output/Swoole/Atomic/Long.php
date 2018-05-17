@@ -2,7 +2,7 @@
 /**
 * Swoole自动补全类(基于最新的2.1.3版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/04/25
+* @modified 2018/05/17
 */
 
 /**
@@ -18,9 +18,10 @@ class Long
      * @param int $value 初始化数值
      * @return 
      */
-    public function __construct($value)
+    public function __construct(int $value)
     {
-    }
+    
+}
 
     /**
      * 
@@ -29,9 +30,10 @@ class Long
      * @param int $add_value 要增加的数值，默认为1,必须为正整数
      * @return mixed
      */
-    public function add($add_value)
+    public function add(int $add_value)
     {
-    }
+    
+}
 
     /**
      * 
@@ -40,9 +42,10 @@ class Long
      * @param int $sub_value 要减少的数值，默认为1
      * @return 
      */
-    public function sub($sub_value)
+    public function sub(int $sub_value)
     {
-    }
+    
+}
 
     /**
      * 
@@ -52,7 +55,8 @@ class Long
      */
     public function get()
     {
-    }
+    
+}
 
     /**
      * 
@@ -61,9 +65,10 @@ class Long
      * @param int $value 指定要设置的目标数值
      * @return 
      */
-    public function set($value)
+    public function set(int $value)
     {
-    }
+    
+}
 
     /**
      * 
@@ -73,9 +78,10 @@ class Long
      * @param int $new_value 用于设置的新值
      * @return 
      */
-    public function cmpset($cmp_value, $new_value)
+    public function cmpset(int $cmp_value, int $new_value)
     {
-    }
+    
+}
 
     /**
      * 
@@ -85,7 +91,8 @@ class Long
      */
     public function __sleep()
     {
-    }
+    
+}
 
     /**
      * 
@@ -95,7 +102,8 @@ class Long
      */
     public function __wakeup()
     {
-    }
+    
+}
 
 }
 

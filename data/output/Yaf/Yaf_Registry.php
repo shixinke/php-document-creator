@@ -2,7 +2,7 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/04/26
+* @modified 2018/05/17
 */
 
 /**
@@ -36,7 +36,8 @@ final class Yaf_Registry
      */
     private function __construct()
     {
-    }
+    
+}
 
     /**
      * 
@@ -47,7 +48,8 @@ final class Yaf_Registry
      */
     private function __clone()
     {
-    }
+    
+}
 
     /**
      * 
@@ -57,9 +59,10 @@ final class Yaf_Registry
      * @param string $name 变量名
      * @return 
      */
-    public static  function get($name)
+    public static  function get(string $name)
     {
-    }
+    
+}
 
     /**
      * 
@@ -69,9 +72,10 @@ final class Yaf_Registry
      * @param string $name 变量名
      * @return 
      */
-    public static  function has($name)
+    public static  function has(string $name)
     {
-    }
+    
+}
 
     /**
      * 
@@ -82,9 +86,10 @@ final class Yaf_Registry
      * @param mixed $value 变量值
      * @return 
      */
-    public static  function set($name, $value)
+    public static  function set(string $name, $value)
     {
-    }
+    
+}
 
     /**
      * 
@@ -95,9 +100,10 @@ final class Yaf_Registry
      * @param string $ name
      * @return 
      */
-    public static  function del($name, $)
+    public static  function del($name, string $)
     {
-    }
+    
+}
 
 }
 

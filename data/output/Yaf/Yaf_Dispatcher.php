@@ -2,7 +2,7 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/04/26
+* @modified 2018/05/17
 */
 
 /**
@@ -121,7 +121,8 @@ final class Yaf_Dispatcher
      */
     public function disableView()
     {
-    }
+    
+}
 
     /**
      * 
@@ -132,7 +133,8 @@ final class Yaf_Dispatcher
      */
     public function enableView()
     {
-    }
+    
+}
 
     /**
      * 
@@ -143,9 +145,10 @@ final class Yaf_Dispatcher
      * @param mixed $options 全局的模板选项（配置相关）
      * @return 
      */
-    public function initView($tpl_dir, $options)
+    public function initView(string $tpl_dir, $options)
     {
-    }
+    
+}
 
     /**
      * 
@@ -155,9 +158,10 @@ final class Yaf_Dispatcher
      * @param YafX_View_Interface $view 视图对象实例
      * @return 
      */
-    public function setView($view)
+    public function setView(YafX_View_Interface $view)
     {
-    }
+    
+}
 
     /**
      * 
@@ -167,9 +171,10 @@ final class Yaf_Dispatcher
      * @param YafX_Request_Abstract $request 手动实例化的请求对象
      * @return 
      */
-    public function setRequest($request)
+    public function setRequest(YafX_Request_Abstract $request)
     {
-    }
+    
+}
 
     /**
      * 
@@ -180,7 +185,8 @@ final class Yaf_Dispatcher
      */
     public function getApplication()
     {
-    }
+    
+}
 
     /**
      * 
@@ -190,7 +196,8 @@ final class Yaf_Dispatcher
      */
     public function getRouter()
     {
-    }
+    
+}
 
     /**
      * 
@@ -201,7 +208,8 @@ final class Yaf_Dispatcher
      */
     public function getRequest()
     {
-    }
+    
+}
 
     /**
      * 
@@ -213,9 +221,10 @@ final class Yaf_Dispatcher
      * @param $error_type $int 处理的错误类型（默认：E_ALL | E_STRICT）
      * @return 
      */
-    public function setErrorHandler(Callable $callback, $error_type = 32767, $int)
+    public function setErrorHandler(Callable $callback, $error_type = 32767)
     {
-    }
+    
+}
 
     /**
      * 
@@ -225,9 +234,10 @@ final class Yaf_Dispatcher
      * @param string $module 模块名
      * @return 
      */
-    public function setDefaultModule($module)
+    public function setDefaultModule(string $module)
     {
-    }
+    
+}
 
     /**
      * 
@@ -237,9 +247,10 @@ final class Yaf_Dispatcher
      * @param string $controller 控制器名
      * @return 
      */
-    public function setDefaultController($controller)
+    public function setDefaultController(string $controller)
     {
-    }
+    
+}
 
     /**
      * 
@@ -247,11 +258,11 @@ final class Yaf_Dispatcher
      *设置默认的动作名
      * @example 
      * @param  mixed $action 
-     * @param string $ action
      * @return 
      */
-    public function setDefaultAction($action, $)
+    public function setDefaultAction($action)
     {
+    
     }
 
     /**
@@ -262,11 +273,11 @@ final class Yaf_Dispatcher
      *当不传递任何参数时，返回$this->_return_response当前值
      * @example 
      * @param  mixed $flag 
-     * @param boolean $ flag
      * @return 
      */
-    public function returnResponse($flag, $)
+    public function returnResponse($flag)
     {
+    
     }
 
     /**
@@ -280,9 +291,10 @@ final class Yaf_Dispatcher
      * @param boolean $ flag
      * @return 
      */
-    public function autoRender($flag, $)
+    public function autoRender($flag, boolean $)
     {
-    }
+    
+}
 
     /**
      * 
@@ -295,9 +307,10 @@ final class Yaf_Dispatcher
      * @param boolean $ flag
      * @return 
      */
-    public function flushInstantly($flag, $)
+    public function flushInstantly($flag, boolean $)
     {
-    }
+    
+}
 
     /**
      * 
@@ -308,7 +321,8 @@ final class Yaf_Dispatcher
      */
     public static  function getInstance()
     {
-    }
+    
+}
 
     /**
      * 
@@ -318,9 +332,10 @@ final class Yaf_Dispatcher
      * @param YafX_Request_Abstract $request 分发的请求对象
      * @return 
      */
-    public function dispatch($request)
+    public function dispatch(YafX_Request_Abstract $request)
     {
-    }
+    
+}
 
     /**
      * 
@@ -331,9 +346,10 @@ final class Yaf_Dispatcher
      * @param boolean $ flag
      * @return 
      */
-    public function throwException($flag, $)
+    public function throwException($flag, boolean $)
     {
-    }
+    
+}
 
     /**
      * 
@@ -344,9 +360,10 @@ final class Yaf_Dispatcher
      * @param boolean $ flag
      * @return 
      */
-    public function catchException($flag, $)
+    public function catchException($flag, boolean $)
     {
-    }
+    
+}
 
     /**
      * 
@@ -356,9 +373,10 @@ final class Yaf_Dispatcher
      * @param YafX_Plugin_Abstract $plugin 实例化的插件对象
      * @return 
      */
-    public function registerPlugin($plugin)
+    public function registerPlugin(YafX_Plugin_Abstract $plugin)
     {
-    }
+    
+}
 
     /**
      * 
@@ -369,7 +387,8 @@ final class Yaf_Dispatcher
      */
     private function __construct()
     {
-    }
+    
+}
 
     /**
      * 
@@ -380,7 +399,8 @@ final class Yaf_Dispatcher
      */
     private function __clone()
     {
-    }
+    
+}
 
     /**
      * 
@@ -391,7 +411,8 @@ final class Yaf_Dispatcher
      */
     public function __destruct()
     {
-    }
+    
+}
 
     /**
      * 
@@ -402,7 +423,8 @@ final class Yaf_Dispatcher
      */
     private function __sleep()
     {
-    }
+    
+}
 
     /**
      * 
@@ -413,7 +435,8 @@ final class Yaf_Dispatcher
      */
     private function __wakeup()
     {
-    }
+    
+}
 
 }
 

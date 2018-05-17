@@ -2,7 +2,7 @@
 /**
 * Swoole自动补全类(基于最新的2.1.3版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/04/25
+* @modified 2018/05/17
 */
 
 /**
@@ -138,7 +138,8 @@ class Client
      */
     public function __construct()
     {
-    }
+    
+}
 
     /**
      * 
@@ -148,7 +149,8 @@ class Client
      */
     public function __destruct()
     {
-    }
+    
+}
 
     /**
      * 
@@ -158,7 +160,8 @@ class Client
      */
     public function set()
     {
-    }
+    
+}
 
     /**
      * 
@@ -168,7 +171,8 @@ class Client
      */
     public function setMethod()
     {
-    }
+    
+}
 
     /**
      * 
@@ -178,7 +182,8 @@ class Client
      */
     public function setHeaders()
     {
-    }
+    
+}
 
     /**
      * 
@@ -188,7 +193,8 @@ class Client
      */
     public function setCookies()
     {
-    }
+    
+}
 
     /**
      * 
@@ -198,7 +204,8 @@ class Client
      */
     public function setData()
     {
-    }
+    
+}
 
     /**
      * 
@@ -208,7 +215,8 @@ class Client
      */
     public function execute()
     {
-    }
+    
+}
 
     /**
      * 
@@ -218,7 +226,8 @@ class Client
      */
     public function get()
     {
-    }
+    
+}
 
     /**
      * 
@@ -228,7 +237,8 @@ class Client
      */
     public function post()
     {
-    }
+    
+}
 
     /**
      * 
@@ -238,7 +248,8 @@ class Client
      */
     public function addFile()
     {
-    }
+    
+}
 
     /**
      * 
@@ -246,9 +257,10 @@ class Client
      * @example 
      * @return boolean
      */
-    public function isConnected()
+    public function isConnected():boolean
     {
-    }
+    
+}
 
     /**
      * 
@@ -258,7 +270,8 @@ class Client
      */
     public function close()
     {
-    }
+    
+}
 
     /**
      * 
@@ -266,9 +279,10 @@ class Client
      * @example 
      * @return boolean
      */
-    public function setDefer()
+    public function setDefer():boolean
     {
-    }
+    
+}
 
     /**
      * 
@@ -276,9 +290,10 @@ class Client
      * @example 
      * @return boolean
      */
-    public function getDefer()
+    public function getDefer():boolean
     {
-    }
+    
+}
 
     /**
      * 
@@ -286,9 +301,10 @@ class Client
      * @example 
      * @return string
      */
-    public function recv()
+    public function recv():string
     {
-    }
+    
+}
 
     /**
      * 
@@ -298,7 +314,8 @@ class Client
      */
     public function __sleep()
     {
-    }
+    
+}
 
     /**
      * 
@@ -308,7 +325,8 @@ class Client
      */
     public function __wakeup()
     {
-    }
+    
+}
 
 }
 

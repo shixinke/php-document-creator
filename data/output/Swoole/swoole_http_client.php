@@ -149,7 +149,7 @@ class swoole_http_client
      * @example 
      * @param string $host 连接的主机IP
      * @param int $port 连接的主机端口
-     * @param boolean $ssl 是否开启TLS/SSL隧道加密，https网站必须设置为true
+     * @param bool $ssl 是否开启TLS/SSL隧道加密，https网站必须设置为true
      * @return 
      */
     public function __construct($host, $port, $ssl)
@@ -255,7 +255,7 @@ class swoole_http_client
      * @example 
      * @param string $data 要发送的数据内容，默认为UTF-8文本格式，如果为其他格式编码或二进制数据，请使用WEBSOCKET_OPCODE_BINARY
      * @param int $opcode 操作类型，默认为WEBSOCKET_OPCODE_TEXT_FRAME表示发送文本
-     * @param boolean $finish 发送成功后是否结束
+     * @param bool $finish 发送成功后是否结束
      * @return 
      */
     public function push($data, $opcode, $finish)
@@ -317,7 +317,7 @@ class swoole_http_client
      * 
      *连接是否成功
      * @example 
-     * @return boolean
+     * @return bool
      */
     public function isConnected()
     {

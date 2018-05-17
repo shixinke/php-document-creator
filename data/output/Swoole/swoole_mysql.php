@@ -55,7 +55,7 @@ class swoole_mysql
     public $sock;
 
     /**
-     * @var boolean $connected 
+     * @var bool $connected
      * 是否连接上了MySQL服务器
      * @access public
      */

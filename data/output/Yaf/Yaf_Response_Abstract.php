@@ -2,7 +2,7 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/04/26
+* @modified 2018/05/17
 */
 
 /**
@@ -49,7 +49,8 @@ abstract class Yaf_Response_Abstract
      */
     public function __construct()
     {
-    }
+    
+}
 
     /**
      * 
@@ -60,7 +61,8 @@ abstract class Yaf_Response_Abstract
      */
     public function __destruct()
     {
-    }
+    
+}
 
     /**
      * 
@@ -71,7 +73,8 @@ abstract class Yaf_Response_Abstract
      */
     private function __clone()
     {
-    }
+    
+}
 
     /**
      * 
@@ -82,7 +85,8 @@ abstract class Yaf_Response_Abstract
      */
     public function __toString()
     {
-    }
+    
+}
 
     /**
      * 
@@ -93,9 +97,10 @@ abstract class Yaf_Response_Abstract
      * @param string $name 响应正文类型，默认为content
      * @return 
      */
-    public function setBody($body, $name = content)
+    public function setBody(string $body, string $name = content)
     {
-    }
+    
+}
 
     /**
      * 
@@ -105,9 +110,10 @@ abstract class Yaf_Response_Abstract
      * @param string $name 响应正文类型，默认为content
      * @return 
      */
-    public function getBody($name = content)
+    public function getBody(string $name = content)
     {
-    }
+    
+}
 
     /**
      * 
@@ -118,9 +124,10 @@ abstract class Yaf_Response_Abstract
      * @param string $name 响应正文类型，默认为content
      * @return 
      */
-    public function appendBody($body, $name)
+    public function appendBody(string $body, string $name)
     {
-    }
+    
+}
 
     /**
      * 
@@ -131,9 +138,10 @@ abstract class Yaf_Response_Abstract
      * @param string $name 响应正文类型，默认为content
      * @return 
      */
-    public function prependBody($body, $name)
+    public function prependBody(string $body, string $name)
     {
-    }
+    
+}
 
     /**
      * 
@@ -144,7 +152,8 @@ abstract class Yaf_Response_Abstract
      */
     public function clearBody()
     {
-    }
+    
+}
 
     /**
      * 
@@ -155,7 +164,8 @@ abstract class Yaf_Response_Abstract
      */
     public function getHeader()
     {
-    }
+    
+}
 
     /**
      * 
@@ -166,7 +176,8 @@ abstract class Yaf_Response_Abstract
      */
     public function setAllHeaders()
     {
-    }
+    
+}
 
     /**
      * 
@@ -177,7 +188,8 @@ abstract class Yaf_Response_Abstract
      */
     public function setHeader()
     {
-    }
+    
+}
 
     /**
      * 
@@ -188,7 +200,8 @@ abstract class Yaf_Response_Abstract
      */
     public function clearHeaders()
     {
-    }
+    
+}
 
     /**
      * 
@@ -198,9 +211,10 @@ abstract class Yaf_Response_Abstract
      * @param string $url 重定向的绝对URL
      * @return 
      */
-    public function setRedirect($url)
+    public function setRedirect(string $url)
     {
-    }
+    
+}
 
     /**
      * 
@@ -211,7 +225,8 @@ abstract class Yaf_Response_Abstract
      */
     public function response()
     {
-    }
+    
+}
 
 }
 

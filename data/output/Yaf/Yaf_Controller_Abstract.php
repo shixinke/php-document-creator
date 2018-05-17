@@ -2,7 +2,7 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/04/26
+* @modified 2018/05/17
 */
 
 /**
@@ -77,9 +77,10 @@ abstract class Yaf_Controller_Abstract
      * @param array $var_ 传递到视图对象的参数
      * @return 
      */
-    protected function render($action_name, $var_array = [], Array $var_)
+    protected function render(string $action_name, $var_array = [], Array $var_)
     {
-    }
+    
+}
 
     /**
      * 
@@ -91,9 +92,10 @@ abstract class Yaf_Controller_Abstract
      * @param array $var_ 传递到视图对象的参数
      * @return 
      */
-    protected function display($action_name, $var_array = [], Array $var_)
+    protected function display(string $action_name, $var_array = [], Array $var_)
     {
-    }
+    
+}
 
     /**
      * 
@@ -104,7 +106,8 @@ abstract class Yaf_Controller_Abstract
      */
     public function getRequest()
     {
-    }
+    
+}
 
     /**
      * 
@@ -115,7 +118,8 @@ abstract class Yaf_Controller_Abstract
      */
     public function getResponse()
     {
-    }
+    
+}
 
     /**
      * 
@@ -126,7 +130,8 @@ abstract class Yaf_Controller_Abstract
      */
     public function getModuleName()
     {
-    }
+    
+}
 
     /**
      * 
@@ -137,7 +142,8 @@ abstract class Yaf_Controller_Abstract
      */
     public function initView()
     {
-    }
+    
+}
 
     /**
      * 
@@ -148,7 +154,8 @@ abstract class Yaf_Controller_Abstract
      */
     public function getView()
     {
-    }
+    
+}
 
     /**
      * 
@@ -159,9 +166,10 @@ abstract class Yaf_Controller_Abstract
      * @param string $ path
      * @return 
      */
-    public function setViewPath($path, $)
+    public function setViewPath($path, string $)
     {
-    }
+    
+}
 
     /**
      * 
@@ -172,7 +180,8 @@ abstract class Yaf_Controller_Abstract
      */
     public function getViewPath()
     {
-    }
+    
+}
 
     /**
      * 
@@ -186,9 +195,10 @@ abstract class Yaf_Controller_Abstract
      * @param string $ parameters
      * @return 
      */
-    public function forward($module, $controller, $action, $parameters, $)
+    public function forward($module, $controller, $action, $parameters, string $)
     {
-    }
+    
+}
 
     /**
      * 
@@ -199,9 +209,10 @@ abstract class Yaf_Controller_Abstract
      * @param string $ url
      * @return 
      */
-    public function redirect($url, $)
+    public function redirect($url, string $)
     {
-    }
+    
+}
 
     /**
      * 
@@ -212,7 +223,8 @@ abstract class Yaf_Controller_Abstract
      */
     public function getInvokeArgs()
     {
-    }
+    
+}
 
     /**
      * 
@@ -223,9 +235,10 @@ abstract class Yaf_Controller_Abstract
      * @param string $ name
      * @return 
      */
-    public function getInvokeArg($name, $)
+    public function getInvokeArg($name, string $)
     {
-    }
+    
+}
 
     /**
      * 
@@ -236,7 +249,8 @@ abstract class Yaf_Controller_Abstract
      */
     public final  function __construct()
     {
-    }
+    
+}
 
     /**
      * 
@@ -247,7 +261,8 @@ abstract class Yaf_Controller_Abstract
      */
     public final  function __clone()
     {
-    }
+    
+}
 
 }
 

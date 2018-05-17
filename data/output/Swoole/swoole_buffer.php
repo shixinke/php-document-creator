@@ -61,7 +61,7 @@ class swoole_buffer
      * @example 
      * @param int $offset 表示偏移量，如果为负数，表示倒数计算偏移量
      * @param int $length 表示读取数据的长度，默认为从 $offset 到整个缓存区末尾
-     * @param boolean $seek 表示从缓冲区的头部将此数据移除
+     * @param bool $seek 表示从缓冲区的头部将此数据移除
      * @return string
      */
     public function substr($offset, $length, $seek)

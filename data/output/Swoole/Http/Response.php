@@ -2,7 +2,7 @@
 /**
 * Swoole自动补全类(基于最新的2.1.3版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/04/25
+* @modified 2018/05/17
 */
 
 /**
@@ -47,7 +47,8 @@ class Response
      */
     public function initHeader()
     {
-    }
+    
+}
 
     /**
      * 
@@ -62,9 +63,10 @@ class Response
      * @param boolean $httponly 是否只是http
      * @return 
      */
-    public function cookie($name, $value, $expires, $path, $domain, $secure, $httponly)
+    public function cookie(string $name, string $value, int $expires, string $path, string $domain, boolean $secure, boolean $httponly)
     {
-    }
+    
+}
 
     /**
      * 
@@ -79,9 +81,10 @@ class Response
      * @param boolean $httponly 是否只是http
      * @return 
      */
-    public function rawcookie($name, $value, $expires, $path, $domain, $secure, $httponly)
+    public function rawcookie(string $name, string $value, int $expires, string $path, string $domain, boolean $secure, boolean $httponly)
     {
-    }
+    
+}
 
     /**
      * 
@@ -90,9 +93,10 @@ class Response
      * @param int $http_code 状态码
      * @return 
      */
-    public function status($http_code)
+    public function status(int $http_code)
     {
-    }
+    
+}
 
     /**
      * 
@@ -101,9 +105,10 @@ class Response
      * @param int $compress_level 压缩等级
      * @return 
      */
-    public function gzip($compress_level)
+    public function gzip(int $compress_level)
     {
-    }
+    
+}
 
     /**
      * 
@@ -114,9 +119,10 @@ class Response
      * @param boolean $ucwords 首字母是否大写
      * @return 
      */
-    public function header($key, $value, $ucwords)
+    public function header(string $key, string $value, boolean $ucwords)
     {
-    }
+    
+}
 
     /**
      * 
@@ -129,7 +135,8 @@ class Response
      */
     public function trailer($key, $value, $ucwords)
     {
-    }
+    
+}
 
     /**
      * 
@@ -138,9 +145,10 @@ class Response
      * @param string $content 输出的内容
      * @return 
      */
-    public function write($content)
+    public function write(string $content)
     {
-    }
+    
+}
 
     /**
      * 
@@ -149,9 +157,10 @@ class Response
      * @param string $content 输出的内容
      * @return 
      */
-    public function end($content)
+    public function end(string $content)
     {
-    }
+    
+}
 
     /**
      * 
@@ -162,9 +171,10 @@ class Response
      * @param int $length 长度
      * @return 
      */
-    public function sendfile($filename, $offset, $length)
+    public function sendfile(string $filename, int $offset, int $length)
     {
-    }
+    
+}
 
     /**
      * 
@@ -174,7 +184,8 @@ class Response
      */
     public function __sleep()
     {
-    }
+    
+}
 
     /**
      * 
@@ -184,7 +195,8 @@ class Response
      */
     public function __wakeup()
     {
-    }
+    
+}
 
     /**
      * 
@@ -194,7 +206,8 @@ class Response
      */
     public function __destruct()
     {
-    }
+    
+}
 
 }
 

@@ -109,6 +109,10 @@ class Document
                             }
                             $content .= $paramValue['type'].' $'.$param;
                         }
+                        $paramType = self::getFunctionParamType($paramValue['type']);
+                        if ($paramType != "") {
+                            $params .= $paramType." ";
+                        }
                         $params .= '$'.$param;
                     }
                     if (isset($paramValue['value'])) {
@@ -135,7 +139,24 @@ class Document
 
             $content .= "function ".$m."(";
             $content .= $params;
-            $content .= ")\n{\n";
+            $content .= ")";
+            if (self::checkVersion() && isset($mv['return']) && ($mv['return'] != '') && (!in_array($mv['return'], array('mixed', 'unknown')))) {
+                $splitArr = explode('|', $mv['return']);
+                if (count($splitArr) > 1) {
+                    if (trim($splitArr[0]) != 'bool' && trim($splitArr[0]) != 'boolean') {
+                        $content .= ":".trim($splitArr[0]);
+                    } else {
+                        $content .= ":".trim($splitArr[1]);
+                    }
+
+                } else {
+                    $content .= ":".$mv['return'];
+                }
+            }
+            $content .= "\n{\n";
+            if (isset($mv['body']) && $mv['body'] != '') {
+                $content .= "    ".$mv['body'];
+            }
             $content .=  "}\n\n";
         }
 
@@ -284,6 +305,10 @@ class Document
                                 } else {
                                     $content .= $paramValue['type'].' $'.$param;
                                 }
+                                $paramType = self::getFunctionParamType($paramValue['type']);
+                                if ($paramType != "") {
+                                    $params .= $paramType." ";
+                                }
                                 $params .= '$'.$param;
                             }
                             if (isset($paramValue['value'])) {
@@ -321,10 +346,27 @@ class Document
                     $content .= " function ".$m."(";
                     $content .= $params;
                     $content .= ")";
+                    if (self::checkVersion() && isset($mv['return']) && ($mv['return'] != '')  && (!in_array($mv['return'], array('mixed', 'unknown')))) {
+                        $splitArr = explode('|', $mv['return']);
+                        if (count($splitArr) > 1) {
+                            if (trim($splitArr[0]) != 'bool' && trim($splitArr[0]) != 'boolean') {
+                                $content .= ":".trim($splitArr[0]);
+                            } else {
+                                $content .= ":".trim($splitArr[1]);
+                            }
+
+                        } else {
+                            $content .= ":".$mv['return'];
+                        }
+                    }
                     if (isset($mv['isAbstract'])) {
                         $content .= ";\n\n";
                     } else {
-                        $content .= "\n    {\n    }\n\n";
+                        $content .= "\n    {\n    ";
+                        if (isset($mv['body']) && ($mv['body'] != '')) {
+                            $content .= "    ".$mv['body'];
+                        }
+                        $content .= "\n}\n\n";
                     }
                 }
 
@@ -531,5 +573,30 @@ class Document
             $content = json_encode($content, JSON_UNESCAPED_UNICODE);
         }
         return file_put_contents($fileName, $content);
+    }
+
+    public static function checkVersion() {
+        if(PHP_MAJOR_VERSION > 6) {
+            return true;
+        }
+        return false;
+    }
+
+    public static function getFunctionParamType($mv) {
+        $type = '';
+        if (self::checkVersion() && isset($mv) && ($mv != '')  && (!in_array($mv, array('mixed', 'unknown')))) {
+            $splitArr = explode('|', $mv);
+            if (count($splitArr) > 1) {
+                if (trim($splitArr[0]) != 'bool' && trim($splitArr[0]) != 'boolean') {
+                    $type = trim($splitArr[0]);
+                } else {
+                    $type = trim($splitArr[1]);
+                }
+
+            } else {
+                $type = $mv;
+            }
+        }
+        return $type;
     }
 }

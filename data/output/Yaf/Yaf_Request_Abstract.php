@@ -2,7 +2,7 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/04/26
+* @modified 2018/05/17
 */
 
 /**
@@ -118,7 +118,8 @@ abstract class Yaf_Request_Abstract
      */
     public function isGet()
     {
-    }
+    
+}
 
     /**
      * 
@@ -129,7 +130,8 @@ abstract class Yaf_Request_Abstract
      */
     public function isPost()
     {
-    }
+    
+}
 
     /**
      * 
@@ -140,7 +142,8 @@ abstract class Yaf_Request_Abstract
      */
     public function isPut()
     {
-    }
+    
+}
 
     /**
      * 
@@ -151,7 +154,8 @@ abstract class Yaf_Request_Abstract
      */
     public function isHead()
     {
-    }
+    
+}
 
     /**
      * 
@@ -162,7 +166,8 @@ abstract class Yaf_Request_Abstract
      */
     public function isOptions()
     {
-    }
+    
+}
 
     /**
      * 
@@ -173,7 +178,8 @@ abstract class Yaf_Request_Abstract
      */
     public function isCli()
     {
-    }
+    
+}
 
     /**
      * 
@@ -184,7 +190,8 @@ abstract class Yaf_Request_Abstract
      */
     public function isXmlHttpRequest()
     {
-    }
+    
+}
 
     /**
      * 
@@ -195,9 +202,10 @@ abstract class Yaf_Request_Abstract
      * @param mixed $default 默认值
      * @return 
      */
-    public function getServer($name, $default)
+    public function getServer(string $name, $default)
     {
-    }
+    
+}
 
     /**
      * 
@@ -208,9 +216,10 @@ abstract class Yaf_Request_Abstract
      * @param string $default 默认值
      * @return 
      */
-    public function getEnv($name, $default)
+    public function getEnv(string $name, string $default)
     {
-    }
+    
+}
 
     /**
      * 
@@ -222,9 +231,10 @@ abstract class Yaf_Request_Abstract
      * @param mixed $value 变量值
      * @return 
      */
-    public function setParam($name, $value)
+    public function setParam(string $name, $value)
     {
-    }
+    
+}
 
     /**
      * 
@@ -235,9 +245,10 @@ abstract class Yaf_Request_Abstract
      * @param string $default 默认值
      * @return 
      */
-    public function getParam($name, $default)
+    public function getParam(string $name, string $default)
     {
-    }
+    
+}
 
     /**
      * 
@@ -248,7 +259,8 @@ abstract class Yaf_Request_Abstract
      */
     public function getParams()
     {
-    }
+    
+}
 
     /**
      * 
@@ -259,7 +271,8 @@ abstract class Yaf_Request_Abstract
      */
     public function getException()
     {
-    }
+    
+}
 
     /**
      * 
@@ -270,7 +283,8 @@ abstract class Yaf_Request_Abstract
      */
     public function getModuleName()
     {
-    }
+    
+}
 
     /**
      * 
@@ -281,7 +295,8 @@ abstract class Yaf_Request_Abstract
      */
     public function getControllerName()
     {
-    }
+    
+}
 
     /**
      * 
@@ -292,7 +307,8 @@ abstract class Yaf_Request_Abstract
      */
     public function getActionName()
     {
-    }
+    
+}
 
     /**
      * 
@@ -302,9 +318,10 @@ abstract class Yaf_Request_Abstract
      * @param string $name 模块名
      * @return 
      */
-    public function setModuleName($name)
+    public function setModuleName(string $name)
     {
-    }
+    
+}
 
     /**
      * 
@@ -315,9 +332,10 @@ abstract class Yaf_Request_Abstract
      * @param string $ name
      * @return 
      */
-    public function setControllerName($name, $)
+    public function setControllerName($name, string $)
     {
-    }
+    
+}
 
     /**
      * 
@@ -328,9 +346,10 @@ abstract class Yaf_Request_Abstract
      * @param string $ name
      * @return 
      */
-    public function setActionName($name, $)
+    public function setActionName($name, string $)
     {
-    }
+    
+}
 
     /**
      * 
@@ -341,7 +360,8 @@ abstract class Yaf_Request_Abstract
      */
     public function getMethod()
     {
-    }
+    
+}
 
     /**
      * 
@@ -352,7 +372,8 @@ abstract class Yaf_Request_Abstract
      */
     public function getLanguage()
     {
-    }
+    
+}
 
     /**
      * 
@@ -363,9 +384,10 @@ abstract class Yaf_Request_Abstract
      * @param string $ baseuri
      * @return 
      */
-    public function setBaseUri($baseuri, $)
+    public function setBaseUri($baseuri, string $)
     {
-    }
+    
+}
 
     /**
      * 
@@ -376,7 +398,8 @@ abstract class Yaf_Request_Abstract
      */
     public function getBaseUri()
     {
-    }
+    
+}
 
     /**
      * 
@@ -387,7 +410,8 @@ abstract class Yaf_Request_Abstract
      */
     public function getRequestUri()
     {
-    }
+    
+}
 
     /**
      * 
@@ -398,9 +422,10 @@ abstract class Yaf_Request_Abstract
      * @param string $ uri
      * @return 
      */
-    public function setRequestUri($uri, $)
+    public function setRequestUri($uri, string $)
     {
-    }
+    
+}
 
     /**
      * 
@@ -411,7 +436,8 @@ abstract class Yaf_Request_Abstract
      */
     public function isDispatched()
     {
-    }
+    
+}
 
     /**
      * 
@@ -422,7 +448,8 @@ abstract class Yaf_Request_Abstract
      */
     public function setDispatched()
     {
-    }
+    
+}
 
     /**
      * 
@@ -433,7 +460,8 @@ abstract class Yaf_Request_Abstract
      */
     public function isRouted()
     {
-    }
+    
+}
 
     /**
      * 
@@ -444,7 +472,8 @@ abstract class Yaf_Request_Abstract
      */
     public function setRouted()
     {
-    }
+    
+}
 
 }
 

@@ -2,7 +2,7 @@
 /**
 * Swoole自动补全类(基于最新的2.1.3版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/04/25
+* @modified 2018/05/17
 */
 
 /**
@@ -19,7 +19,8 @@ class Iterator
      */
     public function rewind()
     {
-    }
+    
+}
 
     /**
      * 
@@ -29,7 +30,8 @@ class Iterator
      */
     public function next()
     {
-    }
+    
+}
 
     /**
      * 
@@ -39,7 +41,8 @@ class Iterator
      */
     public function current()
     {
-    }
+    
+}
 
     /**
      * 
@@ -49,7 +52,8 @@ class Iterator
      */
     public function key()
     {
-    }
+    
+}
 
     /**
      * 
@@ -59,7 +63,8 @@ class Iterator
      */
     public function valid()
     {
-    }
+    
+}
 
     /**
      * 
@@ -67,9 +72,10 @@ class Iterator
      * @example 
      * @return int
      */
-    public function count()
+    public function count():int
     {
-    }
+    
+}
 
     /**
      * 
@@ -78,9 +84,10 @@ class Iterator
      * @param int $fd 连接句柄
      * @return 
      */
-    public function offsetExists($fd)
+    public function offsetExists(int $fd)
     {
-    }
+    
+}
 
     /**
      * 
@@ -89,9 +96,10 @@ class Iterator
      * @param int $fd 连接句柄
      * @return 
      */
-    public function offsetGet($fd)
+    public function offsetGet(int $fd)
     {
-    }
+    
+}
 
     /**
      * 
@@ -101,9 +109,10 @@ class Iterator
      * @param mixed $value 需要设置的值
      * @return 
      */
-    public function offsetSet($fd, $value)
+    public function offsetSet(int $fd, $value)
     {
-    }
+    
+}
 
     /**
      * 
@@ -112,9 +121,10 @@ class Iterator
      * @param int $fd 连接句柄
      * @return 
      */
-    public function offsetUnset($fd)
+    public function offsetUnset(int $fd)
     {
-    }
+    
+}
 
 }
 

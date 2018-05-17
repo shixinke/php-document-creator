@@ -2,7 +2,7 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/04/26
+* @modified 2018/05/17
 */
 
 /**
@@ -28,9 +28,10 @@ final class Yaf_Route_Supervar
      * @param $var $string 全局路由变量名
      * @return 
      */
-    public function __construct($var, $string)
+    public function __construct($var, $var $string)
     {
-    }
+    
+}
 
     /**
      * 
@@ -41,9 +42,10 @@ final class Yaf_Route_Supervar
      * @param YafX_Request_Abstract $ request
      * @return 
      */
-    public function route($request, $)
+    public function route($request, YafX_Request_Abstract $)
     {
-    }
+    
+}
 
     /**
      * 
@@ -57,7 +59,8 @@ final class Yaf_Route_Supervar
      */
     public function assemble($info, $query, Array $)
     {
-    }
+    
+}
 
 }
 

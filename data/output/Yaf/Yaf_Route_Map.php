@@ -2,7 +2,7 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/04/26
+* @modified 2018/05/17
 */
 
 /**
@@ -37,9 +37,10 @@ final class Yaf_Route_Map
      * @param $delim $string 表示一个分隔符，如果设置了这个分隔符，那么在REQUEST_URI中，分隔符之前的作为路由信息载体，而之后的作为请求参数.
      * @return 
      */
-    public function __construct($controller_prefer = 0, $delim = , $boolean, $string)
+    public function __construct($controller_prefer = 0, $delim = , $controller_prefer $boolean, $delim $string)
     {
-    }
+    
+}
 
     /**
      * 
@@ -50,9 +51,10 @@ final class Yaf_Route_Map
      * @param YafX_Request_Abstract $ request
      * @return 
      */
-    public function route($request, $)
+    public function route($request, YafX_Request_Abstract $)
     {
-    }
+    
+}
 
     /**
      * 
@@ -66,7 +68,8 @@ final class Yaf_Route_Map
      */
     public function assemble($info, $query, $)
     {
-    }
+    
+}
 
 }
 

@@ -36,7 +36,7 @@ class swoole_channel
      *向通道写入数据
      * @example 
      * @param mixed $data 可以为任意PHP变量，当$data是非字符串类型时底层会自动进行串化($data的尺寸超过8K时会启用临时文件存储数据;$data必须为非空变量，如空字符串、空数组、0、null、false)
-     * @return boolean
+     * @return bool
      */
     public function push($data)
     {

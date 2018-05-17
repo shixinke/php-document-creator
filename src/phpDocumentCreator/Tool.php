@@ -76,15 +76,23 @@ class Tool
             $params = $func->getParameters();
             foreach($params as $param) {
                 $paramName = $param->getName();
+                if ($paramName == "") {
+                    continue;
+                }
                 $type = '';
                 if ($param->hasType()) {
                     $type = $param->getType();
+                }
+                $defaultValue = null;
+                if ($param->isDefaultValueAvailable()) {
+                    $defaultValue = $param->getDefaultValue();
                 }
 
                 $arr[$name]['parameters'][$paramName] = array(
                     'comment'=>'',
                     'options'=>array(),
-                    'type'=>$type
+                    'type'=>$type,
+                    'value'=>$defaultValue
                 );
             }
         }
@@ -249,6 +257,9 @@ class Tool
             $arr[$name]['parameters'] = array();
             foreach($params as $param) {
                 $paramName = $param->getName();
+                if ($paramName == "") {
+                    continue;
+                }
                 $type = 'unknown';
                 if ($param->hasType()) {
                     $type = $param->getType();

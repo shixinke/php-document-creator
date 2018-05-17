@@ -2,7 +2,7 @@
 /**
 * Swoole自动补全类(基于最新的2.1.3版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/04/25
+* @modified 2018/05/17
 */
 
 /**
@@ -18,9 +18,10 @@ class MsgQueue
      * @param int $len 队列长度
      * @return 
      */
-    public function __construct($len)
+    public function __construct(int $len)
     {
-    }
+    
+}
 
     /**
      * 
@@ -30,7 +31,8 @@ class MsgQueue
      */
     public function __destruct()
     {
-    }
+    
+}
 
     /**
      * 
@@ -40,9 +42,10 @@ class MsgQueue
      * @param int $type 类型
      * @return 
      */
-    public function push($data, $type)
+    public function push($data, int $type)
     {
-    }
+    
+}
 
     /**
      * 
@@ -51,9 +54,10 @@ class MsgQueue
      * @param int $type 类型
      * @return 
      */
-    public function pop($type)
+    public function pop(int $type)
     {
-    }
+    
+}
 
     /**
      * 
@@ -62,9 +66,10 @@ class MsgQueue
      * @param bool $blocking 是否阻塞
      * @return 
      */
-    public function setBlocking($blocking)
+    public function setBlocking(bool $blocking)
     {
-    }
+    
+}
 
     /**
      * 
@@ -72,9 +77,10 @@ class MsgQueue
      * @example 
      * @return array|bool
      */
-    public function stats()
+    public function stats():array
     {
-    }
+    
+}
 
     /**
      * 
@@ -84,7 +90,8 @@ class MsgQueue
      */
     public function destory()
     {
-    }
+    
+}
 
 }
 

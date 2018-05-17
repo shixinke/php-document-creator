@@ -2,7 +2,7 @@
 /**
 * Swoole自动补全类(基于最新的2.1.3版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/04/25
+* @modified 2018/05/17
 */
 
 /**
@@ -94,9 +94,10 @@ class Client
      * @param int $type 表示socket的类型，如TCP/UDP
      * @return 
      */
-    public function __construct($type)
+    public function __construct(int $type)
     {
-    }
+    
+}
 
     /**
      * 
@@ -106,7 +107,8 @@ class Client
      */
     public function __destruct()
     {
-    }
+    
+}
 
     /**
      * 
@@ -117,7 +119,8 @@ class Client
      */
     public function set(Array $settings)
     {
-    }
+    
+}
 
     /**
      * 
@@ -128,9 +131,10 @@ class Client
      * @param float $timeout 网络IO的超时，包括connect/send/recv，单位是s，支持浮点数。默认为0.1s，即100ms，超时发生时，连接会被自动close掉
      * @return 
      */
-    public function connect($host, $port, $timeout)
+    public function connect(string $host, int $port, float $timeout)
     {
-    }
+    
+}
 
     /**
      * 
@@ -138,9 +142,10 @@ class Client
      * @example 
      * @return string
      */
-    public function recv()
+    public function recv():string
     {
-    }
+    
+}
 
     /**
      * 
@@ -150,9 +155,10 @@ class Client
      * @param boolean $flag 是否立即返回
      * @return 
      */
-    public function send($data, $flag)
+    public function send(string $data, boolean $flag)
     {
-    }
+    
+}
 
     /**
      * 
@@ -163,9 +169,10 @@ class Client
      * @param int $length 发送数据的尺寸，默认为整个文件的尺寸
      * @return boolean
      */
-    public function sendfile($filename, $offset, $length)
+    public function sendfile(string $filename, int $offset, int $length):boolean
     {
-    }
+    
+}
 
     /**
      * 
@@ -176,9 +183,10 @@ class Client
      * @param string $data 要发送的数据内容，不得超过64K
      * @return boolean
      */
-    public function sendto($ip, $port, $data)
+    public function sendto(string $ip, int $port, string $data):boolean
     {
-    }
+    
+}
 
     /**
      * 
@@ -186,9 +194,10 @@ class Client
      * @example 
      * @return boolean
      */
-    public function isConnected()
+    public function isConnected():boolean
     {
-    }
+    
+}
 
     /**
      * 
@@ -196,9 +205,10 @@ class Client
      * @example 
      * @return array
      */
-    public function getsockname()
+    public function getsockname():array
     {
-    }
+    
+}
 
     /**
      * 
@@ -206,9 +216,10 @@ class Client
      * @example 
      * @return boolean
      */
-    public function getpeername()
+    public function getpeername():boolean
     {
-    }
+    
+}
 
     /**
      * 
@@ -216,9 +227,10 @@ class Client
      * @example 
      * @return boolean
      */
-    public function close()
+    public function close():boolean
     {
-    }
+    
+}
 
     /**
      * 
@@ -228,7 +240,8 @@ class Client
      */
     public function __sleep()
     {
-    }
+    
+}
 
     /**
      * 
@@ -238,7 +251,8 @@ class Client
      */
     public function __wakeup()
     {
-    }
+    
+}
 
 }
 

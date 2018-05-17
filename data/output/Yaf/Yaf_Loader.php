@@ -2,7 +2,7 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/04/26
+* @modified 2018/05/17
 */
 
 /**
@@ -44,7 +44,8 @@ final class Yaf_Loader
      */
     private function __construct()
     {
-    }
+    
+}
 
     /**
      * 
@@ -55,7 +56,8 @@ final class Yaf_Loader
      */
     private function __clone()
     {
-    }
+    
+}
 
     /**
      * 
@@ -66,7 +68,8 @@ final class Yaf_Loader
      */
     public function __destruct()
     {
-    }
+    
+}
 
     /**
      * 
@@ -77,7 +80,8 @@ final class Yaf_Loader
      */
     private function __sleep()
     {
-    }
+    
+}
 
     /**
      * 
@@ -88,7 +92,8 @@ final class Yaf_Loader
      */
     private function __wakeup()
     {
-    }
+    
+}
 
     /**
      * 
@@ -99,9 +104,10 @@ final class Yaf_Loader
      * @param $class $string 类名
      * @return 
      */
-    public function autoload($class, $string)
+    public function autoload($class, $class $string)
     {
-    }
+    
+}
 
     /**
      * 
@@ -112,9 +118,10 @@ final class Yaf_Loader
      * @param string $global 全局类库目录
      * @return 
      */
-    public static  function getInstance($library, $global)
+    public static  function getInstance(string $library, string $global)
     {
-    }
+    
+}
 
     /**
      * 
@@ -126,7 +133,8 @@ final class Yaf_Loader
      */
     public function registerLocalNamespace($namespace)
     {
-    }
+    
+}
 
     /**
      * 
@@ -137,7 +145,8 @@ final class Yaf_Loader
      */
     public function getLocalNamespace()
     {
-    }
+    
+}
 
     /**
      * 
@@ -148,7 +157,8 @@ final class Yaf_Loader
      */
     public function clearLocalNamespace()
     {
-    }
+    
+}
 
     /**
      * 
@@ -159,9 +169,10 @@ final class Yaf_Loader
      * @param $class_name $string 类名
      * @return 
      */
-    public function isLocalName($class_name, $string)
+    public function isLocalName($class_name, $class_name $string)
     {
-    }
+    
+}
 
     /**
      * 
@@ -172,9 +183,10 @@ final class Yaf_Loader
      * @param $file $string include的全路径文件名
      * @return 
      */
-    public static  function import($file, $string)
+    public static  function import($file, $file $string)
     {
-    }
+    
+}
 
     /**
      * 
@@ -185,9 +197,10 @@ final class Yaf_Loader
      * @param boolean $global 是否为全局类库
      * @return 
      */
-    public function setLibraryPath($library, $global = )
+    public function setLibraryPath(string $library, boolean $global = )
     {
-    }
+    
+}
 
     /**
      * 
@@ -198,9 +211,10 @@ final class Yaf_Loader
      * @param boolean $ global
      * @return 
      */
-    public function getLibraryPath($global = , $)
+    public function getLibraryPath($global = , boolean $)
     {
-    }
+    
+}
 
 }
 

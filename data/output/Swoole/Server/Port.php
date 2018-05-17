@@ -2,7 +2,7 @@
 /**
 * Swoole自动补全类(基于最新的2.1.3版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/04/25
+* @modified 2018/05/17
 */
 
 /**
@@ -131,7 +131,8 @@ class Port
      */
     private function __construct()
     {
-    }
+    
+}
 
     /**
      * 
@@ -141,7 +142,8 @@ class Port
      */
     public function __destruct()
     {
-    }
+    
+}
 
     /**
      * 
@@ -152,7 +154,8 @@ class Port
      */
     public function set(Array $settings)
     {
-    }
+    
+}
 
     /**
      * 
@@ -162,9 +165,10 @@ class Port
      * @param callable $callback 事件对应的回调函数
      * @return 
      */
-    public function on($event_name, Callable $callback)
+    public function on(string $event_name, Callable $callback)
     {
-    }
+    
+}
 
     /**
      * 
@@ -174,7 +178,8 @@ class Port
      */
     public function __sleep()
     {
-    }
+    
+}
 
     /**
      * 
@@ -184,7 +189,8 @@ class Port
      */
     public function __wakeup()
     {
-    }
+    
+}
 
 }
 

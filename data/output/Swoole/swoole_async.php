@@ -18,7 +18,7 @@ class swoole_async
      * @param callable $callback 读文件完成后的回调函数(回调函数可使用的参数$fileName, $content)
      * @param int $chunk_size 每次读入的块大小
      * @param int $offset 读入每次的偏移量
-     * @return boolean
+     * @return bool
      */
     public static  function read($filename, Callable $callback, $chunk_size, $offset)
     {

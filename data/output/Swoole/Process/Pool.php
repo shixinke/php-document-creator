@@ -2,7 +2,7 @@
 /**
 * Swoole自动补全类(基于最新的2.1.3版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/04/25
+* @modified 2018/05/17
 */
 
 /**
@@ -23,9 +23,10 @@ class Pool
      * @param int $msgqueue_key 消息队列的键
      * @return 
      */
-    public function __construct($worker_num, $ipc_type = 0, $msgqueue_key = 0)
+    public function __construct(int $worker_num, int $ipc_type = 0, int $msgqueue_key = 0)
     {
-    }
+    
+}
 
     /**
      * 
@@ -35,7 +36,8 @@ class Pool
      */
     public function __destruct()
     {
-    }
+    
+}
 
     /**
      * 
@@ -45,9 +47,10 @@ class Pool
      * @param callable $callback 回调函数(回调函数onWorkerStart/onWorkerStop，接受2个参数：Pool对象;WorkerId当前工作进程的编号，底层会对子进程进行标号，范围是[0-$worker_num);回调函数onMessage有两个参数：Pool对象,消息数据内容data)
      * @return 
      */
-    public function on($event_name, Callable $callback)
+    public function on(string $event_name, Callable $callback)
     {
-    }
+    
+}
 
     /**
      * 
@@ -58,9 +61,10 @@ class Pool
      * @param int $backlog 监听的队列长度
      * @return bool
      */
-    public function listen($host, $port = 0, $backlog = 2048)
+    public function listen(string $host, int $port = 0, int $backlog = 2048):bool
     {
-    }
+    
+}
 
     /**
      * 
@@ -78,9 +82,10 @@ class Pool
      * @param string $data 写入的数据内容。可多次调用write，底层会在onMessage函数退出后将数据全部写入socket中，并close连接
      * @return 
      */
-    public function write($data)
+    public function write(string $data)
     {
-    }
+    
+}
 
     /**
      * 
@@ -88,9 +93,10 @@ class Pool
      * @example 
      * @return bool
      */
-    public function start()
+    public function start():bool
     {
-    }
+    
+}
 
 }
 

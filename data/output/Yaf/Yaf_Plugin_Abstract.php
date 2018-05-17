@@ -2,7 +2,7 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/04/26
+* @modified 2018/05/17
 */
 
 /**
@@ -20,9 +20,10 @@ abstract class Yaf_Plugin_Abstract
      * @param YafX_Response_Abstract $response 当前响应对象
      * @return 
      */
-    public function routerStartup($request, $response)
+    public function routerStartup(YafX_Request_Abstract $request, YafX_Response_Abstract $response)
     {
-    }
+    
+}
 
     /**
      * 
@@ -33,9 +34,10 @@ abstract class Yaf_Plugin_Abstract
      * @param YafX_Response_Abstract $response 当前响应对象
      * @return 
      */
-    public function routerShutdown($request, $response)
+    public function routerShutdown(YafX_Request_Abstract $request, YafX_Response_Abstract $response)
     {
-    }
+    
+}
 
     /**
      * 
@@ -46,9 +48,10 @@ abstract class Yaf_Plugin_Abstract
      * @param YafX_Response_Abstract $response 当前响应对象
      * @return 
      */
-    public function dispatchLoopStartup($request, $response)
+    public function dispatchLoopStartup(YafX_Request_Abstract $request, YafX_Response_Abstract $response)
     {
-    }
+    
+}
 
     /**
      * 
@@ -59,9 +62,10 @@ abstract class Yaf_Plugin_Abstract
      * @param YafX_Response_Abstract $response 当前响应对象
      * @return 
      */
-    public function preDispatch($request, $response)
+    public function preDispatch(YafX_Request_Abstract $request, YafX_Response_Abstract $response)
     {
-    }
+    
+}
 
     /**
      * 
@@ -72,9 +76,10 @@ abstract class Yaf_Plugin_Abstract
      * @param YafX_Response_Abstract $response 当前响应对象
      * @return 
      */
-    public function postDispatch($request, $response)
+    public function postDispatch(YafX_Request_Abstract $request, YafX_Response_Abstract $response)
     {
-    }
+    
+}
 
     /**
      * 
@@ -85,9 +90,10 @@ abstract class Yaf_Plugin_Abstract
      * @param YafX_Response_Abstract $response 当前响应对象
      * @return 
      */
-    public function dispatchLoopShutdown($request, $response)
+    public function dispatchLoopShutdown(YafX_Request_Abstract $request, YafX_Response_Abstract $response)
     {
-    }
+    
+}
 
 }
 

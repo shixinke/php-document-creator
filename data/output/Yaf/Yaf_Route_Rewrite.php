@@ -2,7 +2,7 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/04/26
+* @modified 2018/05/17
 */
 
 /**
@@ -46,9 +46,10 @@ final class Yaf_Route_Rewrite
      * @param array $ verify
      * @return 
      */
-    public function __construct($match, Array $route, $verify, Array $)
+    public function __construct(string $match, Array $route, $verify, Array $)
     {
-    }
+    
+}
 
     /**
      * 
@@ -59,9 +60,10 @@ final class Yaf_Route_Rewrite
      * @param YafX_Request_Abstract $ request
      * @return 
      */
-    public function route($request, $)
+    public function route($request, YafX_Request_Abstract $)
     {
-    }
+    
+}
 
     /**
      * 
@@ -75,7 +77,8 @@ final class Yaf_Route_Rewrite
      */
     public function assemble($info, $query, Array $)
     {
-    }
+    
+}
 
 }
 

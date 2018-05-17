@@ -2,7 +2,7 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/04/26
+* @modified 2018/05/17
 */
 
 /**
@@ -36,9 +36,10 @@ final class Yaf_Config_Simple extends Yaf_Config_Abstract
      * @param string $readonly 是否只读
      * @return 
      */
-    public function __construct($config, $readonly)
+    public function __construct(string $config, string $readonly)
     {
-    }
+    
+}
 
     /**
      * 
@@ -48,9 +49,10 @@ final class Yaf_Config_Simple extends Yaf_Config_Abstract
      * @param string $name 节点名称
      * @return 
      */
-    public function __isset($name)
+    public function __isset(string $name)
     {
-    }
+    
+}
 
     /**
      * 
@@ -61,9 +63,10 @@ final class Yaf_Config_Simple extends Yaf_Config_Abstract
      * @param mixed $value 节点值
      * @return 
      */
-    public function set($name, $value)
+    public function set(string $name, $value)
     {
-    }
+    
+}
 
     /**
      * 
@@ -74,7 +77,8 @@ final class Yaf_Config_Simple extends Yaf_Config_Abstract
      */
     public function count()
     {
-    }
+    
+}
 
     /**
      * 
@@ -85,7 +89,8 @@ final class Yaf_Config_Simple extends Yaf_Config_Abstract
      */
     public function rewind()
     {
-    }
+    
+}
 
     /**
      * 
@@ -96,7 +101,8 @@ final class Yaf_Config_Simple extends Yaf_Config_Abstract
      */
     public function current()
     {
-    }
+    
+}
 
     /**
      * 
@@ -107,7 +113,8 @@ final class Yaf_Config_Simple extends Yaf_Config_Abstract
      */
     public function next()
     {
-    }
+    
+}
 
     /**
      * 
@@ -118,7 +125,8 @@ final class Yaf_Config_Simple extends Yaf_Config_Abstract
      */
     public function valid()
     {
-    }
+    
+}
 
     /**
      * 
@@ -129,7 +137,8 @@ final class Yaf_Config_Simple extends Yaf_Config_Abstract
      */
     public function key()
     {
-    }
+    
+}
 
     /**
      * 
@@ -139,9 +148,10 @@ final class Yaf_Config_Simple extends Yaf_Config_Abstract
      * @param string $name 节点名称
      * @return 
      */
-    public function offsetUnset($name)
+    public function offsetUnset(string $name)
     {
-    }
+    
+}
 
     /**
      * 
@@ -153,7 +163,8 @@ final class Yaf_Config_Simple extends Yaf_Config_Abstract
      */
     public function offsetExists($name)
     {
-    }
+    
+}
 
     /**
      * 
@@ -165,9 +176,10 @@ final class Yaf_Config_Simple extends Yaf_Config_Abstract
      * @param string $ name
      * @return 
      */
-    public function offsetGet($name, $)
+    public function offsetGet($name, string $)
     {
-    }
+    
+}
 
     /**
      * 
@@ -179,9 +191,10 @@ final class Yaf_Config_Simple extends Yaf_Config_Abstract
      * @param string $ name
      * @return 
      */
-    public function get($name, $)
+    public function get($name, string $)
     {
-    }
+    
+}
 
     /**
      * 
@@ -192,9 +205,10 @@ final class Yaf_Config_Simple extends Yaf_Config_Abstract
      * @param mixed $value 节点值
      * @return 
      */
-    public function offsetSet($name, $value)
+    public function offsetSet(string $name, $value)
     {
-    }
+    
+}
 
     /**
      * 
@@ -206,9 +220,10 @@ final class Yaf_Config_Simple extends Yaf_Config_Abstract
      * @param string $ name
      * @return 
      */
-    public function __get($name, $)
+    public function __get($name, string $)
     {
-    }
+    
+}
 
     /**
      * 
@@ -219,9 +234,10 @@ final class Yaf_Config_Simple extends Yaf_Config_Abstract
      * @param mixed $value 节点值
      * @return 
      */
-    public function __set($name, $value)
+    public function __set(string $name, $value)
     {
-    }
+    
+}
 
     /**
      * 
@@ -231,7 +247,8 @@ final class Yaf_Config_Simple extends Yaf_Config_Abstract
      */
     public function toArray()
     {
-    }
+    
+}
 
     /**
      * 
@@ -241,7 +258,8 @@ final class Yaf_Config_Simple extends Yaf_Config_Abstract
      */
     public function readonly()
     {
-    }
+    
+}
 
 }
 

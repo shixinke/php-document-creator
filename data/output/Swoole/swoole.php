@@ -676,7 +676,7 @@ function swoole_last_error()
 * @param callable $read_callback:读事件回调 
 * @param callable $write_callback:写事件回调 
 * @param int $events:事件名称，可选择关闭/开启可读可写事件，如SWOOLE_EVENT_READ，SWOOLE_EVENT_WRITE，或者SWOOLE_EVENT_READ | SWOOLE_EVENT_WRITE 
-* @return boolean
+* @return bool
 */
 function swoole_event_add($fd, Callable $read_callback, Callable $write_callback, $events)
 {
@@ -691,7 +691,7 @@ function swoole_event_add($fd, Callable $read_callback, Callable $write_callback
 * @param callable $read_callback:读事件回调 
 * @param callable $write_callback:写事件回调 
 * @param int $events:事件名称,，可选择关闭/开启可读可写事件，如SWOOLE_EVENT_READ，SWOOLE_EVENT_WRITE，或者SWOOLE_EVENT_READ | SWOOLE_EVENT_WRITE 
-* @return boolean
+* @return bool
 */
 function swoole_event_set($fd, Callable $read_callback, Callable $write_callback, $events)
 {
@@ -703,7 +703,7 @@ function swoole_event_set($fd, Callable $read_callback, Callable $write_callback
 * @example 
 * 
 * @param int $fd:连接句柄 
-* @return boolean
+* @return bool
 */
 function swoole_event_del($fd)
 {
@@ -762,7 +762,7 @@ function swoole_event_defer(Callable $callback)
 * @example 
 * 
 * @param callable $callback:要设置的回调函数，必须为可执行。$callback为null时表示清除cycle函数 
-* @return boolean
+* @return bool
 */
 function swoole_event_cycle(Callable $callback)
 {

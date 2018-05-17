@@ -271,7 +271,7 @@ class swoole_table
      * 
      *检查当前位置是否有效(迭代器方法，此方法在 Iterator::rewind() 和 Iterator::next() 方法之后被调用以此用来检查当前位置是否有效)
      * @example 
-     * @return boolean
+     * @return bool
      */
     public function valid()
     {

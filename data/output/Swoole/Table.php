@@ -2,7 +2,7 @@
 /**
 * Swoole自动补全类(基于最新的2.1.3版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/04/25
+* @modified 2018/05/17
 */
 
 /**
@@ -34,9 +34,10 @@ class Table
      * @param float $conflict_proportion 预留作为hash冲突的比例
      * @return 
      */
-    public function __construct($table_size, $conflict_proportion)
+    public function __construct(int $table_size, float $conflict_proportion)
     {
-    }
+    
+}
 
     /**
      * 
@@ -47,9 +48,10 @@ class Table
      * @param int $size 指定字符串字段的最大长度，单位为字节
      * @return bool
      */
-    public function column($name, $type, $size)
+    public function column(string $name, int $type, int $size):bool
     {
-    }
+    
+}
 
     /**
      * 
@@ -59,7 +61,8 @@ class Table
      */
     public function create()
     {
-    }
+    
+}
 
     /**
      * 
@@ -69,7 +72,8 @@ class Table
      */
     public function destroy()
     {
-    }
+    
+}
 
     /**
      * 
@@ -79,9 +83,10 @@ class Table
      * @param array $value 必须是一个数组，必须与字段定义的$name完全相同
      * @return 
      */
-    public function set($key, Array $value)
+    public function set(string $key, Array $value)
     {
-    }
+    
+}
 
     /**
      * 
@@ -91,9 +96,10 @@ class Table
      * @param string $field 字段值
      * @return 
      */
-    public function get($key, $field)
+    public function get(string $key, string $field)
     {
-    }
+    
+}
 
     /**
      * 
@@ -101,9 +107,10 @@ class Table
      * @example 
      * @return int
      */
-    public function count()
+    public function count():int
     {
-    }
+    
+}
 
     /**
      * 
@@ -112,9 +119,10 @@ class Table
      * @param string $key 要删除的键
      * @return 
      */
-    public function del($key)
+    public function del(string $key)
     {
-    }
+    
+}
 
     /**
      * 
@@ -125,7 +133,8 @@ class Table
      */
     public function exist($key)
     {
-    }
+    
+}
 
     /**
      * 
@@ -136,9 +145,10 @@ class Table
      * @param mixed $incrby 增量，默认为1。如果列为整形，$incrby必须为int型，如果列为浮点型，$incrby必须为float类型失败返回false，成功返回最终的结果数值
      * @return 
      */
-    public function incr($key, $column, $incrby)
+    public function incr(string $key, string $column, $incrby)
     {
-    }
+    
+}
 
     /**
      * 
@@ -149,9 +159,10 @@ class Table
      * @param mixed $decrby 减量，默认为1。如果列为整形，$decrby必须为int型，如果列为浮点型，$decrby必须为float类型失败返回false，成功返回最终的结果数值
      * @return 
      */
-    public function decr($key, $column, $decrby)
+    public function decr(string $key, string $column, $decrby)
     {
-    }
+    
+}
 
     /**
      * 
@@ -159,9 +170,10 @@ class Table
      * @example 
      * @return int
      */
-    public function getMemorySize()
+    public function getMemorySize():int
     {
-    }
+    
+}
 
     /**
      * 
@@ -170,9 +182,10 @@ class Table
      * @param int $offset 偏移量
      * @return 
      */
-    public function offsetExists($offset)
+    public function offsetExists(int $offset)
     {
-    }
+    
+}
 
     /**
      * 
@@ -181,9 +194,10 @@ class Table
      * @param int $offset 偏移量
      * @return 
      */
-    public function offsetGet($offset)
+    public function offsetGet(int $offset)
     {
-    }
+    
+}
 
     /**
      * 
@@ -193,9 +207,10 @@ class Table
      * @param mixed $value 需要设置的值
      * @return 
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet(int $offset, $value)
     {
-    }
+    
+}
 
     /**
      * 
@@ -204,9 +219,10 @@ class Table
      * @param int $offset 偏移量
      * @return 
      */
-    public function offsetUnset($offset)
+    public function offsetUnset(int $offset)
     {
-    }
+    
+}
 
     /**
      * 
@@ -216,7 +232,8 @@ class Table
      */
     public function __sleep()
     {
-    }
+    
+}
 
     /**
      * 
@@ -226,7 +243,8 @@ class Table
      */
     public function __wakeup()
     {
-    }
+    
+}
 
     /**
      * 
@@ -236,7 +254,8 @@ class Table
      */
     public function rewind()
     {
-    }
+    
+}
 
     /**
      * 
@@ -246,7 +265,8 @@ class Table
      */
     public function next()
     {
-    }
+    
+}
 
     /**
      * 
@@ -256,7 +276,8 @@ class Table
      */
     public function current()
     {
-    }
+    
+}
 
     /**
      * 
@@ -266,7 +287,8 @@ class Table
      */
     public function key()
     {
-    }
+    
+}
 
     /**
      * 
@@ -274,9 +296,10 @@ class Table
      * @example 
      * @return boolean
      */
-    public function valid()
+    public function valid():boolean
     {
-    }
+    
+}
 
 }
 

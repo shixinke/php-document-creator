@@ -60,7 +60,7 @@ class swoole_client
     public $sock    =    0;
 
     /**
-     * @var boolean $reuse 
+     * @var bool $reuse
      * 表示此连接是新创建的还是复用已存在的
      * @access public
      */
@@ -148,7 +148,7 @@ class swoole_client
      *创建tcp客户端对象
      * @example 
      * @param int $type 表示socket的类型，如TCP/UDP(使用常量)
-     * @param boolean $async 表示同步阻塞还是异步非阻塞，默认为同步阻塞
+     * @param bool $async 表示同步阻塞还是异步非阻塞，默认为同步阻塞
      * @return 
      */
     public function __construct($type, $async)
@@ -195,7 +195,7 @@ class swoole_client
      *从服务器端接收数据
      * @example 
      * @param int $size 接收数据的缓存区最大长度，此参数不要设置过大，否则会占用较大内存
-     * @param boolean $flag 是否等待所有数据到达后返回
+     * @param bool $flag 是否等待所有数据到达后返回
      * @return string
      */
     public function recv($size, $flag)
@@ -207,7 +207,7 @@ class swoole_client
      *发送数据到远程服务器
      * @example 
      * @param string $data 要发送的数据
-     * @param boolean $flag 是否等待所有数据到达后返回
+     * @param bool $flag 是否等待所有数据到达后返回
      * @return 
      */
     public function send($data, $flag)
@@ -232,7 +232,7 @@ class swoole_client
      * @param string $filename 指定要发送文件的路径
      * @param int $offset 上传文件的偏移量，可以指定从文件的中间部分开始传输数据。此特性可用于支持断点续传
      * @param int $length 发送数据的尺寸，默认为整个文件的尺寸
-     * @return boolean
+     * @return bool
      */
     public function sendfile($filename, $offset, $length)
     {
@@ -245,7 +245,7 @@ class swoole_client
      * @param string $ip 目标主机的IP地址，支持IPv4/IPv6
      * @param int $port 目标主机端口
      * @param string $data 要发送的数据内容，不得超过64K
-     * @return boolean
+     * @return bool
      */
     public function sendto($ip, $port, $data)
     {
@@ -356,7 +356,7 @@ class swoole_client
      * 
      *关闭连接
      * @example 
-     * @param boolean $force 表示强制关闭连接，可用于关闭SWOOLE_KEEP长连接
+     * @param bool $force 表示强制关闭连接，可用于关闭SWOOLE_KEEP长连接
      * @return 
      */
     public function close($force)

@@ -193,7 +193,7 @@ class swoole_http_server extends swoole_server
     public $worker_id    =    -1;
 
     /**
-     * @var boolean $taskworker 
+     * @var bool $taskworker 
      * 当前进程是否是task工作进程
      * @access public
      */
@@ -385,7 +385,7 @@ class swoole_http_server extends swoole_server
      *设置客户端连接为保护状态，不被心跳线程切断
      * @example 
      * @param int $fd 要设置保护状态的客户端连接fd
-     * @param boolean $is_protected 设置的状态，true表示保护状态，false表示不保护
+     * @param bool $is_protected 设置的状态，true表示保护状态，false表示不保护
      * @return 
      */
     public function protect($fd, $is_protected)
@@ -411,7 +411,7 @@ class swoole_http_server extends swoole_server
      *关闭客户端连接
      * @example 
      * @param int $fd 连接句柄
-     * @param boolean $reset 设置为true会强制关闭连接，丢弃发送队列中的数据
+     * @param bool $reset 设置为true会强制关闭连接，丢弃发送队列中的数据
      * @return 
      */
     public function close($fd, $reset)
@@ -559,7 +559,7 @@ class swoole_http_server extends swoole_server
      * 
      *检测所有服务器连接，并找出已经超时的连接
      * @example 
-     * @param boolean $reactor_id 是否关闭超时的连接，默认为true
+     * @param bool $reactor_id 是否关闭超时的连接，默认为true
      * @return 
      */
     public function heartbeat($reactor_id)

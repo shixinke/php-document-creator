@@ -60,7 +60,7 @@ class swoole_http2_client extends swoole_client
     public $sock    =    0;
 
     /**
-     * @var boolean $reuse 
+     * @var bool $reuse
      * 表示此连接是新创建的还是复用已存在的
      * @access public
      */
@@ -163,7 +163,7 @@ class swoole_http2_client extends swoole_client
      * @example 
      * @param string $host 连接的主机IP
      * @param int $port 连接的主机端口
-     * @param boolean $ssl 是否开启TLS/SSL隧道加密，https网站必须设置为true
+     * @param bool $ssl 是否开启TLS/SSL隧道加密，https网站必须设置为true
      * @return 
      */
     public function __construct($host, $port, $ssl)
@@ -288,7 +288,7 @@ class swoole_http2_client extends swoole_client
      * @example 
      * @param string $data 要发送的数据内容，默认为UTF-8文本格式，如果为其他格式编码或二进制数据，请使用WEBSOCKET_OPCODE_BINARY
      * @param int $opcode 操作类型，默认为WEBSOCKET_OPCODE_TEXT_FRAME表示发送文本
-     * @param boolean $finish 发送成功后是否结束
+     * @param bool $finish 发送成功后是否结束
      * @return 
      */
     public function push($data, $opcode, $finish)
@@ -336,7 +336,7 @@ class swoole_http2_client extends swoole_client
      *从服务器端接收数据
      * @example 
      * @param int $size 接收数据的缓存区最大长度，此参数不要设置过大，否则会占用较大内存
-     * @param boolean $flag 是否等待所有数据到达后返回
+     * @param bool $flag 是否等待所有数据到达后返回
      * @return string
      */
     public function recv($size, $flag)
@@ -348,7 +348,7 @@ class swoole_http2_client extends swoole_client
      *发送数据到远程服务器
      * @example 
      * @param string $data 要发送的数据
-     * @param boolean $flag 是否等待所有数据到达后返回
+     * @param bool $flag 是否等待所有数据到达后返回
      * @return 
      */
     public function send($data, $flag)
@@ -373,7 +373,7 @@ class swoole_http2_client extends swoole_client
      * @param string $filename 指定要发送文件的路径
      * @param int $offset 上传文件的偏移量，可以指定从文件的中间部分开始传输数据。此特性可用于支持断点续传
      * @param int $length 发送数据的尺寸，默认为整个文件的尺寸
-     * @return boolean
+     * @return bool
      */
     public function sendfile($filename, $offset, $length)
     {
@@ -386,7 +386,7 @@ class swoole_http2_client extends swoole_client
      * @param string $ip 目标主机的IP地址，支持IPv4/IPv6
      * @param int $port 目标主机端口
      * @param string $data 要发送的数据内容，不得超过64K
-     * @return boolean
+     * @return bool
      */
     public function sendto($ip, $port, $data)
     {
@@ -467,7 +467,7 @@ class swoole_http2_client extends swoole_client
      * 
      *连接是否成功
      * @example 
-     * @return boolean
+     * @return bool
      */
     public function isConnected()
     {
@@ -497,7 +497,7 @@ class swoole_http2_client extends swoole_client
      * 
      *关闭连接
      * @example 
-     * @param boolean $force 表示强制关闭连接，可用于关闭SWOOLE_KEEP长连接
+     * @param bool $force 表示强制关闭连接，可用于关闭SWOOLE_KEEP长连接
      * @return 
      */
     public function close($force)

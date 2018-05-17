@@ -2,7 +2,7 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/04/26
+* @modified 2018/05/17
 */
 
 /**
@@ -41,7 +41,8 @@ final class Yaf_Session
      */
     private function __construct()
     {
-    }
+    
+}
 
     /**
      * 
@@ -52,7 +53,8 @@ final class Yaf_Session
      */
     private function __clone()
     {
-    }
+    
+}
 
     /**
      * 
@@ -63,7 +65,8 @@ final class Yaf_Session
      */
     private function __sleep()
     {
-    }
+    
+}
 
     /**
      * 
@@ -74,7 +77,8 @@ final class Yaf_Session
      */
     private function __wakeup()
     {
-    }
+    
+}
 
     /**
      * 
@@ -85,7 +89,8 @@ final class Yaf_Session
      */
     public static  function getInstance()
     {
-    }
+    
+}
 
     /**
      * 
@@ -96,7 +101,8 @@ final class Yaf_Session
      */
     public function start()
     {
-    }
+    
+}
 
     /**
      * 
@@ -107,7 +113,8 @@ final class Yaf_Session
      */
     public function __destruct()
     {
-    }
+    
+}
 
     /**
      * 
@@ -117,9 +124,10 @@ final class Yaf_Session
      * @param string $name 节点名称
      * @return 
      */
-    public function __isset($name)
+    public function __isset(string $name)
     {
-    }
+    
+}
 
     /**
      * 
@@ -129,9 +137,10 @@ final class Yaf_Session
      * @param string $name 变量名
      * @return 
      */
-    public function get($name)
+    public function get(string $name)
     {
-    }
+    
+}
 
     /**
      * 
@@ -142,9 +151,10 @@ final class Yaf_Session
      * @param mixed $value 变量值
      * @return 
      */
-    public function set($name, $value)
+    public function set(string $name, $value)
     {
-    }
+    
+}
 
     /**
      * 
@@ -154,9 +164,10 @@ final class Yaf_Session
      * @param string $name 变量名
      * @return 
      */
-    public function del($name)
+    public function del(string $name)
     {
-    }
+    
+}
 
     /**
      * 
@@ -167,7 +178,8 @@ final class Yaf_Session
      */
     public function count()
     {
-    }
+    
+}
 
     /**
      * 
@@ -178,7 +190,8 @@ final class Yaf_Session
      */
     public function rewind()
     {
-    }
+    
+}
 
     /**
      * 
@@ -189,7 +202,8 @@ final class Yaf_Session
      */
     public function current()
     {
-    }
+    
+}
 
     /**
      * 
@@ -200,7 +214,8 @@ final class Yaf_Session
      */
     public function next()
     {
-    }
+    
+}
 
     /**
      * 
@@ -211,7 +226,8 @@ final class Yaf_Session
      */
     public function valid()
     {
-    }
+    
+}
 
     /**
      * 
@@ -222,7 +238,8 @@ final class Yaf_Session
      */
     public function key()
     {
-    }
+    
+}
 
     /**
      * 
@@ -232,9 +249,10 @@ final class Yaf_Session
      * @param string $name 变量名
      * @return 
      */
-    public function offsetUnset($name)
+    public function offsetUnset(string $name)
     {
-    }
+    
+}
 
     /**
      * 
@@ -246,7 +264,8 @@ final class Yaf_Session
      */
     public function offsetExists($name)
     {
-    }
+    
+}
 
     /**
      * 
@@ -256,9 +275,10 @@ final class Yaf_Session
      * @param string $name 变量名
      * @return 
      */
-    public function offsetGet($name)
+    public function offsetGet(string $name)
     {
-    }
+    
+}
 
     /**
      * 
@@ -269,9 +289,10 @@ final class Yaf_Session
      * @param mixed $value 变量值
      * @return 
      */
-    public function offsetSet($name, $value)
+    public function offsetSet(string $name, $value)
     {
-    }
+    
+}
 
     /**
      * 
@@ -283,9 +304,10 @@ final class Yaf_Session
      * @param string $ name
      * @return 
      */
-    public function __get($name, $)
+    public function __get($name, string $)
     {
-    }
+    
+}
 
     /**
      * 
@@ -296,9 +318,10 @@ final class Yaf_Session
      * @param mixed $value 变量值
      * @return 
      */
-    public function __set($name, $value)
+    public function __set(string $name, $value)
     {
-    }
+    
+}
 
 }
 

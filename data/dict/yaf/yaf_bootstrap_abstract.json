@@ -1,11 +1,1 @@
-{
-  "object": {
-    "name": "Yaf_Bootstrap_Abstract"
-  },
-  "comment": "(Yaf >= 3.0.2)\nClass yaf_Bootstrap_Abstract",
-  "namespace": "",
-  "isAbstract": 1,
-  "consts": [],
-  "properties": [],
-  "methods": []
-}
+{"object":{"name":"Yaf_Bootstrap_Abstract"},"comment":"(Yaf >= 3.0.2)\nClass yaf_Bootstrap_Abstract","namespace":"","isAbstract":1,"consts":[],"properties":[],"methods":[]}
