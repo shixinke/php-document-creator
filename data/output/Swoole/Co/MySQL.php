@@ -83,7 +83,7 @@ class MySQL
     public function __construct()
     {
     
-}
+    }
 
     /**
      * 
@@ -94,7 +94,7 @@ class MySQL
     public function __destruct()
     {
     
-}
+    }
 
     /**
      * 
@@ -112,7 +112,7 @@ class MySQL
     public function connect(Array $server_config)
     {
     
-}
+    }
 
     /**
      * 
@@ -125,7 +125,7 @@ class MySQL
     public function query(string $sql, double $timeout):array
     {
     
-}
+    }
 
     /**
      * 
@@ -136,7 +136,7 @@ class MySQL
     public function recv()
     {
     
-}
+    }
 
     /**
      * 
@@ -147,7 +147,7 @@ class MySQL
     public function begin()
     {
     
-}
+    }
 
     /**
      * 
@@ -158,7 +158,7 @@ class MySQL
     public function commit()
     {
     
-}
+    }
 
     /**
      * 
@@ -169,7 +169,7 @@ class MySQL
     public function rollback()
     {
     
-}
+    }
 
     /**
      * 
@@ -181,7 +181,7 @@ class MySQL
     public function setDefer(boolean $defer):boolean
     {
     
-}
+    }
 
     /**
      * 
@@ -192,7 +192,7 @@ class MySQL
     public function getDefer():boolean
     {
     
-}
+    }
 
     /**
      * 
@@ -203,7 +203,7 @@ class MySQL
     public function close()
     {
     
-}
+    }
 
     /**
      * 
@@ -214,7 +214,7 @@ class MySQL
     public function __sleep()
     {
     
-}
+    }
 
     /**
      * 
@@ -225,7 +225,7 @@ class MySQL
     public function __wakeup()
     {
     
-}
+    }
 
 }
 

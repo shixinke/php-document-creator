@@ -86,7 +86,7 @@ class Client
     public function __construct(string $host, int $port, bool $ssl)
     {
     
-}
+    }
 
     /**
      * 
@@ -97,7 +97,7 @@ class Client
     public function __destruct()
     {
     
-}
+    }
 
     /**
      * 
@@ -109,7 +109,7 @@ class Client
     public function set(Array $settings)
     {
     
-}
+    }
 
     /**
      * 
@@ -120,7 +120,7 @@ class Client
     public function connect():bool
     {
     
-}
+    }
 
     /**
      * 
@@ -132,7 +132,7 @@ class Client
     public function send(Object $request):int
     {
     
-}
+    }
 
     /**
      * 
@@ -143,7 +143,7 @@ class Client
     public function recv():object
     {
     
-}
+    }
 
     /**
      * 
@@ -157,7 +157,7 @@ class Client
     public function write(int $stream_id, $data, bool $end_stream)
     {
     
-}
+    }
 
     /**
      * 
@@ -168,7 +168,7 @@ class Client
     public function close()
     {
     
-}
+    }
 
 }
 

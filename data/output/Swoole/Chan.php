@@ -28,7 +28,7 @@ class Chan
     public function __construct(int $size)
     {
     
-}
+    }
 
     /**
      * 
@@ -39,7 +39,7 @@ class Chan
     public function __destruct()
     {
     
-}
+    }
 
     /**
      * 
@@ -51,7 +51,7 @@ class Chan
     public function push($data):boolean
     {
     
-}
+    }
 
     /**
      * 
@@ -62,7 +62,7 @@ class Chan
     public function pop()
     {
     
-}
+    }
 
     /**
      * 
@@ -73,7 +73,7 @@ class Chan
     public function isEmpty():boolean
     {
     
-}
+    }
 
     /**
      * 
@@ -84,7 +84,7 @@ class Chan
     public function isFull():boolean
     {
     
-}
+    }
 
     /**
      * 
@@ -95,7 +95,7 @@ class Chan
     public function close()
     {
     
-}
+    }
 
     /**
      * 
@@ -106,7 +106,7 @@ class Chan
     public function stats():array
     {
     
-}
+    }
 
     /**
      * 
@@ -117,7 +117,7 @@ class Chan
     public function length():int
     {
     
-}
+    }
 
     /**
      * 
@@ -131,7 +131,7 @@ class Chan
     public static  function select(Array $read_list, Array $write_list, int $timeout):array
     {
     
-}
+    }
 
 }
 

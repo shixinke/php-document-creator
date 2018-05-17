@@ -157,7 +157,7 @@ class Document
             if (isset($mv['body']) && $mv['body'] != '') {
                 $content .= "    ".$mv['body'];
             }
-            $content .=  "}\n\n";
+            $content .=  "\n        }\n\n";
         }
 
         //将函数与常量定义放到一个文件
@@ -320,7 +320,7 @@ class Document
                                 foreach($paramValue['options'] as $ok=>$ov) {
                                     $content .= self::toString($ov['value']).'('.$ov['comment'].')';
                                 }
-                                $content .= ']';
+                                $content .= '        ]';
                             }
                             $params .= ', ';
                             $content .= "\n";
@@ -366,7 +366,7 @@ class Document
                         if (isset($mv['body']) && ($mv['body'] != '')) {
                             $content .= "    ".$mv['body'];
                         }
-                        $content .= "\n}\n\n";
+                        $content .= "\n    }\n\n";
                     }
                 }
 

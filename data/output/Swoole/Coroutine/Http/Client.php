@@ -139,7 +139,7 @@ class Client
     public function __construct()
     {
     
-}
+    }
 
     /**
      * 
@@ -150,7 +150,7 @@ class Client
     public function __destruct()
     {
     
-}
+    }
 
     /**
      * 
@@ -161,7 +161,7 @@ class Client
     public function set()
     {
     
-}
+    }
 
     /**
      * 
@@ -172,7 +172,7 @@ class Client
     public function setMethod()
     {
     
-}
+    }
 
     /**
      * 
@@ -183,7 +183,7 @@ class Client
     public function setHeaders()
     {
     
-}
+    }
 
     /**
      * 
@@ -194,7 +194,7 @@ class Client
     public function setCookies()
     {
     
-}
+    }
 
     /**
      * 
@@ -205,7 +205,7 @@ class Client
     public function setData()
     {
     
-}
+    }
 
     /**
      * 
@@ -216,7 +216,7 @@ class Client
     public function execute()
     {
     
-}
+    }
 
     /**
      * 
@@ -227,7 +227,7 @@ class Client
     public function get()
     {
     
-}
+    }
 
     /**
      * 
@@ -238,7 +238,7 @@ class Client
     public function post()
     {
     
-}
+    }
 
     /**
      * 
@@ -249,7 +249,7 @@ class Client
     public function addFile()
     {
     
-}
+    }
 
     /**
      * 
@@ -260,7 +260,7 @@ class Client
     public function isConnected():boolean
     {
     
-}
+    }
 
     /**
      * 
@@ -271,7 +271,7 @@ class Client
     public function close()
     {
     
-}
+    }
 
     /**
      * 
@@ -282,7 +282,7 @@ class Client
     public function setDefer():boolean
     {
     
-}
+    }
 
     /**
      * 
@@ -293,7 +293,7 @@ class Client
     public function getDefer():boolean
     {
     
-}
+    }
 
     /**
      * 
@@ -304,7 +304,7 @@ class Client
     public function recv():string
     {
     
-}
+    }
 
     /**
      * 
@@ -315,7 +315,7 @@ class Client
     public function __sleep()
     {
     
-}
+    }
 
     /**
      * 
@@ -326,7 +326,7 @@ class Client
     public function __wakeup()
     {
     
-}
+    }
 
 }
 

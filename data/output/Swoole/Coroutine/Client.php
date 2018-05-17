@@ -97,7 +97,7 @@ class Client
     public function __construct(int $type)
     {
     
-}
+    }
 
     /**
      * 
@@ -108,7 +108,7 @@ class Client
     public function __destruct()
     {
     
-}
+    }
 
     /**
      * 
@@ -120,7 +120,7 @@ class Client
     public function set(Array $settings)
     {
     
-}
+    }
 
     /**
      * 
@@ -134,7 +134,7 @@ class Client
     public function connect(string $host, int $port, float $timeout)
     {
     
-}
+    }
 
     /**
      * 
@@ -145,7 +145,7 @@ class Client
     public function recv():string
     {
     
-}
+    }
 
     /**
      * 
@@ -158,7 +158,7 @@ class Client
     public function send(string $data, boolean $flag)
     {
     
-}
+    }
 
     /**
      * 
@@ -172,7 +172,7 @@ class Client
     public function sendfile(string $filename, int $offset, int $length):boolean
     {
     
-}
+    }
 
     /**
      * 
@@ -186,7 +186,7 @@ class Client
     public function sendto(string $ip, int $port, string $data):boolean
     {
     
-}
+    }
 
     /**
      * 
@@ -197,7 +197,7 @@ class Client
     public function isConnected():boolean
     {
     
-}
+    }
 
     /**
      * 
@@ -208,7 +208,7 @@ class Client
     public function getsockname():array
     {
     
-}
+    }
 
     /**
      * 
@@ -219,7 +219,7 @@ class Client
     public function getpeername():boolean
     {
     
-}
+    }
 
     /**
      * 
@@ -230,7 +230,7 @@ class Client
     public function close():boolean
     {
     
-}
+    }
 
     /**
      * 
@@ -241,7 +241,7 @@ class Client
     public function __sleep()
     {
     
-}
+    }
 
     /**
      * 
@@ -252,7 +252,7 @@ class Client
     public function __wakeup()
     {
     
-}
+    }
 
 }
 

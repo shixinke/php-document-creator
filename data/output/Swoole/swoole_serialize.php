@@ -2,7 +2,7 @@
 /**
 * Swoole自动补全类(基于最新的2.1.3版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/04/25
+* @modified 2018/05/17
 */
 
 /**
@@ -16,10 +16,11 @@ class swoole_serialize
      * @example 
      * @param mixed $data 为要进行序列化的变量，请注意function和resource类型的变量是不支持序列化的
      * @param int $flag 是否启用快速模式，swoole_serialize默认会使用静态表保存关联数组的Key，设置此参数为SWOOLE_FAST_PACK后将不再保存数组key
-     * @return string | bool
+     * @return string | boolean
      */
-    public static  function pack($data, $flag)
+    public static  function pack($data, int $flag):string
     {
+    
     }
 
     /**
@@ -30,8 +31,9 @@ class swoole_serialize
      * @param int $args 反序列化附加参数，使用UNSERIALIZE_OBJECT_TO_ARRAY或UNSERIALIZE_OBJECT_TO_STDCLASS等常量
      * @return mixed
      */
-    public static  function unpack($string, $args)
+    public static  function unpack(string $string, int $args)
     {
+    
     }
 
 }

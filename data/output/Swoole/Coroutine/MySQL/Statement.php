@@ -49,7 +49,7 @@ class Statement
     public function execute(Array $params)
     {
     
-}
+    }
 
     /**
      * 
@@ -60,7 +60,7 @@ class Statement
     public function __destruct()
     {
     
-}
+    }
 
     /**
      * 
@@ -71,7 +71,7 @@ class Statement
     public function __sleep()
     {
     
-}
+    }
 
     /**
      * 
@@ -82,7 +82,7 @@ class Statement
     public function __wakeup()
     {
     
-}
+    }
 
 }
 

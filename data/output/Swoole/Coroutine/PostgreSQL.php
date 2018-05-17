@@ -26,7 +26,7 @@ class PostgreSQL
     public function __construct()
     {
     
-}
+    }
 
     /**
      * 
@@ -39,7 +39,7 @@ class PostgreSQL
     public function connect(string $conninfo):resource
     {
     
-}
+    }
 
     /**
      * 
@@ -51,7 +51,7 @@ class PostgreSQL
     public function query(string $query):resource
     {
     
-}
+    }
 
     /**
      * 
@@ -64,7 +64,7 @@ class PostgreSQL
     public function fetchAll(resource $result, int $result_type)
     {
     
-}
+    }
 
     /**
      * 
@@ -76,7 +76,7 @@ class PostgreSQL
     public function affectedRows(resource $result)
     {
     
-}
+    }
 
     /**
      * 
@@ -88,7 +88,7 @@ class PostgreSQL
     public function numRows(resource $result):int
     {
     
-}
+    }
 
     /**
      * 
@@ -100,7 +100,7 @@ class PostgreSQL
     public function metaData(string $table_name)
     {
     
-}
+    }
 
     /**
      * 
@@ -113,7 +113,7 @@ class PostgreSQL
     public function fetchObject(resource $result, int $row)
     {
     
-}
+    }
 
     /**
      * 
@@ -126,7 +126,7 @@ class PostgreSQL
     public function fetchAssoc(resource $result, int $row)
     {
     
-}
+    }
 
     /**
      * 
@@ -139,7 +139,7 @@ class PostgreSQL
     public function fetchArray(resource $result, int $row)
     {
     
-}
+    }
 
     /**
      * 
@@ -152,7 +152,7 @@ class PostgreSQL
     public function fetchRow(resource $result, int $row)
     {
     
-}
+    }
 
     /**
      * 
@@ -163,7 +163,7 @@ class PostgreSQL
     public function __destruct()
     {
     
-}
+    }
 
 }
 

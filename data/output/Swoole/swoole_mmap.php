@@ -2,7 +2,7 @@
 /**
 * Swoole自动补全类(基于最新的2.1.3版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/04/25
+* @modified 2018/05/17
 */
 
 /**
@@ -19,8 +19,9 @@ class swoole_mmap
      * @param int $offset 文件的映射起始位置，默认为0
      * @return 
      */
-    public static  function open($filename, $size, $offset)
+    public static  function open(string $filename, int $size, int $offset)
     {
+    
     }
 
 }

@@ -8,8 +8,7 @@
 /**
 *http异步客户端
 */
-namespace Co\Http;
-class Server extends \Swoole\Server
+class Server extends swoole_server
 {
     /**
      * @var callable $onConnect 
@@ -239,7 +238,7 @@ class Server extends \Swoole\Server
     public function on(string $event_name, Callable $callback)
     {
     
-}
+    }
 
     /**
      * 
@@ -250,7 +249,7 @@ class Server extends \Swoole\Server
     public function start()
     {
     
-}
+    }
 
     /**
      * 
@@ -261,7 +260,7 @@ class Server extends \Swoole\Server
     public function __sleep()
     {
     
-}
+    }
 
     /**
      * 
@@ -272,7 +271,7 @@ class Server extends \Swoole\Server
     public function __wakeup()
     {
     
-}
+    }
 
     /**
      * 
@@ -287,7 +286,7 @@ class Server extends \Swoole\Server
     public function __construct(string $host, int $port, int $mode, int $sock_type)
     {
     
-}
+    }
 
     /**
      * 
@@ -298,7 +297,7 @@ class Server extends \Swoole\Server
     public function __destruct()
     {
     
-}
+    }
 
     /**
      * 
@@ -312,7 +311,7 @@ class Server extends \Swoole\Server
     public function listen(string $host, int $port, int $sock_type)
     {
     
-}
+    }
 
     /**
      * 
@@ -326,7 +325,7 @@ class Server extends \Swoole\Server
     public function addlistener(string $host, int $port, int $sock_type)
     {
     
-}
+    }
 
     /**
      * 
@@ -338,7 +337,7 @@ class Server extends \Swoole\Server
     public function set(Array $settings)
     {
     
-}
+    }
 
     /**
      * 
@@ -352,7 +351,7 @@ class Server extends \Swoole\Server
     public function send(int $fd, string $send_data, int $reactor_id)
     {
     
-}
+    }
 
     /**
      * 
@@ -367,7 +366,7 @@ class Server extends \Swoole\Server
     public function sendto(string $ip, int $port, string $send_data, int $server_socket)
     {
     
-}
+    }
 
     /**
      * 
@@ -380,7 +379,7 @@ class Server extends \Swoole\Server
     public function sendwait(int $conn_fd, string $send_data)
     {
     
-}
+    }
 
     /**
      * 
@@ -392,7 +391,7 @@ class Server extends \Swoole\Server
     public function exist(int $fd)
     {
     
-}
+    }
 
     /**
      * 
@@ -405,7 +404,7 @@ class Server extends \Swoole\Server
     public function protect(int $fd, boolean $is_protected)
     {
     
-}
+    }
 
     /**
      * 
@@ -420,7 +419,7 @@ class Server extends \Swoole\Server
     public function sendfile(int $conn_fd, string $filename, int $offset, int $length)
     {
     
-}
+    }
 
     /**
      * 
@@ -433,7 +432,7 @@ class Server extends \Swoole\Server
     public function close(int $fd, boolean $reset)
     {
     
-}
+    }
 
     /**
      * 
@@ -445,7 +444,7 @@ class Server extends \Swoole\Server
     public function confirm(int $fd)
     {
     
-}
+    }
 
     /**
      * 
@@ -457,7 +456,7 @@ class Server extends \Swoole\Server
     public function pause(int $fd)
     {
     
-}
+    }
 
     /**
      * 
@@ -469,7 +468,7 @@ class Server extends \Swoole\Server
     public function resume(int $fd)
     {
     
-}
+    }
 
     /**
      * 
@@ -483,7 +482,7 @@ class Server extends \Swoole\Server
     public function task($data, int $worker_id, Callable $finish_callback)
     {
     
-}
+    }
 
     /**
      * 
@@ -497,7 +496,7 @@ class Server extends \Swoole\Server
     public function taskwait($data, float $timeout, int $worker_id)
     {
     
-}
+    }
 
     /**
      * 
@@ -510,7 +509,7 @@ class Server extends \Swoole\Server
     public function taskWaitMulti(Array $tasks, double $timeout)
     {
     
-}
+    }
 
     /**
      * 
@@ -523,7 +522,7 @@ class Server extends \Swoole\Server
     public function taskCo(Array $tasks, double $timeout):array
     {
     
-}
+    }
 
     /**
      * 
@@ -535,7 +534,7 @@ class Server extends \Swoole\Server
     public function finish($data)
     {
     
-}
+    }
 
     /**
      * 
@@ -546,7 +545,7 @@ class Server extends \Swoole\Server
     public function reload()
     {
     
-}
+    }
 
     /**
      * 
@@ -557,7 +556,7 @@ class Server extends \Swoole\Server
     public function shutdown()
     {
     
-}
+    }
 
     /**
      * 
@@ -569,7 +568,7 @@ class Server extends \Swoole\Server
     public function stop(int $worker_id)
     {
     
-}
+    }
 
     /**
      * 
@@ -582,7 +581,7 @@ class Server extends \Swoole\Server
     public function getLastError()
     {
     
-}
+    }
 
     /**
      * 
@@ -594,7 +593,7 @@ class Server extends \Swoole\Server
     public function heartbeat(boolean $reactor_id)
     {
     
-}
+    }
 
     /**
      * 
@@ -607,7 +606,7 @@ class Server extends \Swoole\Server
     public function connection_info($fd, int $reactor_id):from_id
     {
     
-}
+    }
 
     /**
      * 
@@ -620,7 +619,7 @@ class Server extends \Swoole\Server
     public function connection_list(int $start_fd, int $find_count)
     {
     
-}
+    }
 
     /**
      * 
@@ -633,7 +632,7 @@ class Server extends \Swoole\Server
     public function getClientInfo($fd, int $reactor_id)
     {
     
-}
+    }
 
     /**
      * 
@@ -646,7 +645,7 @@ class Server extends \Swoole\Server
     public function getClientList(int $start_fd, int $find_count)
     {
     
-}
+    }
 
     /**
      * 
@@ -660,7 +659,7 @@ class Server extends \Swoole\Server
     public function after(int $ms, Callable $callback, Array $param)
     {
     
-}
+    }
 
     /**
      * 
@@ -673,7 +672,7 @@ class Server extends \Swoole\Server
     public function tick(int $ms, Callable $callback)
     {
     
-}
+    }
 
     /**
      * 
@@ -685,7 +684,7 @@ class Server extends \Swoole\Server
     public function clearTimer(int $timer_id)
     {
     
-}
+    }
 
     /**
      * 
@@ -697,7 +696,7 @@ class Server extends \Swoole\Server
     public function defer(Callable $callback)
     {
     
-}
+    }
 
     /**
      * 
@@ -710,7 +709,7 @@ class Server extends \Swoole\Server
     public function sendMessage(int $dst_worker_id, string $data)
     {
     
-}
+    }
 
     /**
      * 
@@ -722,7 +721,7 @@ class Server extends \Swoole\Server
     public function addProcess(Swoole\Process $process)
     {
     
-}
+    }
 
     /**
      * 
@@ -734,7 +733,7 @@ class Server extends \Swoole\Server
     public function stats()
     {
     
-}
+    }
 
     /**
      * 
@@ -747,7 +746,7 @@ class Server extends \Swoole\Server
     public function bind(int $fd, int $uid)
     {
     
-}
+    }
 
 }
 

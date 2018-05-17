@@ -8,7 +8,6 @@
 /**
 *swoole内置协程(协程可以理解为纯用户态的线程，其通过协作而不是抢占来进行切换。相对于进程或者线程，协程所有的操作都可以在用户态完成，创建和切换的消耗更低。Swoole可以为每一个请求创建对应的协程，根据IO的状态来合理的调度协程)
 */
-
 class Co
 {
     /**
@@ -21,7 +20,7 @@ class Co
     public static  function create(Callable $func):bool
     {
     
-}
+    }
 
     /**
      * 
@@ -33,7 +32,7 @@ class Co
     public static  function set(Array $options)
     {
     
-}
+    }
 
     /**
      * 
@@ -44,7 +43,7 @@ class Co
     public static  function cli_wait():int
     {
     
-}
+    }
 
     /**
      * 
@@ -56,7 +55,7 @@ class Co
     public static  function suspend(string $uid)
     {
     
-}
+    }
 
     /**
      * 
@@ -68,7 +67,7 @@ class Co
     public static  function resume(string $uid)
     {
     
-}
+    }
 
     /**
      * 
@@ -79,7 +78,7 @@ class Co
     public static  function getuid():int
     {
     
-}
+    }
 
     /**
      * 
@@ -91,7 +90,7 @@ class Co
     public static  function sleep(float $seconds)
     {
     
-}
+    }
 
     /**
      * 
@@ -103,7 +102,7 @@ class Co
     public static  function fgets(resource $handle)
     {
     
-}
+    }
 
     /**
      * 
@@ -116,7 +115,7 @@ class Co
     public static  function fread(resource $handle, int $length)
     {
     
-}
+    }
 
     /**
      * 
@@ -128,7 +127,7 @@ class Co
     public static  function readFile(string $filename)
     {
     
-}
+    }
 
     /**
      * 
@@ -142,7 +141,7 @@ class Co
     public static  function fwrite(resource $handle, string $string, int $length)
     {
     
-}
+    }
 
     /**
      * 
@@ -156,7 +155,7 @@ class Co
     public static  function writeFile(string $filename, string $content, int $flags):bool
     {
     
-}
+    }
 
     /**
      * 
@@ -169,7 +168,7 @@ class Co
     public static  function gethostbyname(string $domain_name, int $family)
     {
     
-}
+    }
 
     /**
      * 
@@ -185,7 +184,7 @@ class Co
     public static  function getaddrinfo(string $hostname, int $family, int $socktype, int $protocol, string $service):array
     {
     
-}
+    }
 
     /**
      * 
@@ -198,7 +197,7 @@ class Co
     public static  function call_user_func(Callable $func, $parameters)
     {
     
-}
+    }
 
     /**
      * 
@@ -211,7 +210,7 @@ class Co
     public static  function call_user_func_array(Callable $func, Array $parameters)
     {
     
-}
+    }
 
     /**
      * 
@@ -223,7 +222,7 @@ class Co
     public static  function exec(string $cmd):array
     {
     
-}
+    }
 
 }
 

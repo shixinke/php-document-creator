@@ -2,7 +2,7 @@
 /**
 * Swoole自动补全类(基于最新的2.1.3版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/04/25
+* @modified 2018/05/17
 */
 
 /**
@@ -82,12 +82,13 @@ class swoole_process
      *创建子进程
      * @example 
      * @param callable $callback 子进程创建成功后要执行的函数
-     * @param bool $redirect_stdin_and_stdout 重定向子进程的标准输入和输出。启用此选项后，在子进程内输出内容将不是打印屏幕，而是写入到主进程管道。读取键盘输入将变为从管道中读取数据。默认为阻塞读取
-     * @param bool $pipe_type 是否创建管道，启用$redirect_stdin_stdout后，此选项将忽略用户参数，强制为true。如果子进程内没有进程间通信，可以设置为 false
+     * @param boolean $redirect_stdin_and_stdout 重定向子进程的标准输入和输出。启用此选项后，在子进程内输出内容将不是打印屏幕，而是写入到主进程管道。读取键盘输入将变为从管道中读取数据。默认为阻塞读取
+     * @param boolean $pipe_type 是否创建管道，启用$redirect_stdin_stdout后，此选项将忽略用户参数，强制为true。如果子进程内没有进程间通信，可以设置为 false
      * @return 
      */
-    public function __construct(Callable $callback, $redirect_stdin_and_stdout, $pipe_type)
+    public function __construct(Callable $callback, boolean $redirect_stdin_and_stdout, boolean $pipe_type)
     {
+    
     }
 
     /**
@@ -98,17 +99,19 @@ class swoole_process
      */
     public function __destruct()
     {
+    
     }
 
     /**
      * 
      *回收结束运行的子进程。
      * @example 
-     * @param bool $blocking 指定是否阻塞等待，默认为阻塞
+     * @param boolean $blocking 指定是否阻塞等待，默认为阻塞
      * @return 
      */
-    public static  function wait($blocking)
+    public static  function wait(boolean $blocking)
     {
+    
     }
 
     /**
@@ -119,8 +122,9 @@ class swoole_process
      * @param callable $callback 回调函数
      * @return 
      */
-    public static  function signal($signal_no, Callable $callback)
+    public static  function signal(int $signal_no, Callable $callback)
     {
+    
     }
 
     /**
@@ -130,8 +134,9 @@ class swoole_process
      * @param int $usec 定时器间隔时间，单位为微秒。如果为负数表示清除定时器
      * @return 
      */
-    public static  function alarm($usec)
+    public static  function alarm(int $usec)
     {
+    
     }
 
     /**
@@ -142,20 +147,22 @@ class swoole_process
      * @param int $signal_no 信号量(默认的信号为SIGTERM，表示终止进程)
      * @return 
      */
-    public static  function kill($pid, $signal_no)
+    public static  function kill(int $pid, int $signal_no)
     {
+    
     }
 
     /**
      * 
      *使当前进程脱变为一个守护进程
      * @example 
-     * @param bool $nochdir 为true表示不要切换当前目录到根目录
-     * @param bool $noclose 为true表示不要关闭标准输入输出文件描述符
+     * @param boolean $nochdir 为true表示不要切换当前目录到根目录
+     * @param boolean $noclose 为true表示不要关闭标准输入输出文件描述符
      * @return 
      */
-    public static  function daemon($nochdir, $noclose)
+    public static  function daemon(boolean $nochdir, boolean $noclose)
     {
+    
     }
 
     /**
@@ -167,6 +174,7 @@ class swoole_process
      */
     public static  function setaffinity(Array $cpu_settings)
     {
+    
     }
 
     /**
@@ -176,8 +184,9 @@ class swoole_process
      * @param double $seconds 单位为秒，支持浮点型，如1.5表示1s+500ms
      * @return 
      */
-    public function setTimeout($seconds)
+    public function setTimeout(double $seconds)
     {
+    
     }
 
     /**
@@ -186,10 +195,11 @@ class swoole_process
      * @example 
      * @param string $key 消息队列的key，默认会使用ftok(__FILE__, 1)作为KEY
      * @param int $mode 通信模式，默认为2，表示争抢模式，所有创建的子进程都会从队列中取数据
-     * @return bool
+     * @return boolean
      */
-    public function useQueue($key, $mode)
+    public function useQueue(string $key, int $mode):boolean
     {
+    
     }
 
     /**
@@ -200,8 +210,9 @@ class swoole_process
      * @example 
      * @return array
      */
-    public function statQueue()
+    public function statQueue():array
     {
+    
     }
 
     /**
@@ -212,6 +223,7 @@ class swoole_process
      */
     public function freeQueue()
     {
+    
     }
 
     /**
@@ -220,8 +232,9 @@ class swoole_process
      * @example 
      * @return int
      */
-    public function start()
+    public function start():int
     {
+    
     }
 
     /**
@@ -231,18 +244,20 @@ class swoole_process
      * @param string $data 写入的数据
      * @return int
      */
-    public function write($data)
+    public function write(string $data):int
     {
+    
     }
 
     /**
      * 
      *用于关闭创建的好的管道
      * @example 
-     * @return bool
+     * @return boolean
      */
-    public function close()
+    public function close():boolean
     {
+    
     }
 
     /**
@@ -252,8 +267,9 @@ class swoole_process
      * @param int $size 是缓冲区的大小，默认为8192，最大不超过64K
      * @return string | bool
      */
-    public function read($size)
+    public function read(int $size):string
     {
+    
     }
 
     /**
@@ -261,10 +277,11 @@ class swoole_process
      *向消息队列推送数据
      * @example 
      * @param string $data 要投递的数据，长度受限与操作系统内核参数的限制。默认为8192，最大不超过65536
-     * @return bool
+     * @return boolean
      */
-    public function push($data)
+    public function push(string $data):boolean
     {
+    
     }
 
     /**
@@ -274,8 +291,9 @@ class swoole_process
      * @param int $size 表示获取数据的最大尺寸，默认为8192
      * @return string
      */
-    public function pop($size)
+    public function pop(int $size):string
     {
+    
     }
 
     /**
@@ -285,8 +303,9 @@ class swoole_process
      * @param int $exit_code 退出进程的状态码，如果为0表示正常结束，会继续执行PHP的shutdown_function，其他扩展的清理工作;如果$status不为0，表示异常退出，会立即终止进程。不再执行PHP的shutdown_function，其他扩展的清理工作
      * @return int
      */
-    public function exit($exit_code)
+    public function exit(int $exit_code):int
     {
+    
     }
 
     /**
@@ -295,10 +314,11 @@ class swoole_process
      * @example 
      * @param string $exec_file 指定可执行文件的绝对路径，如 /usr/bin/python
      * @param array $args 参数列表，如 array('test.py', 123)，相当与python test.py 123
-     * @return bool
+     * @return boolean
      */
-    public function exec($exec_file, Array $args)
+    public function exec(string $exec_file, Array $args):boolean
     {
+    
     }
 
     /**
@@ -306,10 +326,11 @@ class swoole_process
      *修改进程名称
      * @example 
      * @param string $process_name 进程名称
-     * @return bool
+     * @return boolean
      */
-    public function name($process_name)
+    public function name(string $process_name):boolean
     {
+    
     }
 
 }

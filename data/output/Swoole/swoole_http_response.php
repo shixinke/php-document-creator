@@ -2,7 +2,7 @@
 /**
 * Swoole自动补全类(基于最新的2.1.3版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/04/25
+* @modified 2018/05/17
 */
 
 /**
@@ -46,6 +46,7 @@ class swoole_http_response
      */
     public function initHeader()
     {
+    
     }
 
     /**
@@ -57,12 +58,13 @@ class swoole_http_response
      * @param int $expires 有效期
      * @param string $path 存放位置
      * @param string $domain 域名
-     * @param bool $secure 是否为HTTPS
-     * @param bool $httponly 是否只是http
+     * @param boolean $secure 是否为HTTPS
+     * @param boolean $httponly 是否只是http
      * @return 
      */
-    public function cookie($name, $value, $expires, $path, $domain, $secure, $httponly)
+    public function cookie(string $name, string $value, int $expires, string $path, string $domain, boolean $secure, boolean $httponly)
     {
+    
     }
 
     /**
@@ -74,12 +76,13 @@ class swoole_http_response
      * @param int $expires 有效期
      * @param string $path 存放位置
      * @param string $domain 域名
-     * @param bool $secure 是否为HTTPS
-     * @param bool $httponly 是否只是http
+     * @param boolean $secure 是否为HTTPS
+     * @param boolean $httponly 是否只是http
      * @return 
      */
-    public function rawcookie($name, $value, $expires, $path, $domain, $secure, $httponly)
+    public function rawcookie(string $name, string $value, int $expires, string $path, string $domain, boolean $secure, boolean $httponly)
     {
+    
     }
 
     /**
@@ -89,8 +92,9 @@ class swoole_http_response
      * @param int $http_code 状态码
      * @return 
      */
-    public function status($http_code)
+    public function status(int $http_code)
     {
+    
     }
 
     /**
@@ -100,8 +104,9 @@ class swoole_http_response
      * @param int $compress_level 压缩等级
      * @return 
      */
-    public function gzip($compress_level)
+    public function gzip(int $compress_level)
     {
+    
     }
 
     /**
@@ -110,11 +115,12 @@ class swoole_http_response
      * @example 
      * @param string $key 响应头key
      * @param string $value 响应头值
-     * @param bool $ucwords 首字母是否大写
+     * @param boolean $ucwords 首字母是否大写
      * @return 
      */
-    public function header($key, $value, $ucwords)
+    public function header(string $key, string $value, boolean $ucwords)
     {
+    
     }
 
     /**
@@ -128,6 +134,7 @@ class swoole_http_response
      */
     public function trailer($key, $value, $ucwords)
     {
+    
     }
 
     /**
@@ -137,8 +144,9 @@ class swoole_http_response
      * @param string $content 输出的内容
      * @return 
      */
-    public function write($content)
+    public function write(string $content)
     {
+    
     }
 
     /**
@@ -148,8 +156,9 @@ class swoole_http_response
      * @param string $content 输出的内容
      * @return 
      */
-    public function end($content)
+    public function end(string $content)
     {
+    
     }
 
     /**
@@ -161,8 +170,9 @@ class swoole_http_response
      * @param int $length 长度
      * @return 
      */
-    public function sendfile($filename, $offset, $length)
+    public function sendfile(string $filename, int $offset, int $length)
     {
+    
     }
 
     /**
@@ -173,6 +183,7 @@ class swoole_http_response
      */
     public function __sleep()
     {
+    
     }
 
     /**
@@ -183,6 +194,7 @@ class swoole_http_response
      */
     public function __wakeup()
     {
+    
     }
 
     /**
@@ -193,6 +205,7 @@ class swoole_http_response
      */
     public function __destruct()
     {
+    
     }
 
 }

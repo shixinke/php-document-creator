@@ -69,7 +69,7 @@ class Redis
     public function __construct()
     {
     
-}
+    }
 
     /**
      * 
@@ -80,7 +80,7 @@ class Redis
     public function __destruct()
     {
     
-}
+    }
 
     /**
      * 
@@ -93,7 +93,7 @@ class Redis
     public function connect(string $host, int $port)
     {
     
-}
+    }
 
     /**
      * 
@@ -105,7 +105,7 @@ class Redis
     public function setDefer(boolean $defer)
     {
     
-}
+    }
 
     /**
      * 
@@ -116,7 +116,7 @@ class Redis
     public function getDefer():boolean
     {
     
-}
+    }
 
     /**
      * 
@@ -129,7 +129,7 @@ class Redis
     public function recv(int $size, boolean $flag):string
     {
     
-}
+    }
 
     /**
      * 
@@ -140,7 +140,7 @@ class Redis
     public function close()
     {
     
-}
+    }
 
     /**
      * 
@@ -162,7 +162,7 @@ class Redis
     public function set(string $key, string $value, int $options):bool
     {
     
-}
+    }
 
     /**
      * 
@@ -182,7 +182,7 @@ class Redis
     public function setBit(string $key, int $offset, int $value):int:
     {
     
-}
+    }
 
     /**
      * 
@@ -196,7 +196,7 @@ class Redis
     public function setEx(string $key, string $value, int $ttl):bool
     {
     
-}
+    }
 
     /**
      * 
@@ -210,7 +210,7 @@ class Redis
     public function psetEx(string $key, string $value, int $ttl)
     {
     
-}
+    }
 
     /**
      * 
@@ -232,7 +232,7 @@ class Redis
     public function lSet(string $key, int $index, string $value):boolean
     {
     
-}
+    }
 
     /**
      * 
@@ -243,7 +243,7 @@ class Redis
     public function get():string
     {
     
-}
+    }
 
     /**
      * 
@@ -272,7 +272,7 @@ class Redis
     public function mGet(Array $keys)
     {
     
-}
+    }
 
     /**
      * 
@@ -285,7 +285,7 @@ class Redis
     public function del(array $keys):int
     {
     
-}
+    }
 
     /**
      * 
@@ -315,7 +315,7 @@ class Redis
     public function hDel(string $key, string $fields):int
     {
     
-}
+    }
 
     /**
      * 
@@ -336,7 +336,7 @@ class Redis
     public function hSet(string $key, string $field, string $value):long
     {
     
-}
+    }
 
     /**
      * 
@@ -354,7 +354,7 @@ class Redis
     public function hMSet(string $key, Array $fields):boolean
     {
     
-}
+    }
 
     /**
      * 
@@ -374,7 +374,7 @@ class Redis
     public function hSetNx(string $key, string $field, string $value):bool
     {
     
-}
+    }
 
     /**
      * 
@@ -387,7 +387,7 @@ class Redis
     public function delete(array $keys):int
     {
     
-}
+    }
 
     /**
      * 
@@ -407,7 +407,7 @@ class Redis
     public function mSet(Array $values):bool
     {
     
-}
+    }
 
     /**
      * 
@@ -427,7 +427,7 @@ class Redis
     public function mSetNx(Array $values):bool
     {
     
-}
+    }
 
     /**
      * 
@@ -441,7 +441,7 @@ class Redis
     public function getKeys(string $pattern):array
     {
     
-}
+    }
 
     /**
      * 
@@ -455,7 +455,7 @@ class Redis
     public function keys(string $pattern):array
     {
     
-}
+    }
 
     /**
      * 
@@ -472,7 +472,7 @@ class Redis
     public function exists(string $key):bool
     {
     
-}
+    }
 
     /**
      * 
@@ -484,7 +484,7 @@ class Redis
     public function type(string $key):int
     {
     
-}
+    }
 
     /**
      * 
@@ -500,7 +500,7 @@ class Redis
     public function strLen(string $key):int
     {
     
-}
+    }
 
     /**
      * 
@@ -518,7 +518,7 @@ class Redis
     public function lPop(string $key):string
     {
     
-}
+    }
 
     /**
      * 
@@ -551,7 +551,7 @@ class Redis
     public function blPop(string $key, int $timeout):array
     {
     
-}
+    }
 
     /**
      * 
@@ -569,7 +569,7 @@ class Redis
     public function rPop(string $key):string
     {
     
-}
+    }
 
     /**
      * 
@@ -602,7 +602,7 @@ class Redis
     public function brPop(string $key, int $timeout):array
     {
     
-}
+    }
 
     /**
      * 
@@ -615,7 +615,7 @@ class Redis
     public function bRPopLPush(string $srcKey, string $dstKey):string
     {
     
-}
+    }
 
     /**
      * 
@@ -627,7 +627,7 @@ class Redis
     public function lSize(string $key):long
     {
     
-}
+    }
 
     /**
      * 
@@ -639,7 +639,7 @@ class Redis
     public function lLen(string $key):long
     {
     
-}
+    }
 
     /**
      * 
@@ -651,7 +651,7 @@ class Redis
     public function sSize(string $key):long
     {
     
-}
+    }
 
     /**
      * 
@@ -663,7 +663,7 @@ class Redis
     public function scard(string $key):long
     {
     
-}
+    }
 
     /**
      * 
@@ -683,7 +683,7 @@ class Redis
     public function sPop(string $key, int $count):string
     {
     
-}
+    }
 
     /**
      * 
@@ -712,7 +712,7 @@ class Redis
     public function sMembers(string $key):array
     {
     
-}
+    }
 
     /**
      * 
@@ -741,7 +741,7 @@ class Redis
     public function sGetMembers(string $key):array
     {
     
-}
+    }
 
     /**
      * 
@@ -765,7 +765,7 @@ class Redis
     public function sRandMember(string $key):string
     {
     
-}
+    }
 
     /**
      * 
@@ -777,7 +777,7 @@ class Redis
     public function persist(string $key):bool:
     {
     
-}
+    }
 
     /**
      * 
@@ -789,7 +789,7 @@ class Redis
     public function ttl(string $key):long
     {
     
-}
+    }
 
     /**
      * 
@@ -801,7 +801,7 @@ class Redis
     public function pttl(string $key):long
     {
     
-}
+    }
 
     /**
      * 
@@ -819,7 +819,7 @@ class Redis
     public function zCard(string $key):int
     {
     
-}
+    }
 
     /**
      * 
@@ -837,7 +837,7 @@ class Redis
     public function zSize(string $key):int
     {
     
-}
+    }
 
     /**
      * 
@@ -855,7 +855,7 @@ class Redis
     public function hLen(string $key):int
     {
     
-}
+    }
 
     /**
      * 
@@ -887,7 +887,7 @@ class Redis
     public function hKeys(string $key):array
     {
     
-}
+    }
 
     /**
      * 
@@ -919,7 +919,7 @@ class Redis
     public function hVals(string $key):array
     {
     
-}
+    }
 
     /**
      * 
@@ -951,7 +951,7 @@ class Redis
     public function hGetAll(string $key):array
     {
     
-}
+    }
 
     /**
      * 
@@ -962,7 +962,7 @@ class Redis
     public function debug()
     {
     
-}
+    }
 
     /**
      * 
@@ -981,7 +981,7 @@ class Redis
     public function restore(string $key, int $ttl, string $value)
     {
     
-}
+    }
 
     /**
      * 
@@ -997,7 +997,7 @@ class Redis
     public function dump(string $key):string
     {
     
-}
+    }
 
     /**
      * 
@@ -1010,7 +1010,7 @@ class Redis
     public function renameKey(string $srcKey, string $dstKey):boolean
     {
     
-}
+    }
 
     /**
      * 
@@ -1023,7 +1023,7 @@ class Redis
     public function rename(string $srcKey, string $dstKey):boolean
     {
     
-}
+    }
 
     /**
      * 
@@ -1036,7 +1036,7 @@ class Redis
     public function renameNx(string $srcKey, string $dstKey):boolean
     {
     
-}
+    }
 
     /**
      * 
@@ -1075,7 +1075,7 @@ class Redis
     public function rpoplpush(string $srcKey, string $dstKey):string
     {
     
-}
+    }
 
     /**
      * 
@@ -1090,7 +1090,7 @@ class Redis
     public function randomKey():string
     {
     
-}
+    }
 
     /**
      * 
@@ -1101,7 +1101,7 @@ class Redis
     public function ping():string
     {
     
-}
+    }
 
     /**
      * 
@@ -1113,7 +1113,7 @@ class Redis
     public function auth(string $password):bool:
     {
     
-}
+    }
 
     /**
      * 
@@ -1125,7 +1125,7 @@ class Redis
     public function unwatch(string $keys)
     {
     
-}
+    }
 
     /**
      * 
@@ -1145,7 +1145,7 @@ class Redis
     public function watch(string $keys)
     {
     
-}
+    }
 
     /**
      * 
@@ -1156,7 +1156,7 @@ class Redis
     public function save():boolean
     {
     
-}
+    }
 
     /**
      * 
@@ -1167,7 +1167,7 @@ class Redis
     public function bgSave()
     {
     
-}
+    }
 
     /**
      * 
@@ -1178,7 +1178,7 @@ class Redis
     public function lastSave():int
     {
     
-}
+    }
 
     /**
      * 
@@ -1189,7 +1189,7 @@ class Redis
     public function flushDB():bool
     {
     
-}
+    }
 
     /**
      * 
@@ -1200,7 +1200,7 @@ class Redis
     public function flushAll():bool
     {
     
-}
+    }
 
     /**
      * 
@@ -1215,7 +1215,7 @@ class Redis
     public function dbSize():int
     {
     
-}
+    }
 
     /**
      * 
@@ -1226,7 +1226,7 @@ class Redis
     public function bgrewriteaof():bool
     {
     
-}
+    }
 
     /**
      * 
@@ -1244,7 +1244,7 @@ class Redis
     public function time():int
     {
     
-}
+    }
 
     /**
      * 
@@ -1255,7 +1255,7 @@ class Redis
     public function role():string
     {
     
-}
+    }
 
     /**
      * 
@@ -1274,7 +1274,7 @@ class Redis
     public function setRange(string $key, int $offset, string $value):string
     {
     
-}
+    }
 
     /**
      * 
@@ -1289,7 +1289,7 @@ class Redis
     public function setNx(string $key, string $value):bool:
     {
     
-}
+    }
 
     /**
      * 
@@ -1307,7 +1307,7 @@ class Redis
     public function getSet(string $key, string $value):string
     {
     
-}
+    }
 
     /**
      * 
@@ -1325,7 +1325,7 @@ class Redis
     public function append(string $key, string $value):int
     {
     
-}
+    }
 
     /**
      * 
@@ -1346,7 +1346,7 @@ class Redis
     public function lPushx(string $key, string $value):int
     {
     
-}
+    }
 
     /**
      * 
@@ -1370,7 +1370,7 @@ class Redis
     public function lPush(string $key, string $value):int
     {
     
-}
+    }
 
     /**
      * 
@@ -1394,7 +1394,7 @@ class Redis
     public function rPush(string $key, string $value):int
     {
     
-}
+    }
 
     /**
      * 
@@ -1415,7 +1415,7 @@ class Redis
     public function rPushx(string $key, string $value):int
     {
     
-}
+    }
 
     /**
      * 
@@ -1428,7 +1428,7 @@ class Redis
     public function sContains(string $key, string $member):boolean
     {
     
-}
+    }
 
     /**
      * 
@@ -1441,7 +1441,7 @@ class Redis
     public function sismember(string $key, string $member):boolean
     {
     
-}
+    }
 
     /**
      * 
@@ -1458,7 +1458,7 @@ class Redis
     public function zScore(string $key, string $member):double
     {
     
-}
+    }
 
     /**
      * 
@@ -1480,7 +1480,7 @@ class Redis
     public function zRank(string $key, string $member):int
     {
     
-}
+    }
 
     /**
      * 
@@ -1493,7 +1493,7 @@ class Redis
     public function zRevRank(string $key, string $member):int
     {
     
-}
+    }
 
     /**
      * 
@@ -1506,7 +1506,7 @@ class Redis
     public function hGet(string $key, string $field):string
     {
     
-}
+    }
 
     /**
      * 
@@ -1519,7 +1519,7 @@ class Redis
     public function hMGet(string $key, Array $fields):array
     {
     
-}
+    }
 
     /**
      * 
@@ -1537,7 +1537,7 @@ class Redis
     public function hExists(string $key, string $field):bool
     {
     
-}
+    }
 
     /**
      * 
@@ -1550,7 +1550,7 @@ class Redis
     public function publish(string $channel, string $message):int
     {
     
-}
+    }
 
     /**
      * 
@@ -1570,7 +1570,7 @@ class Redis
     public function zIncrBy(string $key, double $step, string $member):float
     {
     
-}
+    }
 
     /**
      * 
@@ -1596,7 +1596,7 @@ class Redis
     public function zAdd(string $key, double $score, string $value):int
     {
     
-}
+    }
 
     /**
      * 
@@ -1610,7 +1610,7 @@ class Redis
     public function zDeleteRangeByScore(string $key, double $start, double $end):long
     {
     
-}
+    }
 
     /**
      * 
@@ -1624,7 +1624,7 @@ class Redis
     public function zRemRangeByScore(string $key, double $start, double $end):long
     {
     
-}
+    }
 
     /**
      * 
@@ -1644,7 +1644,7 @@ class Redis
     public function zCount(string $key, double $start, double $end):int
     {
     
-}
+    }
 
     /**
      * 
@@ -1667,7 +1667,7 @@ class Redis
     public function zRange(string $key, long $start, long $end, boolean $withScores):array
     {
     
-}
+    }
 
     /**
      * 
@@ -1690,7 +1690,7 @@ class Redis
     public function zRevRange(string $key, long $start, long $end, boolean $withScores):array
     {
     
-}
+    }
 
     /**
      * 
@@ -1715,7 +1715,7 @@ class Redis
     public function zRangeByScore(string $key, long $start, long $end, Array $options):array
     {
     
-}
+    }
 
     /**
      * 
@@ -1740,7 +1740,7 @@ class Redis
     public function zRevRangeByScore(string $key, long $start, long $end, Array $options):array
     {
     
-}
+    }
 
     /**
      * 
@@ -1764,7 +1764,7 @@ class Redis
     public function zRangeByLex(string $key, long $min, long $max, long $offset, long $limit):array
     {
     
-}
+    }
 
     /**
      * 
@@ -1780,7 +1780,7 @@ class Redis
     public function zRevRangeByLex(string $key, long $min, long $max, long $offset, long $limit)
     {
     
-}
+    }
 
     /**
      * 
@@ -1814,7 +1814,7 @@ class Redis
     public function zInter(string $dstKey, Array $zsetKeys, Array $zsetKeysWeight, string $aggregateFunction):int
     {
     
-}
+    }
 
     /**
      * 
@@ -1848,7 +1848,7 @@ class Redis
     public function zinterstore(string $dstKey, Array $zsetKeys, Array $zsetKeysWeight, string $aggregateFunction):int
     {
     
-}
+    }
 
     /**
      * 
@@ -1879,7 +1879,7 @@ class Redis
     public function zUnion(string $dstKey, Array $zsetKeys, Array $zsetKeysWeight, string $aggregateFunction):int
     {
     
-}
+    }
 
     /**
      * 
@@ -1910,7 +1910,7 @@ class Redis
     public function zunionstore(string $dstKey, Array $zsetKeys, Array $zsetKeysWeight, string $aggregateFunction):int
     {
     
-}
+    }
 
     /**
      * 
@@ -1930,7 +1930,7 @@ class Redis
     public function incrBy(string $key, int $step):int
     {
     
-}
+    }
 
     /**
      * 
@@ -1949,7 +1949,7 @@ class Redis
     public function hIncrBy(string $key, string $field, int $step):int
     {
     
-}
+    }
 
     /**
      * 
@@ -1967,7 +1967,7 @@ class Redis
     public function incr(string $key):int
     {
     
-}
+    }
 
     /**
      * 
@@ -1986,7 +1986,7 @@ class Redis
     public function decrBy(string $key, float $step):int
     {
     
-}
+    }
 
     /**
      * 
@@ -2003,7 +2003,7 @@ class Redis
     public function decr(string $key):int
     {
     
-}
+    }
 
     /**
      * 
@@ -2021,7 +2021,7 @@ class Redis
     public function getBit(string $key, int $offset):int
     {
     
-}
+    }
 
     /**
      * 
@@ -2048,7 +2048,7 @@ class Redis
     public function lInsert(string $key, string $position, string $element, string $value):int
     {
     
-}
+    }
 
     /**
      * 
@@ -2061,7 +2061,7 @@ class Redis
     public function lGet(string $key, int $index):string
     {
     
-}
+    }
 
     /**
      * 
@@ -2074,7 +2074,7 @@ class Redis
     public function lIndex(string $key, int $index):string
     {
     
-}
+    }
 
     /**
      * 
@@ -2087,7 +2087,7 @@ class Redis
     public function setTimeout(string $key, int $ttl):boolean
     {
     
-}
+    }
 
     /**
      * 
@@ -2100,7 +2100,7 @@ class Redis
     public function expire(string $key, int $ttl):boolean
     {
     
-}
+    }
 
     /**
      * 
@@ -2113,7 +2113,7 @@ class Redis
     public function pexpire(string $key, int $ttl):boolean
     {
     
-}
+    }
 
     /**
      * 
@@ -2133,7 +2133,7 @@ class Redis
     public function expireAt(string $key, int $expireTime):bool:
     {
     
-}
+    }
 
     /**
      * 
@@ -2153,7 +2153,7 @@ class Redis
     public function pexpireAt(string $key, int $expireTime):bool:
     {
     
-}
+    }
 
     /**
      * 
@@ -2173,7 +2173,7 @@ class Redis
     public function move(string $key, int $dbIndex):bool
     {
     
-}
+    }
 
     /**
      * 
@@ -2192,7 +2192,7 @@ class Redis
     public function select(int $dbIndex):bool
     {
     
-}
+    }
 
     /**
      * 
@@ -2211,7 +2211,7 @@ class Redis
     public function getRange(string $key, int $start, int $end):string:
     {
     
-}
+    }
 
     /**
      * 
@@ -2225,7 +2225,7 @@ class Redis
     public function listTrim(string $key, int $start, int $end):array
     {
     
-}
+    }
 
     /**
      * 
@@ -2239,7 +2239,7 @@ class Redis
     public function ltrim(string $key, int $start, int $end):array
     {
     
-}
+    }
 
     /**
      * 
@@ -2253,7 +2253,7 @@ class Redis
     public function lGetRange(string $key, int $start, int $end):array
     {
     
-}
+    }
 
     /**
      * 
@@ -2267,7 +2267,7 @@ class Redis
     public function lRange(string $key, int $start, int $end):array
     {
     
-}
+    }
 
     /**
      * 
@@ -2281,7 +2281,7 @@ class Redis
     public function lRem(string $key, string $value, int $count):long
     {
     
-}
+    }
 
     /**
      * 
@@ -2295,7 +2295,7 @@ class Redis
     public function lRemove(string $key, string $value, int $count):long
     {
     
-}
+    }
 
     /**
      * 
@@ -2316,7 +2316,7 @@ class Redis
     public function zDeleteRangeByRank(string $key, double $start, double $end):int
     {
     
-}
+    }
 
     /**
      * 
@@ -2337,7 +2337,7 @@ class Redis
     public function zRemRangeByRank(string $key, double $start, double $end):int
     {
     
-}
+    }
 
     /**
      * 
@@ -2358,7 +2358,7 @@ class Redis
     public function incrByFloat(string $key, float $step):float
     {
     
-}
+    }
 
     /**
      * 
@@ -2387,7 +2387,7 @@ class Redis
     public function hIncrByFloat(string $key, string $field, double $step)
     {
     
-}
+    }
 
     /**
      * 
@@ -2399,7 +2399,7 @@ class Redis
     public function bitCount(string $key):long
     {
     
-}
+    }
 
     /**
      * 
@@ -2415,7 +2415,7 @@ class Redis
     public function bitOp(string $operation, string $dstKey, string $key1, string $key2, string $keyN):long
     {
     
-}
+    }
 
     /**
      * 
@@ -2432,7 +2432,7 @@ class Redis
     public function sAdd(string $key, string $value):int
     {
     
-}
+    }
 
     /**
      * 
@@ -2455,7 +2455,7 @@ class Redis
     public function sMove(string $srcKey, string $dstKey, string $member):bool
     {
     
-}
+    }
 
     /**
      * 
@@ -2484,7 +2484,7 @@ class Redis
     public function sDiff(string $key1, string $key2):array
     {
     
-}
+    }
 
     /**
      * 
@@ -2517,7 +2517,7 @@ class Redis
     public function sDiffStore(string $dstKey, string $key1, string $key2, string $keyN):int:
     {
     
-}
+    }
 
     /**
      * 
@@ -2550,7 +2550,7 @@ class Redis
     public function sUnion(string $key1, string $key2):array
     {
     
-}
+    }
 
     /**
      * 
@@ -2587,7 +2587,7 @@ class Redis
     public function sUnionStore(string $dstKey, string $key1, string $key2, string $keyN):int
     {
     
-}
+    }
 
     /**
      * 
@@ -2617,7 +2617,7 @@ class Redis
     public function sInter(string $key1, string $key2):array
     {
     
-}
+    }
 
     /**
      * 
@@ -2652,7 +2652,7 @@ class Redis
     public function sInterStore(string $dstKey, string $key1, string $key2, string $keyN):int
     {
     
-}
+    }
 
     /**
      * 
@@ -2665,7 +2665,7 @@ class Redis
     public function sRemove(string $key, string $member):long
     {
     
-}
+    }
 
     /**
      * 
@@ -2678,7 +2678,7 @@ class Redis
     public function srem(string $key, string $member):long
     {
     
-}
+    }
 
     /**
      * 
@@ -2691,7 +2691,7 @@ class Redis
     public function zDelete(string $key, string $member):int
     {
     
-}
+    }
 
     /**
      * 
@@ -2704,7 +2704,7 @@ class Redis
     public function zRemove(string $key, string $member):int
     {
     
-}
+    }
 
     /**
      * 
@@ -2717,7 +2717,7 @@ class Redis
     public function zRem(string $key, string $member):int
     {
     
-}
+    }
 
     /**
      * 
@@ -2738,7 +2738,7 @@ class Redis
     public function pSubscribe(Array $patterns, string $callback, $value)
     {
     
-}
+    }
 
     /**
      * 
@@ -2768,7 +2768,7 @@ class Redis
     public function subscribe(Array $channels, string $callback, $value)
     {
     
-}
+    }
 
     /**
      * 
@@ -2792,7 +2792,7 @@ class Redis
     public function multi()
     {
     
-}
+    }
 
     /**
      * 
@@ -2803,7 +2803,7 @@ class Redis
     public function exec()
     {
     
-}
+    }
 
     /**
      * 
@@ -2817,7 +2817,7 @@ class Redis
     public function eval(string $script, Array $args, int $num_keys)
     {
     
-}
+    }
 
     /**
      * 
@@ -2833,7 +2833,7 @@ class Redis
     public function evalSha(string $script_sha, Array $args, int $num_keys)
     {
     
-}
+    }
 
     /**
      * 
@@ -2856,7 +2856,7 @@ class Redis
     public function script(string $command, string $script)
     {
     
-}
+    }
 
     /**
      * 
@@ -2867,7 +2867,7 @@ class Redis
     public function __sleep()
     {
     
-}
+    }
 
     /**
      * 
@@ -2878,7 +2878,7 @@ class Redis
     public function __wakeup()
     {
     
-}
+    }
 
 }
 

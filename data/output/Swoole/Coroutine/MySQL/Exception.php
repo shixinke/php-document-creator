@@ -48,7 +48,7 @@ class Exception extends \Exception
     private final  function __clone()
     {
     
-}
+    }
 
     /**
      * 
@@ -62,7 +62,7 @@ class Exception extends \Exception
     public function __construct(string $message, int $code, Throwable $previous)
     {
     
-}
+    }
 
     /**
      * 
@@ -73,7 +73,7 @@ class Exception extends \Exception
     public function __wakeup()
     {
     
-}
+    }
 
     /**
      * 
@@ -84,7 +84,7 @@ class Exception extends \Exception
     public final  function getMessage():string
     {
     
-}
+    }
 
     /**
      * 
@@ -95,7 +95,7 @@ class Exception extends \Exception
     public final  function getCode():int
     {
     
-}
+    }
 
     /**
      * 
@@ -106,7 +106,7 @@ class Exception extends \Exception
     public final  function getFile():string
     {
     
-}
+    }
 
     /**
      * 
@@ -117,7 +117,7 @@ class Exception extends \Exception
     public final  function getLine():int
     {
     
-}
+    }
 
     /**
      * 
@@ -128,7 +128,7 @@ class Exception extends \Exception
     public final  function getTrace():array
     {
     
-}
+    }
 
     /**
      * 
@@ -139,7 +139,7 @@ class Exception extends \Exception
     public final  function getPrevious():Throwable
     {
     
-}
+    }
 
     /**
      * 
@@ -150,7 +150,7 @@ class Exception extends \Exception
     public final  function getTraceAsString():string
     {
     
-}
+    }
 
     /**
      * 
@@ -161,7 +161,7 @@ class Exception extends \Exception
     public function __toString()
     {
     
-}
+    }
 
 }
 
