@@ -2,7 +2,7 @@
 /**
 * Swoole自动补全类(基于最新的2.1.3版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/18
 */
 
 /**
@@ -22,14 +22,14 @@ class swoole_http_request
      * 请求头（每个key都是小写）
      * @access public
      */
-    public $header;
+    public $header    =    array();
 
     /**
      * @var array $server 
      * 请求相当的服务器信息,相当于$_SERVER
      * @access public
      */
-    public $server;
+    public $server    =    array();
 
     /**
      * @var unknown $request 
@@ -43,14 +43,14 @@ class swoole_http_request
      * 请求中的cookie数据
      * @access public
      */
-    public $cookie;
+    public $cookie    =    array();
 
     /**
      * @var array $get 
      * get请求参数
      * @access public
      */
-    public $get;
+    public $get    =    array();
 
     /**
      * @var array $files 
@@ -58,21 +58,21 @@ class swoole_http_request
      * name 浏览器上传时传入的文件名称
      * @access public
      */
-    public $files;
+    public $files    =    array();
 
     /**
      * @var array $post 
      * post请求数据
      * @access public
      */
-    public $post;
+    public $post    =    array();
 
     /**
      * @var array $tmpfiles 
      * 临时文件信息
      * @access public
      */
-    public $tmpfiles;
+    public $tmpfiles    =    array();
 
     /**
      * 

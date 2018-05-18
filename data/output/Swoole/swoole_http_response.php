@@ -2,7 +2,7 @@
 /**
 * Swoole自动补全类(基于最新的2.1.3版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/18
 */
 
 /**
@@ -22,14 +22,14 @@ class swoole_http_response
      * 请求头（每个key都是小写）
      * @access public
      */
-    public $header;
+    public $header    =    array();
 
     /**
      * @var array $cookie 
      * 请求中的cookie数据
      * @access public
      */
-    public $cookie;
+    public $cookie    =    array();
 
     /**
      * @var unknown $trailer 

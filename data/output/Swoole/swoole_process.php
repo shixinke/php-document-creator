@@ -2,7 +2,7 @@
 /**
 * Swoole自动补全类(基于最新的2.1.3版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/18
 */
 
 /**
@@ -193,11 +193,11 @@ class swoole_process
      * 
      *启用消息队列作为进程间通信
      * @example 
-     * @param string $key 消息队列的key，默认会使用ftok(__FILE__, 1)作为KEY
+     * @param int $key 消息队列的key，默认会使用ftok(__FILE__, 1)作为KEY
      * @param int $mode 通信模式，默认为2，表示争抢模式，所有创建的子进程都会从队列中取数据
      * @return boolean
      */
-    public function useQueue(string $key, int $mode):boolean
+    public function useQueue(int $key = 0, int $mode = 2):boolean
     {
     
     }
@@ -267,7 +267,7 @@ class swoole_process
      * @param int $size 是缓冲区的大小，默认为8192，最大不超过64K
      * @return string | bool
      */
-    public function read(int $size):string
+    public function read(int $size): ?string
     {
     
     }

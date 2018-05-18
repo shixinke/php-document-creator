@@ -2,7 +2,7 @@
 /**
 * Swoole自动补全类(基于最新的2.1.3版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/18
 */
 
 /**
@@ -169,7 +169,7 @@ class swoole_websocket_server extends swoole_http_server
      * 当监听多端口时的端口列表
      * @access public
      */
-    public $ports;
+    public $ports    =    array();
 
     /**
      * @var int $master_pid 
@@ -225,7 +225,7 @@ class swoole_websocket_server extends swoole_http_server
      * 通过swoole_server:set()设置的参数会保存到setting属性上
      * @access public
      */
-    public $setting;
+    public $setting    =    array();
 
     /**
      * 

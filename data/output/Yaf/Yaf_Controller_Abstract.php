@@ -166,7 +166,7 @@ abstract class Yaf_Controller_Abstract
      * @param string $ path
      * @return 
      */
-    public function setViewPath($path, string $)
+    public function setViewPath($path)
     {
     
 }

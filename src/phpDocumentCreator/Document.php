@@ -144,13 +144,13 @@ class Document
                 $splitArr = explode('|', $mv['return']);
                 if (count($splitArr) > 1) {
                     if (trim($splitArr[0]) != 'bool' && trim($splitArr[0]) != 'boolean') {
-                        $content .= ":".trim($splitArr[0]);
+                        $content .= ": ?".trim($splitArr[0]);
                     } else {
-                        $content .= ":".trim($splitArr[1]);
+                        $content .= ": ".trim($splitArr[1]);
                     }
 
                 } else {
-                    $content .= ":".$mv['return'];
+                    $content .= ": ".$mv['return'];
                 }
             }
             $content .= "\n{\n";
@@ -167,11 +167,13 @@ class Document
         //创建目录
         Tool::createDir(self::DOC_PATH, ucfirst($ext));
         $baseDir = self::DOC_PATH.DS.ucfirst($ext).'/';
+        $useNameSpace = false;
         if (!self::inArray($ext, $classes) ) {
             if (!empty($data['classes'])) {
                 $tmp = $data['classes'];
                 $tmp = array_pop($tmp);
                 if ($tmp['namespace'] != '') {
+                    $useNameSpace = true;
                     $res = self::writeFile($baseDir.$ext.'.namespace.php', $content);
                 } else {
                     $res = self::writeFile($baseDir.$ext.'.php', $content);
@@ -275,6 +277,10 @@ class Document
 
                         }
                         $content .= '    =    '.$pv['value'];
+                    } else {
+                        if (strtolower($pv['type']) == 'array') {
+                            $content .= '    =    array()';
+                        }
                     }
                     $content .=  ";\n\n";
                 }
@@ -350,9 +356,9 @@ class Document
                         $splitArr = explode('|', $mv['return']);
                         if (count($splitArr) > 1) {
                             if (trim($splitArr[0]) != 'bool' && trim($splitArr[0]) != 'boolean') {
-                                $content .= ":".trim($splitArr[0]);
+                                $content .= ": ?".trim($splitArr[0]);
                             } else {
-                                $content .= ":".trim($splitArr[1]);
+                                $content .= ": ".trim($splitArr[1]);
                             }
 
                         } else {

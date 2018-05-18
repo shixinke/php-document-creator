@@ -2,7 +2,7 @@
 /**
 * Swoole自动补全类(基于最新的2.1.3版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/18
 */
 
 /**
@@ -92,7 +92,7 @@ class swoole_http2_client extends swoole_client
      * 配置选项
      * @access public
      */
-    public $setting;
+    public $setting    =    array();
 
     /**
      * @var callable $onConnect 
@@ -148,14 +148,14 @@ class swoole_http2_client extends swoole_client
      * 请求头
      * @access public
      */
-    public $requestHeaders;
+    public $requestHeaders    =    array();
 
     /**
      * @var array $cookies 
      * 请求响应的cookie
      * @access public
      */
-    public $cookies;
+    public $cookies    =    array();
 
     /**
      * 
@@ -474,7 +474,7 @@ class swoole_http2_client extends swoole_client
      * @example 
      * @return string | bool
      */
-    public function getPeerCert():string
+    public function getPeerCert(): ?string
     {
     
     }

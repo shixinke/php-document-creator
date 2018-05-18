@@ -2,7 +2,7 @@
 /**
 * Swoole自动补全类(基于最新的2.1.3版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/18
 */
 
 /**
@@ -16,7 +16,7 @@ class Redis
      * 用于初始化的配置选项
      * @access public
      */
-    public $setting;
+    public $setting    =    array();
 
     /**
      * @var string $host 
@@ -240,7 +240,7 @@ class Redis
      * @example $redis->get('key');
      * @return string|bool
      */
-    public function get():string
+    public function get(): ?string
     {
     
     }
@@ -624,7 +624,7 @@ class Redis
      * @param string|...|array $key 键名
      * @return long | bool
      */
-    public function lSize(string $key):long
+    public function lSize(string $key): ?long
     {
     
     }
@@ -636,7 +636,7 @@ class Redis
      * @param string|...|array $key 键名
      * @return long | bool
      */
-    public function lLen(string $key):long
+    public function lLen(string $key): ?long
     {
     
     }
@@ -680,7 +680,7 @@ class Redis
      * @param int $count 删除个数
      * @return string | bool
      */
-    public function sPop(string $key, int $count):string
+    public function sPop(string $key, int $count): ?string
     {
     
     }
@@ -762,7 +762,7 @@ class Redis
      * @param string $key 键名
      * @return string | bool
      */
-    public function sRandMember(string $key):string
+    public function sRandMember(string $key): ?string
     {
     
     }
@@ -2058,7 +2058,7 @@ class Redis
      * @param int $index 索引值
      * @return string | boolean
      */
-    public function lGet(string $key, int $index):string
+    public function lGet(string $key, int $index): ?string
     {
     
     }
@@ -2071,7 +2071,7 @@ class Redis
      * @param int $index 索引值
      * @return string | boolean
      */
-    public function lIndex(string $key, int $index):string
+    public function lIndex(string $key, int $index): ?string
     {
     
     }
@@ -2222,7 +2222,7 @@ class Redis
      * @param int $end 结束索引
      * @return array | boolean
      */
-    public function listTrim(string $key, int $start, int $end):array
+    public function listTrim(string $key, int $start, int $end): ?array
     {
     
     }
@@ -2236,7 +2236,7 @@ class Redis
      * @param int $end 结束索引
      * @return array | boolean
      */
-    public function ltrim(string $key, int $start, int $end):array
+    public function ltrim(string $key, int $start, int $end): ?array
     {
     
     }
@@ -2278,7 +2278,7 @@ class Redis
      * @param int $count 删除的个数
      * @return long | bool
      */
-    public function lRem(string $key, string $value, int $count):long
+    public function lRem(string $key, string $value, int $count): ?long
     {
     
     }
@@ -2292,7 +2292,7 @@ class Redis
      * @param int $count 删除的个数
      * @return long | bool
      */
-    public function lRemove(string $key, string $value, int $count):long
+    public function lRemove(string $key, string $value, int $count): ?long
     {
     
     }
@@ -2614,7 +2614,7 @@ class Redis
      * @param string $key2 键名2
      * @return array | boolean
      */
-    public function sInter(string $key1, string $key2):array
+    public function sInter(string $key1, string $key2): ?array
     {
     
     }

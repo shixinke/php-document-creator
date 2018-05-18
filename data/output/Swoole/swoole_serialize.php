@@ -2,7 +2,7 @@
 /**
 * Swoole自动补全类(基于最新的2.1.3版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/18
 */
 
 /**
@@ -18,7 +18,7 @@ class swoole_serialize
      * @param int $flag 是否启用快速模式，swoole_serialize默认会使用静态表保存关联数组的Key，设置此参数为SWOOLE_FAST_PACK后将不再保存数组key
      * @return string | boolean
      */
-    public static  function pack($data, int $flag):string
+    public static  function pack($data, int $flag): ?string
     {
     
     }

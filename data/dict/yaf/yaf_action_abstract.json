@@ -1,1 +1,79 @@
-{"object":{"name":"Yaf_Action_Abstract"},"comment":"(Yaf >= 3.0.2)\nClass yaf_Action_Abstract","namespace":"","extends":"Yaf_Controller_Abstract","isAbstract":1,"consts":[],"properties":{"actions":{"access":"public","type":"unknown","comment":false,"isStatic":false},"_module":{"access":"protected","type":"unknown","comment":false,"isStatic":false},"_name":{"access":"protected","type":"unknown","comment":false,"isStatic":false},"_request":{"access":"protected","type":"unknown","comment":false,"isStatic":false},"_response":{"access":"protected","type":"unknown","comment":false,"isStatic":false},"_invoke_args":{"access":"protected","type":"unknown","comment":false,"isStatic":false},"_view":{"access":"protected","type":"unknown","comment":false,"isStatic":false},"_controller":{"access":"protected","type":"unknown","comment":"(Yaf >= 3.0.2)\n当前请求的控制器实例","isStatic":false}},"methods":{"getController":{"access":"public","comment":"(Yaf >= 3.0.2)\n获取当前请求的控制器实例","isStatic":false,"return":"","example":"","parameters":[]},"execute":{"access":"public","isAbstract":1,"comment":"(Yaf >= 3.0.2)\n动作入口方法，由Yaf框架自动调用","isStatic":false,"return":"","example":"","parameters":[]}}}
+{
+  "object": {
+    "name": "Yaf_Action_Abstract"
+  },
+  "comment": "yaf中的操作定义(单独文件定义操作，通常是在控制器文件中定义操作，这里可以通过单独文件来定义操作)",
+  "namespace": "",
+  "extends": "Yaf_Controller_Abstract",
+  "isAbstract": 1,
+  "consts": [],
+  "properties": {
+    "actions": {
+      "access": "public",
+      "type": "array",
+      "comment": "操作列表",
+      "isStatic": false
+    },
+    "_module": {
+      "access": "protected",
+      "type": "unknown",
+      "comment": false,
+      "isStatic": false
+    },
+    "_name": {
+      "access": "protected",
+      "type": "unknown",
+      "comment": false,
+      "isStatic": false
+    },
+    "_request": {
+      "access": "protected",
+      "type": "unknown",
+      "comment": false,
+      "isStatic": false
+    },
+    "_response": {
+      "access": "protected",
+      "type": "unknown",
+      "comment": false,
+      "isStatic": false
+    },
+    "_invoke_args": {
+      "access": "protected",
+      "type": "unknown",
+      "comment": false,
+      "isStatic": false
+    },
+    "_view": {
+      "access": "protected",
+      "type": "unknown",
+      "comment": false,
+      "isStatic": false
+    },
+    "_controller": {
+      "access": "protected",
+      "type": "unknown",
+      "comment": "(Yaf >= 3.0.2)\n当前请求的控制器实例",
+      "isStatic": false
+    }
+  },
+  "methods": {
+    "getController": {
+      "access": "public",
+      "comment": "(Yaf >= 3.0.2)\n获取当前请求的控制器实例",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": []
+    },
+    "execute": {
+      "access": "public",
+      "isAbstract": 1,
+      "comment": "(Yaf >= 3.0.2)\n动作入口方法，由Yaf框架自动调用",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": []
+    }
+  }
+}

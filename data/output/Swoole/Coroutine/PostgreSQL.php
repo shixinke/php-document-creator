@@ -2,7 +2,7 @@
 /**
 * Swoole自动补全类(基于最新的2.1.3版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/18
 */
 
 /**
@@ -36,7 +36,7 @@ class PostgreSQL
      * @param string $conninfo 连接信息
      * @return resource|bool
      */
-    public function connect(string $conninfo):resource
+    public function connect(string $conninfo): ?resource
     {
     
     }

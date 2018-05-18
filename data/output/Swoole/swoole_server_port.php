@@ -2,7 +2,7 @@
 /**
 * Swoole自动补全类(基于最新的2.1.3版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/18
 */
 
 /**
@@ -113,14 +113,14 @@ class swoole_server_port
      * 通过swoole_server:set()设置的参数会保存到setting属性上
      * @access public
      */
-    public $setting;
+    public $setting    =    array();
 
     /**
      * @var array $connections 
      * 所有连接对象
      * @access public
      */
-    public $connections;
+    public $connections    =    array();
 
     /**
      * 

@@ -2,7 +2,7 @@
 /**
 * Swoole自动补全类(基于最新的2.1.3版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/18
 */
 
 /**
@@ -45,7 +45,7 @@ class swoole_mysql
      * 连接信息，保存的是传递给构造函数的数组
      * @access public
      */
-    public $serverInfo;
+    public $serverInfo    =    array();
 
     /**
      * @var int $sock 

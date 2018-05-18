@@ -2,7 +2,7 @@
 /**
 * Swoole自动补全类(基于最新的2.1.3版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/18
 */
 
 /**
@@ -64,7 +64,7 @@ class swoole_http_client
      * 请求头
      * @access public
      */
-    public $requestHeaders;
+    public $requestHeaders    =    array();
 
     /**
      * @var string $requestBody 
@@ -78,14 +78,14 @@ class swoole_http_client
      * 上传的文件
      * @access public
      */
-    public $uploadFiles;
+    public $uploadFiles    =    array();
 
     /**
      * @var array $set_cookie_headers 
      * 设置请求头中的cookie
      * @access public
      */
-    public $set_cookie_headers;
+    public $set_cookie_headers    =    array();
 
     /**
      * @var string $downloadFile 
@@ -99,14 +99,14 @@ class swoole_http_client
      * 请求响应头
      * @access public
      */
-    public $headers;
+    public $headers    =    array();
 
     /**
      * @var array $cookies 
      * 请求响应cookie
      * @access public
      */
-    public $cookies;
+    public $cookies    =    array();
 
     /**
      * @var string $body 

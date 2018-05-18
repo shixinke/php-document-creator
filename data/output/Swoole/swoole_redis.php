@@ -2,7 +2,7 @@
 /**
 * Swoole自动补全类(基于最新的2.1.3版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/18
 */
 
 /**
@@ -61,7 +61,7 @@ class swoole_redis
      * 用于初始化的配置选项
      * @access public
      */
-    public $setting;
+    public $setting    =    array();
 
     /**
      * @var string $host 

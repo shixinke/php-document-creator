@@ -2,7 +2,7 @@
 /**
 * Swoole自动补全类(基于最新的2.1.3版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/18
 */
 
 /**
@@ -122,7 +122,7 @@ class MySQL
      * @param double $timeout 超时时间，超时的话会断开MySQL连接，0表示不设置超时时间
      * @return array|boolean
      */
-    public function query(string $sql, double $timeout):array
+    public function query(string $sql, double $timeout): ?array
     {
     
     }

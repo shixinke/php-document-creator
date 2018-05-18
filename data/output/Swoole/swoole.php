@@ -2,7 +2,7 @@
 /**
 * Swoole自动补全类(基于最新的2.1.3版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/18
 */
 
 /**
@@ -641,7 +641,7 @@ define('UNSERIALIZE_OBJECT_TO_STDCLASS', 2);
 * $version = swoole_version();
 * @return string
 */
-function swoole_version():string
+function swoole_version(): string
 {
 
         }
@@ -653,7 +653,7 @@ function swoole_version():string
 * $num = swoole_cpu_num();
 * @return int
 */
-function swoole_cpu_num():int
+function swoole_cpu_num(): int
 {
 
         }
@@ -665,7 +665,7 @@ function swoole_cpu_num():int
 * $errno = swoole_last_error();
 * @return int
 */
-function swoole_last_error():int
+function swoole_last_error(): int
 {
 
         }
@@ -681,7 +681,7 @@ function swoole_last_error():int
 * @param int $events:事件名称，可选择关闭/开启可读可写事件，如SWOOLE_EVENT_READ，SWOOLE_EVENT_WRITE，或者SWOOLE_EVENT_READ | SWOOLE_EVENT_WRITE 
 * @return boolean
 */
-function swoole_event_add(int $fd, Callable $read_callback, Callable $write_callback, int $events):boolean
+function swoole_event_add(int $fd, Callable $read_callback, Callable $write_callback, int $events): boolean
 {
 
         }
@@ -697,7 +697,7 @@ function swoole_event_add(int $fd, Callable $read_callback, Callable $write_call
 * @param int $events:事件名称,，可选择关闭/开启可读可写事件，如SWOOLE_EVENT_READ，SWOOLE_EVENT_WRITE，或者SWOOLE_EVENT_READ | SWOOLE_EVENT_WRITE 
 * @return boolean
 */
-function swoole_event_set(int $fd, Callable $read_callback, Callable $write_callback, int $events):boolean
+function swoole_event_set(int $fd, Callable $read_callback, Callable $write_callback, int $events): boolean
 {
 
         }
@@ -710,7 +710,7 @@ function swoole_event_set(int $fd, Callable $read_callback, Callable $write_call
 * @param int $fd:连接句柄 
 * @return boolean
 */
-function swoole_event_del(int $fd):boolean
+function swoole_event_del(int $fd): boolean
 {
 
         }
@@ -722,7 +722,7 @@ function swoole_event_del(int $fd):boolean
 * 
 * @return void
 */
-function swoole_event_exit():void
+function swoole_event_exit(): void
 {
 
         }
@@ -734,7 +734,7 @@ function swoole_event_exit():void
 * 
 * @return void
 */
-function swoole_event_wait():void
+function swoole_event_wait(): void
 {
 
         }
@@ -774,7 +774,7 @@ function swoole_event_defer(Callable $callback)
 * @param callable $callback:要设置的回调函数，必须为可执行。$callback为null时表示清除cycle函数 
 * @return boolean
 */
-function swoole_event_cycle(Callable $callback):boolean
+function swoole_event_cycle(Callable $callback): boolean
 {
 
         }
@@ -815,7 +815,7 @@ function swoole_event_isset(int $fd, int $events)
 * @param mixed $param:函数参数 
 * @return int
 */
-function swoole_timer_after(int $ms, Callable $callback, $param):int
+function swoole_timer_after(int $ms, Callable $callback, $param): int
 {
 
         }
@@ -829,7 +829,7 @@ function swoole_timer_after(int $ms, Callable $callback, $param):int
 * @param callable $callback:执行的函数 
 * @return int
 */
-function swoole_timer_tick(int $ms, Callable $callback):int
+function swoole_timer_tick(int $ms, Callable $callback): int
 {
 
         }
@@ -842,7 +842,7 @@ function swoole_timer_tick(int $ms, Callable $callback):int
 * @param int $timer_id:定时器ID 
 * @return bool
 */
-function swoole_timer_exists(int $timer_id):bool
+function swoole_timer_exists(int $timer_id): bool
 {
 
         }
@@ -855,7 +855,7 @@ function swoole_timer_exists(int $timer_id):bool
 * @param int $timer_id:定时器ID 
 * @return bool
 */
-function swoole_timer_clear(int $timer_id):bool
+function swoole_timer_clear(int $timer_id): bool
 {
 
         }
@@ -895,7 +895,7 @@ function swoole_async_set(Array $settings)
 * @param int $offset:读文件的指针偏移量 
 * @return bool
 */
-function swoole_async_read(string $filename, Callable $callback, int $chunk_size, int $offset):bool
+function swoole_async_read(string $filename, Callable $callback, int $chunk_size, int $offset): bool
 {
 
         }
@@ -973,7 +973,7 @@ function swoole_async_dns_lookup(string $hostname, Callable $callback)
 * @param string $domain_name:要查询的域名 
 * @return string|bool
 */
-function swoole_async_dns_lookup_coro(string $domain_name):string
+function swoole_async_dns_lookup_coro(string $domain_name): ?string
 {
 
         }
@@ -1028,7 +1028,7 @@ function go(callable $func)
 * @param float $timeout:超时时间 
 * @return int
 */
-function swoole_client_select(Array $read_array, Array $write_array, Array $error_array, float $timeout):int
+function swoole_client_select(Array $read_array, Array $write_array, Array $error_array, float $timeout): int
 {
 
         }
@@ -1069,7 +1069,7 @@ function swoole_set_process_name(string $process_name)
 * $ips = swoole_get_local_ip();
 * @return array (只返回IPv4地址，返回结果会过滤掉本地的loop地址127.0.0.1,类似于array('eth0'=>'192.168.0.25'))
 */
-function swoole_get_local_ip():array (只返回IPv4地址，返回结果会过滤掉本地的loop地址127.0.0.1,类似于array('eth0'=>'192.168.0.25'))
+function swoole_get_local_ip(): array (只返回IPv4地址，返回结果会过滤掉本地的loop地址127.0.0.1,类似于array('eth0'=>'192.168.0.25'))
 {
 
         }
@@ -1081,7 +1081,7 @@ function swoole_get_local_ip():array (只返回IPv4地址，返回结果会过�
 * $macs = swoole_get_local_mac();
 * @return array
 */
-function swoole_get_local_mac():array
+function swoole_get_local_mac(): array
 {
 
         }
@@ -1094,7 +1094,7 @@ function swoole_get_local_mac():array
 * @param int $errno:标准错误码 
 * @return string
 */
-function swoole_strerror(int $errno):string
+function swoole_strerror(int $errno): string
 {
 
         }
@@ -1106,7 +1106,7 @@ function swoole_strerror(int $errno):string
 * echo swoole_strerror(swoole_errno());
 * @return int
 */
-function swoole_errno():int
+function swoole_errno(): int
 {
 
         }

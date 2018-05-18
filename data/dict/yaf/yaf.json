@@ -1,1 +1,107 @@
-{"version":"3.0.7","comment":"高性能PHP框架YAF(yet another framework)","constants":{"YAF_VERSION":{"value":"3.0.7","comment":"yaf的版本号"},"YAF_ENVIRON":{"value":"product","comment":"目前的环境(用于提取配置)"},"YAF_ERR_STARTUP_FAILED":{"value":512,"comment":"启动失败错误"},"YAF_ERR_ROUTE_FAILED":{"value":513,"comment":"路由错误"},"YAF_ERR_DISPATCH_FAILED":{"value":514,"comment":"路由分发错误"},"YAF_ERR_AUTOLOAD_FAILED":{"value":520,"comment":"类自动加载错误"},"YAF_ERR_NOTFOUND_MODULE":{"value":515,"comment":"模块未找到错误"},"YAF_ERR_NOTFOUND_CONTROLLER":{"value":516,"comment":"控制器未找到错误"},"YAF_ERR_NOTFOUND_ACTION":{"value":517,"comment":"操作方法未找到错误"},"YAF_ERR_NOTFOUND_VIEW":{"value":518,"comment":"视图未找到错误"},"YAF_ERR_CALL_FAILED":{"value":519,"comment":"调用错误"},"YAF_ERR_TYPE_ERROR":{"value":521,"comment":"类型错误"}},"ini":{"yaf.library":{"value":"","options":[],"comment":"全局类库目录"},"yaf.action_prefer":{"value":"0","options":[],"comment":"是否在PATH_INFO模式下启用path_info对应控制器的方法"},"yaf.lowcase_path":{"value":"0","options":[],"comment":"类加载时路径是否小写"},"yaf.use_spl_autoload":{"value":"0","options":[],"comment":"是否启用SPL的自动加载"},"yaf.forward_limit":{"value":"5","options":[],"comment":"跳转数限制"},"yaf.name_suffix":{"value":"1","options":[],"comment":"类名称前缀"},"yaf.name_separator":{"value":"","options":[],"comment":"类名称分隔符"},"yaf.st_compatible":{"value":"0","options":[],"comment":"是否自动适配"},"yaf.environ":{"value":"product","options":[],"comment":"环境设置"},"yaf.use_namespace":{"value":"0","options":[],"comment":"是否启用命名空间"}},"functions":[]}
+{
+  "version": "3.0.7",
+  "comment": "高性能PHP框架YAF(yet another framework)",
+  "constants": {
+    "YAF_VERSION": {
+      "value": "3.0.7",
+      "comment": "yaf的版本号"
+    },
+    "YAF_ENVIRON": {
+      "value": "product",
+      "comment": "目前的环境(用于提取配置)"
+    },
+    "YAF_ERR_STARTUP_FAILED": {
+      "value": 512,
+      "comment": "启动失败错误"
+    },
+    "YAF_ERR_ROUTE_FAILED": {
+      "value": 513,
+      "comment": "路由错误"
+    },
+    "YAF_ERR_DISPATCH_FAILED": {
+      "value": 514,
+      "comment": "路由分发错误"
+    },
+    "YAF_ERR_AUTOLOAD_FAILED": {
+      "value": 520,
+      "comment": "类自动加载错误"
+    },
+    "YAF_ERR_NOTFOUND_MODULE": {
+      "value": 515,
+      "comment": "模块未找到错误"
+    },
+    "YAF_ERR_NOTFOUND_CONTROLLER": {
+      "value": 516,
+      "comment": "控制器未找到错误"
+    },
+    "YAF_ERR_NOTFOUND_ACTION": {
+      "value": 517,
+      "comment": "操作方法未找到错误"
+    },
+    "YAF_ERR_NOTFOUND_VIEW": {
+      "value": 518,
+      "comment": "视图未找到错误"
+    },
+    "YAF_ERR_CALL_FAILED": {
+      "value": 519,
+      "comment": "调用错误"
+    },
+    "YAF_ERR_TYPE_ERROR": {
+      "value": 521,
+      "comment": "类型错误"
+    }
+  },
+  "ini": {
+    "yaf.library": {
+      "value": "",
+      "options": [],
+      "comment": "全局类库目录"
+    },
+    "yaf.action_prefer": {
+      "value": "0",
+      "options": [],
+      "comment": "是否在PATH_INFO模式下启用path_info对应控制器的方法"
+    },
+    "yaf.lowcase_path": {
+      "value": "0",
+      "options": [],
+      "comment": "类加载时路径是否小写"
+    },
+    "yaf.use_spl_autoload": {
+      "value": "0",
+      "options": [],
+      "comment": "是否启用SPL的自动加载"
+    },
+    "yaf.forward_limit": {
+      "value": "5",
+      "options": [],
+      "comment": "跳转数限制"
+    },
+    "yaf.name_suffix": {
+      "value": "1",
+      "options": [],
+      "comment": "类名称前缀"
+    },
+    "yaf.name_separator": {
+      "value": "",
+      "options": [],
+      "comment": "类名称分隔符"
+    },
+    "yaf.st_compatible": {
+      "value": "0",
+      "options": [],
+      "comment": "是否自动适配"
+    },
+    "yaf.environ": {
+      "value": "product",
+      "options": [],
+      "comment": "环境设置"
+    },
+    "yaf.use_namespace": {
+      "value": "0",
+      "options": [],
+      "comment": "是否启用命名空间"
+    }
+  },
+  "functions": []
+}

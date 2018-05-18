@@ -2,7 +2,7 @@
 /**
 * Swoole自动补全类(基于最新的2.1.3版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/18
 */
 
 /**
@@ -23,14 +23,14 @@ class Request
      * 请求头
      * @access public
      */
-    public $headers;
+    public $headers    =    array();
 
     /**
      * @var array $data 
      * 请求数据
      * @access public
      */
-    public $data;
+    public $data    =    array();
 
     /**
      * @var unknown $pipeline 
@@ -45,7 +45,7 @@ class Request
      * name 浏览器上传时传入的文件名称
      * @access public
      */
-    public $files;
+    public $files    =    array();
 
 }
 
