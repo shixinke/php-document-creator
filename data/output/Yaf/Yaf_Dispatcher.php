@@ -2,7 +2,7 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/18
 */
 
 /**
@@ -122,7 +122,7 @@ final class Yaf_Dispatcher
     public function disableView()
     {
     
-}
+    }
 
     /**
      * 
@@ -134,7 +134,7 @@ final class Yaf_Dispatcher
     public function enableView()
     {
     
-}
+    }
 
     /**
      * 
@@ -148,7 +148,7 @@ final class Yaf_Dispatcher
     public function initView(string $tpl_dir, $options)
     {
     
-}
+    }
 
     /**
      * 
@@ -161,7 +161,7 @@ final class Yaf_Dispatcher
     public function setView(YafX_View_Interface $view)
     {
     
-}
+    }
 
     /**
      * 
@@ -174,7 +174,7 @@ final class Yaf_Dispatcher
     public function setRequest(YafX_Request_Abstract $request)
     {
     
-}
+    }
 
     /**
      * 
@@ -186,7 +186,7 @@ final class Yaf_Dispatcher
     public function getApplication()
     {
     
-}
+    }
 
     /**
      * 
@@ -197,7 +197,7 @@ final class Yaf_Dispatcher
     public function getRouter()
     {
     
-}
+    }
 
     /**
      * 
@@ -209,7 +209,7 @@ final class Yaf_Dispatcher
     public function getRequest()
     {
     
-}
+    }
 
     /**
      * 
@@ -218,13 +218,12 @@ final class Yaf_Dispatcher
      * @example 
      * @param callable $callback PHP中可回调的结构
      * @param  mixed $error_type 
-     * @param $error_type $int 处理的错误类型（默认：E_ALL | E_STRICT）
      * @return 
      */
     public function setErrorHandler(Callable $callback, $error_type = 32767)
     {
     
-}
+    }
 
     /**
      * 
@@ -237,7 +236,7 @@ final class Yaf_Dispatcher
     public function setDefaultModule(string $module)
     {
     
-}
+    }
 
     /**
      * 
@@ -250,7 +249,7 @@ final class Yaf_Dispatcher
     public function setDefaultController(string $controller)
     {
     
-}
+    }
 
     /**
      * 
@@ -287,14 +286,13 @@ final class Yaf_Dispatcher
      *当传递$flag参数时，设置$this->_auto_render=$flag，并返回Dispatcher
      *当不传递任何参数时，返回$this->_auto_render属性的值
      * @example 
-     * @param  mixed $flag 
-     * @param boolean $ flag
+     * @param bool $flag 是否自动渲染
      * @return 
      */
-    public function autoRender($flag, boolean $)
+    public function autoRender(bool $flag)
     {
     
-}
+    }
 
     /**
      * 
@@ -303,14 +301,13 @@ final class Yaf_Dispatcher
      *当传递$flag参数时，设置$this->_instantly_flush=$flag，并返回Dispatcher
      *当不传递任何参数时，返回$this->_instantly_flush属性的值
      * @example 
-     * @param  mixed $flag 
-     * @param boolean $ flag
+     * @param bool $flag 是否即时刷新缓存
      * @return 
      */
-    public function flushInstantly($flag, boolean $)
+    public function flushInstantly(bool $flag)
     {
     
-}
+    }
 
     /**
      * 
@@ -322,7 +319,7 @@ final class Yaf_Dispatcher
     public static  function getInstance()
     {
     
-}
+    }
 
     /**
      * 
@@ -335,35 +332,33 @@ final class Yaf_Dispatcher
     public function dispatch(YafX_Request_Abstract $request)
     {
     
-}
+    }
 
     /**
      * 
      *(Yaf >= 3.0.2)
      *开启/关闭异常抛出或返回当前状态
      * @example 
-     * @param  mixed $flag 
-     * @param boolean $ flag
+     * @param bool $flag 是否抛出异常
      * @return 
      */
-    public function throwException($flag, boolean $)
+    public function throwException(bool $flag)
     {
     
-}
+    }
 
     /**
      * 
      *(Yaf >= 3.0.2)
      *开启/关闭自动异常捕获功能或返回当前状态
      * @example 
-     * @param  mixed $flag 
-     * @param boolean $ flag
+     * @param bool $flag 是否捕获异常
      * @return 
      */
-    public function catchException($flag, boolean $)
+    public function catchException(bool $flag)
     {
     
-}
+    }
 
     /**
      * 
@@ -376,7 +371,7 @@ final class Yaf_Dispatcher
     public function registerPlugin(YafX_Plugin_Abstract $plugin)
     {
     
-}
+    }
 
     /**
      * 
@@ -388,7 +383,7 @@ final class Yaf_Dispatcher
     private function __construct()
     {
     
-}
+    }
 
     /**
      * 
@@ -400,7 +395,7 @@ final class Yaf_Dispatcher
     private function __clone()
     {
     
-}
+    }
 
     /**
      * 
@@ -412,7 +407,7 @@ final class Yaf_Dispatcher
     public function __destruct()
     {
     
-}
+    }
 
     /**
      * 
@@ -424,7 +419,7 @@ final class Yaf_Dispatcher
     private function __sleep()
     {
     
-}
+    }
 
     /**
      * 
@@ -436,7 +431,7 @@ final class Yaf_Dispatcher
     private function __wakeup()
     {
     
-}
+    }
 
 }
 

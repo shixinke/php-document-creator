@@ -16,14 +16,14 @@
     },
     "_module": {
       "access": "protected",
-      "type": "unknown",
-      "comment": false,
+      "type": "string",
+      "comment": "当前模块对象",
       "isStatic": false
     },
     "_name": {
       "access": "protected",
-      "type": "unknown",
-      "comment": false,
+      "type": "string",
+      "comment": "当前操作名",
       "isStatic": false
     },
     "_request": {

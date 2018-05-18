@@ -2,17 +2,16 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/18
 */
 
 /**
-*(Yaf >= 3.0.2)
-*Class yaf_Registry
+*yaf变量注册器
 */
 final class Yaf_Registry
 {
     /**
-     * @var unknown $_instance 
+     * @var Yaf_Registry $_instance 
      * (Yaf >= 3.0.2)
      * Registry实例（单例模式）
      * @access protected
@@ -20,12 +19,12 @@ final class Yaf_Registry
     protected static  $_instance;
 
     /**
-     * @var unknown $_entries 
+     * @var array $_entries 
      * (Yaf >= 3.0.2)
      * 注册变量栈
      * @access protected
      */
-    protected $_entries;
+    protected $_entries    =    array();
 
     /**
      * 
@@ -37,19 +36,19 @@ final class Yaf_Registry
     private function __construct()
     {
     
-}
+    }
 
     /**
      * 
      *(Yaf >= 3.0.2)
      *重置__clone魔术方法，防止克隆Dispatcher（因为是单例模式）.
      * @example 
-     * @return 
+     * @return void
      */
-    private function __clone()
+    private function __clone():void
     {
     
-}
+    }
 
     /**
      * 
@@ -57,12 +56,12 @@ final class Yaf_Registry
      *获取注册变量值
      * @example 
      * @param string $name 变量名
-     * @return 
+     * @return mixed
      */
     public static  function get(string $name)
     {
     
-}
+    }
 
     /**
      * 
@@ -70,12 +69,12 @@ final class Yaf_Registry
      *检测变量是否存在
      * @example 
      * @param string $name 变量名
-     * @return 
+     * @return bool
      */
-    public static  function has(string $name)
+    public static  function has(string $name):bool
     {
     
-}
+    }
 
     /**
      * 
@@ -84,26 +83,24 @@ final class Yaf_Registry
      * @example 
      * @param string $name 变量名
      * @param mixed $value 变量值
-     * @return 
+     * @return bool
      */
-    public static  function set(string $name, $value)
+    public static  function set(string $name, $value):bool
     {
     
-}
+    }
 
     /**
      * 
-     *(Yaf >= 3.0.2)
-     *删除变量
+     *删除注册器中的变量
      * @example 
-     * @param  mixed $name 
-     * @param string $ name
-     * @return 
+     * @param string $name 变量名
+     * @return void
      */
-    public static  function del($name, string $)
+    public static  function del(string $name):void
     {
     
-}
+    }
 
 }
 

@@ -2,7 +2,7 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/18
 */
 
 /**
@@ -80,7 +80,7 @@ abstract class Yaf_Controller_Abstract
     protected function render(string $action_name, $var_array = [], Array $var_)
     {
     
-}
+    }
 
     /**
      * 
@@ -95,7 +95,7 @@ abstract class Yaf_Controller_Abstract
     protected function display(string $action_name, $var_array = [], Array $var_)
     {
     
-}
+    }
 
     /**
      * 
@@ -107,7 +107,7 @@ abstract class Yaf_Controller_Abstract
     public function getRequest()
     {
     
-}
+    }
 
     /**
      * 
@@ -119,7 +119,7 @@ abstract class Yaf_Controller_Abstract
     public function getResponse()
     {
     
-}
+    }
 
     /**
      * 
@@ -131,7 +131,7 @@ abstract class Yaf_Controller_Abstract
     public function getModuleName()
     {
     
-}
+    }
 
     /**
      * 
@@ -143,7 +143,7 @@ abstract class Yaf_Controller_Abstract
     public function initView()
     {
     
-}
+    }
 
     /**
      * 
@@ -155,7 +155,7 @@ abstract class Yaf_Controller_Abstract
     public function getView()
     {
     
-}
+    }
 
     /**
      * 
@@ -163,13 +163,12 @@ abstract class Yaf_Controller_Abstract
      *设置模板文件目录
      * @example 
      * @param  mixed $path 
-     * @param string $ path
      * @return 
      */
     public function setViewPath($path)
     {
     
-}
+    }
 
     /**
      * 
@@ -181,7 +180,7 @@ abstract class Yaf_Controller_Abstract
     public function getViewPath()
     {
     
-}
+    }
 
     /**
      * 
@@ -192,13 +191,12 @@ abstract class Yaf_Controller_Abstract
      * @param  mixed $controller 
      * @param  mixed $action 
      * @param  mixed $parameters 
-     * @param string $ parameters
      * @return 
      */
-    public function forward($module, $controller, $action, $parameters, string $)
+    public function forward($module, $controller, $action, $parameters)
     {
     
-}
+    }
 
     /**
      * 
@@ -206,13 +204,12 @@ abstract class Yaf_Controller_Abstract
      *将当前请求重定向到指定的URL（内部实现是通过发送Location报头实现，如：header("Location:http//www.phpboy.net/"））
      * @example 
      * @param  mixed $url 
-     * @param string $ url
      * @return 
      */
-    public function redirect($url, string $)
+    public function redirect($url)
     {
     
-}
+    }
 
     /**
      * 
@@ -224,7 +221,7 @@ abstract class Yaf_Controller_Abstract
     public function getInvokeArgs()
     {
     
-}
+    }
 
     /**
      * 
@@ -232,13 +229,12 @@ abstract class Yaf_Controller_Abstract
      *获取指定调用参数名的值
      * @example 
      * @param  mixed $name 
-     * @param string $ name
      * @return 
      */
-    public function getInvokeArg($name, string $)
+    public function getInvokeArg($name)
     {
     
-}
+    }
 
     /**
      * 
@@ -250,7 +246,7 @@ abstract class Yaf_Controller_Abstract
     public final  function __construct()
     {
     
-}
+    }
 
     /**
      * 
@@ -262,7 +258,7 @@ abstract class Yaf_Controller_Abstract
     public final  function __clone()
     {
     
-}
+    }
 
 }
 

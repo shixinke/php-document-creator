@@ -2,7 +2,7 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/18
 */
 
 /**
@@ -40,7 +40,7 @@ final class Yaf_Route_Map
     public function __construct($controller_prefer = 0, $delim = , $controller_prefer $boolean, $delim $string)
     {
     
-}
+    }
 
     /**
      * 
@@ -54,7 +54,7 @@ final class Yaf_Route_Map
     public function route($request, YafX_Request_Abstract $)
     {
     
-}
+    }
 
     /**
      * 
@@ -69,7 +69,7 @@ final class Yaf_Route_Map
     public function assemble($info, $query, $)
     {
     
-}
+    }
 
 }
 

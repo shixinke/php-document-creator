@@ -2,21 +2,20 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/18
 */
 
 /**
-*(Yaf >= 3.0.2)
-*Class yaf_Action_Abstract
+*yaf中的操作定义(单独文件定义操作，通常是在控制器文件中定义操作，这里可以通过单独文件来定义操作)
 */
 abstract class Yaf_Action_Abstract extends Yaf_Controller_Abstract
 {
     /**
-     * @var unknown $actions 
-     * 
+     * @var array $actions 
+     * 操作列表
      * @access public
      */
-    public $actions;
+    public $actions    =    array();
 
     /**
      * @var unknown $_module 
@@ -78,7 +77,7 @@ abstract class Yaf_Action_Abstract extends Yaf_Controller_Abstract
     public function getController()
     {
     
-}
+    }
 
     /**
      * 

@@ -2,7 +2,7 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/18
 */
 
 /**
@@ -23,7 +23,7 @@ abstract class Yaf_Plugin_Abstract
     public function routerStartup(YafX_Request_Abstract $request, YafX_Response_Abstract $response)
     {
     
-}
+    }
 
     /**
      * 
@@ -37,7 +37,7 @@ abstract class Yaf_Plugin_Abstract
     public function routerShutdown(YafX_Request_Abstract $request, YafX_Response_Abstract $response)
     {
     
-}
+    }
 
     /**
      * 
@@ -51,7 +51,7 @@ abstract class Yaf_Plugin_Abstract
     public function dispatchLoopStartup(YafX_Request_Abstract $request, YafX_Response_Abstract $response)
     {
     
-}
+    }
 
     /**
      * 
@@ -65,7 +65,7 @@ abstract class Yaf_Plugin_Abstract
     public function preDispatch(YafX_Request_Abstract $request, YafX_Response_Abstract $response)
     {
     
-}
+    }
 
     /**
      * 
@@ -79,7 +79,7 @@ abstract class Yaf_Plugin_Abstract
     public function postDispatch(YafX_Request_Abstract $request, YafX_Response_Abstract $response)
     {
     
-}
+    }
 
     /**
      * 
@@ -93,7 +93,7 @@ abstract class Yaf_Plugin_Abstract
     public function dispatchLoopShutdown(YafX_Request_Abstract $request, YafX_Response_Abstract $response)
     {
     
-}
+    }
 
 }
 

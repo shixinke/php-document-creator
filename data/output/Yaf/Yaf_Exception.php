@@ -2,7 +2,7 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/18
 */
 
 /**
@@ -57,7 +57,7 @@ class Yaf_Exception extends Exception
     private final  function __clone()
     {
     
-}
+    }
 
     /**
      * 
@@ -71,7 +71,7 @@ class Yaf_Exception extends Exception
     public function __construct($message, $code, $previous)
     {
     
-}
+    }
 
     /**
      * 
@@ -82,7 +82,7 @@ class Yaf_Exception extends Exception
     public function __wakeup()
     {
     
-}
+    }
 
     /**
      * 
@@ -93,7 +93,7 @@ class Yaf_Exception extends Exception
     public final  function getMessage()
     {
     
-}
+    }
 
     /**
      * 
@@ -104,7 +104,7 @@ class Yaf_Exception extends Exception
     public final  function getCode()
     {
     
-}
+    }
 
     /**
      * 
@@ -115,7 +115,7 @@ class Yaf_Exception extends Exception
     public final  function getFile()
     {
     
-}
+    }
 
     /**
      * 
@@ -126,7 +126,7 @@ class Yaf_Exception extends Exception
     public final  function getLine()
     {
     
-}
+    }
 
     /**
      * 
@@ -137,7 +137,7 @@ class Yaf_Exception extends Exception
     public final  function getTrace()
     {
     
-}
+    }
 
     /**
      * 
@@ -148,7 +148,7 @@ class Yaf_Exception extends Exception
     public final  function getPrevious()
     {
     
-}
+    }
 
     /**
      * 
@@ -159,7 +159,7 @@ class Yaf_Exception extends Exception
     public final  function getTraceAsString()
     {
     
-}
+    }
 
     /**
      * 
@@ -170,7 +170,7 @@ class Yaf_Exception extends Exception
     public function __toString()
     {
     
-}
+    }
 
 }
 

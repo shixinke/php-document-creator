@@ -2,7 +2,7 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/18
 */
 
 /**
@@ -45,7 +45,7 @@ final class Yaf_Loader
     private function __construct()
     {
     
-}
+    }
 
     /**
      * 
@@ -57,7 +57,7 @@ final class Yaf_Loader
     private function __clone()
     {
     
-}
+    }
 
     /**
      * 
@@ -69,7 +69,7 @@ final class Yaf_Loader
     public function __destruct()
     {
     
-}
+    }
 
     /**
      * 
@@ -81,7 +81,7 @@ final class Yaf_Loader
     private function __sleep()
     {
     
-}
+    }
 
     /**
      * 
@@ -93,7 +93,7 @@ final class Yaf_Loader
     private function __wakeup()
     {
     
-}
+    }
 
     /**
      * 
@@ -107,7 +107,7 @@ final class Yaf_Loader
     public function autoload($class, $class $string)
     {
     
-}
+    }
 
     /**
      * 
@@ -121,7 +121,7 @@ final class Yaf_Loader
     public static  function getInstance(string $library, string $global)
     {
     
-}
+    }
 
     /**
      * 
@@ -134,7 +134,7 @@ final class Yaf_Loader
     public function registerLocalNamespace($namespace)
     {
     
-}
+    }
 
     /**
      * 
@@ -146,7 +146,7 @@ final class Yaf_Loader
     public function getLocalNamespace()
     {
     
-}
+    }
 
     /**
      * 
@@ -158,7 +158,7 @@ final class Yaf_Loader
     public function clearLocalNamespace()
     {
     
-}
+    }
 
     /**
      * 
@@ -172,7 +172,7 @@ final class Yaf_Loader
     public function isLocalName($class_name, $class_name $string)
     {
     
-}
+    }
 
     /**
      * 
@@ -186,7 +186,7 @@ final class Yaf_Loader
     public static  function import($file, $file $string)
     {
     
-}
+    }
 
     /**
      * 
@@ -200,7 +200,7 @@ final class Yaf_Loader
     public function setLibraryPath(string $library, boolean $global = )
     {
     
-}
+    }
 
     /**
      * 
@@ -214,7 +214,7 @@ final class Yaf_Loader
     public function getLibraryPath($global = , boolean $)
     {
     
-}
+    }
 
 }
 

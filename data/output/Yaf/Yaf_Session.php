@@ -2,7 +2,7 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/18
 */
 
 /**
@@ -42,7 +42,7 @@ final class Yaf_Session
     private function __construct()
     {
     
-}
+    }
 
     /**
      * 
@@ -54,7 +54,7 @@ final class Yaf_Session
     private function __clone()
     {
     
-}
+    }
 
     /**
      * 
@@ -66,7 +66,7 @@ final class Yaf_Session
     private function __sleep()
     {
     
-}
+    }
 
     /**
      * 
@@ -78,7 +78,7 @@ final class Yaf_Session
     private function __wakeup()
     {
     
-}
+    }
 
     /**
      * 
@@ -90,7 +90,7 @@ final class Yaf_Session
     public static  function getInstance()
     {
     
-}
+    }
 
     /**
      * 
@@ -102,7 +102,7 @@ final class Yaf_Session
     public function start()
     {
     
-}
+    }
 
     /**
      * 
@@ -114,7 +114,7 @@ final class Yaf_Session
     public function __destruct()
     {
     
-}
+    }
 
     /**
      * 
@@ -127,7 +127,7 @@ final class Yaf_Session
     public function __isset(string $name)
     {
     
-}
+    }
 
     /**
      * 
@@ -140,7 +140,7 @@ final class Yaf_Session
     public function get(string $name)
     {
     
-}
+    }
 
     /**
      * 
@@ -154,7 +154,7 @@ final class Yaf_Session
     public function set(string $name, $value)
     {
     
-}
+    }
 
     /**
      * 
@@ -167,7 +167,7 @@ final class Yaf_Session
     public function del(string $name)
     {
     
-}
+    }
 
     /**
      * 
@@ -179,7 +179,7 @@ final class Yaf_Session
     public function count()
     {
     
-}
+    }
 
     /**
      * 
@@ -191,7 +191,7 @@ final class Yaf_Session
     public function rewind()
     {
     
-}
+    }
 
     /**
      * 
@@ -203,7 +203,7 @@ final class Yaf_Session
     public function current()
     {
     
-}
+    }
 
     /**
      * 
@@ -215,7 +215,7 @@ final class Yaf_Session
     public function next()
     {
     
-}
+    }
 
     /**
      * 
@@ -227,7 +227,7 @@ final class Yaf_Session
     public function valid()
     {
     
-}
+    }
 
     /**
      * 
@@ -239,7 +239,7 @@ final class Yaf_Session
     public function key()
     {
     
-}
+    }
 
     /**
      * 
@@ -252,7 +252,7 @@ final class Yaf_Session
     public function offsetUnset(string $name)
     {
     
-}
+    }
 
     /**
      * 
@@ -265,7 +265,7 @@ final class Yaf_Session
     public function offsetExists($name)
     {
     
-}
+    }
 
     /**
      * 
@@ -278,7 +278,7 @@ final class Yaf_Session
     public function offsetGet(string $name)
     {
     
-}
+    }
 
     /**
      * 
@@ -292,7 +292,7 @@ final class Yaf_Session
     public function offsetSet(string $name, $value)
     {
     
-}
+    }
 
     /**
      * 
@@ -307,7 +307,7 @@ final class Yaf_Session
     public function __get($name, string $)
     {
     
-}
+    }
 
     /**
      * 
@@ -321,7 +321,7 @@ final class Yaf_Session
     public function __set(string $name, $value)
     {
     
-}
+    }
 
 }
 

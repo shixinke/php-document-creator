@@ -2,103 +2,103 @@
   "object": {
     "name": "Yaf_Dispatcher"
   },
-  "comment": "(Yaf >= 3.0.2)\nClass yaf_Dispatcher",
+  "comment": "路由及请求分发器",
   "namespace": "",
   "isFinal": 1,
   "consts": [],
   "properties": {
     "_router": {
       "access": "protected",
-      "type": "unknown",
-      "comment": "(Yaf >= 3.0.2)\n路由器对象.",
+      "type": "Yaf_Router",
+      "comment": "路由器对象.",
       "isStatic": false
     },
     "_view": {
       "access": "protected",
-      "type": "unknown",
-      "comment": "(Yaf >= 3.0.2)\n视图对象.",
+      "type": "Yaf_View_Interface",
+      "comment": "视图对象.",
       "isStatic": false
     },
     "_request": {
       "access": "protected",
-      "type": "unknown",
-      "comment": "(Yaf >= 3.0.2)\n当前请求对象（包含请求的所有信息）.",
+      "type": "Yaf_Request_Abstract ",
+      "comment": "当前请求对象（包含请求的所有信息）.",
       "isStatic": false
     },
     "_plugins": {
       "access": "protected",
-      "type": "unknown",
-      "comment": "(Yaf >= 3.0.2)\n已注册的插件对象",
+      "type": "array",
+      "comment": "已注册的插件对象",
       "isStatic": false
     },
     "_instance": {
       "access": "protected",
-      "type": "unknown",
-      "comment": "(Yaf >= 3.0.2)\nyaf_Dispatcher实现了单例模式，此属性保存当前实例.",
+      "type": "Yaf_Dispatcher",
+      "comment": "yaf_Dispatcher实现了单例模式，此属性保存当前实例.",
       "isStatic": true
     },
     "_auto_render": {
       "access": "protected",
-      "type": "unknown",
-      "comment": "(Yaf >= 3.0.2)\n自动渲染功能开关，默认1.\n自动渲染是指根据当前请求的控制器Controller和动作Action自动寻找模块文件，加载与渲染模块，之后返回结果或者输出.\n如果设置为0，$this->_instantly_flush，$this->_return_response的设置将无效，也即：\nyaf_Dispatcher::getInstance()->flushInstantly($flag);\nyaf_Dispatcher::getInstance()->returnResponse($flag);\n设置无效，并且不会渲染模板.",
+      "type": "int",
+      "comment": "自动渲染功能开关，默认1.\n自动渲染是指根据当前请求的控制器Controller和动作Action自动寻找模块文件，加载与渲染模块，之后返回结果或者输出.\n如果设置为0，$this->_instantly_flush，$this->_return_response的设置将无效，也即：\nyaf_Dispatcher::getInstance()->flushInstantly($flag);\nyaf_Dispatcher::getInstance()->returnResponse($flag);\n设置无效，并且不会渲染模板.",
       "isStatic": false,
       "value": true
     },
     "_return_response": {
       "access": "protected",
-      "type": "unknown",
-      "comment": "(Yaf >= 3.0.2)\n返回包含请求正文的响应对象开关，默认为0.\n默认情况下，Yaf的自动渲染查找并渲染模板（render，并非display），渲染结果写入yaf_Response_Abstract实例的_body属性，\n在分发器结束分发之后，输出_body（数组遍历输出）属性的值，并清空_body.\n设置此属性为1，分发器结束分发之后，不会输出和清空_body，可以通过yaf_Application的run()，yaf_Dispatcher的方法dispatch()，\n或者yaf_Controller_Abstract的getResponse()等方法的调用返回响应对象，\n进而调用yaf_Response_Abstract实例的getBody()方法获取响应正文.此属性依赖$this->_auto_render的设置，\n当$this->_auto_render=1时，响应正文包括渲染模板的结果，反之则不包括.",
+      "type": "int",
+      "comment": "返回包含请求正文的响应对象开关，默认为0.\n默认情况下，Yaf的自动渲染查找并渲染模板（render，并非display），渲染结果写入yaf_Response_Abstract实例的_body属性，\n在分发器结束分发之后，输出_body（数组遍历输出）属性的值，并清空_body.\n设置此属性为1，分发器结束分发之后，不会输出和清空_body，可以通过yaf_Application的run()，yaf_Dispatcher的方法dispatch()，\n或者yaf_Controller_Abstract的getResponse()等方法的调用返回响应对象，\n进而调用yaf_Response_Abstract实例的getBody()方法获取响应正文.此属性依赖$this->_auto_render的设置，\n当$this->_auto_render=1时，响应正文包括渲染模板的结果，反之则不包括.",
       "isStatic": false,
       "value": false
     },
     "_instantly_flush": {
       "access": "protected",
-      "type": "unknown",
-      "comment": "(Yaf >= 3.0.2)\n立即输出响应正文开头，默认为0.\n默认情况下，Yaf自动渲染调用yaf_Controller_Abstract的render方法，渲染模板.\n当此属性设置为1时，Yaf调用yaf_Controller_Abstract的display方法，直接渲染并输出，但不设置yaf_Response_Abstract实例的_body属性.",
+      "type": "int",
+      "comment": "立即输出响应正文开头，默认为0.\n默认情况下，Yaf自动渲染调用yaf_Controller_Abstract的render方法，渲染模板.\n当此属性设置为1时，Yaf调用yaf_Controller_Abstract的display方法，直接渲染并输出，但不设置yaf_Response_Abstract实例的_body属性.",
       "isStatic": false,
       "value": false
     },
     "_default_module": {
       "access": "protected",
-      "type": "unknown",
-      "comment": "(Yaf >= 3.0.2)\n默认模块名",
+      "type": "string",
+      "comment": "默认模块名",
       "isStatic": false
     },
     "_default_controller": {
       "access": "protected",
-      "type": "unknown",
-      "comment": "(Yaf >= 3.0.2)\n默认控制器",
+      "type": "string",
+      "comment": "默认控制器",
       "isStatic": false
     },
     "_default_action": {
       "access": "protected",
-      "type": "unknown",
-      "comment": "(Yaf >= 3.0.2)\n默认动作名",
+      "type": "string",
+      "comment": "默认动作名",
       "isStatic": false
     }
   },
   "methods": {
     "disableView": {
       "access": "public",
-      "comment": "(Yaf >= 3.0.2)\n关闭自动渲染模板",
+      "comment": "关闭自动渲染模板",
       "isStatic": false,
-      "return": "",
+      "return": "bool",
       "example": "",
       "parameters": []
     },
     "enableView": {
       "access": "public",
-      "comment": "(Yaf >= 3.0.2)\n开启自动渲染模板",
+      "comment": "开启自动渲染模板",
       "isStatic": false,
-      "return": "",
+      "return": "Yaf_Dispatcher",
       "example": "",
       "parameters": []
     },
     "initView": {
       "access": "public",
-      "comment": "(Yaf >= 3.0.2)\n初始化视图对象",
+      "comment": "初始化视图对象",
       "isStatic": false,
-      "return": "",
+      "return": "Yaf_View_Interface",
       "example": "",
       "parameters": {
         "tpl_dir": {
@@ -116,28 +116,28 @@
     },
     "setView": {
       "access": "public",
-      "comment": "(Yaf >= 3.0.2)\n设置视图对象",
+      "comment": "设置视图对象",
       "isStatic": false,
-      "return": "",
+      "return": "Yaf_Dispatcher",
       "example": "",
       "parameters": {
         "view": {
           "comment": "视图对象实例",
-          "type": "YafX_View_Interface",
+          "type": "Yaf_View_Interface",
           "options": []
         }
       }
     },
     "setRequest": {
       "access": "public",
-      "comment": "(Yaf >= 3.0.2)\n设置请求对象（在命令行或者其他API模式下构造请求很有用）",
+      "comment": "设置请求对象（在命令行或者其他API模式下构造请求很有用）",
       "isStatic": false,
-      "return": "",
+      "return": "Yaf_Dispatcher",
       "example": "",
       "parameters": {
         "request": {
           "comment": "手动实例化的请求对象",
-          "type": "YafX_Request_Abstract",
+          "type": "Yaf_Request_Abstract",
           "options": []
         }
       }
@@ -146,7 +146,7 @@
       "access": "public",
       "comment": "(Yaf >= 3.0.2)\n返回应用实例",
       "isStatic": false,
-      "return": "",
+      "return": "Yaf_Application",
       "example": "",
       "parameters": []
     },
@@ -154,15 +154,15 @@
       "access": "public",
       "comment": "返回路由器实例",
       "isStatic": false,
-      "return": "",
+      "return": "Yaf_Router",
       "example": "",
       "parameters": []
     },
     "getRequest": {
       "access": "public",
-      "comment": "(Yaf >= 3.0.2)\n返回请求对象实例",
+      "comment": "返回请求对象实例",
       "isStatic": false,
-      "return": "",
+      "return": "Yaf_Request",
       "example": "",
       "parameters": []
     },
@@ -170,7 +170,7 @@
       "access": "public",
       "comment": "(Yaf >= 3.0.2)\n设置一个用户定义的错误处理函数（封装了PHP内置的set_error_handler函数）",
       "isStatic": false,
-      "return": "",
+      "return": "Yaf_Dispatcher",
       "example": "",
       "parameters": {
         "callback": {
@@ -179,22 +179,18 @@
           "options": []
         },
         "error_type": {
-          "comment": "",
-          "type": "unknown",
+          "comment": "错误类型",
+          "type": "int",
           "options": [],
           "value": 32767
-        },
-        "int": {
-          "type": "$error_type",
-          "comment": "处理的错误类型（默认：E_ALL | E_STRICT）"
         }
       }
     },
     "setDefaultModule": {
       "access": "public",
-      "comment": "(Yaf >= 3.0.2)\n设置默认模块",
+      "comment": "设置默认模块",
       "isStatic": false,
-      "return": "",
+      "return": "Yaf_Dispatcher",
       "example": "",
       "parameters": {
         "module": {
@@ -206,9 +202,9 @@
     },
     "setDefaultController": {
       "access": "public",
-      "comment": "(Yaf >= 3.0.2)\n设置默认的控制器",
+      "comment": "设置默认的控制器",
       "isStatic": false,
-      "return": "",
+      "return": "Yaf_Dispatcher",
       "example": "",
       "parameters": {
         "controller": {
@@ -220,143 +216,127 @@
     },
     "setDefaultAction": {
       "access": "public",
-      "comment": "(Yaf >= 3.0.2)\n设置默认的动作名",
+      "comment": "设置默认的动作名",
       "isStatic": false,
-      "return": "",
+      "return": "Yaf_Dispatcher",
       "example": "",
       "parameters": {
         "action": {
-          "comment": "",
-          "type": "unknown",
+          "comment": "操作名",
+          "type": "string",
           "options": []
         }
       }
     },
     "returnResponse": {
       "access": "public",
-      "comment": "(Yaf >= 3.0.2)\n设置或者返回$this->_return_response属性的值\n当传递$flag参数时，设置$this->_return_response=$flag，并返回Dispatcher\n当不传递任何参数时，返回$this->_return_response当前值",
+      "comment": "设置或者返回$this->_return_response属性的值\n当传递$flag参数时，设置$this->_return_response=$flag，并返回Dispatcher\n当不传递任何参数时，返回$this->_return_response当前值",
       "isStatic": false,
-      "return": "",
+      "return": "Yaf_Dispatcher",
       "example": "",
       "parameters": {
         "flag": {
-          "comment": "",
-          "type": "unknown",
+          "comment": "是否返回响应",
+          "type": "bool",
           "options": []
         }
       }
     },
     "autoRender": {
       "access": "public",
-      "comment": "(Yaf >= 3.0.2)\n设置或者返回$this->_auto_render属性的值\n当传递$flag参数时，设置$this->_auto_render=$flag，并返回Dispatcher\n当不传递任何参数时，返回$this->_auto_render属性的值",
+      "comment": "设置或者返回$this->_auto_render属性的值\n当传递$flag参数时，设置$this->_auto_render=$flag，并返回Dispatcher\n当不传递任何参数时，返回$this->_auto_render属性的值",
       "isStatic": false,
-      "return": "",
+      "return": "Yaf_Dispatcher",
       "example": "",
       "parameters": {
         "flag": {
-          "comment": "",
-          "type": "unknown",
+          "comment": "是否自动渲染",
+          "type": "bool",
           "options": []
-        },
-        "": {
-          "type": "boolean",
-          "comment": "flag"
         }
       }
     },
     "flushInstantly": {
       "access": "public",
-      "comment": "(Yaf >= 3.0.2)\n设置或者返回$this->_instantly_flush属性的值\n当传递$flag参数时，设置$this->_instantly_flush=$flag，并返回Dispatcher\n当不传递任何参数时，返回$this->_instantly_flush属性的值",
+      "comment": "设置或者返回$this->_instantly_flush属性的值\n当传递$flag参数时，设置$this->_instantly_flush=$flag，并返回Dispatcher\n当不传递任何参数时，返回$this->_instantly_flush属性的值",
       "isStatic": false,
-      "return": "",
+      "return": "Yaf_Dispatcher",
       "example": "",
       "parameters": {
         "flag": {
-          "comment": "",
-          "type": "unknown",
+          "comment": "是否即时刷新缓存",
+          "type": "bool",
           "options": []
-        },
-        "": {
-          "type": "boolean",
-          "comment": "flag"
         }
       }
     },
     "getInstance": {
       "access": "public",
-      "comment": "(Yaf >= 3.0.2)\n返回当前yaf_Dispatcher实例（单例模式）",
+      "comment": "返回当前yaf_Dispatcher实例（单例模式）",
       "isStatic": true,
-      "return": "",
+      "return": "Yaf_Dispatcher",
       "example": "",
       "parameters": []
     },
     "dispatch": {
       "access": "public",
-      "comment": "(Yaf >= 3.0.2)\n手动分发请求",
+      "comment": "手动分发请求",
       "isStatic": false,
-      "return": "",
+      "return": "Yaf_Response_Abstract",
       "example": "",
       "parameters": {
         "request": {
           "comment": "分发的请求对象",
-          "type": "YafX_Request_Abstract",
+          "type": "Yaf_Request_Abstract",
           "options": []
         }
       }
     },
     "throwException": {
       "access": "public",
-      "comment": "(Yaf >= 3.0.2)\n开启\/关闭异常抛出或返回当前状态",
+      "comment": "开启\/关闭异常抛出或返回当前状态",
       "isStatic": false,
-      "return": "",
+      "return": "Yaf_Dispatcher",
       "example": "",
       "parameters": {
         "flag": {
-          "comment": "",
-          "type": "unknown",
+          "comment": "是否抛出异常",
+          "type": "bool",
           "options": []
-        },
-        "": {
-          "type": "boolean",
-          "comment": "flag"
         }
       }
     },
     "catchException": {
       "access": "public",
-      "comment": "(Yaf >= 3.0.2)\n开启\/关闭自动异常捕获功能或返回当前状态",
+      "comment": "开启\/关闭自动异常捕获功能或返回当前状态",
       "isStatic": false,
-      "return": "",
+      "return": "Yaf_Dispatcher",
       "example": "",
       "parameters": {
         "flag": {
-          "comment": "",
-          "type": "unknown",
+          "comment": "是否捕获异常",
+          "type": "bool",
           "options": []
-        },
-        "": {
-          "type": "boolean",
-          "comment": "flag"
         }
       }
     },
     "registerPlugin": {
       "access": "public",
-      "comment": "(Yaf >= 3.0.2)\n注册插件",
+      "comment": "注册插件",
       "isStatic": false,
-      "return": "",
+      "return": "Yaf_Dispatcher",
       "example": "",
       "parameters": {
         "plugin": {
           "comment": "实例化的插件对象",
-          "type": "YafX_Plugin_Abstract",
+          "type": "Yaf_Plugin_Abstract",
           "options": []
         }
       }
     },
     "__construct": {
       "access": "private",
-      "comment": "(Yaf >= 3.0.2)\n重置__construct魔术方法.",
+      "comment": "重置__construct魔术方法.",
       "isStatic": false,
       "return": "",
       "example": "",
@@ -364,7 +344,7 @@
     },
     "__clone": {
       "access": "private",
-      "comment": "(Yaf >= 3.0.2)\n重置__clone魔术方法，防止克隆yaf_Dispatcher（因为是单例模式）.",
+      "comment": "重置__clone魔术方法，防止克隆yaf_Dispatcher（因为是单例模式）.",
       "isStatic": false,
       "return": "",
       "example": "",
@@ -372,7 +352,7 @@
     },
     "__destruct": {
       "access": "public",
-      "comment": "(Yaf >= 3.0.2)\n重置__destruct魔术方法.",
+      "comment": "重置__destruct魔术方法.",
       "isStatic": false,
       "return": "",
       "example": "",
@@ -380,7 +360,7 @@
     },
     "__sleep": {
       "access": "private",
-      "comment": "(Yaf >= 3.0.2)\n重置__sleep魔术方法.",
+      "comment": "重置__sleep魔术方法.",
       "isStatic": false,
       "return": "",
       "example": "",
@@ -388,7 +368,7 @@
     },
     "__wakeup": {
       "access": "private",
-      "comment": "(Yaf >= 3.0.2)\n重置__wakeup魔术方法.",
+      "comment": "重置__wakeup魔术方法.",
       "isStatic": false,
       "return": "",
       "example": "",

@@ -2,7 +2,7 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/18
 */
 
 /**
@@ -37,7 +37,7 @@ final class Yaf_Router
     public function __construct()
     {
     
-}
+    }
 
     /**
      * 
@@ -52,7 +52,7 @@ final class Yaf_Router
     public function addRoute($name, $route, YafX_Route_Interface $)
     {
     
-}
+    }
 
     /**
      * 
@@ -66,7 +66,7 @@ final class Yaf_Router
     public function addConfig($config, $config $Array)
     {
     
-}
+    }
 
     /**
      * 
@@ -80,7 +80,7 @@ final class Yaf_Router
     public function route($request, YafX_Request_Abstract $)
     {
     
-}
+    }
 
     /**
      * 
@@ -93,7 +93,7 @@ final class Yaf_Router
     public function getRoute(string $name)
     {
     
-}
+    }
 
     /**
      * 
@@ -105,7 +105,7 @@ final class Yaf_Router
     public function getRoutes()
     {
     
-}
+    }
 
     /**
      * 
@@ -117,7 +117,7 @@ final class Yaf_Router
     public function getCurrentRoute()
     {
     
-}
+    }
 
 }
 

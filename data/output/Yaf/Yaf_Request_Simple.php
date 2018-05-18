@@ -2,7 +2,7 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/18
 */
 
 /**
@@ -125,7 +125,7 @@ final class Yaf_Request_Simple extends Yaf_Request_Abstract
     public function __construct($method, $module, $controller, $action, $parameters, $|)
     {
     
-}
+    }
 
     /**
      * 
@@ -138,7 +138,7 @@ final class Yaf_Request_Simple extends Yaf_Request_Abstract
     public function getQuery(string $name)
     {
     
-}
+    }
 
     /**
      * 
@@ -151,7 +151,7 @@ final class Yaf_Request_Simple extends Yaf_Request_Abstract
     public function getRequest(string $name)
     {
     
-}
+    }
 
     /**
      * 
@@ -164,7 +164,7 @@ final class Yaf_Request_Simple extends Yaf_Request_Abstract
     public function getPost(string $name)
     {
     
-}
+    }
 
     /**
      * 
@@ -177,7 +177,7 @@ final class Yaf_Request_Simple extends Yaf_Request_Abstract
     public function getCookie(string $name)
     {
     
-}
+    }
 
     /**
      * 
@@ -190,7 +190,7 @@ final class Yaf_Request_Simple extends Yaf_Request_Abstract
     public function getFiles(string $name)
     {
     
-}
+    }
 
     /**
      * 
@@ -202,7 +202,7 @@ final class Yaf_Request_Simple extends Yaf_Request_Abstract
     public function isXmlHttpRequest()
     {
     
-}
+    }
 
     /**
      * 
@@ -216,7 +216,7 @@ final class Yaf_Request_Simple extends Yaf_Request_Abstract
     public function get(string $name, $default)
     {
     
-}
+    }
 
     /**
      * 
@@ -228,7 +228,7 @@ final class Yaf_Request_Simple extends Yaf_Request_Abstract
     private function __clone()
     {
     
-}
+    }
 
     /**
      * 
@@ -240,7 +240,7 @@ final class Yaf_Request_Simple extends Yaf_Request_Abstract
     public function isGet()
     {
     
-}
+    }
 
     /**
      * 
@@ -252,7 +252,7 @@ final class Yaf_Request_Simple extends Yaf_Request_Abstract
     public function isPost()
     {
     
-}
+    }
 
     /**
      * 
@@ -264,7 +264,7 @@ final class Yaf_Request_Simple extends Yaf_Request_Abstract
     public function isPut()
     {
     
-}
+    }
 
     /**
      * 
@@ -276,7 +276,7 @@ final class Yaf_Request_Simple extends Yaf_Request_Abstract
     public function isHead()
     {
     
-}
+    }
 
     /**
      * 
@@ -288,7 +288,7 @@ final class Yaf_Request_Simple extends Yaf_Request_Abstract
     public function isOptions()
     {
     
-}
+    }
 
     /**
      * 
@@ -300,7 +300,7 @@ final class Yaf_Request_Simple extends Yaf_Request_Abstract
     public function isCli()
     {
     
-}
+    }
 
     /**
      * 
@@ -314,7 +314,7 @@ final class Yaf_Request_Simple extends Yaf_Request_Abstract
     public function getServer(string $name, $default)
     {
     
-}
+    }
 
     /**
      * 
@@ -328,7 +328,7 @@ final class Yaf_Request_Simple extends Yaf_Request_Abstract
     public function getEnv(string $name, string $default)
     {
     
-}
+    }
 
     /**
      * 
@@ -343,7 +343,7 @@ final class Yaf_Request_Simple extends Yaf_Request_Abstract
     public function setParam(string $name, $value)
     {
     
-}
+    }
 
     /**
      * 
@@ -357,7 +357,7 @@ final class Yaf_Request_Simple extends Yaf_Request_Abstract
     public function getParam(string $name, string $default)
     {
     
-}
+    }
 
     /**
      * 
@@ -369,7 +369,7 @@ final class Yaf_Request_Simple extends Yaf_Request_Abstract
     public function getParams()
     {
     
-}
+    }
 
     /**
      * 
@@ -381,7 +381,7 @@ final class Yaf_Request_Simple extends Yaf_Request_Abstract
     public function getException()
     {
     
-}
+    }
 
     /**
      * 
@@ -393,7 +393,7 @@ final class Yaf_Request_Simple extends Yaf_Request_Abstract
     public function getModuleName()
     {
     
-}
+    }
 
     /**
      * 
@@ -405,7 +405,7 @@ final class Yaf_Request_Simple extends Yaf_Request_Abstract
     public function getControllerName()
     {
     
-}
+    }
 
     /**
      * 
@@ -417,7 +417,7 @@ final class Yaf_Request_Simple extends Yaf_Request_Abstract
     public function getActionName()
     {
     
-}
+    }
 
     /**
      * 
@@ -430,7 +430,7 @@ final class Yaf_Request_Simple extends Yaf_Request_Abstract
     public function setModuleName(string $name)
     {
     
-}
+    }
 
     /**
      * 
@@ -444,7 +444,7 @@ final class Yaf_Request_Simple extends Yaf_Request_Abstract
     public function setControllerName($name, string $)
     {
     
-}
+    }
 
     /**
      * 
@@ -458,7 +458,7 @@ final class Yaf_Request_Simple extends Yaf_Request_Abstract
     public function setActionName($name, string $)
     {
     
-}
+    }
 
     /**
      * 
@@ -470,7 +470,7 @@ final class Yaf_Request_Simple extends Yaf_Request_Abstract
     public function getMethod()
     {
     
-}
+    }
 
     /**
      * 
@@ -482,7 +482,7 @@ final class Yaf_Request_Simple extends Yaf_Request_Abstract
     public function getLanguage()
     {
     
-}
+    }
 
     /**
      * 
@@ -496,7 +496,7 @@ final class Yaf_Request_Simple extends Yaf_Request_Abstract
     public function setBaseUri($baseuri, string $)
     {
     
-}
+    }
 
     /**
      * 
@@ -508,7 +508,7 @@ final class Yaf_Request_Simple extends Yaf_Request_Abstract
     public function getBaseUri()
     {
     
-}
+    }
 
     /**
      * 
@@ -520,7 +520,7 @@ final class Yaf_Request_Simple extends Yaf_Request_Abstract
     public function getRequestUri()
     {
     
-}
+    }
 
     /**
      * 
@@ -534,7 +534,7 @@ final class Yaf_Request_Simple extends Yaf_Request_Abstract
     public function setRequestUri($uri, string $)
     {
     
-}
+    }
 
     /**
      * 
@@ -546,7 +546,7 @@ final class Yaf_Request_Simple extends Yaf_Request_Abstract
     public function isDispatched()
     {
     
-}
+    }
 
     /**
      * 
@@ -558,7 +558,7 @@ final class Yaf_Request_Simple extends Yaf_Request_Abstract
     public function setDispatched()
     {
     
-}
+    }
 
     /**
      * 
@@ -570,7 +570,7 @@ final class Yaf_Request_Simple extends Yaf_Request_Abstract
     public function isRouted()
     {
     
-}
+    }
 
     /**
      * 
@@ -582,7 +582,7 @@ final class Yaf_Request_Simple extends Yaf_Request_Abstract
     public function setRouted()
     {
     
-}
+    }
 
 }
 

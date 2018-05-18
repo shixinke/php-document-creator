@@ -2,7 +2,7 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/18
 */
 
 /**
@@ -46,7 +46,7 @@ class Yaf_View_Simple
     public function __construct(string $tpl_dir, Array $options)
     {
     
-}
+    }
 
     /**
      * 
@@ -59,7 +59,7 @@ class Yaf_View_Simple
     public function __isset(string $name)
     {
     
-}
+    }
 
     /**
      * 
@@ -72,7 +72,7 @@ class Yaf_View_Simple
     public function __get(string $name)
     {
     
-}
+    }
 
     /**
      * 
@@ -85,7 +85,7 @@ class Yaf_View_Simple
     public function get(string $name)
     {
     
-}
+    }
 
     /**
      * 
@@ -99,7 +99,7 @@ class Yaf_View_Simple
     public function __set(string $name, string $value)
     {
     
-}
+    }
 
     /**
      * 
@@ -112,7 +112,7 @@ class Yaf_View_Simple
     public function clear(string $name)
     {
     
-}
+    }
 
     /**
      * 
@@ -126,7 +126,7 @@ class Yaf_View_Simple
     public function assign(string $name, string $value)
     {
     
-}
+    }
 
     /**
      * 
@@ -140,7 +140,7 @@ class Yaf_View_Simple
     public function assignRef(string $name, string $value)
     {
     
-}
+    }
 
     /**
      * 
@@ -155,7 +155,7 @@ class Yaf_View_Simple
     public function display(string $tpl, $var_array = [], Array $var_)
     {
     
-}
+    }
 
     /**
      * 
@@ -170,7 +170,7 @@ class Yaf_View_Simple
     public function render(string $tpl, $var_array = [], Array $var_)
     {
     
-}
+    }
 
     /**
      * 
@@ -183,7 +183,7 @@ class Yaf_View_Simple
     public function setScriptPath(string $tpl_dir)
     {
     
-}
+    }
 
     /**
      * 
@@ -195,7 +195,7 @@ class Yaf_View_Simple
     public function getScriptPath()
     {
     
-}
+    }
 
 }
 

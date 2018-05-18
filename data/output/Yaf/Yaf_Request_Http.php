@@ -2,7 +2,7 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/18
 */
 
 /**
@@ -111,7 +111,7 @@ class Yaf_Request_Http extends Yaf_Request_Abstract
     public function __construct(string $request_uri, string $base_uri)
     {
     
-}
+    }
 
     /**
      * 
@@ -125,7 +125,7 @@ class Yaf_Request_Http extends Yaf_Request_Abstract
     public function getQuery(string $name, string $default)
     {
     
-}
+    }
 
     /**
      * 
@@ -138,7 +138,7 @@ class Yaf_Request_Http extends Yaf_Request_Abstract
     public function getRequest(string $name)
     {
     
-}
+    }
 
     /**
      * 
@@ -152,7 +152,7 @@ class Yaf_Request_Http extends Yaf_Request_Abstract
     public function getPost(string $name, string $default)
     {
     
-}
+    }
 
     /**
      * 
@@ -165,7 +165,7 @@ class Yaf_Request_Http extends Yaf_Request_Abstract
     public function getCookie(string $name)
     {
     
-}
+    }
 
     /**
      * 
@@ -178,7 +178,7 @@ class Yaf_Request_Http extends Yaf_Request_Abstract
     public function getFiles(string $name)
     {
     
-}
+    }
 
     /**
      * 
@@ -190,7 +190,7 @@ class Yaf_Request_Http extends Yaf_Request_Abstract
     public function isXmlHttpRequest()
     {
     
-}
+    }
 
     /**
      * 
@@ -204,7 +204,7 @@ class Yaf_Request_Http extends Yaf_Request_Abstract
     public function get(string $name, $default)
     {
     
-}
+    }
 
     /**
      * 
@@ -216,7 +216,7 @@ class Yaf_Request_Http extends Yaf_Request_Abstract
     private function __clone()
     {
     
-}
+    }
 
     /**
      * 
@@ -228,7 +228,7 @@ class Yaf_Request_Http extends Yaf_Request_Abstract
     public function isGet()
     {
     
-}
+    }
 
     /**
      * 
@@ -240,7 +240,7 @@ class Yaf_Request_Http extends Yaf_Request_Abstract
     public function isPost()
     {
     
-}
+    }
 
     /**
      * 
@@ -252,7 +252,7 @@ class Yaf_Request_Http extends Yaf_Request_Abstract
     public function isPut()
     {
     
-}
+    }
 
     /**
      * 
@@ -264,7 +264,7 @@ class Yaf_Request_Http extends Yaf_Request_Abstract
     public function isHead()
     {
     
-}
+    }
 
     /**
      * 
@@ -276,7 +276,7 @@ class Yaf_Request_Http extends Yaf_Request_Abstract
     public function isOptions()
     {
     
-}
+    }
 
     /**
      * 
@@ -288,7 +288,7 @@ class Yaf_Request_Http extends Yaf_Request_Abstract
     public function isCli()
     {
     
-}
+    }
 
     /**
      * 
@@ -302,7 +302,7 @@ class Yaf_Request_Http extends Yaf_Request_Abstract
     public function getServer(string $name, $default)
     {
     
-}
+    }
 
     /**
      * 
@@ -316,7 +316,7 @@ class Yaf_Request_Http extends Yaf_Request_Abstract
     public function getEnv(string $name, string $default)
     {
     
-}
+    }
 
     /**
      * 
@@ -331,7 +331,7 @@ class Yaf_Request_Http extends Yaf_Request_Abstract
     public function setParam(string $name, $value)
     {
     
-}
+    }
 
     /**
      * 
@@ -345,7 +345,7 @@ class Yaf_Request_Http extends Yaf_Request_Abstract
     public function getParam(string $name, string $default)
     {
     
-}
+    }
 
     /**
      * 
@@ -357,7 +357,7 @@ class Yaf_Request_Http extends Yaf_Request_Abstract
     public function getParams()
     {
     
-}
+    }
 
     /**
      * 
@@ -369,7 +369,7 @@ class Yaf_Request_Http extends Yaf_Request_Abstract
     public function getException()
     {
     
-}
+    }
 
     /**
      * 
@@ -381,7 +381,7 @@ class Yaf_Request_Http extends Yaf_Request_Abstract
     public function getModuleName()
     {
     
-}
+    }
 
     /**
      * 
@@ -393,7 +393,7 @@ class Yaf_Request_Http extends Yaf_Request_Abstract
     public function getControllerName()
     {
     
-}
+    }
 
     /**
      * 
@@ -405,7 +405,7 @@ class Yaf_Request_Http extends Yaf_Request_Abstract
     public function getActionName()
     {
     
-}
+    }
 
     /**
      * 
@@ -418,7 +418,7 @@ class Yaf_Request_Http extends Yaf_Request_Abstract
     public function setModuleName(string $name)
     {
     
-}
+    }
 
     /**
      * 
@@ -432,7 +432,7 @@ class Yaf_Request_Http extends Yaf_Request_Abstract
     public function setControllerName($name, string $)
     {
     
-}
+    }
 
     /**
      * 
@@ -446,7 +446,7 @@ class Yaf_Request_Http extends Yaf_Request_Abstract
     public function setActionName($name, string $)
     {
     
-}
+    }
 
     /**
      * 
@@ -458,7 +458,7 @@ class Yaf_Request_Http extends Yaf_Request_Abstract
     public function getMethod()
     {
     
-}
+    }
 
     /**
      * 
@@ -470,7 +470,7 @@ class Yaf_Request_Http extends Yaf_Request_Abstract
     public function getLanguage()
     {
     
-}
+    }
 
     /**
      * 
@@ -484,7 +484,7 @@ class Yaf_Request_Http extends Yaf_Request_Abstract
     public function setBaseUri($baseuri, string $)
     {
     
-}
+    }
 
     /**
      * 
@@ -496,7 +496,7 @@ class Yaf_Request_Http extends Yaf_Request_Abstract
     public function getBaseUri()
     {
     
-}
+    }
 
     /**
      * 
@@ -508,7 +508,7 @@ class Yaf_Request_Http extends Yaf_Request_Abstract
     public function getRequestUri()
     {
     
-}
+    }
 
     /**
      * 
@@ -522,7 +522,7 @@ class Yaf_Request_Http extends Yaf_Request_Abstract
     public function setRequestUri($uri, string $)
     {
     
-}
+    }
 
     /**
      * 
@@ -534,7 +534,7 @@ class Yaf_Request_Http extends Yaf_Request_Abstract
     public function isDispatched()
     {
     
-}
+    }
 
     /**
      * 
@@ -546,7 +546,7 @@ class Yaf_Request_Http extends Yaf_Request_Abstract
     public function setDispatched()
     {
     
-}
+    }
 
     /**
      * 
@@ -558,7 +558,7 @@ class Yaf_Request_Http extends Yaf_Request_Abstract
     public function isRouted()
     {
     
-}
+    }
 
     /**
      * 
@@ -570,7 +570,7 @@ class Yaf_Request_Http extends Yaf_Request_Abstract
     public function setRouted()
     {
     
-}
+    }
 
 }
 

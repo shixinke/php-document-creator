@@ -2,7 +2,7 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/18
 */
 
 /**
@@ -39,7 +39,7 @@ final class Yaf_Config_Ini extends Yaf_Config_Abstract
     public function __construct(string $filename, string $section)
     {
     
-}
+    }
 
     /**
      * 
@@ -52,7 +52,7 @@ final class Yaf_Config_Ini extends Yaf_Config_Abstract
     public function __isset(string $name)
     {
     
-}
+    }
 
     /**
      * 
@@ -67,7 +67,7 @@ final class Yaf_Config_Ini extends Yaf_Config_Abstract
     public function set(string $name, $value, $)
     {
     
-}
+    }
 
     /**
      * 
@@ -79,7 +79,7 @@ final class Yaf_Config_Ini extends Yaf_Config_Abstract
     public function count()
     {
     
-}
+    }
 
     /**
      * 
@@ -91,7 +91,7 @@ final class Yaf_Config_Ini extends Yaf_Config_Abstract
     public function rewind()
     {
     
-}
+    }
 
     /**
      * 
@@ -103,7 +103,7 @@ final class Yaf_Config_Ini extends Yaf_Config_Abstract
     public function current()
     {
     
-}
+    }
 
     /**
      * 
@@ -115,7 +115,7 @@ final class Yaf_Config_Ini extends Yaf_Config_Abstract
     public function next()
     {
     
-}
+    }
 
     /**
      * 
@@ -127,7 +127,7 @@ final class Yaf_Config_Ini extends Yaf_Config_Abstract
     public function valid()
     {
     
-}
+    }
 
     /**
      * 
@@ -139,7 +139,7 @@ final class Yaf_Config_Ini extends Yaf_Config_Abstract
     public function key()
     {
     
-}
+    }
 
     /**
      * 
@@ -152,7 +152,7 @@ final class Yaf_Config_Ini extends Yaf_Config_Abstract
     public function offsetUnset(string $name)
     {
     
-}
+    }
 
     /**
      * 
@@ -165,7 +165,7 @@ final class Yaf_Config_Ini extends Yaf_Config_Abstract
     public function offsetExists($name)
     {
     
-}
+    }
 
     /**
      * 
@@ -180,7 +180,7 @@ final class Yaf_Config_Ini extends Yaf_Config_Abstract
     public function offsetSet(string $name, $value, $)
     {
     
-}
+    }
 
     /**
      * 
@@ -195,7 +195,7 @@ final class Yaf_Config_Ini extends Yaf_Config_Abstract
     public function offsetGet($name, string $)
     {
     
-}
+    }
 
     /**
      * 
@@ -210,7 +210,7 @@ final class Yaf_Config_Ini extends Yaf_Config_Abstract
     public function get($name, string $)
     {
     
-}
+    }
 
     /**
      * 
@@ -225,7 +225,7 @@ final class Yaf_Config_Ini extends Yaf_Config_Abstract
     public function __get($name, string $)
     {
     
-}
+    }
 
     /**
      * 
@@ -240,7 +240,7 @@ final class Yaf_Config_Ini extends Yaf_Config_Abstract
     public function __set(string $name, $value, $)
     {
     
-}
+    }
 
     /**
      * 
@@ -251,7 +251,7 @@ final class Yaf_Config_Ini extends Yaf_Config_Abstract
     public function toArray()
     {
     
-}
+    }
 
     /**
      * 
@@ -262,7 +262,7 @@ final class Yaf_Config_Ini extends Yaf_Config_Abstract
     public function readonly()
     {
     
-}
+    }
 
 }
 

@@ -2,7 +2,7 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/18
 */
 
 /**
@@ -58,7 +58,7 @@ class Yaf_Response_Http extends Yaf_Response_Abstract
     public function __construct()
     {
     
-}
+    }
 
     /**
      * 
@@ -70,7 +70,7 @@ class Yaf_Response_Http extends Yaf_Response_Abstract
     public function __destruct()
     {
     
-}
+    }
 
     /**
      * 
@@ -82,7 +82,7 @@ class Yaf_Response_Http extends Yaf_Response_Abstract
     private function __clone()
     {
     
-}
+    }
 
     /**
      * 
@@ -94,7 +94,7 @@ class Yaf_Response_Http extends Yaf_Response_Abstract
     public function __toString()
     {
     
-}
+    }
 
     /**
      * 
@@ -108,7 +108,7 @@ class Yaf_Response_Http extends Yaf_Response_Abstract
     public function setBody(string $body, string $name = content)
     {
     
-}
+    }
 
     /**
      * 
@@ -121,7 +121,7 @@ class Yaf_Response_Http extends Yaf_Response_Abstract
     public function getBody(string $name = content)
     {
     
-}
+    }
 
     /**
      * 
@@ -135,7 +135,7 @@ class Yaf_Response_Http extends Yaf_Response_Abstract
     public function appendBody(string $body, string $name)
     {
     
-}
+    }
 
     /**
      * 
@@ -149,7 +149,7 @@ class Yaf_Response_Http extends Yaf_Response_Abstract
     public function prependBody(string $body, string $name)
     {
     
-}
+    }
 
     /**
      * 
@@ -161,7 +161,7 @@ class Yaf_Response_Http extends Yaf_Response_Abstract
     public function clearBody()
     {
     
-}
+    }
 
     /**
      * 
@@ -173,7 +173,7 @@ class Yaf_Response_Http extends Yaf_Response_Abstract
     public function getHeader()
     {
     
-}
+    }
 
     /**
      * 
@@ -185,7 +185,7 @@ class Yaf_Response_Http extends Yaf_Response_Abstract
     public function setAllHeaders()
     {
     
-}
+    }
 
     /**
      * 
@@ -197,7 +197,7 @@ class Yaf_Response_Http extends Yaf_Response_Abstract
     public function setHeader()
     {
     
-}
+    }
 
     /**
      * 
@@ -209,7 +209,7 @@ class Yaf_Response_Http extends Yaf_Response_Abstract
     public function clearHeaders()
     {
     
-}
+    }
 
     /**
      * 
@@ -222,7 +222,7 @@ class Yaf_Response_Http extends Yaf_Response_Abstract
     public function setRedirect(string $url)
     {
     
-}
+    }
 
     /**
      * 
@@ -234,7 +234,7 @@ class Yaf_Response_Http extends Yaf_Response_Abstract
     public function response()
     {
     
-}
+    }
 
 }
 
