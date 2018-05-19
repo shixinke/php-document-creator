@@ -2,7 +2,7 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/18
+* @modified 2018/05/19
 */
 
 /**
@@ -12,7 +12,6 @@ final class Yaf_Registry
 {
     /**
      * @var Yaf_Registry $_instance 
-     * (Yaf >= 3.0.2)
      * Registry实例（单例模式）
      * @access protected
      */
@@ -20,7 +19,6 @@ final class Yaf_Registry
 
     /**
      * @var array $_entries 
-     * (Yaf >= 3.0.2)
      * 注册变量栈
      * @access protected
      */
@@ -28,7 +26,6 @@ final class Yaf_Registry
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *重置__construct魔术方法.
      * @example 
      * @return 
@@ -40,19 +37,17 @@ final class Yaf_Registry
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *重置__clone魔术方法，防止克隆Dispatcher（因为是单例模式）.
      * @example 
      * @return void
      */
-    private function __clone():void
+    private function __clone(): void
     {
     
     }
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *获取注册变量值
      * @example 
      * @param string $name 变量名
@@ -65,27 +60,25 @@ final class Yaf_Registry
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *检测变量是否存在
      * @example 
      * @param string $name 变量名
      * @return bool
      */
-    public static  function has(string $name):bool
+    public static  function has(string $name): bool
     {
     
     }
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *注册变量
      * @example 
      * @param string $name 变量名
      * @param mixed $value 变量值
      * @return bool
      */
-    public static  function set(string $name, $value):bool
+    public static  function set(string $name, $value): bool
     {
     
     }
@@ -97,7 +90,7 @@ final class Yaf_Registry
      * @param string $name 变量名
      * @return void
      */
-    public static  function del(string $name):void
+    public static  function del(string $name): void
     {
     
     }

@@ -121,6 +121,7 @@ class Tool
             if ($className->isInterface()) {
                 $arr[$name]['isInterface'] = 1;
             }
+            $arr[$name]['interfaces'] = $className->getInterfaceNames();
         }
         return $arr;
     }
@@ -184,6 +185,7 @@ class Tool
                 if ($classObj->isInterface()) {
                     $arr[$name]['isInterface'] = 1;
                 }
+                $arr[$name]['interfaces'] = $classObj->getInterfaceNames();
             }
 
         }

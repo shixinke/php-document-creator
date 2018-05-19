@@ -2,108 +2,96 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/18
+* @modified 2018/05/19
 */
 
 /**
-*(Yaf >= 3.0.2)
-*Class yaf_Request_Abstract
+*请求抽象类
 */
 abstract class Yaf_Request_Abstract
 {
     /**     
-    *
+    *http请求
     */
     const SCHEME_HTTP    =    'http';
 
     /**     
-    *
+    *https请求
     */
     const SCHEME_HTTPS    =    'https';
 
     /**
-     * @var unknown $module 
-     * (Yaf >= 3.0.2)
+     * @var string $module 
      * 当前请求的模块名
      * @access public
      */
     public $module;
 
     /**
-     * @var unknown $controller 
-     * (Yaf >= 3.0.2)
+     * @var string $controller 
      * 当前请求的控制器名
      * @access public
      */
     public $controller;
 
     /**
-     * @var unknown $action 
-     * (Yaf >= 3.0.2)
+     * @var stirng $action 
      * 当前请求的动作名
      * @access public
      */
     public $action;
 
     /**
-     * @var unknown $method 
-     * (Yaf >= 3.0.2)
+     * @var string $method 
      * 当前请求的方法 getMethod
      * @access public
      */
     public $method;
 
     /**
-     * @var unknown $params 
-     * (Yaf >= 3.0.2)
+     * @var array $params 
      * 请求传递的参数
      * @access protected
      */
-    protected $params;
+    protected $params    =    array();
 
     /**
-     * @var unknown $language 
-     * (Yaf >= 3.0.2)
+     * @var string $language 
      * http报头中HTTP_ACCEPT_LANGUAGE的值
      * @access protected
      */
     protected $language;
 
     /**
-     * @var unknown $_exception 
-     * (Yaf >= 3.0.2)
+     * @var Yaf_Exception $_exception 
      * 异常对象
      * @access protected
      */
     protected $_exception;
 
     /**
-     * @var unknown $_base_uri 
-     * (Yaf >= 3.0.2)
+     * @var string $_base_uri 
      * 请求的Base URI（http请求 or cli模式下）
      * @access protected
      */
     protected $_base_uri    =    '';
 
     /**
-     * @var unknown $uri 
-     * (Yaf >= 3.0.2)
+     * @var string $uri 
      * 请求的URI（http请求）
      * @access protected
      */
     protected $uri    =    '';
 
     /**
-     * @var unknown $dispatched 
-     * (Yaf >= 3.0.2)
+     * @var bool $dispatched 
      * 请求是否完成了分发，默认为0
      * @access protected
      */
     protected $dispatched    =    '';
 
     /**
-     * @var unknown $routed 
-     * (Yaf >= 3.0.2)
+     * @var bool $routed 
      * 请求是否完成了路由，默认为0
      * @access protected
      */
@@ -111,96 +99,88 @@ abstract class Yaf_Request_Abstract
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *判断是否为GET请求
      * @example 
-     * @return 
+     * @return bool
      */
-    public function isGet()
+    public function isGet(): bool
     {
     
     }
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *判断是否为POST请求
      * @example 
-     * @return 
+     * @return bool
      */
-    public function isPost()
+    public function isPost(): bool
     {
     
     }
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *判断是否为PUT请求
      * @example 
-     * @return 
+     * @return bool
      */
-    public function isPut()
+    public function isPut(): bool
     {
     
     }
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *判断是否为HEAD请求
      * @example 
-     * @return 
+     * @return bool
      */
-    public function isHead()
+    public function isHead(): bool
     {
     
     }
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *判断是否为Options请求
      * @example 
-     * @return 
+     * @return bool
      */
-    public function isOptions()
+    public function isOptions(): bool
     {
     
     }
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *判断是否为CLI请求
      * @example 
-     * @return 
+     * @return bool
      */
-    public function isCli()
+    public function isCli(): bool
     {
     
     }
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *判断是否为AJAX请求
      * @example 
-     * @return 
+     * @return bool
      */
-    public function isXmlHttpRequest()
+    public function isXmlHttpRequest(): bool
     {
     
     }
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *获取服务器$_SERVER全局变量中的值
      * @example 
      * @param string $name 变量名
      * @param mixed $default 默认值
-     * @return 
+     * @return mixed
      */
     public function getServer(string $name, $default)
     {
@@ -209,12 +189,11 @@ abstract class Yaf_Request_Abstract
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *获取环境变量$_ENV全局变量中的值
      * @example 
      * @param string $name 变量名
      * @param string $default 默认值
-     * @return 
+     * @return mixed
      */
     public function getEnv(string $name, string $default)
     {
@@ -223,7 +202,6 @@ abstract class Yaf_Request_Abstract
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *设置请求的参数
      *当只有一个参数且为Array类型，如果存在对应的键值将覆盖
      * @example 
@@ -238,7 +216,6 @@ abstract class Yaf_Request_Abstract
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *获取请求的参数
      * @example 
      * @param string $name 变量名
@@ -252,67 +229,61 @@ abstract class Yaf_Request_Abstract
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *获取请求全部的参数
      * @example 
-     * @return 
+     * @return array|null
      */
-    public function getParams()
+    public function getParams(): ?array
     {
     
     }
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *获取异常对象
      * @example 
-     * @return 
+     * @return Yaf_Exception
      */
-    public function getException()
+    public function getException(): Yaf_Exception
     {
     
     }
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *获取当前模块名
      * @example 
-     * @return 
+     * @return string
      */
-    public function getModuleName()
+    public function getModuleName(): string
     {
     
     }
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *获取当前控制器名
      * @example 
-     * @return 
+     * @return string
      */
-    public function getControllerName()
+    public function getControllerName(): string
     {
     
     }
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *获取当前动作名
      * @example 
-     * @return 
+     * @return string
      */
-    public function getActionName()
+    public function getActionName(): string
     {
     
     }
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *设置请求的模块名
      * @example 
      * @param string $name 模块名
@@ -325,152 +296,136 @@ abstract class Yaf_Request_Abstract
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *设置请求的控制器名
      * @example 
-     * @param  mixed $name 
-     * @param string $ name
+     * @param string $name 控制器名称
      * @return 
      */
-    public function setControllerName($name, string $)
+    public function setControllerName(string $name)
     {
     
     }
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *设置请求的动作名
      * @example 
-     * @param  mixed $name 
-     * @param string $ name
+     * @param string $name 操作名称
      * @return 
      */
-    public function setActionName($name, string $)
+    public function setActionName(string $name)
     {
     
     }
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *获取当前请求的方法
      * @example 
-     * @return 
+     * @return string
      */
-    public function getMethod()
+    public function getMethod(): string
     {
     
     }
 
     /**
      * 
-     *(Yaf >= 3.0.2)
-     *获取当前请求的请求
+     *获取当前请求的请求的语言
      * @example 
-     * @return 
+     * @return string
      */
-    public function getLanguage()
+    public function getLanguage(): string
     {
     
     }
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *设置请求的Base URI
      * @example 
-     * @param  mixed $baseuri 
-     * @param string $ baseuri
+     * @param string $baseuri 基本请求地址
      * @return 
      */
-    public function setBaseUri($baseuri, string $)
+    public function setBaseUri(string $baseuri)
     {
     
     }
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *获取请求的Base URI
      * @example 
-     * @return 
+     * @return string
      */
-    public function getBaseUri()
+    public function getBaseUri(): string
     {
     
     }
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *获取请求的uri
      * @example 
-     * @return 
+     * @return string
      */
-    public function getRequestUri()
+    public function getRequestUri(): string
     {
     
     }
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *设置请求的URI
      * @example 
-     * @param  mixed $uri 
-     * @param string $ uri
+     * @param string $uri 请求uri
      * @return 
      */
-    public function setRequestUri($uri, string $)
+    public function setRequestUri(string $uri)
     {
     
     }
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *判断请求是否完成了分发
      * @example 
-     * @return 
+     * @return bool
      */
-    public function isDispatched()
+    public function isDispatched(): bool
     {
     
     }
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *设置请求已经完成分发
      * @example 
-     * @return 
+     * @return bool
      */
-    public function setDispatched()
+    public function setDispatched(): bool
     {
     
     }
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *判断请求是否完成了路由
      * @example 
-     * @return 
+     * @return bool
      */
-    public function isRouted()
+    public function isRouted(): bool
     {
     
     }
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *设置请求已经完成了路由
      * @example 
-     * @return 
+     * @return bool
      */
-    public function setRouted()
+    public function setRouted(): bool
     {
     
     }

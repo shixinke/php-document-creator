@@ -2,41 +2,37 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/18
+* @modified 2018/05/19
 */
 
 /**
-*(Yaf >= 3.0.2)
-*Class yaf_View_Simple
+*简单视图对象
 */
-class Yaf_View_Simple
+class Yaf_View_Simple implements Yaf_View_Interface
 {
     /**
-     * @var unknown $_tpl_vars 
-     * (Yaf >= 3.0.2)
+     * @var array $_tpl_vars 
      * 储存所有模板变量
      * @access protected
      */
-    protected $_tpl_vars;
+    protected $_tpl_vars    =    array();
 
     /**
-     * @var unknown $_tpl_dir 
-     * (Yaf >= 3.0.2)
+     * @var string $_tpl_dir 
      * 模板文件目录
      * @access protected
      */
     protected $_tpl_dir;
 
     /**
-     * @var unknown $_options 
-     * (Yaf >= 3.0.2)
+     * @var array $_options 
+     * 配置选项
      * @access protected
      */
-    protected $_options;
+    protected $_options    =    array();
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *构造方法
      * @example 
      * @param string $tpl_dir 模板文件目录
@@ -50,7 +46,6 @@ class Yaf_View_Simple
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *当isset检测某个属性是否存在时自动调用（判断是否传递某个模板变量）
      * @example 
      * @param string $name 模板变量名
@@ -63,7 +58,6 @@ class Yaf_View_Simple
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *获取某个模板变量的值
      * @example 
      * @param string $name 模板变量名
@@ -76,7 +70,6 @@ class Yaf_View_Simple
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *获取某个模板变量的值
      * @example 
      * @param string $name 模板变量名
@@ -89,7 +82,6 @@ class Yaf_View_Simple
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *传递变量到模板
      * @example 
      * @param string $name 变量名
@@ -103,7 +95,6 @@ class Yaf_View_Simple
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *清空某个模板变量的值
      * @example 
      * @param string $name 模板变量名
@@ -116,7 +107,6 @@ class Yaf_View_Simple
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *传递变量到模板
      * @example 
      * @param string $name 变量名
@@ -130,7 +120,6 @@ class Yaf_View_Simple
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *以引用的方式传递变量到模板
      * @example 
      * @param string $name 变量名
@@ -144,37 +133,32 @@ class Yaf_View_Simple
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *渲染模板并直接输出
      * @example 
      * @param string $tpl 模板文件名
-     * @param  mixed $var_array 
-     * @param array $var_ 模板变量
+     * @param array $var_array 模板变量数组
      * @return 
      */
-    public function display(string $tpl, $var_array = [], Array $var_)
+    public function display(string $tpl, Array $var_array = [])
     {
     
     }
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *渲染模板并返回结果
      * @example 
      * @param string $tpl 模板文件名
-     * @param  mixed $var_array 
-     * @param array $var_ 模板变量
+     * @param array $var_array 模板变量数组
      * @return 
      */
-    public function render(string $tpl, $var_array = [], Array $var_)
+    public function render(string $tpl, Array $var_array = [])
     {
     
     }
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *设置模板文件目录
      * @example 
      * @param string $tpl_dir 模板文件目录
@@ -187,12 +171,11 @@ class Yaf_View_Simple
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *获取模板目录文件
      * @example 
-     * @return 
+     * @return string
      */
-    public function getScriptPath()
+    public function getScriptPath(): string
     {
     
     }

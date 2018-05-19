@@ -2,26 +2,23 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/18
+* @modified 2018/05/19
 */
 
 /**
-*(Yaf >= 3.0.2)
-*Class yaf_Config_Abstract
+*yaf配置抽象类
 */
 abstract class Yaf_Config_Abstract
 {
     /**
-     * @var unknown $_config 
-     * (Yaf >= 3.0.2)
+     * @var array $_config 
      * 存储已解析的配置
      * @access protected
      */
-    protected $_config;
+    protected $_config    =    array();
 
     /**
-     * @var unknown $_readonly 
-     * (Yaf >= 3.0.2)
+     * @var int $_readonly 
      * 配置是否只读，默认为1.
      * @access protected
      */
@@ -29,80 +26,71 @@ abstract class Yaf_Config_Abstract
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *获取配置节点的值
      *当不传递$name参数时，返回配置对象本身
      * @example 
-     * @param  mixed $name 
-     * @param string $ name
-     * @return 
+     * @param string $name 配置键
+     * @param mixed $value 默认值
+     * @return mixed
      */
-    public abstract  function get($name, string $);
+    public abstract  function get(string $name, $value);
 
     /**
      * 
-     *(Yaf >= 3.0.2)
-     *设置配置节点的值
+     *设置配置节点的值(只读)
      * @example 
-     * @param  mixed $name 
-     * @param  mixed $value 
-     * @param mixed $ value
-     * @return 
+     * @return Yaf_Config_Abstract
      */
-    public abstract  function set($name, $value, $);
+    public abstract  function set(string $name, $value): Yaf_Config_Abstract;
 
     /**
      * 
-     *(Yaf >= 3.0.2)
-     *返回配置只读的状态
+     *配置是否只读
      * @example 
-     * @return 
+     * @return bool
      */
-    public abstract  function readonly();
+    public abstract  function readonly(): bool;
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *将配置转换为数组
      * @example 
-     * @return 
+     * @return array
      */
-    public abstract  function toArray();
+    public abstract  function toArray(): array;
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *获取配置节点的值
      *当不传递$name参数时，返回配置对象本身
      * @example 
-     * @param  mixed $name 
-     * @param string $ name
-     * @return 
+     * @param string $name 配置键
+     * @return mixed
      */
-    public function __get($name, string $)
+    public function __get(string $name)
     {
     
     }
 
     /**
      * 
-     *
+     *返回当前值
      * @example 
-     * @return 
+     * @return void
      */
-    public abstract  function current();
+    public abstract  function current(): void;
 
     /**
      * 
-     *
+     *返回下一个值
      * @example 
-     * @return 
+     * @return void
      */
-    public abstract  function next();
+    public abstract  function next(): void;
 
     /**
      * 
-     *
+     *返回当前键
      * @example 
      * @return 
      */
@@ -110,23 +98,23 @@ abstract class Yaf_Config_Abstract
 
     /**
      * 
-     *
+     *验证当前对象是否合法
      * @example 
-     * @return 
+     * @return void
      */
-    public abstract  function valid();
+    public abstract  function valid(): void;
 
     /**
      * 
-     *
+     *将迭代器重置到第一个位置
      * @example 
-     * @return 
+     * @return void
      */
-    public abstract  function rewind();
+    public abstract  function rewind(): void;
 
     /**
      * 
-     *
+     *返回当前迭代器的个数
      * @example 
      * @return 
      */
@@ -134,40 +122,40 @@ abstract class Yaf_Config_Abstract
 
     /**
      * 
-     *
+     *当前索引对应的对象是否存在
      * @example 
-     * @param  mixed $offset 
-     * @return 
+     * @param string $offset 索引
+     * @return void
      */
-    public abstract  function offsetExists($offset);
+    public abstract  function offsetExists(string $offset): void;
 
     /**
      * 
-     *
+     *通过索引获取当前对象
      * @example 
-     * @param  mixed $offset 
-     * @return 
+     * @param string $offset 索引
+     * @return void
      */
-    public abstract  function offsetGet($offset);
+    public abstract  function offsetGet(string $offset): void;
 
     /**
      * 
-     *
+     *通过索引设置值
      * @example 
-     * @param  mixed $offset 
-     * @param  mixed $value 
-     * @return 
+     * @param string $offset 索引
+     * @param mixed $value 配置值
+     * @return void
      */
-    public abstract  function offsetSet($offset, $value);
+    public abstract  function offsetSet(string $offset, $value): void;
 
     /**
      * 
-     *
+     *通过索引删除值
      * @example 
-     * @param  mixed $offset 
-     * @return 
+     * @param string $offset 索引
+     * @return void
      */
-    public abstract  function offsetUnset($offset);
+    public abstract  function offsetUnset(string $offset): void;
 
 }
 

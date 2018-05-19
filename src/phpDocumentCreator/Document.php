@@ -28,7 +28,7 @@ class Document
         }
     }
 
-    public static function toString($value) {
+    public static function toString($value, $type = null) {
         $str = "";
         if (is_array($value)) {
             $str = '[';
@@ -38,7 +38,36 @@ class Document
             }
             $str .= ']';
         } else {
-            $str = $value;
+            if (is_numeric($value)) {
+                $str = $value;
+            } elseif(is_null($value)) {
+                $str = null;
+            } elseif ($value == '') {
+                $str = "''";
+            } if (in_array($value, array('true', 'false'))) {
+                $str = $value == 'true' ? true : false;
+            } else {
+                if ($type) {
+                    switch ($type) {
+                        case 'int':
+                            $str = (int) $value;
+                            break;
+                        case 'float':
+                            $str = (float) $value;
+                            break;
+                        case 'bool':
+                            $str = (bool) $value;
+                            break;
+                        default:
+                            $str = $value;
+                            break;
+                    }
+                } else {
+                    $str = $value;
+                }
+
+            }
+
         }
         return $str;
     }
@@ -116,7 +145,12 @@ class Document
                         $params .= '$'.$param;
                     }
                     if (isset($paramValue['value'])) {
-                        $params .= " = ".self::toString($paramValue['value']);
+                        if ($paramValue['value'] == '') {
+                            $params .= " = ''";
+                        } else {
+                            $params .= " = ".self::toString($paramValue['value']);
+                        }
+
                     }
                     if (isset($paramValue['comment'])) {
                         $content .= ':'.$paramValue['comment']." ";
@@ -141,16 +175,19 @@ class Document
             $content .= $params;
             $content .= ")";
             if (self::checkVersion() && isset($mv['return']) && ($mv['return'] != '') && (!in_array($mv['return'], array('mixed', 'unknown')))) {
-                $splitArr = explode('|', $mv['return']);
-                if (count($splitArr) > 1) {
-                    if (trim($splitArr[0]) != 'bool' && trim($splitArr[0]) != 'boolean') {
-                        $content .= ": ?".trim($splitArr[0]);
-                    } else {
-                        $content .= ": ".trim($splitArr[1]);
+                $map = self::getReturnType($mv['return']);
+                if ($map['type'] == 'object') {
+                    if (!isset($mv['body'])) {
+                        $mv['body'] = 'return new '.$map['value'][0].'();';
                     }
-
-                } else {
-                    $content .= ": ".$mv['return'];
+                } elseif($map['type'] == 'exception') {
+                    $mv['body'] = 'return new Exception();';
+                }  else {
+                    if (count($map['value']) > 1) {
+                        $content .= ": ?".trim($map['value'][0]);
+                    } else {
+                        $content .= ": ".$mv['return'];
+                    }
                 }
             }
             $content .= "\n{\n";
@@ -224,6 +261,10 @@ class Document
                             $value['extends'] = "\\".$value['extends'];
                         }
                         $content .= ' extends '.$value['extends'];
+                    }
+                    if (isset($value['interfaces']) && !empty($value['interfaces'])) {
+                        $interfaces = trim(implode(", ", $value['interfaces']), ',');
+                        $content .= ' implements '.$interfaces;
                     }
                 }
                 $arrTmp = array();
@@ -318,7 +359,7 @@ class Document
                                 $params .= '$'.$param;
                             }
                             if (isset($paramValue['value'])) {
-                                $params .= " = ".self::toString($paramValue['value']);
+                                $params .= " = ".self::toString($paramValue['value'], $paramValue['type']);
                             }
                             $content .= " ".$paramValue['comment'];
                             if (isset($paramValue['options']) && !empty($paramValue['options'])) {
@@ -353,16 +394,35 @@ class Document
                     $content .= $params;
                     $content .= ")";
                     if (self::checkVersion() && isset($mv['return']) && ($mv['return'] != '')  && (!in_array($mv['return'], array('mixed', 'unknown')))) {
-                        $splitArr = explode('|', $mv['return']);
-                        if (count($splitArr) > 1) {
-                            if (trim($splitArr[0]) != 'bool' && trim($splitArr[0]) != 'boolean') {
-                                $content .= ": ?".trim($splitArr[0]);
-                            } else {
-                                $content .= ": ".trim($splitArr[1]);
+                        $map = self::getReturnType($mv['return']);
+                        if ($map['type'] == 'object') {
+                            if (!isset($mv['body'])) {
+                                if ($useNameSpace) {
+                                    $mv['body'] = 'return new '.self::toCamel($map['value'][0]).'();';
+                                } else {
+                                    $mv['body'] = 'return new '.$map['value'][0].'();';
+                                }
                             }
 
+                        } elseif($map['type'] == 'interface') {
+                            if (!$useNameSpace) {
+                                if (count($map['value']) > 1) {
+                                    $content .= ": ?".trim($map['value'][0]);
+                                } else {
+                                    $content .= ": ".$mv['return'];
+                                }
+                            }
+
+                        } elseif($map['type'] == 'exception') {
+                            if (!isset($mv['body'])) {
+                                $mv['body'] = 'return new Exception();';
+                            }
                         } else {
-                            $content .= ":".$mv['return'];
+                            if (count($map['value']) > 1) {
+                                $content .= ": ?".trim($map['value'][0]);
+                            } else {
+                                $content .= ": ".$mv['return'];
+                            }
                         }
                     }
                     if (isset($mv['isAbstract'])) {
@@ -604,5 +664,52 @@ class Document
             }
         }
         return $type;
+    }
+
+    public static function getReturnType($value) {
+        $valueArr = explode('|', $value);
+        $map = array();
+        if (count($valueArr) == 2 && ($valueArr[0] == 'bool' || $value[0] == 'boolean')) {
+            $valueArr[0] = $valueArr[1];
+            $valueArr[1] = null;
+        }
+        $map['type'] = $valueArr[0];
+        $map['value'] = $valueArr;
+        if(strtolower($valueArr[0]) == 'throwable') {
+            $map['type'] = 'exception';
+        }elseif(!in_array(strtolower($valueArr[0]), array('int', 'string', 'float', 'callable', 'array', 'bool', 'null'))) {
+
+            if (class_exists($valueArr[0])) {
+                $class = new \ReflectionClass($valueArr[0]);
+                if ($class->hasMethod('__construct')) {
+                    $m = $class->getMethod('__construct');
+                    if ($m->isPublic()) {
+                        if ($class->isInterface() || $class->hasMethod('__construct')) {
+                            $map['type'] = 'interface';
+                        } else {
+                            $map['type'] = 'object';
+                        }
+                    } else {
+                        $map['type'] = 'interface';
+                    }
+
+                } else {
+                    $map['type'] = 'interface';
+                }
+
+            }
+
+        }
+        return $map;
+
+    }
+
+    public static function toCamel($className) {
+        $classNameArr = explode('_', $className);
+        $newName = '';
+        foreach ($classNameArr as $tmp) {
+            $newName .= ucfirst($tmp).'\\';
+        }
+        return $newName;
     }
 }

@@ -2,18 +2,16 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/18
+* @modified 2018/05/19
 */
 
 /**
-*(Yaf >= 3.0.2)
-*Class yaf_Route_Supervar
+*变量路由
 */
-final class Yaf_Route_Supervar
+final class Yaf_Route_Supervar implements Yaf_Route_Interface
 {
     /**
-     * @var unknown $_var_name 
-     * (Yaf >= 3.0.2)
+     * @var string $_var_name 
      * 全局路由变量名
      * @access protected
      */
@@ -21,46 +19,34 @@ final class Yaf_Route_Supervar
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *构造方法
      * @example 
-     * @param  mixed $var 
-     * @param $var $string 全局路由变量名
+     * @param string $var 全局路由变量名
      * @return 
      */
-    public function __construct($var, $var $string)
+    public function __construct(string $var)
     {
     
     }
 
     /**
      * 
-     *(Yaf >= 3.0.2)
      *路由请求
      * @example 
-     * @param  mixed $request 
-     * @param YafX_Request_Abstract $ request
-     * @return 
+     * @param Yaf_Request_Abstract $request 请求对象
+     * @return bool
      */
-    public function route($request, YafX_Request_Abstract $)
-    {
-    
-    }
+    public abstract  function route(Yaf_Request_Abstract $request): bool;
 
     /**
      * 
-     *(Yaf >= 2.3.2)
-     *组合uri，路由解析的逆操作
+     *组装请求
      * @example 
-     * @param  mixed $info 
-     * @param  mixed $query 
-     * @param array $ query
-     * @return 
+     * @param array $info 路径信息
+     * @param array $query 查询字符串
+     * @return string
      */
-    public function assemble($info, $query, Array $)
-    {
-    
-    }
+    public abstract  function assemble(Array $info, Array $query): string;
 
 }
 
