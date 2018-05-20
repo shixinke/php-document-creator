@@ -271,7 +271,16 @@ class Document
                         $content .= ' extends '.$value['extends'];
                     }
                     if (isset($value['interfaces']) && !empty($value['interfaces'])) {
-                        $interfaces = trim(implode(", ", $value['interfaces']), ',');
+
+                        if ($useNameSpace) {
+                            $interfaces = '';
+                            foreach ($value['interfaces'] as $interface) {
+                                $interfaces .= '\\'.$interface.',';
+                            }
+                            $interfaces = trim($interfaces, ',');
+                        } else {
+                            $interfaces = trim(implode(", ", $value['interfaces']), ',');
+                        }
                         $content .= ' implements '.$interfaces;
                     }
                 }
