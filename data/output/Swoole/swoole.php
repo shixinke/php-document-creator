@@ -1060,7 +1060,7 @@ function swoole_select(Array $read_array, Array $write_array, Array $error_array
 function swoole_set_process_name(string $process_name)
 {
 
-        }
+}
 
 /**
 * 
@@ -1069,10 +1069,10 @@ function swoole_set_process_name(string $process_name)
 * $ips = swoole_get_local_ip();
 * @return array (只返回IPv4地址，返回结果会过滤掉本地的loop地址127.0.0.1,类似于array('eth0'=>'192.168.0.25'))
 */
-function swoole_get_local_ip(): array (只返回IPv4地址，返回结果会过滤掉本地的loop地址127.0.0.1,类似于array('eth0'=>'192.168.0.25'))
+function swoole_get_local_ip(): array
 {
 
-        }
+}
 
 /**
 * 
