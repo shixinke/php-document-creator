@@ -2,7 +2,7 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/19
+* @modified 2018/05/20
 */
 
 /**
@@ -39,9 +39,9 @@ final class Yaf_Registry
      * 
      *重置__clone魔术方法，防止克隆Dispatcher（因为是单例模式）.
      * @example 
-     * @return void
+     * @return 
      */
-    private function __clone(): void
+    private function __clone()
     {
     
     }
@@ -88,9 +88,9 @@ final class Yaf_Registry
      *删除注册器中的变量
      * @example 
      * @param string $name 变量名
-     * @return void
+     * @return 
      */
-    public static  function del(string $name): void
+    public static  function del(string $name)
     {
     
     }

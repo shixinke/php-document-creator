@@ -2,7 +2,7 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/19
+* @modified 2018/05/20
 */
 
 /**
@@ -22,7 +22,7 @@ abstract class Yaf_Config_Abstract
      * 配置是否只读，默认为1.
      * @access protected
      */
-    protected $_readonly    =    '1';
+    protected $_readonly    =    1;
 
     /**
      * 
@@ -41,7 +41,7 @@ abstract class Yaf_Config_Abstract
      * @example 
      * @return Yaf_Config_Abstract
      */
-    public abstract  function set(string $name, $value): Yaf_Config_Abstract;
+    public abstract  function set(): Yaf_Config_Abstract;
 
     /**
      * 
@@ -78,7 +78,7 @@ abstract class Yaf_Config_Abstract
      * @example 
      * @return void
      */
-    public abstract  function current(): void;
+    public abstract  function current();
 
     /**
      * 
@@ -86,7 +86,7 @@ abstract class Yaf_Config_Abstract
      * @example 
      * @return void
      */
-    public abstract  function next(): void;
+    public abstract  function next();
 
     /**
      * 
@@ -102,7 +102,7 @@ abstract class Yaf_Config_Abstract
      * @example 
      * @return void
      */
-    public abstract  function valid(): void;
+    public abstract  function valid();
 
     /**
      * 
@@ -110,7 +110,7 @@ abstract class Yaf_Config_Abstract
      * @example 
      * @return void
      */
-    public abstract  function rewind(): void;
+    public abstract  function rewind();
 
     /**
      * 
@@ -127,7 +127,7 @@ abstract class Yaf_Config_Abstract
      * @param string $offset 索引
      * @return void
      */
-    public abstract  function offsetExists(string $offset): void;
+    public abstract  function offsetExists(string $offset);
 
     /**
      * 
@@ -136,7 +136,7 @@ abstract class Yaf_Config_Abstract
      * @param string $offset 索引
      * @return void
      */
-    public abstract  function offsetGet(string $offset): void;
+    public abstract  function offsetGet(string $offset);
 
     /**
      * 
@@ -146,7 +146,7 @@ abstract class Yaf_Config_Abstract
      * @param mixed $value 配置值
      * @return void
      */
-    public abstract  function offsetSet(string $offset, $value): void;
+    public abstract  function offsetSet(string $offset, $value);
 
     /**
      * 
@@ -155,7 +155,7 @@ abstract class Yaf_Config_Abstract
      * @param string $offset 索引
      * @return void
      */
-    public abstract  function offsetUnset(string $offset): void;
+    public abstract  function offsetUnset(string $offset);
 
 }
 

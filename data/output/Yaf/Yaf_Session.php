@@ -2,13 +2,13 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/19
+* @modified 2018/05/20
 */
 
 /**
 *yaf的会话对象
 */
-final class Yaf_Session implements Iterator, Traversable, ArrayAccess, Countable
+final class Yaf_Session implements Iterator,ArrayAccess, Countable
 {
     /**
      * @var Yaf_Session $_instance 
@@ -29,7 +29,7 @@ final class Yaf_Session implements Iterator, Traversable, ArrayAccess, Countable
      * 是否开启session
      * @access protected
      */
-    protected $_started    =    '';
+    protected $_started    =    false;
 
     /**
      * 

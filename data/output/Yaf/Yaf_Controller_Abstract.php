@@ -2,7 +2,7 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/19
+* @modified 2018/05/20
 */
 
 /**
@@ -124,7 +124,7 @@ abstract class Yaf_Controller_Abstract
      * @example 
      * @return void
      */
-    public function initView(): void
+    public function initView()
     {
     
     }
@@ -147,7 +147,7 @@ abstract class Yaf_Controller_Abstract
      * @param string $path 模板目录
      * @return void
      */
-    public function setViewPath(string $path): void
+    public function setViewPath(string $path)
     {
     
     }
@@ -173,7 +173,7 @@ abstract class Yaf_Controller_Abstract
      * @param array $parameters 参数列表数组
      * @return void
      */
-    public function forward(string $module, string $controller, string $action, Array $parameters = []): void
+    public function forward(string $module, string $controller, string $action, Array $parameters = [])
     {
     
     }

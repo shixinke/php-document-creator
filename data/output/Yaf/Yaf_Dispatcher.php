@@ -2,7 +2,7 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/19
+* @modified 2018/05/20
 */
 
 /**
@@ -55,7 +55,7 @@ final class Yaf_Dispatcher
      * 设置无效，并且不会渲染模板.
      * @access protected
      */
-    protected $_auto_render    =    '1';
+    protected $_auto_render    =    1;
 
     /**
      * @var int $_return_response 
@@ -68,7 +68,7 @@ final class Yaf_Dispatcher
      * 当$this->_auto_render=1时，响应正文包括渲染模板的结果，反之则不包括.
      * @access protected
      */
-    protected $_return_response    =    '';
+    protected $_return_response    =    0;
 
     /**
      * @var int $_instantly_flush 
@@ -77,7 +77,7 @@ final class Yaf_Dispatcher
      * 当此属性设置为1时，Yaf调用yaf_Controller_Abstract的display方法，直接渲染并输出，但不设置yaf_Response_Abstract实例的_body属性.
      * @access protected
      */
-    protected $_instantly_flush    =    '';
+    protected $_instantly_flush    =    0;
 
     /**
      * @var string $_default_module 

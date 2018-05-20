@@ -235,6 +235,7 @@ class Tool
     public static function getMethods($reflection)
     {
         $methods =  $reflection->getMethods();
+        $isAbstractClass = $reflection->isAbstract();
         $arr = array();
         foreach($methods as $method) {
             $name = $method->getName();
@@ -248,7 +249,7 @@ class Tool
             if ($method->isFinal()) {
                 $arr[$name]['isFinal'] = 1;
             }
-            if ($method->isAbstract()) {
+            if ($method->isAbstract() && $isAbstractClass) {
                 $arr[$name]['isAbstract'] = 1;
             }
             $arr[$name]['comment'] = $method->getDocComment();

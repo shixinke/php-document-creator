@@ -2,7 +2,7 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/19
+* @modified 2018/05/20
 */
 
 /**
@@ -177,7 +177,7 @@ final class Yaf_Loader
      * @param bool $global 是否为全局类库
      * @return 
      */
-    public function setLibraryPath(string $library, bool $global = )
+    public function setLibraryPath(string $library, bool $global = false)
     {
     
     }
@@ -189,7 +189,7 @@ final class Yaf_Loader
      * @param bool $global 是否全局类库
      * @return string|bool
      */
-    public function getLibraryPath(bool $global = ): ?string
+    public function getLibraryPath(bool $global = false): ?string
     {
     
     }

@@ -2,7 +2,7 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/19
+* @modified 2018/05/20
 */
 
 /**
@@ -65,7 +65,7 @@ class Yaf_Exception_LoadFailed_Module extends Yaf_Exception_LoadFailed implement
      * @param Throwable $previous 上一个异常对象
      * @return 
      */
-    public function __construct(string $message = , int $code = 1, Throwable $previous)
+    public function __construct(string $message = '', int $code = 0, Throwable $previous)
     {
     
     }

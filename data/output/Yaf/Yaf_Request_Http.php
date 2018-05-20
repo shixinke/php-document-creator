@@ -2,7 +2,7 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/19
+* @modified 2018/05/20
 */
 
 /**
@@ -78,14 +78,14 @@ class Yaf_Request_Http extends Yaf_Request_Abstract
      * 请求是否完成了分发，默认为0
      * @access protected
      */
-    protected $dispatched    =    '';
+    protected $dispatched    =    false;
 
     /**
      * @var bool $routed 
      * 请求是否完成了路由，默认为0
      * @access protected
      */
-    protected $routed    =    '';
+    protected $routed    =    false;
 
     /**
      * 

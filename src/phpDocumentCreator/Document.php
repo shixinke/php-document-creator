@@ -31,22 +31,18 @@ class Document
     public static function toString($value, $type = null) {
         $str = "";
         if (is_array($value)) {
-            $str = '[';
+            $str = "[";
             $keys = array_keys($value);
             foreach ($keys as $key) {
                 $str .= $key.'=>'.$value[$key];
             }
-            $str .= ']';
+            $str .= "]";
         } else {
             if (is_numeric($value)) {
                 $str = $value;
             } elseif(is_null($value)) {
                 $str = null;
-            } elseif ($value == '') {
-                $str = "''";
-            } if (in_array($value, array('true', 'false'))) {
-                $str = $value == 'true' ? true : false;
-            } else {
+            }  else {
                 if ($type) {
                     switch ($type) {
                         case 'int':
@@ -56,14 +52,26 @@ class Document
                             $str = (float) $value;
                             break;
                         case 'bool':
-                            $str = (bool) $value;
+                            if ($value == 'true' || $value == true){
+                                $str = 'true';
+                            } elseif ($value == 'false' || $value == false) {
+                                $str = 'false';
+                            } else {
+                                $str = $value == '' ? 'false' : 'true';
+                            }
+
                             break;
                         default:
-                            $str = $value;
+                            $str = "'".$value."'";
                             break;
                     }
                 } else {
-                    $str = $value;
+                    if ($value == '') {
+                        $str = "''";
+                    } else {
+                        $str = $value;
+                    }
+
                 }
 
             }
@@ -174,7 +182,7 @@ class Document
             $content .= "function ".$m."(";
             $content .= $params;
             $content .= ")";
-            if (self::checkVersion() && isset($mv['return']) && ($mv['return'] != '') && (!in_array($mv['return'], array('mixed', 'unknown')))) {
+            if (self::checkVersion() && isset($mv['return']) && ($mv['return'] != '') && (!in_array($mv['return'], array('mixed', 'unknown', 'void')))) {
                 $map = self::getReturnType($mv['return']);
                 if ($map['type'] == 'object') {
                     if (!isset($mv['body'])) {
@@ -313,7 +321,7 @@ class Document
                             if (is_array($pv['value'])) {
                                 $pv['value'] = "  ".self::toString($pv['value']);
                             } else {
-                                $pv['value'] = "'".$pv['value']."'";
+                                $pv['value'] =  self::toString($pv['value'], $pv['type']);
                             }
 
                         }
@@ -359,7 +367,18 @@ class Document
                                 $params .= '$'.$param;
                             }
                             if (isset($paramValue['value'])) {
-                                $params .= " = ".self::toString($paramValue['value'], $paramValue['type']);
+                                if ($paramValue == '') {
+                                    $params .= " = ''";
+                                } else {
+                                    if ($paramValue['type'] == 'array') {
+                                        $params .= " = []";
+                                    } else {
+
+                                        $params .= " = ".self::toString($paramValue['value'], $paramValue['type']);
+                                    }
+
+                                }
+
                             }
                             $content .= " ".$paramValue['comment'];
                             if (isset($paramValue['options']) && !empty($paramValue['options'])) {
@@ -393,7 +412,7 @@ class Document
                     $content .= " function ".$m."(";
                     $content .= $params;
                     $content .= ")";
-                    if (self::checkVersion() && isset($mv['return']) && ($mv['return'] != '')  && (!in_array($mv['return'], array('mixed', 'unknown')))) {
+                    if (self::checkVersion() && isset($mv['return']) && ($mv['return'] != '')  && (!in_array($mv['return'], array('mixed', 'unknown', 'void')))) {
                         $map = self::getReturnType($mv['return']);
                         if ($map['type'] == 'object') {
                             if (!isset($mv['body'])) {
@@ -425,7 +444,7 @@ class Document
                             }
                         }
                     }
-                    if (isset($mv['isAbstract'])) {
+                    if (isset($mv['isAbstract']) || isset($value['isInterface'])) {
                         $content .= ";\n\n";
                     } else {
                         $content .= "\n    {\n    ";
@@ -650,7 +669,7 @@ class Document
 
     public static function getFunctionParamType($mv) {
         $type = '';
-        if (self::checkVersion() && isset($mv) && ($mv != '')  && (!in_array($mv, array('mixed', 'unknown')))) {
+        if (self::checkVersion() && isset($mv) && ($mv != '')  && (!in_array($mv, array('mixed', 'unknown', 'void')))) {
             $splitArr = explode('|', $mv);
             if (count($splitArr) > 1) {
                 if (trim($splitArr[0]) != 'bool' && trim($splitArr[0]) != 'boolean') {

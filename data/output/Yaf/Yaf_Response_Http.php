@@ -2,7 +2,7 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/19
+* @modified 2018/05/20
 */
 
 /**
@@ -34,7 +34,7 @@ class Yaf_Response_Http extends Yaf_Response_Abstract
      * 是否开启已输出响应报头检测
      * @access protected
      */
-    protected $_sendheader    =    '1';
+    protected $_sendheader    =    true;
 
     /**
      * @var int $_response_code 
@@ -95,7 +95,7 @@ class Yaf_Response_Http extends Yaf_Response_Abstract
      * @param string $name 响应正文类型，默认为content
      * @return 
      */
-    public function setBody(string $body, string $name = content)
+    public function setBody(string $body, string $name = 'content')
     {
     
     }
@@ -107,7 +107,7 @@ class Yaf_Response_Http extends Yaf_Response_Abstract
      * @param string $name 响应正文类型，默认为content
      * @return 
      */
-    public function getBody(string $name = content)
+    public function getBody(string $name = 'content')
     {
     
     }

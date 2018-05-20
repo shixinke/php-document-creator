@@ -2,7 +2,7 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/19
+* @modified 2018/05/20
 */
 
 /**
@@ -18,10 +18,7 @@ interface Yaf_View_Interface
      * @param string $value 变量值
      * @return 
      */
-    public function assign(string $name, string $value)
-    {
-    
-    }
+    public function assign(string $name, string $value);
 
     /**
      * 
@@ -31,10 +28,7 @@ interface Yaf_View_Interface
      * @param array $var_array 模板变量数组
      * @return 
      */
-    public function display(string $tpl, Array $var_array = [])
-    {
-    
-    }
+    public function display(string $tpl, Array $var_array = []);
 
     /**
      * 
@@ -44,10 +38,7 @@ interface Yaf_View_Interface
      * @param array $var_array 模板变量数组
      * @return 
      */
-    public function render(string $tpl, Array $var_array = [])
-    {
-    
-    }
+    public function render(string $tpl, Array $var_array = []);
 
     /**
      * 
@@ -56,10 +47,7 @@ interface Yaf_View_Interface
      * @param string $tpl_dir 模板文件目录
      * @return 
      */
-    public function setScriptPath(string $tpl_dir)
-    {
-    
-    }
+    public function setScriptPath(string $tpl_dir);
 
     /**
      * 
@@ -67,10 +55,7 @@ interface Yaf_View_Interface
      * @example 
      * @return string
      */
-    public function getScriptPath(): string
-    {
-    
-    }
+    public function getScriptPath(): string;
 
 }
 

@@ -2,7 +2,7 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/19
+* @modified 2018/05/20
 */
 
 /**
@@ -43,7 +43,7 @@ final class Yaf_Application
      * 指明当前的yaf_Application是否已经运行.
      * @access protected
      */
-    protected $_running    =    '';
+    protected $_running    =    false;
 
     /**
      * @var string $_environ 
@@ -85,7 +85,7 @@ final class Yaf_Application
      * @param Yaf_Bootstrap_Abstract $bootstrap 引导类
      * @return void
      */
-    public function bootstrap(Yaf_Bootstrap_Abstract $bootstrap): void
+    public function bootstrap(Yaf_Bootstrap_Abstract $bootstrap)
     {
     
     }
@@ -96,7 +96,7 @@ final class Yaf_Application
      * @example 
      * @return void
      */
-    public function run(): void
+    public function run()
     {
     
     }
@@ -120,7 +120,7 @@ final class Yaf_Application
      * @param string $section 加载的配置节点，使用该节点的配置初始化应用.
      * @return 
      */
-    public function __construct($config, string $section = product)
+    public function __construct($config, string $section = 'product')
     {
     
     }
@@ -133,7 +133,7 @@ final class Yaf_Application
      * @param mixed $parameter 零个或者多个回调函数参数
      * @return void
      */
-    public function execute(Callable $entry, $parameter): void
+    public function execute(Callable $entry, $parameter)
     {
     
     }

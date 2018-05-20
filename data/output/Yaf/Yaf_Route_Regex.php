@@ -2,7 +2,7 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/19
+* @modified 2018/05/20
 */
 
 /**
@@ -68,7 +68,10 @@ final class Yaf_Route_Regex implements Yaf_Route_Interface
      * @param Yaf_Request_Abstract $request 请求对象
      * @return bool
      */
-    public abstract  function route(Yaf_Request_Abstract $request): bool;
+    public function route(Yaf_Request_Abstract $request): bool
+    {
+    
+    }
 
     /**
      * 
@@ -78,7 +81,10 @@ final class Yaf_Route_Regex implements Yaf_Route_Interface
      * @param array $query 查询字符串
      * @return string
      */
-    public abstract  function assemble(Array $info, Array $query): string;
+    public function assemble(Array $info, Array $query): string
+    {
+    
+    }
 
 }
 

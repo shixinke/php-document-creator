@@ -2,13 +2,13 @@
 /**
 * Yaf自动补全类(基于最新的3.0.7版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/19
+* @modified 2018/05/20
 */
 
 /**
 *yaf中ini配置文件类
 */
-final class Yaf_Config_Ini extends Yaf_Config_Abstract implements Iterator, Traversable, ArrayAccess, Countable
+final class Yaf_Config_Ini extends Yaf_Config_Abstract implements Iterator, ArrayAccess, Countable
 {
     /**
      * @var array $_config 
@@ -22,7 +22,7 @@ final class Yaf_Config_Ini extends Yaf_Config_Abstract implements Iterator, Trav
      * 配置是否只读，默认为1.
      * @access protected
      */
-    protected $_readonly    =    '1';
+    protected $_readonly    =    1;
 
     /**
      * 
