@@ -8,7 +8,8 @@
 /**
 *Swoole实现的Redis Server
 */
-class Server extends swoole_server
+namespace Co\Redis;
+class Server extends \Swoole\Server
 {
     /**     
     *nil类型

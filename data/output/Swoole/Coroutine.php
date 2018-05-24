@@ -1,8 +1,8 @@
 <?php
 /**
-* Swoole自动补全类(基于最新的2.1.3版本)
+* Swoole自动补全类(基于最新的2.2.0版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/24
 */
 
 /**
@@ -18,10 +18,10 @@ class Coroutine
      * @param callable $func 协程执行的代码
      * @return bool
      */
-    public static  function create(Callable $func):bool
+    public static  function create(Callable $func): bool
     {
     
-}
+    }
 
     /**
      * 
@@ -33,7 +33,7 @@ class Coroutine
     public static  function set(Array $options)
     {
     
-}
+    }
 
     /**
      * 
@@ -41,10 +41,10 @@ class Coroutine
      * @example 
      * @return int
      */
-    public static  function cli_wait():int
+    public static  function cli_wait(): int
     {
     
-}
+    }
 
     /**
      * 
@@ -56,7 +56,7 @@ class Coroutine
     public static  function suspend(string $uid)
     {
     
-}
+    }
 
     /**
      * 
@@ -68,7 +68,7 @@ class Coroutine
     public static  function resume(string $uid)
     {
     
-}
+    }
 
     /**
      * 
@@ -76,10 +76,10 @@ class Coroutine
      * @example 
      * @return int
      */
-    public static  function getuid():int
+    public static  function getuid(): int
     {
     
-}
+    }
 
     /**
      * 
@@ -91,7 +91,7 @@ class Coroutine
     public static  function sleep(float $seconds)
     {
     
-}
+    }
 
     /**
      * 
@@ -103,7 +103,7 @@ class Coroutine
     public static  function fgets(resource $handle)
     {
     
-}
+    }
 
     /**
      * 
@@ -116,7 +116,7 @@ class Coroutine
     public static  function fread(resource $handle, int $length)
     {
     
-}
+    }
 
     /**
      * 
@@ -128,7 +128,7 @@ class Coroutine
     public static  function readFile(string $filename)
     {
     
-}
+    }
 
     /**
      * 
@@ -142,7 +142,7 @@ class Coroutine
     public static  function fwrite(resource $handle, string $string, int $length)
     {
     
-}
+    }
 
     /**
      * 
@@ -153,10 +153,10 @@ class Coroutine
      * @param int $flags 为写入的选项，可以使用FILE_APPEND表示追加到文件末尾，默认会清空当前文件内容
      * @return bool
      */
-    public static  function writeFile(string $filename, string $content, int $flags):bool
+    public static  function writeFile(string $filename, string $content, int $flags): bool
     {
     
-}
+    }
 
     /**
      * 
@@ -169,7 +169,7 @@ class Coroutine
     public static  function gethostbyname(string $domain_name, int $family)
     {
     
-}
+    }
 
     /**
      * 
@@ -182,10 +182,10 @@ class Coroutine
      * @param string $service 服务
      * @return array | bool
      */
-    public static  function getaddrinfo(string $hostname, int $family, int $socktype, int $protocol, string $service):array
+    public static  function getaddrinfo(string $hostname, int $family, int $socktype, int $protocol, string $service): ?array
     {
     
-}
+    }
 
     /**
      * 
@@ -198,7 +198,7 @@ class Coroutine
     public static  function call_user_func(Callable $func, $parameters)
     {
     
-}
+    }
 
     /**
      * 
@@ -211,7 +211,7 @@ class Coroutine
     public static  function call_user_func_array(Callable $func, Array $parameters)
     {
     
-}
+    }
 
     /**
      * 
@@ -220,10 +220,10 @@ class Coroutine
      * @param string $cmd 要执行的shell指令
      * @return array
      */
-    public static  function exec(string $cmd):array
+    public static  function exec(string $cmd): array
     {
     
-}
+    }
 
 }
 

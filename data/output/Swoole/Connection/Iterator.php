@@ -1,15 +1,15 @@
 <?php
 /**
-* Swoole自动补全类(基于最新的2.1.3版本)
+* Swoole自动补全类(基于最新的2.2.0版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/24
 */
 
 /**
 *
 */
 namespace Swoole\Connection;
-class Iterator
+class Iterator implements \Iterator,\Traversable,\Countable,\ArrayAccess
 {
     /**
      * 
@@ -20,7 +20,7 @@ class Iterator
     public function rewind()
     {
     
-}
+    }
 
     /**
      * 
@@ -31,7 +31,7 @@ class Iterator
     public function next()
     {
     
-}
+    }
 
     /**
      * 
@@ -42,7 +42,7 @@ class Iterator
     public function current()
     {
     
-}
+    }
 
     /**
      * 
@@ -53,7 +53,7 @@ class Iterator
     public function key()
     {
     
-}
+    }
 
     /**
      * 
@@ -64,7 +64,7 @@ class Iterator
     public function valid()
     {
     
-}
+    }
 
     /**
      * 
@@ -72,10 +72,10 @@ class Iterator
      * @example 
      * @return int
      */
-    public function count():int
+    public function count(): int
     {
     
-}
+    }
 
     /**
      * 
@@ -87,7 +87,7 @@ class Iterator
     public function offsetExists(int $fd)
     {
     
-}
+    }
 
     /**
      * 
@@ -99,7 +99,7 @@ class Iterator
     public function offsetGet(int $fd)
     {
     
-}
+    }
 
     /**
      * 
@@ -112,7 +112,7 @@ class Iterator
     public function offsetSet(int $fd, $value)
     {
     
-}
+    }
 
     /**
      * 
@@ -124,7 +124,7 @@ class Iterator
     public function offsetUnset(int $fd)
     {
     
-}
+    }
 
 }
 

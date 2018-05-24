@@ -1,15 +1,15 @@
 <?php
 /**
-* Swoole自动补全类(基于最新的2.1.3版本)
+* Swoole自动补全类(基于最新的2.2.0版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/24
 */
 
 /**
 *swoole 异常类
 */
 namespace Swoole;
-class Exception extends \Exception
+class Exception extends \Exception implements \Throwable
 {
     /**
      * @var string $message 
@@ -48,7 +48,7 @@ class Exception extends \Exception
     private final  function __clone()
     {
     
-}
+    }
 
     /**
      * 
@@ -62,7 +62,7 @@ class Exception extends \Exception
     public function __construct(string $message, int $code, Throwable $previous)
     {
     
-}
+    }
 
     /**
      * 
@@ -73,7 +73,7 @@ class Exception extends \Exception
     public function __wakeup()
     {
     
-}
+    }
 
     /**
      * 
@@ -81,10 +81,10 @@ class Exception extends \Exception
      * @example 
      * @return string
      */
-    public final  function getMessage():string
+    public final  function getMessage(): string
     {
     
-}
+    }
 
     /**
      * 
@@ -92,10 +92,10 @@ class Exception extends \Exception
      * @example 
      * @return int
      */
-    public final  function getCode():int
+    public final  function getCode(): int
     {
     
-}
+    }
 
     /**
      * 
@@ -103,10 +103,10 @@ class Exception extends \Exception
      * @example 
      * @return string
      */
-    public final  function getFile():string
+    public final  function getFile(): string
     {
     
-}
+    }
 
     /**
      * 
@@ -114,10 +114,10 @@ class Exception extends \Exception
      * @example 
      * @return int
      */
-    public final  function getLine():int
+    public final  function getLine(): int
     {
     
-}
+    }
 
     /**
      * 
@@ -125,10 +125,10 @@ class Exception extends \Exception
      * @example 
      * @return array
      */
-    public final  function getTrace():array
+    public final  function getTrace(): array
     {
     
-}
+    }
 
     /**
      * 
@@ -136,10 +136,10 @@ class Exception extends \Exception
      * @example 
      * @return Throwable
      */
-    public final  function getPrevious():Throwable
+    public final  function getPrevious()
     {
-    
-}
+        return new Exception();
+    }
 
     /**
      * 
@@ -147,10 +147,10 @@ class Exception extends \Exception
      * @example 
      * @return string
      */
-    public final  function getTraceAsString():string
+    public final  function getTraceAsString(): string
     {
     
-}
+    }
 
     /**
      * 
@@ -161,7 +161,7 @@ class Exception extends \Exception
     public function __toString()
     {
     
-}
+    }
 
 }
 

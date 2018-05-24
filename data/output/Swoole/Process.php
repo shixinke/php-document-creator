@@ -1,8 +1,8 @@
 <?php
 /**
-* Swoole自动补全类(基于最新的2.1.3版本)
+* Swoole自动补全类(基于最新的2.2.0版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/24
 */
 
 /**
@@ -90,7 +90,7 @@ class Process
     public function __construct(Callable $callback, boolean $redirect_stdin_and_stdout, boolean $pipe_type)
     {
     
-}
+    }
 
     /**
      * 
@@ -101,7 +101,7 @@ class Process
     public function __destruct()
     {
     
-}
+    }
 
     /**
      * 
@@ -113,7 +113,7 @@ class Process
     public static  function wait(boolean $blocking)
     {
     
-}
+    }
 
     /**
      * 
@@ -126,7 +126,7 @@ class Process
     public static  function signal(int $signal_no, Callable $callback)
     {
     
-}
+    }
 
     /**
      * 
@@ -138,7 +138,7 @@ class Process
     public static  function alarm(int $usec)
     {
     
-}
+    }
 
     /**
      * 
@@ -151,7 +151,7 @@ class Process
     public static  function kill(int $pid, int $signal_no)
     {
     
-}
+    }
 
     /**
      * 
@@ -164,7 +164,7 @@ class Process
     public static  function daemon(boolean $nochdir, boolean $noclose)
     {
     
-}
+    }
 
     /**
      * 
@@ -176,7 +176,7 @@ class Process
     public static  function setaffinity(Array $cpu_settings)
     {
     
-}
+    }
 
     /**
      * 
@@ -188,20 +188,20 @@ class Process
     public function setTimeout(double $seconds)
     {
     
-}
+    }
 
     /**
      * 
      *启用消息队列作为进程间通信
      * @example 
-     * @param string $key 消息队列的key，默认会使用ftok(__FILE__, 1)作为KEY
+     * @param int $key 消息队列的key，默认会使用ftok(__FILE__, 1)作为KEY
      * @param int $mode 通信模式，默认为2，表示争抢模式，所有创建的子进程都会从队列中取数据
      * @return boolean
      */
-    public function useQueue(string $key, int $mode):boolean
+    public function useQueue(int $key = 0, int $mode = 2): boolean
     {
     
-}
+    }
 
     /**
      * 
@@ -211,10 +211,10 @@ class Process
      * @example 
      * @return array
      */
-    public function statQueue():array
+    public function statQueue(): array
     {
     
-}
+    }
 
     /**
      * 
@@ -225,7 +225,7 @@ class Process
     public function freeQueue()
     {
     
-}
+    }
 
     /**
      * 
@@ -233,10 +233,10 @@ class Process
      * @example 
      * @return int
      */
-    public function start():int
+    public function start(): int
     {
     
-}
+    }
 
     /**
      * 
@@ -245,10 +245,10 @@ class Process
      * @param string $data 写入的数据
      * @return int
      */
-    public function write(string $data):int
+    public function write(string $data): int
     {
     
-}
+    }
 
     /**
      * 
@@ -256,10 +256,10 @@ class Process
      * @example 
      * @return boolean
      */
-    public function close():boolean
+    public function close(): boolean
     {
     
-}
+    }
 
     /**
      * 
@@ -268,10 +268,10 @@ class Process
      * @param int $size 是缓冲区的大小，默认为8192，最大不超过64K
      * @return string | bool
      */
-    public function read(int $size):string
+    public function read(int $size): ?string
     {
     
-}
+    }
 
     /**
      * 
@@ -280,10 +280,10 @@ class Process
      * @param string $data 要投递的数据，长度受限与操作系统内核参数的限制。默认为8192，最大不超过65536
      * @return boolean
      */
-    public function push(string $data):boolean
+    public function push(string $data): boolean
     {
     
-}
+    }
 
     /**
      * 
@@ -292,10 +292,10 @@ class Process
      * @param int $size 表示获取数据的最大尺寸，默认为8192
      * @return string
      */
-    public function pop(int $size):string
+    public function pop(int $size): string
     {
     
-}
+    }
 
     /**
      * 
@@ -304,10 +304,10 @@ class Process
      * @param int $exit_code 退出进程的状态码，如果为0表示正常结束，会继续执行PHP的shutdown_function，其他扩展的清理工作;如果$status不为0，表示异常退出，会立即终止进程。不再执行PHP的shutdown_function，其他扩展的清理工作
      * @return int
      */
-    public function exit(int $exit_code):int
+    public function exit(int $exit_code): int
     {
     
-}
+    }
 
     /**
      * 
@@ -317,10 +317,10 @@ class Process
      * @param array $args 参数列表，如 array('test.py', 123)，相当与python test.py 123
      * @return boolean
      */
-    public function exec(string $exec_file, Array $args):boolean
+    public function exec(string $exec_file, Array $args): boolean
     {
     
-}
+    }
 
     /**
      * 
@@ -329,10 +329,10 @@ class Process
      * @param string $process_name 进程名称
      * @return boolean
      */
-    public function name(string $process_name):boolean
+    public function name(string $process_name): boolean
     {
     
-}
+    }
 
 }
 

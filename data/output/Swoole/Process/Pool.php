@@ -1,8 +1,8 @@
 <?php
 /**
-* Swoole自动补全类(基于最新的2.1.3版本)
+* Swoole自动补全类(基于最新的2.2.0版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/24
 */
 
 /**
@@ -26,7 +26,7 @@ class Pool
     public function __construct(int $worker_num, int $ipc_type = 0, int $msgqueue_key = 0)
     {
     
-}
+    }
 
     /**
      * 
@@ -37,7 +37,7 @@ class Pool
     public function __destruct()
     {
     
-}
+    }
 
     /**
      * 
@@ -50,7 +50,7 @@ class Pool
     public function on(string $event_name, Callable $callback)
     {
     
-}
+    }
 
     /**
      * 
@@ -61,10 +61,10 @@ class Pool
      * @param int $backlog 监听的队列长度
      * @return bool
      */
-    public function listen(string $host, int $port = 0, int $backlog = 2048):bool
+    public function listen(string $host, int $port = 0, int $backlog = 2048): bool
     {
     
-}
+    }
 
     /**
      * 
@@ -85,7 +85,7 @@ class Pool
     public function write(string $data)
     {
     
-}
+    }
 
     /**
      * 
@@ -93,10 +93,10 @@ class Pool
      * @example 
      * @return bool
      */
-    public function start():bool
+    public function start(): bool
     {
     
-}
+    }
 
 }
 

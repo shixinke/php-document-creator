@@ -1,8 +1,8 @@
 <?php
 /**
-* Swoole自动补全类(基于最新的2.1.3版本)
+* Swoole自动补全类(基于最新的2.2.0版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/24
 */
 
 /**
@@ -24,7 +24,7 @@ class Event
     public static  function add(int $fd, Callable $read_callback, Callable $write_callback, int $events)
     {
     
-}
+    }
 
     /**
      * 
@@ -36,7 +36,7 @@ class Event
     public static  function del(int $fd)
     {
     
-}
+    }
 
     /**
      * 
@@ -51,7 +51,7 @@ class Event
     public static  function set(int $fd, Callable $read_callback, Callable $write_callback, int $events)
     {
     
-}
+    }
 
     /**
      * 
@@ -62,7 +62,7 @@ class Event
     public static  function exit()
     {
     
-}
+    }
 
     /**
      * 
@@ -75,7 +75,7 @@ class Event
     public static  function write(int $fd, string $data)
     {
     
-}
+    }
 
     /**
      * 
@@ -86,7 +86,7 @@ class Event
     public static  function wait()
     {
     
-}
+    }
 
     /**
      * 
@@ -98,7 +98,7 @@ class Event
     public static  function defer(Callable $callback)
     {
     
-}
+    }
 
     /**
      * 
@@ -110,7 +110,7 @@ class Event
     public static  function cycle(Callable $callback)
     {
     
-}
+    }
 
 }
 

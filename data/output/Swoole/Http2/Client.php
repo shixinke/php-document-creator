@@ -1,8 +1,8 @@
 <?php
 /**
-* Swoole自动补全类(基于最新的2.1.3版本)
+* Swoole自动补全类(基于最新的2.2.0版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/24
 */
 
 /**
@@ -93,7 +93,7 @@ class Client extends \Swoole\Client
      * 配置选项
      * @access public
      */
-    public $setting;
+    public $setting    =    array();
 
     /**
      * @var callable $onConnect 
@@ -149,14 +149,14 @@ class Client extends \Swoole\Client
      * 请求头
      * @access public
      */
-    public $requestHeaders;
+    public $requestHeaders    =    array();
 
     /**
      * @var array $cookies 
      * 请求响应的cookie
      * @access public
      */
-    public $cookies;
+    public $cookies    =    array();
 
     /**
      * 
@@ -170,7 +170,7 @@ class Client extends \Swoole\Client
     public function __construct(string $host, int $port, boolean $ssl)
     {
     
-}
+    }
 
     /**
      * 
@@ -181,7 +181,7 @@ class Client extends \Swoole\Client
     public function __destruct()
     {
     
-}
+    }
 
     /**
      * 
@@ -193,7 +193,7 @@ class Client extends \Swoole\Client
     public function setHeaders(Array $headers)
     {
     
-}
+    }
 
     /**
      * 
@@ -205,7 +205,7 @@ class Client extends \Swoole\Client
     public function setCookies(Array $cookies)
     {
     
-}
+    }
 
     /**
      * 
@@ -218,7 +218,7 @@ class Client extends \Swoole\Client
     public function get(string $path, Callable $callback)
     {
     
-}
+    }
 
     /**
      * 
@@ -232,7 +232,7 @@ class Client extends \Swoole\Client
     public function post(string $path, $data, Callable $callback)
     {
     
-}
+    }
 
     /**
      * 
@@ -244,7 +244,7 @@ class Client extends \Swoole\Client
     public function onConnect(Callable $callback)
     {
     
-}
+    }
 
     /**
      * 
@@ -256,7 +256,7 @@ class Client extends \Swoole\Client
     public function onError(Callable $callback)
     {
     
-}
+    }
 
     /**
      * 
@@ -268,7 +268,7 @@ class Client extends \Swoole\Client
     public function onReceive(Callable $callback)
     {
     
-}
+    }
 
     /**
      * 
@@ -280,7 +280,7 @@ class Client extends \Swoole\Client
     public function onClose(Callable $callback)
     {
     
-}
+    }
 
     /**
      * 
@@ -292,7 +292,7 @@ class Client extends \Swoole\Client
     public function openStream(Callable $callback)
     {
     
-}
+    }
 
     /**
      * 
@@ -306,7 +306,7 @@ class Client extends \Swoole\Client
     public function push(string $data, int $opcode, boolean $finish)
     {
     
-}
+    }
 
     /**
      * 
@@ -318,7 +318,7 @@ class Client extends \Swoole\Client
     public function closeStream(Callable $callback)
     {
     
-}
+    }
 
     /**
      * 
@@ -330,7 +330,7 @@ class Client extends \Swoole\Client
     public function set(Array $settings)
     {
     
-}
+    }
 
     /**
      * 
@@ -345,7 +345,7 @@ class Client extends \Swoole\Client
     public function connect(string $host, int $port, float $timeout, int $sock_flag)
     {
     
-}
+    }
 
     /**
      * 
@@ -355,10 +355,10 @@ class Client extends \Swoole\Client
      * @param boolean $flag 是否等待所有数据到达后返回
      * @return string
      */
-    public function recv(int $size, boolean $flag):string
+    public function recv(int $size, boolean $flag): string
     {
     
-}
+    }
 
     /**
      * 
@@ -371,7 +371,7 @@ class Client extends \Swoole\Client
     public function send(string $data, boolean $flag)
     {
     
-}
+    }
 
     /**
      * 
@@ -383,7 +383,7 @@ class Client extends \Swoole\Client
     public function pipe(int $dst_socket)
     {
     
-}
+    }
 
     /**
      * 
@@ -394,10 +394,10 @@ class Client extends \Swoole\Client
      * @param int $length 发送数据的尺寸，默认为整个文件的尺寸
      * @return boolean
      */
-    public function sendfile(string $filename, int $offset, int $length):boolean
+    public function sendfile(string $filename, int $offset, int $length): boolean
     {
     
-}
+    }
 
     /**
      * 
@@ -408,10 +408,10 @@ class Client extends \Swoole\Client
      * @param string $data 要发送的数据内容，不得超过64K
      * @return boolean
      */
-    public function sendto(string $ip, int $port, string $data):boolean
+    public function sendto(string $ip, int $port, string $data): boolean
     {
     
-}
+    }
 
     /**
      * 
@@ -422,7 +422,7 @@ class Client extends \Swoole\Client
     public function sleep()
     {
     
-}
+    }
 
     /**
      * 
@@ -433,7 +433,7 @@ class Client extends \Swoole\Client
     public function wakeup()
     {
     
-}
+    }
 
     /**
      * 
@@ -444,7 +444,7 @@ class Client extends \Swoole\Client
     public function pause()
     {
     
-}
+    }
 
     /**
      * 
@@ -455,7 +455,7 @@ class Client extends \Swoole\Client
     public function resume()
     {
     
-}
+    }
 
     /**
      * 
@@ -467,7 +467,7 @@ class Client extends \Swoole\Client
     public function enableSSL(Callable $callback)
     {
     
-}
+    }
 
     /**
      * 
@@ -475,10 +475,10 @@ class Client extends \Swoole\Client
      * @example 
      * @return string | bool
      */
-    public function getPeerCert():string
+    public function getPeerCert(): ?string
     {
     
-}
+    }
 
     /**
      * 
@@ -489,7 +489,7 @@ class Client extends \Swoole\Client
     public function verifyPeerCert()
     {
     
-}
+    }
 
     /**
      * 
@@ -497,10 +497,10 @@ class Client extends \Swoole\Client
      * @example 
      * @return boolean
      */
-    public function isConnected():boolean
+    public function isConnected(): boolean
     {
     
-}
+    }
 
     /**
      * 
@@ -511,7 +511,7 @@ class Client extends \Swoole\Client
     public function getsockname()
     {
     
-}
+    }
 
     /**
      * 
@@ -522,7 +522,7 @@ class Client extends \Swoole\Client
     public function getpeername()
     {
     
-}
+    }
 
     /**
      * 
@@ -534,7 +534,7 @@ class Client extends \Swoole\Client
     public function close(boolean $force)
     {
     
-}
+    }
 
     /**
      * 
@@ -547,7 +547,7 @@ class Client extends \Swoole\Client
     public function on(string $event_name, Callable $callback)
     {
     
-}
+    }
 
 }
 

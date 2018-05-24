@@ -1,15 +1,15 @@
 <?php
 /**
-* Swoole自动补全类(基于最新的2.1.3版本)
+* Swoole自动补全类(基于最新的2.2.0版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/24
 */
 
 /**
 *个基于共享内存和锁实现的超高性能，并发数据结构。用于解决多进程/多线程数据共享和同步加锁问题
 */
 namespace Swoole;
-class Table
+class Table implements \ArrayAccess,\Iterator,\Traversable,\Countable
 {
     /**     
     *整型
@@ -37,7 +37,7 @@ class Table
     public function __construct(int $table_size, float $conflict_proportion)
     {
     
-}
+    }
 
     /**
      * 
@@ -48,10 +48,10 @@ class Table
      * @param int $size 指定字符串字段的最大长度，单位为字节
      * @return bool
      */
-    public function column(string $name, int $type, int $size):bool
+    public function column(string $name, int $type, int $size): bool
     {
     
-}
+    }
 
     /**
      * 
@@ -62,7 +62,7 @@ class Table
     public function create()
     {
     
-}
+    }
 
     /**
      * 
@@ -73,7 +73,7 @@ class Table
     public function destroy()
     {
     
-}
+    }
 
     /**
      * 
@@ -86,7 +86,7 @@ class Table
     public function set(string $key, Array $value)
     {
     
-}
+    }
 
     /**
      * 
@@ -99,7 +99,7 @@ class Table
     public function get(string $key, string $field)
     {
     
-}
+    }
 
     /**
      * 
@@ -107,10 +107,10 @@ class Table
      * @example 
      * @return int
      */
-    public function count():int
+    public function count(): int
     {
     
-}
+    }
 
     /**
      * 
@@ -122,7 +122,7 @@ class Table
     public function del(string $key)
     {
     
-}
+    }
 
     /**
      * 
@@ -134,7 +134,7 @@ class Table
     public function exist($key)
     {
     
-}
+    }
 
     /**
      * 
@@ -148,7 +148,7 @@ class Table
     public function incr(string $key, string $column, $incrby)
     {
     
-}
+    }
 
     /**
      * 
@@ -162,7 +162,7 @@ class Table
     public function decr(string $key, string $column, $decrby)
     {
     
-}
+    }
 
     /**
      * 
@@ -170,10 +170,10 @@ class Table
      * @example 
      * @return int
      */
-    public function getMemorySize():int
+    public function getMemorySize(): int
     {
     
-}
+    }
 
     /**
      * 
@@ -185,7 +185,7 @@ class Table
     public function offsetExists(int $offset)
     {
     
-}
+    }
 
     /**
      * 
@@ -197,7 +197,7 @@ class Table
     public function offsetGet(int $offset)
     {
     
-}
+    }
 
     /**
      * 
@@ -210,7 +210,7 @@ class Table
     public function offsetSet(int $offset, $value)
     {
     
-}
+    }
 
     /**
      * 
@@ -222,7 +222,7 @@ class Table
     public function offsetUnset(int $offset)
     {
     
-}
+    }
 
     /**
      * 
@@ -233,7 +233,7 @@ class Table
     public function __sleep()
     {
     
-}
+    }
 
     /**
      * 
@@ -244,7 +244,7 @@ class Table
     public function __wakeup()
     {
     
-}
+    }
 
     /**
      * 
@@ -255,7 +255,7 @@ class Table
     public function rewind()
     {
     
-}
+    }
 
     /**
      * 
@@ -266,7 +266,7 @@ class Table
     public function next()
     {
     
-}
+    }
 
     /**
      * 
@@ -277,7 +277,7 @@ class Table
     public function current()
     {
     
-}
+    }
 
     /**
      * 
@@ -288,7 +288,7 @@ class Table
     public function key()
     {
     
-}
+    }
 
     /**
      * 
@@ -296,10 +296,10 @@ class Table
      * @example 
      * @return boolean
      */
-    public function valid():boolean
+    public function valid(): boolean
     {
     
-}
+    }
 
 }
 

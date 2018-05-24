@@ -8,7 +8,8 @@
 /**
 *http异步客户端
 */
-class Server extends swoole_server
+namespace Co\Http;
+class Server extends \Swoole\Server
 {
     /**
      * @var callable $onConnect 

@@ -1,8 +1,8 @@
 <?php
 /**
-* Swoole自动补全类(基于最新的2.1.3版本)
+* Swoole自动补全类(基于最新的2.2.0版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/24
 */
 
 /**
@@ -62,7 +62,7 @@ class Redis
      * 用于初始化的配置选项
      * @access public
      */
-    public $setting;
+    public $setting    =    array();
 
     /**
      * @var string $host 
@@ -109,7 +109,7 @@ class Redis
     public function __construct(Array $setting)
     {
     
-}
+    }
 
     /**
      * 
@@ -120,7 +120,7 @@ class Redis
     public function __destruct()
     {
     
-}
+    }
 
     /**
      * 
@@ -133,7 +133,7 @@ class Redis
     public function on(string $event_name, Callable $callback)
     {
     
-}
+    }
 
     /**
      * 
@@ -147,7 +147,7 @@ class Redis
     public function connect(string $host, int $port, Callable $callback)
     {
     
-}
+    }
 
     /**
      * 
@@ -158,7 +158,7 @@ class Redis
     public function close()
     {
     
-}
+    }
 
     /**
      * 
@@ -166,10 +166,10 @@ class Redis
      * @example 
      * @return int
      */
-    public function getState():int
+    public function getState(): int
     {
     
-}
+    }
 
     /**
      * 
@@ -182,7 +182,7 @@ class Redis
     public function __call(string $command, Array $params)
     {
     
-}
+    }
 
 }
 

@@ -1,8 +1,8 @@
 <?php
 /**
-* Swoole自动补全类(基于最新的2.1.3版本)
+* Swoole自动补全类(基于最新的2.2.0版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/24
 */
 
 /**
@@ -135,7 +135,7 @@ class Server
      * 通过swoole_server:set()设置的参数会保存到setting属性上
      * @access public
      */
-    public $setting;
+    public $setting    =    array();
 
     /**
      * @var iterator $connections 
@@ -177,7 +177,7 @@ class Server
      * 当监听多端口时的端口列表
      * @access public
      */
-    public $ports;
+    public $ports    =    array();
 
     /**
      * @var int $master_pid 
@@ -227,7 +227,7 @@ class Server
     public function __construct(string $host, int $port, int $mode, int $sock_type)
     {
     
-}
+    }
 
     /**
      * 
@@ -238,7 +238,7 @@ class Server
     public function __destruct()
     {
     
-}
+    }
 
     /**
      * 
@@ -252,7 +252,7 @@ class Server
     public function listen(string $host, int $port, int $sock_type)
     {
     
-}
+    }
 
     /**
      * 
@@ -266,7 +266,7 @@ class Server
     public function addlistener(string $host, int $port, int $sock_type)
     {
     
-}
+    }
 
     /**
      * 
@@ -279,7 +279,7 @@ class Server
     public function on(string $event_name, Callable $callback)
     {
     
-}
+    }
 
     /**
      * 
@@ -291,7 +291,7 @@ class Server
     public function set(Array $settings)
     {
     
-}
+    }
 
     /**
      * 
@@ -302,7 +302,7 @@ class Server
     public function start()
     {
     
-}
+    }
 
     /**
      * 
@@ -316,7 +316,7 @@ class Server
     public function send(int $fd, string $send_data, int $reactor_id)
     {
     
-}
+    }
 
     /**
      * 
@@ -331,7 +331,7 @@ class Server
     public function sendto(string $ip, int $port, string $send_data, int $server_socket)
     {
     
-}
+    }
 
     /**
      * 
@@ -344,7 +344,7 @@ class Server
     public function sendwait(int $conn_fd, string $send_data)
     {
     
-}
+    }
 
     /**
      * 
@@ -356,7 +356,7 @@ class Server
     public function exist(int $fd)
     {
     
-}
+    }
 
     /**
      * 
@@ -369,7 +369,7 @@ class Server
     public function protect(int $fd, boolean $is_protected)
     {
     
-}
+    }
 
     /**
      * 
@@ -384,7 +384,7 @@ class Server
     public function sendfile(int $conn_fd, string $filename, int $offset, int $length)
     {
     
-}
+    }
 
     /**
      * 
@@ -397,7 +397,7 @@ class Server
     public function close(int $fd, boolean $reset)
     {
     
-}
+    }
 
     /**
      * 
@@ -409,7 +409,7 @@ class Server
     public function confirm(int $fd)
     {
     
-}
+    }
 
     /**
      * 
@@ -421,7 +421,7 @@ class Server
     public function pause(int $fd)
     {
     
-}
+    }
 
     /**
      * 
@@ -433,7 +433,7 @@ class Server
     public function resume(int $fd)
     {
     
-}
+    }
 
     /**
      * 
@@ -447,7 +447,7 @@ class Server
     public function task($data, int $worker_id, Callable $finish_callback)
     {
     
-}
+    }
 
     /**
      * 
@@ -461,7 +461,7 @@ class Server
     public function taskwait($data, float $timeout, int $worker_id)
     {
     
-}
+    }
 
     /**
      * 
@@ -474,7 +474,7 @@ class Server
     public function taskWaitMulti(Array $tasks, double $timeout)
     {
     
-}
+    }
 
     /**
      * 
@@ -484,10 +484,10 @@ class Server
      * @param double $timeout 超时时间
      * @return array
      */
-    public function taskCo(Array $tasks, double $timeout):array
+    public function taskCo(Array $tasks, double $timeout): array
     {
     
-}
+    }
 
     /**
      * 
@@ -499,7 +499,7 @@ class Server
     public function finish(string $data)
     {
     
-}
+    }
 
     /**
      * 
@@ -507,10 +507,10 @@ class Server
      * @example 
      * @return boolean
      */
-    public function reload():boolean
+    public function reload(): boolean
     {
     
-}
+    }
 
     /**
      * 
@@ -521,7 +521,7 @@ class Server
     public function shutdown()
     {
     
-}
+    }
 
     /**
      * 
@@ -533,7 +533,7 @@ class Server
     public function stop(int $worker_id)
     {
     
-}
+    }
 
     /**
      * 
@@ -546,7 +546,7 @@ class Server
     public function getLastError()
     {
     
-}
+    }
 
     /**
      * 
@@ -558,7 +558,7 @@ class Server
     public function heartbeat(boolean $reactor_id)
     {
     
-}
+    }
 
     /**
      * 
@@ -568,10 +568,10 @@ class Server
      * @param int $reactor_id reactor线程id
      * @return from_id
      */
-    public function connection_info($fd, int $reactor_id):from_id
+    public function connection_info($fd, int $reactor_id): from_id
     {
     
-}
+    }
 
     /**
      * 
@@ -584,7 +584,7 @@ class Server
     public function connection_list(int $start_fd, int $find_count)
     {
     
-}
+    }
 
     /**
      * 
@@ -597,7 +597,7 @@ class Server
     public function getClientInfo($fd, int $reactor_id)
     {
     
-}
+    }
 
     /**
      * 
@@ -610,7 +610,7 @@ class Server
     public function getClientList(int $start_fd, int $find_count)
     {
     
-}
+    }
 
     /**
      * 
@@ -624,7 +624,7 @@ class Server
     public function after(int $ms, Callable $callback, Array $param)
     {
     
-}
+    }
 
     /**
      * 
@@ -637,7 +637,7 @@ class Server
     public function tick(int $ms, Callable $callback)
     {
     
-}
+    }
 
     /**
      * 
@@ -649,7 +649,7 @@ class Server
     public function clearTimer(int $timer_id)
     {
     
-}
+    }
 
     /**
      * 
@@ -661,7 +661,7 @@ class Server
     public function defer(Callable $callback)
     {
     
-}
+    }
 
     /**
      * 
@@ -674,7 +674,7 @@ class Server
     public function sendMessage(int $dst_worker_id, string $data)
     {
     
-}
+    }
 
     /**
      * 
@@ -686,7 +686,7 @@ class Server
     public function addProcess(Swoole\Process $process)
     {
     
-}
+    }
 
     /**
      * 
@@ -698,7 +698,7 @@ class Server
     public function stats()
     {
     
-}
+    }
 
     /**
      * 
@@ -711,7 +711,7 @@ class Server
     public function bind(int $fd, int $uid)
     {
     
-}
+    }
 
     /**
      * 
@@ -722,7 +722,7 @@ class Server
     public function __sleep()
     {
     
-}
+    }
 
     /**
      * 
@@ -733,7 +733,7 @@ class Server
     public function __wakeup()
     {
     
-}
+    }
 
 }
 

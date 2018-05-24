@@ -64,7 +64,7 @@ final class Socket
      * @param float $timeout 设置超时，默认为-1表示永不超时
      * @return Coroutine\Socket|false
      */
-    public function accept(float $timeout): ?Swoole\Coroutine\Socket
+    public function accept(float $timeout): ?Coroutine\Socket
     {
     
     }

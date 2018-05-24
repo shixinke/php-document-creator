@@ -142,7 +142,7 @@ class Client
      */
     public function recv()
     {
-        return new object();
+        return new Object\();
     }
 
     /**

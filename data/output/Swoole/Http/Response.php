@@ -1,8 +1,8 @@
 <?php
 /**
-* Swoole自动补全类(基于最新的2.1.3版本)
+* Swoole自动补全类(基于最新的2.2.0版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/24
 */
 
 /**
@@ -23,32 +23,32 @@ class Response
      * 请求头（每个key都是小写）
      * @access public
      */
-    public $header;
+    public $header    =    array();
 
     /**
      * @var array $cookie 
      * 请求中的cookie数据
      * @access public
      */
-    public $cookie;
+    public $cookie    =    array();
 
     /**
-     * @var unknown $trailer 
-     * 
+     * @var array $trailer 
+     * 以块（chunked）传输编码消息里的尾部（trailer）里用到的头域
      * @access public
      */
-    public $trailer;
+    public $trailer    =    array();
 
     /**
      * 
-     *
+     *初始化头部
      * @example 
      * @return 
      */
     public function initHeader()
     {
     
-}
+    }
 
     /**
      * 
@@ -66,7 +66,7 @@ class Response
     public function cookie(string $name, string $value, int $expires, string $path, string $domain, boolean $secure, boolean $httponly)
     {
     
-}
+    }
 
     /**
      * 
@@ -84,7 +84,7 @@ class Response
     public function rawcookie(string $name, string $value, int $expires, string $path, string $domain, boolean $secure, boolean $httponly)
     {
     
-}
+    }
 
     /**
      * 
@@ -96,7 +96,7 @@ class Response
     public function status(int $http_code)
     {
     
-}
+    }
 
     /**
      * 
@@ -108,7 +108,7 @@ class Response
     public function gzip(int $compress_level)
     {
     
-}
+    }
 
     /**
      * 
@@ -122,21 +122,21 @@ class Response
     public function header(string $key, string $value, boolean $ucwords)
     {
     
-}
+    }
 
     /**
      * 
-     *
+     *设置头域值
      * @example 
-     * @param  mixed $key 
-     * @param  mixed $value 
-     * @param  mixed $ucwords 
+     * @param string $key 头域键
+     * @param mixed $value 头域值
+     * @param bool $ucwords 键名是否大写
      * @return 
      */
-    public function trailer($key, $value, $ucwords)
+    public function trailer(string $key, $value, bool $ucwords)
     {
     
-}
+    }
 
     /**
      * 
@@ -148,7 +148,7 @@ class Response
     public function write(string $content)
     {
     
-}
+    }
 
     /**
      * 
@@ -160,7 +160,7 @@ class Response
     public function end(string $content)
     {
     
-}
+    }
 
     /**
      * 
@@ -174,7 +174,7 @@ class Response
     public function sendfile(string $filename, int $offset, int $length)
     {
     
-}
+    }
 
     /**
      * 
@@ -185,7 +185,7 @@ class Response
     public function __sleep()
     {
     
-}
+    }
 
     /**
      * 
@@ -196,7 +196,7 @@ class Response
     public function __wakeup()
     {
     
-}
+    }
 
     /**
      * 
@@ -207,7 +207,7 @@ class Response
     public function __destruct()
     {
     
-}
+    }
 
 }
 

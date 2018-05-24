@@ -1,8 +1,8 @@
 <?php
 /**
-* Swoole自动补全类(基于最新的2.1.3版本)
+* Swoole自动补全类(基于最新的2.2.0版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/24
 */
 
 /**
@@ -37,6 +37,13 @@ class Lock
     const SPINLOCK    =    5;
 
     /**
+     * @var unknown $errCode 
+     * 
+     * @access public
+     */
+    public $errCode    =    0;
+
+    /**
      * 
      *创建锁
      * @example 
@@ -47,7 +54,7 @@ class Lock
     public function __construct(int $type, string $filename)
     {
     
-}
+    }
 
     /**
      * 
@@ -58,7 +65,7 @@ class Lock
     public function __destruct()
     {
     
-}
+    }
 
     /**
      * 
@@ -69,7 +76,7 @@ class Lock
     public function lock()
     {
     
-}
+    }
 
     /**
      * 
@@ -81,7 +88,7 @@ class Lock
     public function lockwait(float $timeout)
     {
     
-}
+    }
 
     /**
      * 
@@ -92,7 +99,7 @@ class Lock
     public function trylock()
     {
     
-}
+    }
 
     /**
      * 
@@ -103,7 +110,7 @@ class Lock
     public function lock_read()
     {
     
-}
+    }
 
     /**
      * 
@@ -114,7 +121,7 @@ class Lock
     public function trylock_read()
     {
     
-}
+    }
 
     /**
      * 
@@ -125,7 +132,7 @@ class Lock
     public function unlock()
     {
     
-}
+    }
 
 }
 

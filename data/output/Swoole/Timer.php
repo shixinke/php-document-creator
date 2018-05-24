@@ -1,8 +1,8 @@
 <?php
 /**
-* Swoole自动补全类(基于最新的2.1.3版本)
+* Swoole自动补全类(基于最新的2.2.0版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/24
 */
 
 /**
@@ -23,7 +23,7 @@ class Timer
     public static  function tick(int $ms, Callable $callback, $param)
     {
     
-}
+    }
 
     /**
      * 
@@ -36,7 +36,7 @@ class Timer
     public static  function after(int $ms, Callable $callback)
     {
     
-}
+    }
 
     /**
      * 
@@ -48,7 +48,7 @@ class Timer
     public static  function exists(int $timer_id)
     {
     
-}
+    }
 
     /**
      * 
@@ -60,7 +60,7 @@ class Timer
     public static  function clear(int $timer_id)
     {
     
-}
+    }
 
 }
 

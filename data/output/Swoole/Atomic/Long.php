@@ -1,8 +1,8 @@
 <?php
 /**
-* Swoole自动补全类(基于最新的2.1.3版本)
+* Swoole自动补全类(基于最新的2.2.0版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/24
 */
 
 /**
@@ -21,7 +21,7 @@ class Long
     public function __construct(int $value)
     {
     
-}
+    }
 
     /**
      * 
@@ -33,7 +33,7 @@ class Long
     public function add(int $add_value)
     {
     
-}
+    }
 
     /**
      * 
@@ -45,7 +45,7 @@ class Long
     public function sub(int $sub_value)
     {
     
-}
+    }
 
     /**
      * 
@@ -56,7 +56,7 @@ class Long
     public function get()
     {
     
-}
+    }
 
     /**
      * 
@@ -68,7 +68,7 @@ class Long
     public function set(int $value)
     {
     
-}
+    }
 
     /**
      * 
@@ -81,7 +81,7 @@ class Long
     public function cmpset(int $cmp_value, int $new_value)
     {
     
-}
+    }
 
     /**
      * 
@@ -92,7 +92,7 @@ class Long
     public function __sleep()
     {
     
-}
+    }
 
     /**
      * 
@@ -103,7 +103,7 @@ class Long
     public function __wakeup()
     {
     
-}
+    }
 
 }
 

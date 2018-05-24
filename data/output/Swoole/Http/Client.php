@@ -1,8 +1,8 @@
 <?php
 /**
-* Swoole自动补全类(基于最新的2.1.3版本)
+* Swoole自动补全类(基于最新的2.2.0版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/17
+* @modified 2018/05/24
 */
 
 /**
@@ -65,7 +65,7 @@ class Client
      * 请求头
      * @access public
      */
-    public $requestHeaders;
+    public $requestHeaders    =    array();
 
     /**
      * @var string $requestBody 
@@ -79,14 +79,14 @@ class Client
      * 上传的文件
      * @access public
      */
-    public $uploadFiles;
+    public $uploadFiles    =    array();
 
     /**
      * @var array $set_cookie_headers 
      * 设置请求头中的cookie
      * @access public
      */
-    public $set_cookie_headers;
+    public $set_cookie_headers    =    array();
 
     /**
      * @var string $downloadFile 
@@ -100,14 +100,14 @@ class Client
      * 请求响应头
      * @access public
      */
-    public $headers;
+    public $headers    =    array();
 
     /**
      * @var array $cookies 
      * 请求响应cookie
      * @access public
      */
-    public $cookies;
+    public $cookies    =    array();
 
     /**
      * @var string $body 
@@ -156,7 +156,7 @@ class Client
     public function __construct(string $host, int $port, boolean $ssl)
     {
     
-}
+    }
 
     /**
      * 
@@ -167,7 +167,7 @@ class Client
     public function __destruct()
     {
     
-}
+    }
 
     /**
      * 
@@ -179,7 +179,7 @@ class Client
     public function set(Array $settings)
     {
     
-}
+    }
 
     /**
      * 
@@ -191,7 +191,7 @@ class Client
     public function setMethod(string $method)
     {
     
-}
+    }
 
     /**
      * 
@@ -203,7 +203,7 @@ class Client
     public function setHeaders(Array $headers)
     {
     
-}
+    }
 
     /**
      * 
@@ -215,7 +215,7 @@ class Client
     public function setCookies(Array $cookies)
     {
     
-}
+    }
 
     /**
      * 
@@ -227,7 +227,7 @@ class Client
     public function setData(string $data)
     {
     
-}
+    }
 
     /**
      * 
@@ -244,7 +244,7 @@ class Client
     public function addFile(string $path, string $name, string $type, string $filename, int $offset, int $length)
     {
     
-}
+    }
 
     /**
      * 
@@ -257,7 +257,7 @@ class Client
     public function execute(string $path, Callable $callback)
     {
     
-}
+    }
 
     /**
      * 
@@ -271,7 +271,7 @@ class Client
     public function push(string $data, int $opcode, boolean $finish)
     {
     
-}
+    }
 
     /**
      * 
@@ -284,7 +284,7 @@ class Client
     public function get(string $path, Callable $callback)
     {
     
-}
+    }
 
     /**
      * 
@@ -298,7 +298,7 @@ class Client
     public function post(string $path, $data, Callable $callback)
     {
     
-}
+    }
 
     /**
      * 
@@ -311,7 +311,7 @@ class Client
     public function upgrade(string $path, Callable $callback)
     {
     
-}
+    }
 
     /**
      * 
@@ -326,7 +326,7 @@ class Client
     public function download(string $path, string $file, Callable $callback, int $offset)
     {
     
-}
+    }
 
     /**
      * 
@@ -334,10 +334,10 @@ class Client
      * @example 
      * @return boolean
      */
-    public function isConnected():boolean
+    public function isConnected(): boolean
     {
     
-}
+    }
 
     /**
      * 
@@ -348,7 +348,7 @@ class Client
     public function close()
     {
     
-}
+    }
 
     /**
      * 
@@ -361,7 +361,7 @@ class Client
     public function on(string $event_name, Callable $callback)
     {
     
-}
+    }
 
 }
 
