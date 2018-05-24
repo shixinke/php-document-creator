@@ -4,7 +4,7 @@
     "type": "library",
     "repositories": [
         {
-            "url" : "http://github.com/shixinke/php-document-creatorc"
+            "url" : "http://github.com/shixinke/php-document-creator"
         }
     ],
     "homepage":"http://www.shixinke.com",
