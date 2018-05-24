@@ -1,14 +1,16 @@
 {
     "name": "shixinke/php-document-creator",
     "description": "a document creator for php extension",
+    "version":"0.2.0",
     "type": "library",
     "repositories": [
         {
+            "type":"vcs",
             "url" : "http://github.com/shixinke/php-document-creator"
         }
     ],
     "homepage":"http://www.shixinke.com",
-    "license": "Apache 2.0",
+    "license": "Apache-2.0",
     "authors": [
         {
             "name": "shixinke",
