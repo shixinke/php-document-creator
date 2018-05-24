@@ -8,8 +8,7 @@
 /**
 *swoole websocket服务端
 */
-namespace Co\WebSocket;
-class Server extends \Swoole\Http\Server
+class Server extends swoole_http_server
 {
     /**
      * @var callable $onConnect 

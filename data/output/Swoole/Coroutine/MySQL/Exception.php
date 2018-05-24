@@ -9,7 +9,7 @@
 *swoole mysql 协程 异常类
 */
 namespace Swoole\Coroutine\MySQL;
-class Exception extends \Exception implements \Throwable
+class Exception extends \Exception implements Throwable
 {
     /**
      * @var string $message 

@@ -9,7 +9,7 @@
 *socket异常
 */
 namespace Swoole\Coroutine\Socket;
-class Exception extends \Exception implements \Throwable
+class Exception extends \Exception implements Throwable
 {
     /**
      * @var string $message 

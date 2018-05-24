@@ -8,7 +8,6 @@
 /**
 *swoole TCP/UDP服务器
 */
-namespace Co;
 class Server
 {
     /**

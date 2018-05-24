@@ -62,11 +62,11 @@ final class Socket
      *接受客户端发起的连接
      * @example 
      * @param float $timeout 设置超时，默认为-1表示永不超时
-     * @return Coroutine\Socket|false
+     * @return 
      */
-    public function accept(float $timeout): ?Coroutine\Socket
+    public function accept(float $timeout)
     {
-    
+            return new Swoole\Coroutine\Socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
     }
 
     /**
