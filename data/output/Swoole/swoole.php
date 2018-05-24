@@ -1,8 +1,8 @@
 <?php
 /**
-* Swoole自动补全类(基于最新的2.1.3版本)
+* Swoole自动补全类(基于最新的2.2.0版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/18
+* @modified 2018/05/24
 */
 
 /**
@@ -487,27 +487,27 @@ define('SWOOLE_TRACE_AIO', 262144);
 */
 define('SWOOLE_TRACE_ALL', 4294967295);
 /**
-调试日志
+调试日志，仅作为内核开发调试使用
 */
 define('SWOOLE_LOG_DEBUG', 0);
 /**
-trace跟踪日志
+跟踪日志，可用于跟踪系统问题，调试日志是经过精心设置的，会携带关键性信息
 */
 define('SWOOLE_LOG_TRACE', 1);
 /**
-
+普通信息，仅作为信息展示
 */
 define('SWOOLE_LOG_INFO', 2);
 /**
-通告日志
+提示信息，系统可能存在某些行为，如重启、关闭
 */
 define('SWOOLE_LOG_NOTICE', 3);
 /**
-警告日志
+警告信息，系统可能存在某些问题
 */
 define('SWOOLE_LOG_WARNING', 4);
 /**
-错误日志
+错误信息，系统发生了某些关键性的错误，需要即时解决
 */
 define('SWOOLE_LOG_ERROR', 5);
 /**
@@ -722,7 +722,7 @@ function swoole_event_del(int $fd): boolean
 * 
 * @return void
 */
-function swoole_event_exit(): void
+function swoole_event_exit()
 {
 
         }
@@ -734,7 +734,7 @@ function swoole_event_exit(): void
 * 
 * @return void
 */
-function swoole_event_wait(): void
+function swoole_event_wait()
 {
 
         }
@@ -940,10 +940,10 @@ function swoole_async_readfile(string $filename, Callable $callback)
 * @param string $filename:写入的文件名 
 * @param string $content:写入的内容 
 * @param callable $callback:写文件完成后的回调函数 
-* @param  $flags: 
+* @param int $flags:其他写入选项，如可以使用FILE_APPEND表示追加到文件末尾 
 * @return 
 */
-function swoole_async_writefile(string $filename, string $content, Callable $callback, $flags)
+function swoole_async_writefile(string $filename, string $content, Callable $callback, int $flags)
 {
 
         }
@@ -1060,19 +1060,19 @@ function swoole_select(Array $read_array, Array $write_array, Array $error_array
 function swoole_set_process_name(string $process_name)
 {
 
-}
+        }
 
 /**
 * 
 *用于获取本地所有网络接口的IP地址(返回以interface名称为key的关联数组)
 * @example 
 * $ips = swoole_get_local_ip();
-* @return array (只返回IPv4地址，返回结果会过滤掉本地的loop地址127.0.0.1,类似于array('eth0'=>'192.168.0.25'))
+* @return array
 */
 function swoole_get_local_ip(): array
 {
 
-}
+        }
 
 /**
 * 

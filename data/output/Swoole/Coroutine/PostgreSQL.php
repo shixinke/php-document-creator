@@ -1,8 +1,8 @@
 <?php
 /**
-* Swoole自动补全类(基于最新的2.1.3版本)
+* Swoole自动补全类(基于最新的2.2.0版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/18
+* @modified 2018/05/24
 */
 
 /**
@@ -48,7 +48,7 @@ class PostgreSQL
      * @param string $query 执行sql语句
      * @return resource
      */
-    public function query(string $query):resource
+    public function query(string $query): resource
     {
     
     }
@@ -85,7 +85,7 @@ class PostgreSQL
      * @param resource $result 结果集
      * @return int
      */
-    public function numRows(resource $result):int
+    public function numRows(resource $result): int
     {
     
     }

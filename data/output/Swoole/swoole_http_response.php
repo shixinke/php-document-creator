@@ -1,8 +1,8 @@
 <?php
 /**
-* Swoole自动补全类(基于最新的2.1.3版本)
+* Swoole自动补全类(基于最新的2.2.0版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/18
+* @modified 2018/05/24
 */
 
 /**
@@ -32,15 +32,15 @@ class swoole_http_response
     public $cookie    =    array();
 
     /**
-     * @var unknown $trailer 
-     * 
+     * @var array $trailer 
+     * 以块（chunked）传输编码消息里的尾部（trailer）里用到的头域
      * @access public
      */
-    public $trailer;
+    public $trailer    =    array();
 
     /**
      * 
-     *
+     *初始化头部
      * @example 
      * @return 
      */
@@ -125,14 +125,14 @@ class swoole_http_response
 
     /**
      * 
-     *
+     *设置头域值
      * @example 
-     * @param  mixed $key 
-     * @param  mixed $value 
-     * @param  mixed $ucwords 
+     * @param string $key 头域键
+     * @param mixed $value 头域值
+     * @param bool $ucwords 键名是否大写
      * @return 
      */
-    public function trailer($key, $value, $ucwords)
+    public function trailer(string $key, $value, bool $ucwords)
     {
     
     }

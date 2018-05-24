@@ -1,8 +1,8 @@
 <?php
 /**
-* Swoole自动补全类(基于最新的2.1.3版本)
+* Swoole自动补全类(基于最新的2.2.0版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/18
+* @modified 2018/05/24
 */
 
 /**
@@ -17,7 +17,7 @@ class Co
      * @param callable $func 协程执行的代码
      * @return bool
      */
-    public static  function create(Callable $func):bool
+    public static  function create(Callable $func): bool
     {
     
     }
@@ -40,7 +40,7 @@ class Co
      * @example 
      * @return int
      */
-    public static  function cli_wait():int
+    public static  function cli_wait(): int
     {
     
     }
@@ -75,7 +75,7 @@ class Co
      * @example 
      * @return int
      */
-    public static  function getuid():int
+    public static  function getuid(): int
     {
     
     }
@@ -152,7 +152,7 @@ class Co
      * @param int $flags 为写入的选项，可以使用FILE_APPEND表示追加到文件末尾，默认会清空当前文件内容
      * @return bool
      */
-    public static  function writeFile(string $filename, string $content, int $flags):bool
+    public static  function writeFile(string $filename, string $content, int $flags): bool
     {
     
     }
@@ -219,7 +219,7 @@ class Co
      * @param string $cmd 要执行的shell指令
      * @return array
      */
-    public static  function exec(string $cmd):array
+    public static  function exec(string $cmd): array
     {
     
     }

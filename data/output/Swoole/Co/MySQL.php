@@ -1,8 +1,8 @@
 <?php
 /**
-* Swoole自动补全类(基于最新的2.1.3版本)
+* Swoole自动补全类(基于最新的2.2.0版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/18
+* @modified 2018/05/24
 */
 
 /**
@@ -178,7 +178,7 @@ class MySQL
      * @param boolean $defer 为true时，表明该Client要延迟收包，为false时，表明该Client非延迟收包，默认值为true
      * @return boolean
      */
-    public function setDefer(boolean $defer):boolean
+    public function setDefer(boolean $defer): boolean
     {
     
     }
@@ -189,7 +189,7 @@ class MySQL
      * @example 
      * @return boolean
      */
-    public function getDefer():boolean
+    public function getDefer(): boolean
     {
     
     }

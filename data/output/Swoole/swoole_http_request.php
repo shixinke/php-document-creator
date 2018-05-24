@@ -1,8 +1,8 @@
 <?php
 /**
-* Swoole自动补全类(基于最新的2.1.3版本)
+* Swoole自动补全类(基于最新的2.2.0版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/18
+* @modified 2018/05/24
 */
 
 /**
@@ -32,11 +32,11 @@ class swoole_http_request
     public $server    =    array();
 
     /**
-     * @var unknown $request 
-     * 
+     * @var array $request 
+     * 请求服务器信息，相当于$_REQUEST
      * @access public
      */
-    public $request;
+    public $request    =    array();
 
     /**
      * @var array $cookie 
@@ -80,7 +80,7 @@ class swoole_http_request
      * @example 
      * @return string
      */
-    public function rawcontent():string
+    public function rawcontent(): string
     {
     
     }

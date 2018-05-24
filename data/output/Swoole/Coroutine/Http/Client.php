@@ -1,8 +1,8 @@
 <?php
 /**
-* Swoole自动补全类(基于最新的2.1.3版本)
+* Swoole自动补全类(基于最新的2.2.0版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/18
+* @modified 2018/05/24
 */
 
 /**
@@ -19,22 +19,22 @@ class Client
     public $errCode    =    0;
 
     /**
-     * @var unknown $sock 
-     * 
+     * @var int $sock 
+     * socket连接符
      * @access public
      */
     public $sock    =    0;
 
     /**
-     * @var unknown $reuse 
-     * 
+     * @var bool $reuse 
+     * 此连接是新创建的还是复用已存在的
      * @access public
      */
-    public $reuse    =    '';
+    public $reuse    =    false;
 
     /**
-     * @var unknown $reuseCount 
-     * 
+     * @var int $reuseCount 
+     * 连接复用次数
      * @access public
      */
     public $reuseCount    =    0;
@@ -47,18 +47,18 @@ class Client
     public $type    =    0;
 
     /**
-     * @var unknown $setting 
-     * 
+     * @var array $setting 
+     * 配置选项
      * @access public
      */
-    public $setting;
+    public $setting    =    array();
 
     /**
-     * @var unknown $connected 
-     * 
+     * @var bool $connected 
+     * 是否已连接
      * @access public
      */
-    public $connected    =    '';
+    public $connected    =    false;
 
     /**
      * @var int $statusCode 
@@ -257,7 +257,7 @@ class Client
      * @example 
      * @return boolean
      */
-    public function isConnected():boolean
+    public function isConnected(): boolean
     {
     
     }
@@ -279,7 +279,7 @@ class Client
      * @example 
      * @return boolean
      */
-    public function setDefer():boolean
+    public function setDefer(): boolean
     {
     
     }
@@ -290,7 +290,7 @@ class Client
      * @example 
      * @return boolean
      */
-    public function getDefer():boolean
+    public function getDefer(): boolean
     {
     
     }
@@ -301,7 +301,7 @@ class Client
      * @example 
      * @return string
      */
-    public function recv():string
+    public function recv(): string
     {
     
     }

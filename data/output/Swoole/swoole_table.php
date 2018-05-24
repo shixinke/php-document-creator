@@ -1,14 +1,14 @@
 <?php
 /**
-* Swoole自动补全类(基于最新的2.1.3版本)
+* Swoole自动补全类(基于最新的2.2.0版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/18
+* @modified 2018/05/24
 */
 
 /**
 *个基于共享内存和锁实现的超高性能，并发数据结构。用于解决多进程/多线程数据共享和同步加锁问题
 */
-class swoole_table
+class swoole_table implements ArrayAccess, Iterator, Traversable, Countable
 {
     /**     
     *整型
@@ -47,7 +47,7 @@ class swoole_table
      * @param int $size 指定字符串字段的最大长度，单位为字节
      * @return bool
      */
-    public function column(string $name, int $type, int $size):bool
+    public function column(string $name, int $type, int $size): bool
     {
     
     }
@@ -106,7 +106,7 @@ class swoole_table
      * @example 
      * @return int
      */
-    public function count():int
+    public function count(): int
     {
     
     }
@@ -169,7 +169,7 @@ class swoole_table
      * @example 
      * @return int
      */
-    public function getMemorySize():int
+    public function getMemorySize(): int
     {
     
     }
@@ -295,7 +295,7 @@ class swoole_table
      * @example 
      * @return boolean
      */
-    public function valid():boolean
+    public function valid(): boolean
     {
     
     }

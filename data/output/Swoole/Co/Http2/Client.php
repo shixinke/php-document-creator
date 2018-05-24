@@ -1,8 +1,8 @@
 <?php
 /**
-* Swoole自动补全类(基于最新的2.1.3版本)
+* Swoole自动补全类(基于最新的2.2.0版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/18
+* @modified 2018/05/24
 */
 
 /**
@@ -54,11 +54,11 @@ class Client
     public $setting    =    array();
 
     /**
-     * @var unknown $connected 
-     * 
+     * @var bool $connected 
+     * 是否已连接
      * @access public
      */
-    public $connected    =    '';
+    public $connected    =    false;
 
     /**
      * @var string $host 
@@ -117,7 +117,7 @@ class Client
      * @example 
      * @return bool
      */
-    public function connect():bool
+    public function connect(): bool
     {
     
     }
@@ -140,9 +140,9 @@ class Client
      * @example 
      * @return object
      */
-    public function recv():object
+    public function recv()
     {
-    
+        return new object();
     }
 
     /**

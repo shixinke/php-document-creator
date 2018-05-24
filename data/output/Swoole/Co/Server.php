@@ -1,8 +1,8 @@
 <?php
 /**
-* Swoole自动补全类(基于最新的2.1.3版本)
+* Swoole自动补全类(基于最新的2.2.0版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/18
+* @modified 2018/05/24
 */
 
 /**
@@ -483,7 +483,7 @@ class Server
      * @param double $timeout 超时时间
      * @return array
      */
-    public function taskCo(Array $tasks, double $timeout):array
+    public function taskCo(Array $tasks, double $timeout): array
     {
     
     }
@@ -506,7 +506,7 @@ class Server
      * @example 
      * @return boolean
      */
-    public function reload():boolean
+    public function reload(): boolean
     {
     
     }
@@ -567,7 +567,7 @@ class Server
      * @param int $reactor_id reactor线程id
      * @return from_id
      */
-    public function connection_info($fd, int $reactor_id):from_id
+    public function connection_info($fd, int $reactor_id): from_id
     {
     
     }

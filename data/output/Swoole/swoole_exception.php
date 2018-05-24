@@ -1,14 +1,14 @@
 <?php
 /**
-* Swoole自动补全类(基于最新的2.1.3版本)
+* Swoole自动补全类(基于最新的2.2.0版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/18
+* @modified 2018/05/24
 */
 
 /**
 *swoole 异常类
 */
-class swoole_exception extends Exception
+class swoole_exception extends Exception implements Throwable
 {
     /**
      * @var string $message 
@@ -80,7 +80,7 @@ class swoole_exception extends Exception
      * @example 
      * @return string
      */
-    public final  function getMessage():string
+    public final  function getMessage(): string
     {
     
     }
@@ -91,7 +91,7 @@ class swoole_exception extends Exception
      * @example 
      * @return int
      */
-    public final  function getCode():int
+    public final  function getCode(): int
     {
     
     }
@@ -102,7 +102,7 @@ class swoole_exception extends Exception
      * @example 
      * @return string
      */
-    public final  function getFile():string
+    public final  function getFile(): string
     {
     
     }
@@ -113,7 +113,7 @@ class swoole_exception extends Exception
      * @example 
      * @return int
      */
-    public final  function getLine():int
+    public final  function getLine(): int
     {
     
     }
@@ -124,7 +124,7 @@ class swoole_exception extends Exception
      * @example 
      * @return array
      */
-    public final  function getTrace():array
+    public final  function getTrace(): array
     {
     
     }
@@ -135,9 +135,9 @@ class swoole_exception extends Exception
      * @example 
      * @return Throwable
      */
-    public final  function getPrevious():Throwable
+    public final  function getPrevious()
     {
-    
+        return new Exception();
     }
 
     /**
@@ -146,7 +146,7 @@ class swoole_exception extends Exception
      * @example 
      * @return string
      */
-    public final  function getTraceAsString():string
+    public final  function getTraceAsString(): string
     {
     
     }

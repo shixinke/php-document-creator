@@ -1,8 +1,8 @@
 <?php
 /**
-* Swoole自动补全类(基于最新的2.1.3版本)
+* Swoole自动补全类(基于最新的2.2.0版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/18
+* @modified 2018/05/24
 */
 
 /**
@@ -20,7 +20,7 @@ class swoole_async
      * @param int $offset 读入每次的偏移量
      * @return boolean
      */
-    public static  function read(string $filename, Callable $callback, int $chunk_size, int $offset):boolean
+    public static  function read(string $filename, Callable $callback, int $chunk_size = 8192, int $offset = 0): boolean
     {
     
     }

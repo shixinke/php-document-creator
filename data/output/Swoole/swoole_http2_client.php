@@ -1,8 +1,8 @@
 <?php
 /**
-* Swoole自动补全类(基于最新的2.1.3版本)
+* Swoole自动补全类(基于最新的2.2.0版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/18
+* @modified 2018/05/24
 */
 
 /**
@@ -354,7 +354,7 @@ class swoole_http2_client extends swoole_client
      * @param boolean $flag 是否等待所有数据到达后返回
      * @return string
      */
-    public function recv(int $size, boolean $flag):string
+    public function recv(int $size, boolean $flag): string
     {
     
     }
@@ -393,7 +393,7 @@ class swoole_http2_client extends swoole_client
      * @param int $length 发送数据的尺寸，默认为整个文件的尺寸
      * @return boolean
      */
-    public function sendfile(string $filename, int $offset, int $length):boolean
+    public function sendfile(string $filename, int $offset, int $length): boolean
     {
     
     }
@@ -407,7 +407,7 @@ class swoole_http2_client extends swoole_client
      * @param string $data 要发送的数据内容，不得超过64K
      * @return boolean
      */
-    public function sendto(string $ip, int $port, string $data):boolean
+    public function sendto(string $ip, int $port, string $data): boolean
     {
     
     }
@@ -496,7 +496,7 @@ class swoole_http2_client extends swoole_client
      * @example 
      * @return boolean
      */
-    public function isConnected():boolean
+    public function isConnected(): boolean
     {
     
     }

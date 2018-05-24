@@ -1,14 +1,14 @@
 <?php
 /**
-* Swoole自动补全类(基于最新的2.1.3版本)
+* Swoole自动补全类(基于最新的2.2.0版本)
 * @author shixinke(http://www.shixinke.com)
-* @modified 2018/05/18
+* @modified 2018/05/24
 */
 
 /**
 *内存表行
 */
-class swoole_table_row
+class swoole_table_row implements ArrayAccess
 {
     /**
      * @var string $key 
