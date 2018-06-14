@@ -622,7 +622,7 @@
       "access": "public",
       "comment": "修改某个键的某个位置的位值",
       "isStatic": false,
-      "return": "int:",
+      "return": "int",
       "example": "\n<pre>\n$redis->set('key', \"*\");     \/\/ ord(\"*\") = 42 = 0x2f = \"0010 1010\"\n$redis->setBit('key', 5, 1); \/\/ returns 0\n$redis->setBit('key', 7, 1); \/\/ returns 0\n$redis->get('key');          \/\/ chr(0x2f) = \"\/\" = b(\"0010 1111\")\n<\/pre>",
       "parameters": {
         "key": {
@@ -1325,7 +1325,7 @@
       "access": "public",
       "comment": "获取多个集合的差集，并将结果存入到一个新的集合中",
       "isStatic": false,
-      "return": "int:",
+      "return": "int",
       "example": "\n<pre>\n$redis->delete('s0', 's1', 's2');\n$redis->sAdd('s0', '1');\n$redis->sAdd('s0', '2');\n$redis->sAdd('s0', '3');\n$redis->sAdd('s0', '4');\n$redis->sAdd('s1', '1');\n$redis->sAdd('s2', '3');\nvar_dump($redis->sDiffStore('dst', 's0', 's1', 's2'));\nvar_dump($redis->sMembers('dst'));\n\/\/int(2)\n\/\/array(2) {\n\/\/  [0]=>\n\/\/  string(1) \"4\"\n\/\/  [1]=>\n\/\/  string(1) \"2\"\n\/\/}\n<\/pre>",
       "parameters": {
         "dstKey": {

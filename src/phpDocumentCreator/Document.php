@@ -15,6 +15,7 @@ class Document
     private static $_dicts = array();
     private static $_exports = array();
     private static $_alias = array();
+    private static $_config = array();
     public function __construct($extension)
     {
         $finalDictPath = self::DICT_PATH.DS.$extension;
@@ -202,7 +203,7 @@ class Document
             if (isset($mv['body']) && $mv['body'] != '') {
                 $content .= "    ".$mv['body'];
             }
-            $content .=  "\n        }\n\n";
+            $content .=  "\n}\n\n";
         }
 
         //将函数与常量定义放到一个文件
@@ -271,7 +272,14 @@ class Document
                         $content .= ' extends '.$value['extends'];
                     }
                     if (isset($value['interfaces']) && !empty($value['interfaces'])) {
-
+                        if (isset(self::$_config['excepts'])) {
+                            $interfaceCount = count($value['interfaces']);
+                            for ($i = 0; $i < $interfaceCount;$i ++) {
+                                if (in_array($value['interfaces'][$i], self::$_config['excepts'])) {
+                                    unset($value['interfaces'][$i]);
+                                }
+                            }
+                        }
                         if ($useNameSpace) {
                             $interfaces = '';
                             foreach ($value['interfaces'] as $interface) {
@@ -422,6 +430,7 @@ class Document
                     $content .= $params;
                     $content .= ")";
                     if (self::checkVersion() && isset($mv['return']) && ($mv['return'] != '')  && (!in_array($mv['return'], array('mixed', 'unknown', 'void')))) {
+
                         $map = self::getReturnType($mv['return']);
                         if ($map['type'] == 'object') {
                             if (!isset($mv['body'])) {
@@ -566,6 +575,7 @@ class Document
                     if (isset($tmp['alias'])) {
                         self::$_alias = $tmp['alias'];
                     }
+                    self::$_config = $tmp;
                 } else {
                     $arr[str_replace('.json', '', $file)] = $tmp;
                 }

@@ -22,9 +22,11 @@ class Tool
         {
             $arr[$k] = array(
                 'value'=>$v,
+                'type'=>self::getVarDataType($v),
                 'comment'=>''
             );
         }
+
         return $arr;
     }
 
@@ -42,6 +44,7 @@ class Tool
             if (stripos($constant, $prefix.'_') === 0) {
                 $arr[$constant] = array(
                     'value'=>$v,
+                    'type'=>self::getVarDataType($v),
                     'comment'=>''
                 );
             }
@@ -72,6 +75,9 @@ class Tool
             $arr[$name]['comment'] = $func->getDocComment();
             $arr[$name]['parameters'] = array();
             $arr[$name]['return'] = '';
+            if ($func->hasReturnType()) {
+                $arr[$name]['return'] = self::transformDataType($func->getReturnType());
+            }
             $arr[$name]['example'] = '';
             $params = $func->getParameters();
             foreach($params as $param) {
@@ -86,6 +92,9 @@ class Tool
                 $defaultValue = null;
                 if ($param->isDefaultValueAvailable()) {
                     $defaultValue = $param->getDefaultValue();
+                    if ($type == '') {
+                        $type = self::getVarDataType($param->getDefaultValue());
+                    }
                 }
 
                 $arr[$name]['parameters'][$paramName] = array(
@@ -198,7 +207,7 @@ class Tool
         $consts = $reflection->getConstants();
         foreach($consts as $const=>$value) {
             $arr[$const]['comment'] = '';
-            $arr[$const]['type'] = 'unknown';
+            $arr[$const]['type'] = self::getVarDataType($value);
             $arr[$const]['value'] = $value;
         }
         return $arr;
@@ -228,6 +237,9 @@ class Tool
                     $arr[$name]['value'] = $property->getValue();
                 }
             }
+            if (isset($arr[$name]['value'])) {
+                $arr[$name]['type'] = self::getVarDataType($arr[$name]['value']);
+            }
         }
         return $arr;
     }
@@ -255,6 +267,9 @@ class Tool
             $arr[$name]['comment'] = $method->getDocComment();
             $arr[$name]['isStatic'] = $method->isStatic();
             $arr[$name]['return'] = '';
+            if ($method->hasReturnType()) {
+                $arr[$name]['return'] = self::transformDataType($method->getReturnType());
+            }
             $arr[$name]['example'] = '';
             $params = $method->getParameters();
             $arr[$name]['parameters'] = array();
@@ -272,12 +287,16 @@ class Tool
                     } else if($param->isCallable()) {
                         $type = 'callable';
                     }
+
                 }
                 $arr[$name]['parameters'][$paramName]['comment'] = '';
                 $arr[$name]['parameters'][$paramName]['type'] = $type;
                 $arr[$name]['parameters'][$paramName]['options'] = array();
                 if ($param->isDefaultValueAvailable()) {
                     $arr[$name]['parameters'][$paramName]['value'] = $param->getDefaultValue();
+                    if ($type == 'unknown') {
+                        $arr[$name]['parameters'][$paramName]['type'] = self::getVarDataType($param->getDefaultValue());
+                    }
                 }
             }
         }
@@ -347,6 +366,38 @@ class Tool
             $aliasNames[$row] = $tmp->getName();
         }
         return $aliasNames;
+    }
+
+    public static function getVarDataType($val) {
+        if (is_int($val)) {
+            return 'int';
+        } elseif (is_string($val)) {
+            return 'string';
+        } elseif (is_null($val)) {
+            return 'null';
+        } elseif (is_bool($val)) {
+            return 'bool';
+        } elseif (is_float($val)) {
+            return 'float';
+        } elseif (is_array($val)) {
+            return 'Array';
+        } elseif (is_callable($val)) {
+            return 'Callable';
+        } elseif (is_resource($val)) {
+            return 'resource';
+        } elseif (is_object($val)) {
+            return 'Object';
+        } else {
+            return 'unknown';
+        }
+    }
+
+    public static function transformDataType($type) {
+        if ($type == 'long') {
+            return 'int';
+        }
+
+        return $type;
     }
 
 

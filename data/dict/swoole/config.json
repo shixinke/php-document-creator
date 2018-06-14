@@ -2,5 +2,6 @@
   "alias":{
     "functions":[],
     "classes":["Co", "Chan", "Co\\MySQL", "Co\\Redis", "Co\\Http\\Client", "Co\\Http2\\Client", "Co\\Http\\Server", "Co\\Server", "Co\\WebSocket\\Server", "Co\\Redis\\Server"]
-  }
+  },
+  "excepts":["Traversable"]
 }
