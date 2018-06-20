@@ -1,9 +1,115 @@
 {
+  "version": "4.1.0RC1",
+  "comment": "php操作Redis客户端",
+  "constants": [],
+  "ini": {
+    "redis.arrays.autorehash": {
+      "value": "",
+      "options": [],
+      "comment": "是否自动重新hash"
+    },
+    "redis.arrays.connecttimeout": {
+      "value": "",
+      "options": [],
+      "comment": "redis数组连接超时时间设置(users=1)"
+    },
+    "redis.arrays.distributor": {
+      "value": "",
+      "options": [],
+      "comment": "redis键分布函数名称或分布方法"
+    },
+    "redis.arrays.functions": {
+      "value": "",
+      "options": [],
+      "comment": "设置每个redis数组使用的函数名称(如:users=user_hash)"
+    },
+    "redis.arrays.hosts": {
+      "value": "",
+      "options": [],
+      "comment": "设置每个数组的主机名(如:users[]=localhost:6379&users[]=localhost:6380&users[]=localhost:6381&users[]=localhost:6382&friends[]=localhost)"
+    },
+    "redis.arrays.index": {
+      "value": "",
+      "options": [],
+      "comment": "设置哪些redis数组使用索引(如:users=1,friends=0)"
+    },
+    "redis.arrays.lazyconnect": {
+      "value": "",
+      "options": [],
+      "comment": "是否在需要操作某个Redis instance上的数据时，才建立连接"
+    },
+    "redis.arrays.names": {
+      "value": "",
+      "options": [],
+      "comment": "可用的redis数组列表(多个使用,隔开,如:users,friends)"
+    },
+    "redis.arrays.pconnect": {
+      "value": "",
+      "options": [],
+      "comment": "redis阵列是否启用长连接"
+    },
+    "redis.arrays.previous": {
+      "value": "",
+      "options": [],
+      "comment": "旧阵列(当一个新的节点添加到一个数组，phpredis需要知道它。节点的旧列表变成“previous”数组，节点的新列表作为主环)"
+    },
+    "redis.arrays.readtimeout": {
+      "value": "",
+      "options": [],
+      "comment": "阵列读数据超时时间"
+    },
+    "redis.arrays.retryinterval": {
+      "value": "",
+      "options": [],
+      "comment": "指定当客户失去与服务器连接时重新连接的延迟的时间"
+    },
+    "redis.clusters.persistent": {
+      "value": "",
+      "options": [],
+      "comment": "集群是否为长连接"
+    },
+    "redis.clusters.read_timeout": {
+      "value": "",
+      "options": [],
+      "comment": "设置集群的读数据超时时间(如:mycluster=10)"
+    },
+    "redis.clusters.seeds": {
+      "value": "",
+      "options": [],
+      "comment": "设置集群对应的主机配置(如:mycluster[]=localhost:7000&test[]=localhost:7001   ;\\n　在程序中使用:$obj_cluster = new RedisCluster('mycluster');)"
+    },
+    "redis.clusters.timeout": {
+      "value": "",
+      "options": [],
+      "comment": "设置集群的连接超时时间(如:mycluster=5)"
+    },
+    "redis.session.locking_enabled": {
+      "value": "",
+      "options": [],
+      "comment": "session是否启用锁"
+    },
+    "redis.session.lock_expire": {
+      "value": "",
+      "options": [],
+      "comment": "设置用redis来存储session数据的锁有效时间"
+    },
+    "redis.session.lock_retries": {
+      "value": "",
+      "options": [],
+      "comment": "设置用redis来存储session数据的锁重试次数"
+    },
+    "redis.session.lock_wait_time": {
+      "value": "",
+      "options": [],
+      "comment": "设置用redis来存储session数据的锁等待时间"
+    }
+  },
+  "functions": [],
   "object": {
     "name": "Redis"
   },
-  "comment": "php操作Redis客户端",
   "namespace": "",
+  "interfaces": [],
   "consts": {
     "REDIS_NOT_FOUND": {
       "comment": "未知类型",
@@ -62,8 +168,18 @@
     },
     "OPT_READ_TIMEOUT": {
       "comment": "读操作超时选项",
-      "type": "unknown",
+      "type": "float",
       "value": 3
+    },
+    "OPT_TCP_KEEPALIVE": {
+      "comment": "TCP长连接选项",
+      "type": "int",
+      "value": 6
+    },
+    "OPT_COMPRESSION": {
+      "comment": "启用压缩选项",
+      "type": "int",
+      "value": 7
     },
     "SERIALIZER_NONE": {
       "comment": "不实行序列化",
@@ -74,6 +190,11 @@
       "comment": "PHP序列化",
       "type": "int",
       "value": 1
+    },
+    "COMPRESSION_NONE": {
+      "comment": "",
+      "type": "int",
+      "value": 0
     },
     "OPT_SCAN": {
       "comment": "扫描选项",
@@ -107,7 +228,7 @@
       "access": "public",
       "comment": "创建一个redis客户端",
       "isStatic": false,
-      "return": "Object",
+      "return": "",
       "example": "$redis = new Redis();",
       "parameters": []
     },
