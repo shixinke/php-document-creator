@@ -6,7 +6,7 @@
 */
 
 /**
-*与key相关的redis数组
+*与key相关的redis数组(也有人翻译为redis阵列)
 */
 class RedisArray
 {
@@ -83,11 +83,11 @@ class RedisArray
 
     /**
      * 
-     *
+     *键分布函数名
      * @example 
-     * @return 
+     * @return string
      */
-    public function _distributor()
+    public function _distributor(): string
     {
     
     }
@@ -260,9 +260,9 @@ class RedisArray
      * </pre>
      * @param string $optionName 选项名
      * @param string $optionValue 选项值
-     * @return bool:
+     * @return bool
      */
-    public function setOption(string $optionName, string $optionValue): bool:
+    public function setOption(string $optionName, string $optionValue): bool
     {
     
     }

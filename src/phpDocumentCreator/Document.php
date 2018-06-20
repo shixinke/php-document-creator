@@ -638,7 +638,7 @@ class Document
             foreach($v['consts'] as $key=>$val) {
                 if (isset($dict[$fileName]['consts'][$key]['comment']) && ( $dict[$fileName]['consts'][$key]['comment'] != '')) {
                     $exportData['classes'][$k]['consts'][$key]['comment'] = $dict[$fileName]['consts'][$key]['comment'];
-                    $exportData['classes'][$k]['consts'][$key]['type'] = $dict[$fileName]['consts'][$key]['type'];
+                    $exportData['classes'][$k]['consts'][$key]['type'] = rtrim($dict[$fileName]['consts'][$key]['type'], ':');
                 }
             }
 
@@ -650,7 +650,7 @@ class Document
                     $exportData['classes'][$k]['properties'][$key]['comment'] = $dict[$fileName]['properties'][$key]['comment'];
                 }
                 if (isset($dict[$fileName]['properties'][$key]['type']) && ( $dict[$fileName]['properties'][$key]['type'] != '')) {
-                    $exportData['classes'][$k]['properties'][$key]['type'] = $dict[$fileName]['properties'][$key]['type'];
+                    $exportData['classes'][$k]['properties'][$key]['type'] = rtrim($dict[$fileName]['properties'][$key]['type'], ':');
                 }
             }
             foreach($v['methods'] as $key=>$val) {
@@ -701,6 +701,7 @@ class Document
                 $type = $mv;
             }
         }
+        $type = self::transformDataType($type);
         return $type;
     }
 
@@ -738,6 +739,7 @@ class Document
             }
 
         }
+        $map['type'] = self::transformDataType($map['type']);
         return $map;
 
     }
@@ -749,5 +751,17 @@ class Document
             $newName .= ucfirst($tmp).'\\';
         }
         return $newName;
+    }
+
+    public static function transformDataType($type) {
+        if ($type == 'long') {
+            return 'int';
+        } elseif ($type == 'function') {
+            return 'Callable';
+        } elseif ($type == 'boolean') {
+            return 'bool';
+        }
+        $type = rtrim($type, ':');
+        return $type;
     }
 }

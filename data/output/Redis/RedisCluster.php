@@ -151,7 +151,7 @@ class RedisCluster
      * @param boolean $persistent 与每个节点持久化连接
      * @return 
      */
-    public function __construct(string $name, Array $config, float $timeout, float $read_timeout, boolean $persistent)
+    public function __construct(string $name, Array $config, float $timeout, float $read_timeout, bool $persistent)
     {
     
     }
@@ -318,9 +318,9 @@ class RedisCluster
      * 
      * @param string $key 设置的缓存键
      * @param string $value 设置的缓存值
-     * @return bool:
+     * @return bool
      */
-    public function setnx(string $key, string $value): bool:
+    public function setnx(string $key, string $value): bool
     {
     
     }
@@ -1077,9 +1077,9 @@ class RedisCluster
      *移除指定键的有效期，让它永久有效
      * @example $redis->persist('key');
      * @param string $key 键名
-     * @return bool:
+     * @return bool
      */
-    public function persist(string $key): bool:
+    public function persist(string $key): bool
     {
     
     }
@@ -1690,9 +1690,9 @@ class RedisCluster
      * </pre>
      * @param string $key 键名
      * @param int $expireTime 到期时间
-     * @return bool:
+     * @return bool
      */
-    public function expireAt(string $key, int $expireTime): bool:
+    public function expireAt(string $key, int $expireTime): bool
     {
     
     }
@@ -1723,9 +1723,9 @@ class RedisCluster
      * </pre>
      * @param string $key 键名
      * @param int $expireTime 到期时间
-     * @return bool:
+     * @return bool
      */
-    public function pexpireAt(string $key, int $expireTime): bool:
+    public function pexpireAt(string $key, int $expireTime): bool
     {
     
     }
@@ -1831,9 +1831,9 @@ class RedisCluster
      * @param int $bit 位值
      * @param int $start 开始位置
      * @param int $end 结束位置
-     * @return function
+     * @return callable
      */
-    public function bitpos(string $key, int $bit, int $start, int $end): function
+    public function bitpos(string $key, int $bit, int $start, int $end): callable
     {
     
     }
@@ -1863,9 +1863,9 @@ class RedisCluster
      * @param string $key 键名
      * @param int $start 开始位置
      * @param int $end 结束位置
-     * @return string:
+     * @return string
      */
-    public function getrange(string $key, int $start, int $end): string:
+    public function getrange(string $key, int $start, int $end): string
     {
     
     }
@@ -2075,7 +2075,7 @@ class RedisCluster
      * @param boolean $withScores 是否返回成员的排序值
      * @return array
      */
-    public function zRange(string $key, long $start, long $end, boolean $withScores): array
+    public function zRange(string $key, int $start, int $end, bool $withScores): array
     {
     
     }
@@ -2098,7 +2098,7 @@ class RedisCluster
      * @param boolean $withScores 是否返回成员的排序值
      * @return array
      */
-    public function zRevRange(string $key, long $start, long $end, boolean $withScores): array
+    public function zRevRange(string $key, int $start, int $end, bool $withScores): array
     {
     
     }
@@ -2123,7 +2123,7 @@ class RedisCluster
      * @param array $options 附加选项(可以是：withscores => TRUE, and limit => array($offset, $count))
      * @return array
      */
-    public function zRangeByScore(string $key, long $start, long $end, Array $options): array
+    public function zRangeByScore(string $key, int $start, int $end, Array $options): array
     {
     
     }
@@ -2148,7 +2148,7 @@ class RedisCluster
      * @param array $options 附加选项(可以是：withscores => TRUE, and limit => array($offset, $count))
      * @return array
      */
-    public function zRevRangeByScore(string $key, long $start, long $end, Array $options): array
+    public function zRevRangeByScore(string $key, int $start, int $end, Array $options): array
     {
     
     }
@@ -2172,7 +2172,7 @@ class RedisCluster
      * @param long $limit 成员数
      * @return array
      */
-    public function zRangeByLex(string $key, long $min, long $max, long $offset, long $limit): array
+    public function zRangeByLex(string $key, int $min, int $max, int $offset, int $limit): array
     {
     
     }
@@ -2188,7 +2188,7 @@ class RedisCluster
      * @param long $limit 成员数
      * @return 
      */
-    public function zRevRangeByLex(string $key, long $min, long $max, long $offset, long $limit)
+    public function zRevRangeByLex(string $key, int $min, int $max, int $offset, int $limit)
     {
     
     }
@@ -2202,7 +2202,7 @@ class RedisCluster
      * @param long $max 最大的字母
      * @return int
      */
-    public function zlexcount(string $key, long $min, long $max): int
+    public function zlexcount(string $key, int $min, int $max): int
     {
     
     }
@@ -2216,7 +2216,7 @@ class RedisCluster
      * @param long $max 最大的字母
      * @return long
      */
-    public function zremrangebylex(string $key, long $min, long $max): long
+    public function zremrangebylex(string $key, int $min, int $max): long
     {
     
     }
@@ -2586,9 +2586,9 @@ class RedisCluster
      * </pre>
      * @param string $optionName 选项名
      * @param string $optionValue 选项值
-     * @return bool:
+     * @return bool
      */
-    public function setOption(string $optionName, string $optionValue): bool:
+    public function setOption(string $optionName, string $optionValue): bool
     {
     
     }
