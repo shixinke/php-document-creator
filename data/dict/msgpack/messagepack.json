@@ -1,1 +1,92 @@
-{"object":{"name":"MessagePack"},"comment":false,"namespace":"","consts":{"OPT_PHPONLY":{"comment":"","type":"unknown","value":-1001}},"properties":[],"methods":{"__construct":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":{"opt":{"comment":"","type":"unknown","options":[]}}},"setOption":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":{"option":{"comment":"","type":"unknown","options":[]},"value":{"comment":"","type":"unknown","options":[]}}},"pack":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":{"value":{"comment":"","type":"unknown","options":[]}}},"unpack":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":{"str":{"comment":"","type":"unknown","options":[]},"object":{"comment":"","type":"unknown","options":[]}}},"unpacker":{"access":"public","comment":false,"isStatic":false,"return":"","example":"","parameters":[]}}}
+{
+  "object": {
+    "name": "MessagePack"
+  },
+  "comment": "MessagePack是一个基于二进制的高效对象序列化库。 它支持在许多语言（如JSON）之间交换结构化对象。 但与JSON不同的是，它非常快速和小巧（它是msgpack相关函数对应的类）",
+  "namespace": "",
+  "interfaces": [],
+  "consts": {
+    "OPT_PHPONLY": {
+      "comment": "",
+      "type": "int",
+      "value": -1001
+    }
+  },
+  "properties": [],
+  "methods": {
+    "__construct": {
+      "access": "public",
+      "comment": "messagePack序列化初始化",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "opt": {
+          "comment": "是否只适应于PHP",
+          "type": "bool",
+          "options": []
+        }
+      }
+    },
+    "setOption": {
+      "access": "public",
+      "comment": "设置属性配置(目前只支持MSGPACK_CLASS_OPT_PHPONLY)",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": {
+        "option": {
+          "comment": "属性名",
+          "type": "int",
+          "options": []
+        },
+        "value": {
+          "comment": "属性值",
+          "type": "mixed",
+          "options": []
+        }
+      }
+    },
+    "pack": {
+      "access": "public",
+      "comment": "序列化(打包)数据",
+      "isStatic": false,
+      "return": "string|null",
+      "example": "",
+      "parameters": {
+        "value": {
+          "comment": "被序列化的数据",
+          "type": "mixed",
+          "options": []
+        }
+      }
+    },
+    "unpack": {
+      "access": "public",
+      "comment": "给数据反序列化",
+      "isStatic": false,
+      "return": "mixed|null",
+      "example": "",
+      "parameters": {
+        "str": {
+          "comment": "被反序列化的数据",
+          "type": "string",
+          "options": []
+        },
+        "object": {
+          "comment": "返回的数据对象",
+          "type": "mixed",
+          "options": []
+        }
+      }
+    },
+    "unpacker": {
+      "access": "public",
+      "comment": "返回当前实例对象",
+      "isStatic": false,
+      "return": "",
+      "example": "",
+      "parameters": []
+    }
+  }
+}

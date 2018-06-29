@@ -1,1 +1,92 @@
-{"version":"2.0.2","comment":"","constants":{"MESSAGEPACK_OPT_PHPONLY":{"value":-1001,"comment":""}},"ini":{"msgpack.error_display":{"value":"1","options":[],"comment":""},"msgpack.php_only":{"value":"1","options":[],"comment":""},"msgpack.illegal_key_insert":{"value":"0","options":[],"comment":""},"msgpack.use_str8_serialization":{"value":"1","options":[],"comment":""}},"functions":{"msgpack_serialize":{"comment":false,"parameters":{"value":{"comment":"","options":[],"type":""}},"return":"","example":""},"msgpack_unserialize":{"comment":false,"parameters":{"str":{"comment":"","options":[],"type":""},"object":{"comment":"","options":[],"type":""}},"return":"","example":""},"msgpack_pack":{"comment":false,"parameters":{"value":{"comment":"","options":[],"type":""}},"return":"","example":""},"msgpack_unpack":{"comment":false,"parameters":{"str":{"comment":"","options":[],"type":""},"object":{"comment":"","options":[],"type":""}},"return":"","example":""}}}
+{
+  "version": "2.0.2",
+  "comment": "MessagePack是一个基于二进制的高效对象序列化库。 它支持在许多语言（如JSON）之间交换结构化对象。 但与JSON不同的是，它非常快速和小巧",
+  "constants": {
+    "MESSAGEPACK_OPT_PHPONLY": {
+      "value": -1001,
+      "comment": "是否只在PHP中使用序列化"
+    }
+  },
+  "ini": {
+    "msgpack.error_display": {
+      "value": "1",
+      "options": [],
+      "comment": "是否显示错误"
+    },
+    "msgpack.php_only": {
+      "value": "1",
+      "options": [],
+      "comment": "是否在适用于PHP"
+    },
+    "msgpack.illegal_key_insert": {
+      "value": "0",
+      "options": [],
+      "comment": "非法键插入"
+    },
+    "msgpack.use_str8_serialization": {
+      "value": "1",
+      "options": [],
+      "comment": ""
+    }
+  },
+  "functions": {
+    "msgpack_serialize": {
+      "comment": false,
+      "parameters": {
+        "value": {
+          "comment": "",
+          "options": [],
+          "type": ""
+        }
+      },
+      "return": "",
+      "example": ""
+    },
+    "msgpack_unserialize": {
+      "comment": false,
+      "parameters": {
+        "str": {
+          "comment": "",
+          "options": [],
+          "type": ""
+        },
+        "object": {
+          "comment": "",
+          "options": [],
+          "type": ""
+        }
+      },
+      "return": "",
+      "example": ""
+    },
+    "msgpack_pack": {
+      "comment": false,
+      "parameters": {
+        "value": {
+          "comment": "",
+          "options": [],
+          "type": ""
+        }
+      },
+      "return": "",
+      "example": ""
+    },
+    "msgpack_unpack": {
+      "comment": false,
+      "parameters": {
+        "str": {
+          "comment": "",
+          "options": [],
+          "type": ""
+        },
+        "object": {
+          "comment": "",
+          "options": [],
+          "type": ""
+        }
+      },
+      "return": "",
+      "example": ""
+    }
+  }
+}
