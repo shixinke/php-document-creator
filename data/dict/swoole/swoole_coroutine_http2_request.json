@@ -1,1 +1,43 @@
-{"object":{"name":"Swoole\\Coroutine\\Http2\\Request"},"comment":"协程版http2请求客户端","namespace":"Swoole\\Coroutine\\Http2","interfaces":[],"consts":[],"properties":{"method":{"access":"public","type":"string","comment":"请求方式","isStatic":false},"headers":{"access":"public","type":"array","comment":"请求头","isStatic":false},"data":{"access":"public","type":"array","comment":"请求数据","isStatic":false},"pipeline":{"access":"public","type":"bool","comment":"是否分段发送数据帧","isStatic":false,"value":false},"files":{"access":"public","type":"array","comment":"请求中的文件上传信息\nname 浏览器上传时传入的文件名称","isStatic":false}},"methods":[]}
+{
+  "object": {
+    "name": "Swoole\\Coroutine\\Http2\\Request"
+  },
+  "comment": "协程版http2请求客户端",
+  "namespace": "Swoole\\Coroutine\\Http2",
+  "interfaces": [],
+  "consts": [],
+  "properties": {
+    "method": {
+      "access": "public",
+      "type": "string",
+      "comment": "请求方式",
+      "isStatic": false
+    },
+    "headers": {
+      "access": "public",
+      "type": "array",
+      "comment": "请求头",
+      "isStatic": false
+    },
+    "data": {
+      "access": "public",
+      "type": "array",
+      "comment": "请求数据",
+      "isStatic": false
+    },
+    "pipeline": {
+      "access": "public",
+      "type": "bool",
+      "comment": "是否分段发送数据帧",
+      "isStatic": false,
+      "value": false
+    },
+    "files": {
+      "access": "public",
+      "type": "array",
+      "comment": "请求中的文件上传信息\nname 浏览器上传时传入的文件名称",
+      "isStatic": false
+    }
+  },
+  "methods": []
+}
